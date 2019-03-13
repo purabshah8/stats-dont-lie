@@ -12,7 +12,7 @@ class Game(models.Model):
 
     GAME_TYPES = (
         ('Pre', 'Preseason Game'),
-        ('Reg', 'Regular Season Gam'e),
+        ('Reg', 'Regular Season Game'),
         ('Post', 'Playoff Game')
     )
     season = models.ForeignKey('Season', models.CASCADE)

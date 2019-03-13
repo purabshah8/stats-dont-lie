@@ -47,6 +47,7 @@ def create_tables():
         """ 
             CREATE TABLE arena(
                 id SERIAL PRIMARY KEY,
+                name VARCHAR(64),
                 location_id INTEGER NOT NULL
                     REFERENCES location(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
