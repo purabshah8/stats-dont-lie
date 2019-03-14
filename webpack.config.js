@@ -6,7 +6,7 @@ module.exports = {
     context: __dirname,
     entry: './frontend/index.jsx',
     output: {
-        path: path.resolve(__dirname),
+        path: path.resolve(__dirname, 'assets', 'js'),
         filename: 'bundle.js'
     },
     resolve: {
