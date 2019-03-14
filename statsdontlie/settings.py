@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webpack_loader',
+    'graphene_django',
     'stats.apps.StatsConfig'
 ]
 
@@ -132,7 +133,12 @@ STATICFILES_DIRS = (
 # Webpack Loader
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'assets/js/',
+        'BUNDLE_DIR_NAME': 'js/',
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
     }
+}
+
+# Graphene
+GRAPHENE = {
+    'SCHEMA': 'schema.schema'
 }

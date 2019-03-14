@@ -2,3 +2,5 @@ stat-env
 .vscode
 __pycache__
 node_modules
+bundle.js
+bundle.js.map
