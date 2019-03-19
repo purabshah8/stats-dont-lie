@@ -62,3 +62,79 @@ class Query(object):
     def resolve_all_logos(self, info, **kwargs):
         return Logo.objects.all()
     
+    league = graphene.Field(LeagueType, id=graphene.Int(), name=graphene.String())
+    conference = graphene.Field(ConferenceType, id=graphene.Int(), name=graphene.String())
+    division = graphene.Field(DivisionType, id=graphene.Int(), name=graphene.String())
+    location = graphene.Field(LocationType, id=graphene.Int())
+    arena = graphene.Field(ArenaType, id=graphene.Int(), name=graphene.String())
+    team = graphene.Field(TeamType, id=graphene.Int(), name=graphene.String(), city=graphene.String(), abbr=graphene.String())
+    logo = graphene.Field(TeamType, id=graphene.Int())
+
+    def resolve_league(self, info, **kwargs):
+        id = kwargs.get('id')
+        name = kwargs.get('name')
+
+        if id is not None:
+            return League.objects.get(pk=id)
+
+        if name is not None:
+            return League.objects.get(name=name)
+    
+    def resolve_conference(self, info, **kwargs):
+        id = kwargs.get('id')
+        name = kwargs.get('name')
+
+        if id is not None:
+            return Conference.objects.get(pk=id)
+
+        if name is not None:
+            return Conference.objects.get(name=name)
+    
+
+    def resolve_division(self, info, **kwargs):
+        id = kwargs.get('id')
+        name = kwargs.get('name')
+
+        if id is not None:
+            return Division.objects.get(pk=id)
+
+        if name is not None:
+            return Division.objects.get(name=name)
+    
+    def resolve_location(self, info, **kwargs):
+        id = kwargs.get('id')
+
+        if id is not None:
+            return Location.objects.get(pk=id)
+    
+    def resolve_arena(self, info, **kwargs):
+        id = kwargs.get('id')
+        name = kwargs.get('name')
+
+        if id is not None:
+            return Arena.objects.get(pk=id)
+    
+        if name is not None:
+            return Arena.objects.get(name=name)
+    
+
+    def resolve_team(self, info, **kwargs):
+        id = kwargs.get('id')
+        name = kwargs.get('name')
+        abbr = kwargs.get('abbr')
+
+        if id is not None:
+            return Team.objects.get(pk=id)
+
+        if name is not None:
+            return Team.objects.get(name=name)
+
+        if abbr is not None:
+            return Team.objects.get(abbreviation=abbr)
+    
+    def resolve_logo(self, info, **kwargs):
+        id = kwargs.get('id')
+
+        if id is not None:
+            return Logo.objects.get(pk=id)
+    

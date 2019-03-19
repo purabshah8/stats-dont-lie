@@ -1,1 +1,1 @@
-{"status":"done","chunks":{"main":[{"name":"bundle.js","path":"/Users/purab/nba_stats_viz/statsdontlie/assets/js/bundle.js"}]},"error":"ModuleNotFoundError","message":"Module not found: Error: Empty dependency (no request)"}
+{"status":"done","chunks":{"main":[{"name":"bundle.js","path":"/Users/purab/nba_stats_viz/statsdontlie/assets/js/bundle.js"},{"name":"bundle.js.map","path":"/Users/purab/nba_stats_viz/statsdontlie/assets/js/bundle.js.map"}]}}
