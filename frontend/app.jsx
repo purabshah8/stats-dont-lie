@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, Link } from "react-router-dom";
 import Teams from './components/teams';
+import Team from './components/team';
 
 const App = () => {
     return(
@@ -12,6 +13,7 @@ const App = () => {
                     </>
                 )}/>
                 <Route exact path="/teams" component={Teams} />
+                <Route exact path="/teams/:id" component={Team} />
             </Switch>
     );
 };

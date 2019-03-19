@@ -1,38 +1,35 @@
 import React from 'react';
-import gql from "graphql-tag";
 import { Query } from "react-apollo";
-
-const GET_ALL_TEAMS = gql `
-    query {
-        allTeams {
-            city
-            name
-        }
-    }
-`;
+import { GET_ALL_TEAMS } from '../util/queries';
+import { Link } from "react-router-dom";
 
 const Teams = () => {
     return(
-        <Query query={GET_ALL_TEAMS} >
-        {
-            ({loading, error, data}) => {
-                if (loading) return 'Loading...';
-                if (error) return `Error! ${error.message}`;
-
-                return(
-                    <ul>
-                        {
-                            data.allTeams.map(team => (
-                                <li>
-                                    {team.city + ' ' + team.name}
-                                </li>
-                            ))
-                        }
-                    </ul>
-                );
+        <div>
+            <h2>NBA Teams</h2>
+            <Query query={GET_ALL_TEAMS} >
+            {
+                ({loading, error, data}) => {
+                    if (loading) return 'Loading...';
+                    if (error) return `Error! ${error.message}`;
+                    
+                    return(
+                        <ul>
+                            {
+                                data.allTeams.map(team => (
+                                    <li>
+                                        <Link to={`teams/${team.id}`}>
+                                            {team.city + ' ' + team.name}
+                                        </Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    );
+                }
             }
-        }
-        </Query>
+            </Query>
+        </div>
     );
 };
 
