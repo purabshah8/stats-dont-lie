@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Query } from "react-apollo";
-import { getTeam } from '../util/queries';
+import { GET_TEAM } from '../util/queries';
 
 export default class Team extends Component {
 
@@ -13,7 +13,7 @@ export default class Team extends Component {
     render() {
         return (
             <div>
-                <Query query={getTeam('id', this.props.match.params.id)}>
+                <Query query={GET_TEAM} variables={ { teamId: this.props.match.params.id } }>
                     {
                         ({loading, error, data}) => {
                             if (loading) return 'Loading...';
@@ -21,6 +21,7 @@ export default class Team extends Component {
                             
                             return(
                                 <div>
+                                    <img className="team-logo" src={`/static/images/logos/${data.team.abbreviation}_logo.svg`} />
                                     <h2>{data.team.city + " " + data.team.name}</h2>
                                     <ul>
                                         <li>Division: {data.team.division.name}</li>

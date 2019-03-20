@@ -1,7 +1,6 @@
 import gql from "graphql-tag";
 
-
-export const GET_ALL_TEAMS = gql `
+export const GET_ALL_TEAMS = gql`
     query {
         allTeams {
             id
@@ -11,24 +10,20 @@ export const GET_ALL_TEAMS = gql `
     }
 `;
 
-export const getTeam = (queryType, queryValue) => {
-
-    return gql `
-    {
-    team(${queryType}: ${queryValue}) {
+export const GET_TEAM = gql`
+query TeamDetails($teamId: Int!) {
+    team(id: $teamId) {
         city
         name
+        abbreviation
         arena {
-        name
-        }
-        division {
-        name
-        conference {
             name
         }
+        division {
+            name
+            conference {
+                name
+            }
         }
-
     }
-    }
-`
-}
+}`;
