@@ -1,0 +1,13 @@
+@charset "utf-8";
+@import "../node_modules/bulma/bulma";
+
+// Google Font Import
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,400i,700,700i&subset=latin-ext');
+
+// Set theme colors
+
+
+// Update Bulma's global variables
+$family-sans-serif: "Poppins", sans-serif;
+
+// Update some of Bulma's component variables

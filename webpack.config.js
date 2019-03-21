@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const BundleTracker = require('webpack-bundle-tracker');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     
@@ -15,6 +16,7 @@ module.exports = {
     },
     plugins: [
         new BundleTracker({filename: './webpack-stats.json'}),
+        new MiniCssExtractPlugin({filename: "./assets/css/style.css"})
     ],
     module: {
         rules: [
@@ -27,6 +29,10 @@ module.exports = {
                         presets: ['@babel/env', '@babel/react']
                     }
                 },
+            },
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             }
         ]
     },
