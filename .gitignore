@@ -1,7 +1,10 @@
 stat-env
 .vscode
 __pycache__
+.DS_Store
 node_modules
 bundle.js
 bundle.js.map
 webpack-stats.json
+images
+scraper.ipynb
