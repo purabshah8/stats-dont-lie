@@ -2,7 +2,8 @@ import psycopg2
 import sys
 
 leagues = [
-    (1, "nba", 1946)
+    (1, "nba", 1946),
+    (2, "aba", 1967)
     ]
 
 conferences = [
@@ -116,102 +117,8 @@ teams = [
     (30, 6, "Kings", "Sacramento", 11, 1924, "SAC"),
 ]
 
-# logos = [
-#     (1, 'http://content.sportslogos.net/logos/6/213/full/slhg02hbef3j1ov4lsnwyol5o.png', 1, 'primary', 1997),
-#     (2, 'http://content.sportslogos.net/logos/6/3786/full/137_brooklyn-nets-primary-2013.png', 2, 'primary', 2013),
-#     (3, 'http://content.sportslogos.net/logos/6/218/full/7034_philadelphia_76ers-primary-2016.png', 3, 'primary', 2016),
-#     (4, 'http://content.sportslogos.net/logos/6/216/full/2nn48xofg0hms8k326cqdmuis.gif', 4, 'primary', 2012),
-#     (5, '', 5, 'primary', ),
-#     (6, '', 6, 'primary', ),
-#     (7, '', 7, 'primary', ),
-#     (8, '', 8, 'primary', ),
-#     (9, '', 9, 'primary', ),
-#     (10, '', 10, 'primary', ),
-#     (11, '', 11, 'primary', ),
-#     (12, '', 12, 'primary', ),
-#     (13, '', 13, 'primary', ),
-#     (14, '', 14, 'primary', ),
-#     (15, '', 15, 'primary', ),
-#     (16, '', 16, 'primary', ),
-#     (17, '', 17, 'primary', ),
-#     (18, '', 18, 'primary', ),
-#     (19, '', 19, 'primary', ),
-#     (20, '', 20, 'primary', ),
-#     (21, '', 21, 'primary', ),
-#     (22, '', 22, 'primary', ),
-#     (23, '', 23, 'primary', ),
-#     (24, '', 24, 'primary', ),
-#     (25, '', 25, 'primary', ),
-#     (26, '', 26, 'primary', ),
-#     (27, '', 27, 'primary', ),
-#     (28, '', 28, 'primary', ),
-#     (29, '', 29, 'primary', ),
-#     (30, '', 30, 'primary', ),
-#     (31, '', 1, 'secondary', ),
-#     (32, 'http://content.sportslogos.net/logos/6/3786/full/345_brooklyn-nets-secondary-2013.png', 2, 'secondary', 2013),
-#     (33, 'http://content.sportslogos.net/logos/6/218/full/5312_philadelphia_76ers-secondary-2016.png', 3, 'secondary', 2016),
-#     (34, '', 4, 'secondary', ),
-#     (35, '', 5, 'secondary', ),
-#     (36, '', 6, 'secondary', ),
-#     (37, '', 7, 'secondary', ),
-#     (38, '', 8, 'secondary', ),
-#     (39, '', 9, 'secondary', ),
-#     (40, '', 10, 'secondary', ),
-#     (41, '', 11, 'secondary', ),
-#     (42, '', 12, 'secondary', ),
-#     (43, '', 13, 'secondary', ),
-#     (44, '', 14, 'secondary', ),
-#     (45, '', 15, 'secondary', ),
-#     (46, '', 16, 'secondary', ),
-#     (47, '', 17, 'secondary', ),
-#     (48, '', 18, 'secondary', ),
-#     (49, '', 19, 'secondary', ),
-#     (50, '', 20, 'secondary', ),
-#     (51, '', 21, 'secondary', ),
-#     (52, '', 22, 'secondary', ),
-#     (53, '', 23, 'secondary', ),
-#     (54, '', 24, 'secondary', ),
-#     (55, '', 25, 'secondary', ),
-#     (56, '', 26, 'secondary', ),
-#     (57, '', 27, 'secondary', ),
-#     (58, '', 28, 'secondary', ),
-#     (59, '', 29, 'secondary', ),
-#     (60, '', 30, 'secondary', ),
-#     (61, 'http://content.sportslogos.net/logos/6/213/full/9648_boston_celtics-alternate-2015.png', 1, 'alternate', 2015),
-#     (62, 'http://content.sportslogos.net/logos/6/3786/full/930_brooklyn-nets-partial-2013.png', 2, 'alternate', 2013),
-#     (63, 'http://content.sportslogos.net/logos/6/218/full/3588_philadelphia_76ers-secondary-2015.png', 3, 'alternate', 2015),
-#     (64, '', 4, 'alternate', ),
-#     (65, '', 5, 'alternate', ),
-#     (66, '', 6, 'alternate', ),
-#     (67, '', 7, 'alternate', ),
-#     (68, '', 8, 'alternate', ),
-#     (69, '', 9, 'alternate', ),
-#     (70, '', 10, 'alternate', ),
-#     (71, '', 11, 'alternate', ),
-#     (72, '', 12, 'alternate', ),
-#     (73, '', 13, 'alternate', ),
-#     (74, '', 14, 'alternate', ),
-#     (75, '', 15, 'alternate', ),
-#     (76, '', 16, 'alternate', ),
-#     (77, '', 17, 'alternate', ),
-#     (78, '', 18, 'alternate', ),
-#     (79, '', 19, 'alternate', ),
-#     (80, '', 20, 'alternate', ),
-#     (81, '', 21, 'alternate', ),
-#     (82, '', 22, 'alternate', ),
-#     (83, '', 23, 'alternate', ),
-#     (84, '', 24, 'alternate', ),
-#     (85, '', 25, 'alternate', ),
-#     (86, '', 26, 'alternate', ),
-#     (87, '', 27, 'alternate', ),
-#     (88, '', 28, 'alternate', ),
-#     (89, '', 29, 'alternate', ),
-#     (90, '', 30, 'alternate', ),
-# ]
-
 def insert(table, values):
     connection = None
-
 
     try:
         connection = psycopg2.connect("dbname=nba user=purab password=godricshallows")
@@ -232,19 +139,8 @@ def insert(table, values):
         if connection:
             connection.close()
 
-tables = ['league', 'conference', 'division', 'location', 'arena', 'team']
+tables = ["league", "conference", "division", "location", "arena", "team", "season", "person", "team_employee", "referee", "player", "position", "player_position"]
+
 seed_data = [leagues, conferences, divisions, locations, arenas, teams]
-for i in range(len(tables)):
+for i in range(len(seed_data)):
     insert(tables[i], seed_data[i])
-
-# insert('league', leagues)
-# insert('conference', conferences)
-# insert('division', divisions)
-# insert('location', locations)
-# insert('arena', arenas)
-# insert('team', teams)
-
-# connection = psycopg2.connect("dbname=nba user=purab password=godricshallows")
-# cursor = connection.cursor()
-# num_args_str = "(" + "%s," * (len(conferences[0])-1) + "%s)"
-# args = [str(cursor.mogrify(num_args_str, x)) for x in conferences]
