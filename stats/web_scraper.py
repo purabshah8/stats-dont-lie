@@ -1,7 +1,4 @@
-import requests
-import bs4
-import re
-from seed import insert
+import requests, bs4, re
 
 def get_box_score_urls(season="2019"):
     months = ['october', 'november', 'december', 'january', 'february', 'march', 'april', 'may', 'june']
@@ -75,12 +72,18 @@ def get_player_urls(letters = "abcdefghijklmnopqrstuvwyz"):
 def get_player_info(url):
     player_response = requests.get("https://www.basketball-reference.com" + url)
     player_soup = bs4.BeautifulSoup(player_response.text, 'html.parser')
-    player_info = player_soup.find(attrs={"itemtype": "https://schema.org/Person"})
     
-    name = player_info.find("h1")
-    name = name.get_text().split(" ")
+    person = {}
+    player = {}
+    
+    player_info = player_soup.find(attrs={"itemtype": "https://schema.org/Person"})
+    image_url = player_soup.find(attrs={"itemscope": "image"})
+    if image_url is not None:
+        player['image_url'] = image_url['src']
+    name = player_info.find("h1").get_text().split(" ")
     player_info = player_info("p")
-    player = {"preferred_name": name[0]}
+    # player = {"preferred_name": name[0]}
+    person['preferred_name'] = name[0]
     last_name = name[1]
     
     raw_info = []
@@ -97,19 +100,18 @@ def get_player_info(url):
         if last_name in info_arr:
             full_name = " ".join(info_arr).split('▪')[0].split(" ")
             last_name_idx = full_name.index(last_name)
-            print(full_name)
-            player["last_name"] = " ".join(full_name[last_name_idx:]).strip().strip("I").strip().replace("Jr.", "").strip()
-            player["middle_name"] = " ".join(full_name[1:last_name_idx]).strip()
-            player["first_name"] = full_name[0]
-            print(player["last_name"])
+            person["last_name"] = " ".join(full_name[last_name_idx:]).strip().strip("I").strip().replace("Jr.", "").strip()
+            person["middle_name"] = " ".join(full_name[1:last_name_idx]).strip()
+            person["first_name"] = full_name[0]
+            # print(person["last_name"])
             # special cases 
             special_names = ["Carlos Navarro", "John Ramos", "Ray Richardson", "Michael Ray McAdoo", "Vander Velden"]
             
-            if player["last_name"] in special_names or re.search(r"^[vV][ao]n ", player["last_name"]):
-                names = player["last_name"].split(" ")
-                player["middle_name"] = " ".join(names[0:-1])
-                player["preferred_name"] = player["preferred_name"] + " " + names[0]
-                player["last_name"] = names[-1]
+            if person["last_name"] in special_names or re.search(r"^[vV][ao]n ", person["last_name"]):
+                names = person["last_name"].split(" ")
+                person["middle_name"] = " ".join(names[0:-1])
+                person["preferred_name"] = person["preferred_name"] + " " + names[0]
+                person["last_name"] = names[-1]
                 
         if 'Position:' in info_arr:
             positions = {
@@ -139,37 +141,31 @@ def get_player_info(url):
 
         if 'Born:' in info_arr:
             birth_date = " ".join(info_arr[1:4])
-            player["birth_date"] = birth_date
+            person["dob"] = birth_date
             if len(info_arr) > 4:
                 in_idx = info_arr.index("in")
                 birth_place = " ".join(info_arr[in_idx+1:-1])
-                player["birth_place"] = birth_place
+                person["birth_place"] = birth_place
 
         if 'College:' in info_arr or 'Colleges:' in info_arr:
             college = " ".join(info_arr[1:])
-            player["college"] = college
+            person["college"] = college
             
         if 'Debut:' in info_arr:
             debut_info = " ".join(info_arr).split("&blacksquare")
             if len(debut_info) > 1:
-                debut_info[0] = debut_info[0].strip().split(" ")
+                # debut_info[0] = debut_info[0].strip().split(" ")
                 debut_info[1] = debut_info[1].strip().split(" ")
-                player["nba_debut"] = int(debut_info[0][-1]) + 1
-                player["aba_debut"] = int(debut_info[1][-1]) + 1
+                # player["nba_debut"] = int(debut_info[0][-1]) + 1
+                player["rookie_season"] = int(debut_info[1][-1]) + 1
             else:
-                player["nba_debut"] = int(info_arr[-1]) + 1
-                
-    return player
+                player["rookie_season"] = int(info_arr[-1]) + 1
 
-if __name__ == "__main__":
+    player_seasons = player_soup.find_all(attrs={"data-stat": "season", "scope":"row", "class": "left"})
+    player_seasons = [season for season in player_seasons if season("a")]
+    final_season = player_seasons[-1].get_text()
+    final_season = int(final_season[0:2] + final_season[-2:])
+    if final_season != 2019:
+        player['final_season'] = final_season
 
-    player_urls = get_player_urls()
-    for url in player_urls:
-        player_info = get_player_info(url)
-        insert('player', player_info)
-
-    box_score_urls = get_box_score_urls(2019)
-    for url in box_score_urls:
-        basic, advanced = get_box_score_info(url)
-        insert('basic_box', basic)
-        insert('advanced_box', advanced)
+    return player, person
