@@ -45,7 +45,7 @@ def create_tables():
                 city VARCHAR(64),
                 state VARCHAR(64),
                 country VARCHAR(64) NOT NULL,
-                postal_code INTEGER,
+                postal_code INTEGER
             );
         """,
         """ 
@@ -84,7 +84,7 @@ def create_tables():
                 year INTEGER NOT NULL,
                 preseason_start DATE,
                 season_start DATE,
-                playoff_start DATE,
+                playoff_start DATE
             );
         """,
         """ 
@@ -146,6 +146,7 @@ def create_tables():
             CREATE TABLE position(
                 id INTEGER NOT NULL PRIMARY KEY,
                 name VARCHAR(16) NOT NULL,
+                abbreviation VARCHAR(2) NOT NULL
             );
         """,
         """ 

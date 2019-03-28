@@ -43,10 +43,20 @@ class Location(models.Model):
     postal_code = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        return self.address
+        address =  self.address
+        if self.city:
+            address += ", " + self.city
+        if self.state:
+            address += ", " + self.state
+        if self.country and self.country != 'USA':
+            address += " " + self.country
+        if self.postal_code:
+            address += " " + str(self.postal_code)
+        return address
 
     class Meta:
         db_table = 'location'
+
 
 class Arena(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True)
@@ -75,14 +85,91 @@ class Team(models.Model):
     class Meta:
         db_table = 'team'
 
-class Logo(models.Model):
-    url = models.TextField()
-    team = models.ForeignKey('Team', models.DO_NOTHING)
-    type = models.CharField(max_length=32)
-    debut_year = models.IntegerField(blank=True, null=True)
-    final_year = models.IntegerField(blank=True, null=True)
+
+class Season(models.Model):
+    league = models.ForeignKey(League, models.DO_NOTHING)
+    year = models.IntegerField()
+    preseason_start = models.DateField(blank=True, null=True)
+    season_start = models.DateField(blank=True, null=True)
+    playoff_start = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return Team.objects.get(id=self.team).name + type
+        return self.year
+
     class Meta:
-        db_table = 'logo'
+        db_table = 'season'
+
+
+class Person(models.Model):
+    last_name = models.CharField(max_length=16)
+    first_name = models.CharField(max_length=16)
+    middle_name = models.CharField(max_length=16, blank=True, null=True)
+    preferred_name = models.CharField(max_length=16, blank=True, null=True)
+    dob = models.DateField()
+    college = models.CharField(max_length=32, blank=True, null=True)
+    birthplace = models.ForeignKey(Location, models.DO_NOTHING)
+
+    def __str__(self):
+        return self.preferred_name + " " + self.last_name
+    class Meta:
+        db_table = 'person'
+
+
+class Referee(models.Model):
+    id = models.OneToOneField(Person, models.DO_NOTHING, db_column='id', primary_key=True)
+    jersey_number = models.IntegerField()
+    rookie_season = models.ForeignKey('Season', models.DO_NOTHING)
+
+    def __str__(self):
+        return Person.objects.get(id=self.id)
+    class Meta:
+        db_table = 'referee'
+
+
+class TeamEmployee(models.Model):
+    id = models.OneToOneField(Person, models.DO_NOTHING, db_column='id', primary_key=True)
+    team = models.ForeignKey(Team, models.DO_NOTHING)
+    role = models.CharField(max_length=16)
+    start_date = models.DateField()
+    end_date = models.DateField(blank=True, null=True)
+    
+    def __str__(self):
+        return Person.objects.get(id=self.id)
+
+    class Meta:
+        db_table = 'team_employee'
+
+
+class Player(models.Model):
+    id = models.OneToOneField(Person, models.DO_NOTHING, db_column='id', primary_key=True)
+    height = models.IntegerField()
+    weight = models.IntegerField()
+    shooting_hand = models.CharField(max_length=5)
+    rookie_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="rookie_season")
+    final_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="final_season")
+    image_url = models.CharField(max_length=128)
+
+    def __str__(self):
+        return Person.objects.get(id=self.id)
+
+    class Meta:
+        db_table = 'player'
+
+
+class Position(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=16)
+    abbreviation = models.CharField(max_length=2)
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        db_table = 'position'
+
+
+class PlayerPosition(models.Model):
+    player = models.ForeignKey(Player, models.DO_NOTHING)
+    position = models.ForeignKey('Position', models.DO_NOTHING)
+
+    class Meta:
+        db_table = 'player_position'
