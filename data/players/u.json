@@ -1,0 +1,262 @@
+[
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "Siena College",
+            "dob": "November 26, 1986",
+            "first_name": "Edwin",
+            "last_name": "Ubiles",
+            "middle_name": "",
+            "preferred_name": "Edwin"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2012,
+            "height": 198.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ubileed01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Edmond, Oklahoma",
+            "college": "University of Michigan, Baylor University",
+            "dob": "May 20, 1987",
+            "first_name": "Ekpedeme",
+            "last_name": "Udoh",
+            "middle_name": "Friday",
+            "preferred_name": "Ekpe"
+        },
+        "player": {
+            "aba": false,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/udohek01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2011,
+            "shooting_hand": "Right",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Portland, Oregon",
+            "college": "University of San Francisco, Portland State University",
+            "dob": "August 9, 1977",
+            "first_name": "Ime",
+            "last_name": "Udoka",
+            "middle_name": "Sunday",
+            "preferred_name": "Ime"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2011,
+            "height": 198.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/udokaim01.jpg",
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG",
+                "PF"
+            ],
+            "rookie_season": 2005,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Celje, Slovenia",
+            "dob": "July 5, 1982",
+            "first_name": "Beno",
+            "last_name": "Udrih",
+            "middle_name": "",
+            "preferred_name": "Beno"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2017,
+            "height": 190.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/udrihbe01.jpg",
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 2005,
+            "shooting_hand": "Left",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Split, Croatia",
+            "dob": "May 12, 1984",
+            "first_name": "Roko",
+            "last_name": "Ukic",
+            "middle_name": "Leni",
+            "preferred_name": "Roko"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2010,
+            "height": 196.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2009,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Southfield, Michigan",
+            "college": "University of Kentucky",
+            "dob": "January 5, 1996",
+            "first_name": "Tyler",
+            "last_name": "Ulis",
+            "middle_name": "",
+            "preferred_name": "Tyler"
+        },
+        "player": {
+            "aba": false,
+            "height": 178.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ulisty01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 72.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Louisville, Kentucky",
+            "college": "University of Louisville",
+            "dob": "March 14, 1946",
+            "first_name": "Westley",
+            "last_name": "Unseld",
+            "middle_name": "Sissel",
+            "preferred_name": "Wes"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1981,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/unselwe01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1969,
+            "shooting_hand": "Right",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "college": "Long Island University",
+            "dob": "September 30, 1929",
+            "first_name": "Harold",
+            "last_name": "Uplinger",
+            "middle_name": "F.",
+            "preferred_name": "Hal"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1954,
+            "height": 193.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1954,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "University of Utah",
+            "dob": "January 24, 1963",
+            "first_name": "Kelvin",
+            "last_name": "Upshaw",
+            "middle_name": "Parnell",
+            "preferred_name": "Kelvin"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1991,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1990,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Cedar Rapids, Iowa",
+            "college": "University of Iowa",
+            "dob": "May 19, 1993",
+            "first_name": "Jarrod",
+            "last_name": "Uthoff",
+            "middle_name": "Reed",
+            "preferred_name": "Jarrod"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2017,
+            "height": 206.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/uthofja01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2018,
+            "shooting_hand": "Right",
+            "weight": 100.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Houston, Texas",
+            "college": "University of Tulsa",
+            "dob": "March 19, 1988",
+            "first_name": "Benjamin",
+            "last_name": "Uzoh",
+            "middle_name": "Izoura",
+            "preferred_name": "Ben"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2012,
+            "height": 190.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/uzohbe01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2011,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    }
+]

@@ -3,10 +3,12 @@ from dateutil.parser import parse
 
 def get_box_score_urls(season="2019"):
     months = ['october', 'november', 'december', 'january', 'february', 'march', 'april', 'may', 'june']
-    # months = ['october', 'november', 'december', 'january', 'february', 'march']
+    if season == 2019:
+        months.pop()
+        months.pop()
     urls = []
     for month in months:
-        response = requests.get("https://www.basketball-reference.com/leagues/NBA_{0}_games-{1}.html".format(season,month))
+        response = requests.get(f"https://www.basketball-reference.com/leagues/NBA_{season}_games-{month}.html")
         if response.status_code == 200:
             scores_soup = bs4.BeautifulSoup(response.text, 'html.parser')
             box_scores = scores_soup.find_all('a', string="Box Score")
@@ -57,7 +59,7 @@ def get_player_urls(letters = "abcdefghijklmnopqrstuvwyz"):
     """Return a list of player urls whose last name begin with the characters in the input string. Default input is a string of all letters (execpt x)"""
     player_urls = []
     for letter in letters:
-        response = requests.get("https://www.basketball-reference.com/players/{0}/".format(letter))
+        response = requests.get(f"https://www.basketball-reference.com/players/{letter}/")
         if response.status_code == 200:
             player_names_soup = bs4.BeautifulSoup(response.text, 'html.parser')
             player_tables = player_names_soup("tbody")
@@ -71,30 +73,34 @@ def get_player_urls(letters = "abcdefghijklmnopqrstuvwyz"):
     return player_urls
 
 def get_player_info(url):
+    """Fetch a player's information from bbref and return a dict of dicts containing personal and player information"""
     player_response = requests.get("https://www.basketball-reference.com" + url)
     player_soup = bs4.BeautifulSoup(player_response.text, 'html.parser')
     
     person = {}
     player = {}
     
-    player_info = player_soup.find(attrs={"itemtype": "https://schema.org/Person"})
     image_url = player_soup.find(attrs={"itemscope": "image"})
     if image_url is not None:
         player['image_url'] = image_url['src']
+    
+    player_info = player_soup.find(attrs={"itemtype": "https://schema.org/Person"})
     name = player_info.find("h1").get_text().split(" ")
     player_info = player_info("p")
-    # player = {"preferred_name": name[0]}
     person['preferred_name'] = name[0]
+    if len(name) < 2:
+        name.append("Hilario")
     last_name = name[1]
     
     raw_info = []
     for info in player_info:
         raw_info.append(info.get_text().replace("\n", " "))
-    info_topics = ['Pronunciation', 'High School', 'Hall of Fame', 'Draft', 'Experience', 'Relatives', 'Died', 'Recruiting', '(born']
+    ignore = ['Pronunciation', 'High School', 'Hall of Fame', 'Draft', 'Experience', 'Relatives', 'Died', 'Recruiting', '(born']
 
     for info in raw_info:
-        if any(string in info for string in info_topics):
+        if any(string in info for string in ignore):
             continue
+        # clean up info
         info = info.replace("\xa0", " ").split(" ")
         info_arr = [x for x in info if x]
 
@@ -104,10 +110,9 @@ def get_player_info(url):
             person["last_name"] = " ".join(full_name[last_name_idx:]).strip().strip("I").strip().replace("Jr.", "").strip()
             person["middle_name"] = " ".join(full_name[1:last_name_idx]).strip()
             person["first_name"] = full_name[0]
-            # print(person["last_name"])
-            # special cases 
-            special_names = ["Carlos Navarro", "John Ramos", "Ray Richardson", "Michael Ray McAdoo", "Vander Velden"]
             
+            # players with 3 names (and James Michael McAdoo)
+            special_names = ["Carlos Navarro", "John Ramos", "Ray Richardson", "Michael Ray McAdoo", "Vander Velden"]
             if person["last_name"] in special_names or re.search(r"^[vV][ao]n ", person["last_name"]):
                 names = person["last_name"].split(" ")
                 person["middle_name"] = " ".join(names[0:-1])
@@ -124,8 +129,7 @@ def get_player_info(url):
                 "Guard": "G",
                 "Forward": "F"
             }
-            shooting_hand = info_arr[-1]
-            player["shooting_hand"] = shooting_hand
+            player["shooting_hand"] = info_arr[-1]
             block_idx = info_arr.index("▪")
             position_string = " ".join(info_arr[1:block_idx])
             position_list = re.findall(r"[\w']+", " ".join(position_string.split("and")))
@@ -135,32 +139,32 @@ def get_player_info(url):
             player["positions"] = list(player_positions)
 
         if 'kg' in " ".join(info_arr):
-            weight = float(info_arr[-1].split("kg")[0])
-            player["weight"] = weight
-            height = float(info_arr[-2].split("cm")[0][1:])
-            player["height"] = height
+            player["weight"] = float(info_arr[-1].split("kg")[0])
+            player["height"] = float(info_arr[-2].split("cm")[0][1:])
 
         if 'Born:' in info_arr:
             birth_date = " ".join(info_arr[1:4])
             person["dob"] = birth_date
             if len(info_arr) > 4:
                 in_idx = info_arr.index("in")
-                birth_place = " ".join(info_arr[in_idx+1:-1])
-                person["birth_place"] = birth_place
+                person["birth_place"] = " ".join(info_arr[in_idx+1:-1])
 
         if 'College:' in info_arr or 'Colleges:' in info_arr:
-            college = " ".join(info_arr[1:])
-            person["college"] = college
+            person["college"] = " ".join(info_arr[1:])
             
         if 'Debut:' in info_arr:
             debut_info = " ".join(info_arr).split("&blacksquare")
             if len(debut_info) > 1:
-                # debut_info[0] = debut_info[0].strip().split(" ")
                 debut_info[1] = debut_info[1].strip().split(" ")
-                # player["nba_debut"] = int(debut_info[0][-1]) + 1
                 player["rookie_season"] = int(debut_info[1][-1]) + 1
             else:
                 player["rookie_season"] = int(info_arr[-1]) + 1
+        
+        if 'ABA' in info_arr:
+            player['aba'] = True
+    
+    if 'aba' not in player:
+        player['aba'] = False
 
     player_seasons = player_soup.find_all(attrs={"data-stat": "season", "scope":"row", "class": "left"})
     player_seasons = [season for season in player_seasons if season("a")]
@@ -168,13 +172,14 @@ def get_player_info(url):
     final_season = int(final_season[0:2] + final_season[-2:])
     if final_season != 2019:
         player['final_season'] = final_season
-
-    return player, person
+    
+    return {'player': player, 'person': person }
 
 def get_season_dates(year):
-    url = "https://en.wikipedia.org/wiki/{0}-{1}_NBA_season".format(year-1, year % 100)
+    """Return list of season start and playoff start dates for NBA season ending in year"""
+    url = f"https://en.wikipedia.org/wiki/{year-1}-{year % 100}_NBA_season"
     if year % 100 < 10:
-        url = "https://en.wikipedia.org/wiki/{0}-{1}_NBA_season".format(year-1, '0' + str(year % 100))
+        url = f"https://en.wikipedia.org/wiki/{year-1}-0{year % 100}_NBA_season"
     response = requests.get(url)
     if response.status_code == 200:
         season_soup = bs4.BeautifulSoup(response.text, 'html.parser')
@@ -190,7 +195,7 @@ def get_season_dates(year):
             season_start += " 1999"
         playoff_start = date_list[1].split("–")[0].strip()
         if playoff_start[-4:] != str(year):
-            playoff_start += " {0}".format(year)
+            playoff_start += f" {year}"
         est = pytz.timezone('America/New_York')
         season_start = parse(season_start)
         season_start = est.localize(season_start)

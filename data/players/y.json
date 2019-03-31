@@ -1,0 +1,437 @@
+[
+    {
+        "person": {
+            "birth_place": "Dreux, France",
+            "dob": "December 17, 1995",
+            "first_name": "Guerschon",
+            "last_name": "Yabusele",
+            "middle_name": "",
+            "preferred_name": "Guerschon"
+        },
+        "player": {
+            "aba": false,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/yabusgu01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2018,
+            "shooting_hand": "Right",
+            "weight": 117.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Cleveland, Tennessee",
+            "college": "University of Tennessee",
+            "dob": "March 21, 1981",
+            "first_name": "Vincent",
+            "last_name": "Yarbrough",
+            "middle_name": "Raymond",
+            "preferred_name": "Vincent"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2003,
+            "height": 201.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2003,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Hollywood, California",
+            "college": "Stanford University",
+            "dob": "November 3, 1928",
+            "first_name": "George",
+            "last_name": "Yardley",
+            "middle_name": "Harry",
+            "preferred_name": "George"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1960,
+            "height": 196.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/yardlge01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1954,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Maryland",
+            "dob": "January 30, 1946",
+            "first_name": "Barry",
+            "last_name": "Yates",
+            "middle_name": "",
+            "preferred_name": "Barry"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1972,
+            "height": 201.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1972,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Memphis",
+            "dob": "November 7, 1937",
+            "first_name": "Wayne",
+            "last_name": "Yates",
+            "middle_name": "E.",
+            "preferred_name": "Wayne"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1962,
+            "height": 203.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1962,
+            "shooting_hand": "Right",
+            "weight": 106.0
+        }
+    },
+    {
+        "person": {
+            "college": "Fordham University",
+            "dob": "December 5, 1948",
+            "first_name": "Charles",
+            "last_name": "Yelverton",
+            "middle_name": "W.",
+            "preferred_name": "Charlie"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1972,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1972,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Euclid, Ohio",
+            "college": "University of North Carolina",
+            "dob": "October 3, 1958",
+            "first_name": "Richard",
+            "last_name": "Yonakor",
+            "middle_name": "Robert",
+            "preferred_name": "Rich"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1982,
+            "height": 206.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1983,
+            "shooting_hand": "Left",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Raleigh, North Carolina",
+            "college": "Wake Forest University",
+            "dob": "July 26, 1962",
+            "first_name": "Danny",
+            "last_name": "Young",
+            "middle_name": "Richardson",
+            "preferred_name": "Danny"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1995,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1985,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Flint, Michigan",
+            "college": "University of Kentucky",
+            "dob": "August 16, 1995",
+            "first_name": "James",
+            "last_name": "Young",
+            "middle_name": "",
+            "preferred_name": "James"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2018,
+            "height": 198.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/youngja01.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2015,
+            "shooting_hand": "Left",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Houston, Texas",
+            "college": "University of Houston, University of Oregon",
+            "dob": "June 27, 1992",
+            "first_name": "Joseph",
+            "last_name": "Young",
+            "middle_name": "Michael",
+            "preferred_name": "Joe"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2018,
+            "height": 188.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/youngjo01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2016,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Wichita, Kansas",
+            "dob": "December 31, 1978",
+            "first_name": "Suntino",
+            "last_name": "Young",
+            "middle_name": "Korleone",
+            "preferred_name": "Korleone"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1999,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2000,
+            "shooting_hand": "Right",
+            "weight": 96.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Houston, Texas",
+            "college": "University of Houston",
+            "dob": "January 2, 1961",
+            "first_name": "Michael",
+            "last_name": "Young",
+            "middle_name": "Wayne",
+            "preferred_name": "Michael"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1990,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1985,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Los Angeles, California",
+            "college": "University of Southern California",
+            "dob": "June 1, 1985",
+            "first_name": "Nicholas",
+            "last_name": "Young",
+            "middle_name": "Aaron",
+            "preferred_name": "Nick"
+        },
+        "player": {
+            "aba": false,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/youngni01.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2008,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Baltimore, Maryland",
+            "college": "Virginia Polytechnic Institute and State University",
+            "dob": "August 4, 1963",
+            "first_name": "Perry",
+            "last_name": "Young",
+            "middle_name": "",
+            "preferred_name": "Perry"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1987,
+            "height": 196.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1988,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Washington, District of Columbia",
+            "college": "University of Pittsburgh",
+            "dob": "June 1, 1985",
+            "first_name": "Samuel",
+            "last_name": "Young",
+            "middle_name": "David",
+            "preferred_name": "Sam"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2013,
+            "height": 198.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/youngsa01.jpg",
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG"
+            ],
+            "rookie_season": 2010,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New Orleans, Louisiana",
+            "college": "Georgia Institute of Technology",
+            "dob": "June 21, 1988",
+            "first_name": "Thaddeus",
+            "last_name": "Young",
+            "middle_name": "Charles",
+            "preferred_name": "Thaddeus"
+        },
+        "player": {
+            "aba": false,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/youngth01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2008,
+            "shooting_hand": "Left",
+            "weight": 100.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Santa Cruz, California",
+            "college": "Stanford University",
+            "dob": "February 6, 1976",
+            "first_name": "Tim",
+            "last_name": "Young",
+            "middle_name": "Aaron",
+            "preferred_name": "Tim"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1900,
+            "height": 213.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2000,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Lubbock, Texas",
+            "college": "University of Oklahoma",
+            "dob": "September 19, 1998",
+            "first_name": "Rayford",
+            "last_name": "Young",
+            "middle_name": "Trae",
+            "preferred_name": "Trae"
+        },
+        "player": {
+            "aba": false,
+            "height": 188.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/youngtr01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Hebei, China",
+            "dob": "November 6, 1985",
+            "first_name": "Sun",
+            "last_name": "Yue",
+            "middle_name": "",
+            "preferred_name": "Sun"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2009,
+            "height": 206.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2009,
+            "shooting_hand": "Left",
+            "weight": 92.0
+        }
+    }
+]

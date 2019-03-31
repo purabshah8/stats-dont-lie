@@ -170,7 +170,7 @@ class Position(models.Model):
     abbreviation = models.CharField(max_length=2)
 
     def __str__(self):
-        return self.name
+        return self.abbreviation
     class Meta:
         db_table = 'position'
 

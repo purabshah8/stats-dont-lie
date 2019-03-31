@@ -123,7 +123,6 @@ teams = [
 ]
 
 seasons = []
-
 for yr in range(1947, 2020):
     i = yr - 1946
     season_start, playoff_start = get_season_dates(yr)
@@ -142,6 +141,17 @@ for i in range(len(playoff_dates)):
     playoff_start = est.localize(playoff_start)
     aba_season_info = (highest_id + i, 2, 1968 + i, season_start, playoff_start)
     seasons.append(aba_season_info)
+
+positions = [
+    (1, 'Point Guard', 'PG'),
+    (2, 'Shooting Guard', 'SG'),
+    (3, 'Small Forward', 'SF'),
+    (4, 'Power Forward', 'PF'),
+    (5, 'Center', 'C'),
+    (6, 'Guard', 'G'),
+    (7, 'Forward', 'F'),
+]
+
 
 def insert(table, values):
     connection = None
@@ -165,8 +175,8 @@ def insert(table, values):
         if connection:
             connection.close()
 
-tables = ["league", "conference", "division", "location", "arena", "team", "season", "person", "team_employee", "referee", "player", "position", "player_position"]
+tables = ["league", "conference", "division", "location", "arena", "team", "season", "position"]
 
-seed_data = [leagues, conferences, divisions, locations, arenas, teams, seasons]
+seed_data = [leagues, conferences, divisions, locations, arenas, teams, seasons, positions]
 for i in range(len(seed_data)):
     insert(tables[i], seed_data[i])

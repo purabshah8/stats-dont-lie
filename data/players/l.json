@@ -1,0 +1,4320 @@
+[
+    {
+        "person": {
+            "birth_place": "Port-au-Prince, Haiti",
+            "college": "University of Kentucky",
+            "dob": "March 18, 1996",
+            "first_name": "Skal",
+            "last_name": "Labissiere",
+            "middle_name": "",
+            "preferred_name": "Skal"
+        },
+        "player": {
+            "aba": false,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/labissk01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 106.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Gary, Indiana",
+            "college": "Western Michigan University",
+            "dob": "April 10, 1945",
+            "first_name": "Reggie",
+            "last_name": "Lacefield",
+            "middle_name": "",
+            "preferred_name": "Reggie"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1969,
+            "height": 196.0,
+            "positions": [
+                "G",
+                "F"
+            ],
+            "rookie_season": 1969,
+            "shooting_hand": "Right",
+            "weight": 104.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Los Angeles, California",
+            "college": "University of California, Los Angeles",
+            "dob": "August 2, 1944",
+            "first_name": "Edgar",
+            "last_name": "Lacey",
+            "middle_name": "Eddie",
+            "preferred_name": "Edgar"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1969,
+            "height": 198.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1969,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Indianola, Mississippi",
+            "college": "New Mexico State University",
+            "dob": "March 28, 1948",
+            "first_name": "Samuel",
+            "last_name": "Lacey",
+            "middle_name": "",
+            "preferred_name": "Sam"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1983,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/laceysa01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1971,
+            "shooting_hand": "Right",
+            "weight": 106.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Evanston, Illinois",
+            "college": "Marquette University",
+            "dob": "April 4, 1949",
+            "first_name": "Robert",
+            "last_name": "Lackey",
+            "middle_name": "",
+            "preferred_name": "Bob"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1974,
+            "height": 196.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1973,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of San Francisco",
+            "dob": "February 7, 1938",
+            "first_name": "Fred",
+            "last_name": "LaCour",
+            "middle_name": "",
+            "preferred_name": "Fred"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1963,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "PG",
+                "F",
+                "G"
+            ],
+            "rookie_season": 1961,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Necaise Crossing, Mississippi",
+            "college": "University of Southern Mississippi",
+            "dob": "October 6, 1948",
+            "first_name": "Wendell",
+            "last_name": "Ladner",
+            "middle_name": "",
+            "preferred_name": "Wendell"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1975,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1971,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Angola, New York",
+            "college": "Duke University",
+            "dob": "August 17, 1969",
+            "first_name": "Christian",
+            "last_name": "Laettner",
+            "middle_name": "Donald",
+            "preferred_name": "Christian"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2005,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/laettch01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 1993,
+            "shooting_hand": "Right",
+            "weight": 106.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Baton Rouge, Louisiana",
+            "college": "University of Houston",
+            "dob": "May 6, 1984",
+            "first_name": "Oliver",
+            "last_name": "Lafayette",
+            "middle_name": "",
+            "preferred_name": "Oliver"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2010,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2011,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Hampton, Iowa",
+            "college": "University of Kansas",
+            "dob": "May 29, 1976",
+            "first_name": "Raef",
+            "last_name": "LaFrentz",
+            "middle_name": "Andrew",
+            "preferred_name": "Raef"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2008,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lafrera01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2000,
+            "shooting_hand": "Left",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Detroit, Michigan",
+            "college": "University of North Carolina",
+            "dob": "February 10, 1955",
+            "first_name": "Thomas",
+            "last_name": "LaGarde",
+            "middle_name": "Joseph",
+            "preferred_name": "Tom"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1985,
+            "height": 208.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1978,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Boston, Massachusetts",
+            "college": "University of Notre Dame",
+            "dob": "May 19, 1957",
+            "first_name": "William",
+            "last_name": "Laimbeer",
+            "middle_name": "J.",
+            "preferred_name": "Bill"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1994,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/laimbbi01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1981,
+            "shooting_hand": "Right",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "college": "Ohio University",
+            "dob": "June 23, 1920",
+            "first_name": "Peter",
+            "last_name": "Lalich",
+            "middle_name": "T.",
+            "preferred_name": "Pete"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1947,
+            "height": 188.0,
+            "positions": [
+                "F"
+            ],
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Columbus, Ohio",
+            "college": "University of Louisiana at Lafayette",
+            "dob": "April 7, 1951",
+            "first_name": "Dwight",
+            "last_name": "Lamar",
+            "middle_name": "",
+            "preferred_name": "Bo"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1977,
+            "height": 185.0,
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1974,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Queens, New York",
+            "college": "University of Kentucky",
+            "dob": "November 6, 1991",
+            "first_name": "Doron",
+            "last_name": "Lamb",
+            "middle_name": "Emmanuel Calvin",
+            "preferred_name": "Doron"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2014,
+            "height": 193.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lambdo01.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Henrico, Virginia",
+            "college": "University of Connecticut",
+            "dob": "May 30, 1992",
+            "first_name": "Jeremy",
+            "last_name": "Lamb",
+            "middle_name": "Emmanuel",
+            "preferred_name": "Jeremy"
+        },
+        "player": {
+            "aba": false,
+            "height": 196.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lambje01.jpg",
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Berkeley, California",
+            "college": "University of Southern California",
+            "dob": "January 14, 1953",
+            "first_name": "John",
+            "last_name": "Lambert",
+            "middle_name": "Edward",
+            "preferred_name": "John"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1982,
+            "height": 208.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1976,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Minneapolis, Minnesota",
+            "college": "University of Virginia",
+            "dob": "March 9, 1959",
+            "first_name": "Jeffrey",
+            "last_name": "Lamp",
+            "middle_name": "Alan",
+            "preferred_name": "Jeff"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1989,
+            "height": 198.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1982,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Lodz, Poland",
+            "dob": "February 5, 1985",
+            "first_name": "Maciej",
+            "last_name": "Lampe",
+            "middle_name": "Boleslaw",
+            "preferred_name": "Maciej"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2006,
+            "height": 211.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2005,
+            "shooting_hand": "Right",
+            "weight": 124.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Harrisburg, Pennsylvania",
+            "college": "Vanderbilt University, University of Arkansas at Little Rock",
+            "dob": "July 2, 1960",
+            "first_name": "Jimmy",
+            "last_name": "Lampley",
+            "middle_name": "D.",
+            "preferred_name": "Jim"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1987,
+            "height": 208.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1987,
+            "shooting_hand": "Right",
+            "weight": 104.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Harvey, Illinois",
+            "college": "University of California",
+            "dob": "September 3, 1979",
+            "first_name": "Sean",
+            "last_name": "Lampley",
+            "middle_name": "James",
+            "preferred_name": "Sean"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2004,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2003,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Milwaukee, Wisconsin",
+            "college": "Purdue University",
+            "dob": "September 19, 1983",
+            "first_name": "Carl",
+            "last_name": "Landry",
+            "middle_name": "Christopher",
+            "preferred_name": "Carl"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2016,
+            "height": 206.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/landrca01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2008,
+            "shooting_hand": "Right",
+            "weight": 112.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Milwaukee, Wisconsin",
+            "college": "University of Wisconsin",
+            "dob": "November 1, 1985",
+            "first_name": "Marcus",
+            "last_name": "Landry",
+            "middle_name": "",
+            "preferred_name": "Marcus"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2010,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/landrma01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2010,
+            "shooting_hand": "Right",
+            "weight": 104.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Minot, North Dakota",
+            "college": "University of Minnesota, Arizona State University",
+            "dob": "May 21, 1955",
+            "first_name": "Mark",
+            "last_name": "Landsberger",
+            "middle_name": "Walter",
+            "preferred_name": "Mark"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1984,
+            "height": 203.0,
+            "positions": [
+                "F",
+                "C",
+                "PF"
+            ],
+            "rookie_season": 1978,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Akron, Ohio",
+            "college": "University of Pittsburgh",
+            "dob": "December 4, 1966",
+            "first_name": "Jerome",
+            "last_name": "Lane",
+            "middle_name": "",
+            "preferred_name": "Jerome"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1993,
+            "height": 198.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1989,
+            "shooting_hand": "Right",
+            "weight": 104.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Pine Bluff, Arkansas",
+            "college": "University of Arkansas",
+            "dob": "June 28, 1966",
+            "first_name": "Andrew",
+            "last_name": "Lang",
+            "middle_name": "Charles",
+            "preferred_name": "Andrew"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1900,
+            "height": 211.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1989,
+            "shooting_hand": "Right",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Mobile, Alabama",
+            "college": "Duke University",
+            "dob": "May 15, 1972",
+            "first_name": "Antonio",
+            "last_name": "Lang",
+            "middle_name": "Maurice",
+            "preferred_name": "Antonio"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1900,
+            "height": 203.0,
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1995,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Mobile, Alabama",
+            "dob": "October 17, 1983",
+            "first_name": "James",
+            "last_name": "Lang",
+            "middle_name": "",
+            "preferred_name": "James"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2007,
+            "height": 208.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2007,
+            "shooting_hand": "Right",
+            "weight": 129.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Palo Alto, California",
+            "college": "Duke University",
+            "dob": "May 13, 1976",
+            "first_name": "Trajan",
+            "last_name": "Langdon",
+            "middle_name": "Shaka",
+            "preferred_name": "Trajan"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2002,
+            "height": 190.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2000,
+            "shooting_hand": "Right",
+            "weight": 89.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Fort Worth, Texas",
+            "college": "University of Kansas",
+            "dob": "September 15, 1983",
+            "first_name": "Andre'",
+            "last_name": "Langford",
+            "middle_name": "Keith",
+            "preferred_name": "Keith"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2008,
+            "height": 193.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2008,
+            "shooting_hand": "Left",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "Vanderbilt University",
+            "dob": "November 28, 1977",
+            "first_name": "Daniel",
+            "last_name": "Langhi",
+            "middle_name": "Matthew",
+            "preferred_name": "Dan"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2004,
+            "height": 211.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2001,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Buffalo, New York",
+            "college": "St. Bonaventure University",
+            "dob": "September 10, 1948",
+            "first_name": "Robert",
+            "last_name": "Lanier",
+            "middle_name": "Jerry",
+            "preferred_name": "Bob"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1984,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/laniebo01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1971,
+            "shooting_hand": "Left",
+            "weight": 113.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Uniontown, Pennsylvania",
+            "college": "University of Nebraska",
+            "dob": "July 13, 1946",
+            "first_name": "Stuart",
+            "last_name": "Lantz",
+            "middle_name": "Burrell",
+            "preferred_name": "Stu"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1976,
+            "height": 190.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lantzst01.jpg",
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1969,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Buenos Aires, Argentina",
+            "dob": "January 31, 1990",
+            "first_name": "Nicolas",
+            "last_name": "Laprovittola",
+            "middle_name": "",
+            "preferred_name": "Nicolas"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2017,
+            "height": 193.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/laproni01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New York, New York",
+            "college": "University of North Carolina",
+            "dob": "July 18, 1938",
+            "first_name": "York",
+            "last_name": "Larese",
+            "middle_name": "Bruno",
+            "preferred_name": "York"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1962,
+            "height": 193.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1962,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Cincinnati, Ohio",
+            "college": "University of Miami",
+            "dob": "October 2, 1992",
+            "first_name": "DeShane",
+            "last_name": "Larkin",
+            "middle_name": "",
+            "preferred_name": "Shane"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2018,
+            "height": 180.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/larkish01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2014,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Winston-Salem, North Carolina",
+            "college": "Wake Forest University",
+            "dob": "December 10, 1973",
+            "first_name": "Rusty",
+            "last_name": "LaRue",
+            "middle_name": "",
+            "preferred_name": "Rusty"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2004,
+            "height": 188.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1998,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "Dartmouth College",
+            "dob": "November 11, 1937",
+            "first_name": "Rudolph",
+            "last_name": "LaRusso",
+            "middle_name": "Anton",
+            "preferred_name": "Rudy"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1969,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/larusru01.jpg",
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1960,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "South Bend, Indiana",
+            "college": "Indiana University",
+            "dob": "June 7, 1953",
+            "first_name": "John",
+            "last_name": "Laskowski",
+            "middle_name": "",
+            "preferred_name": "John"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1977,
+            "height": 198.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1976,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Port-Gentil, Gabon",
+            "college": "University of Massachusetts Amherst",
+            "dob": "December 17, 1982",
+            "first_name": "Yann",
+            "last_name": "Lasme",
+            "middle_name": "Stephane",
+            "preferred_name": "Stephane"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2008,
+            "height": 203.0,
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2008,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Houston, Texas",
+            "college": "University of Texas at El Paso",
+            "dob": "December 23, 1943",
+            "first_name": "David",
+            "last_name": "Lattin",
+            "middle_name": "",
+            "preferred_name": "Dave"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1973,
+            "height": 198.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1971,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "Central State University",
+            "dob": "August 31, 1973",
+            "first_name": "Priest",
+            "last_name": "Lauderdale",
+            "middle_name": "",
+            "preferred_name": "Priest"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1998,
+            "height": 224.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1997,
+            "shooting_hand": "Left",
+            "weight": 147.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "college": "Hofstra University",
+            "dob": "July 11, 1954",
+            "first_name": "Richard",
+            "last_name": "Laurel",
+            "middle_name": "",
+            "preferred_name": "Rich"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1978,
+            "height": 198.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1978,
+            "shooting_hand": "Left",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "college": "Saint Peter's College",
+            "dob": "November 2, 1944",
+            "first_name": "Harry",
+            "last_name": "Laurie",
+            "middle_name": "",
+            "preferred_name": "Harry"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1971,
+            "height": 185.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1972,
+            "shooting_hand": "Right",
+            "weight": 80.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Wisconsin",
+            "dob": "November 17, 1922",
+            "first_name": "Walter",
+            "last_name": "Lautenbach",
+            "middle_name": "Henry",
+            "preferred_name": "Walt"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1950,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "F"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Mulhouse, France",
+            "dob": "September 30, 1991",
+            "first_name": "Joffrey",
+            "last_name": "Lauvergne",
+            "middle_name": "",
+            "preferred_name": "Joffrey"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2018,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lauvejo01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2016,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Somerville, Massachusetts",
+            "college": "Yale University",
+            "dob": "July 11, 1926",
+            "first_name": "Anthony",
+            "last_name": "Lavelli",
+            "middle_name": "",
+            "preferred_name": "Tony"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1951,
+            "height": 190.0,
+            "positions": [
+                "F"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Renton, Washington",
+            "college": "University of California, Los Angeles",
+            "dob": "March 10, 1995",
+            "first_name": "Zachary",
+            "last_name": "LaVine",
+            "middle_name": "",
+            "preferred_name": "Zach"
+        },
+        "player": {
+            "aba": false,
+            "height": 196.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lavinza01.jpg",
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 2015,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Aurora, Illinois",
+            "college": "Western Kentucky University",
+            "dob": "June 29, 1926",
+            "first_name": "Robert",
+            "last_name": "Lavoy",
+            "middle_name": "William",
+            "preferred_name": "Bob"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1954,
+            "height": 201.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1951,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Dallas, Texas",
+            "college": "Texas A&M University",
+            "dob": "January 25, 1985",
+            "first_name": "Acie",
+            "last_name": "Law IV",
+            "middle_name": "",
+            "preferred_name": "Acie"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2011,
+            "height": 190.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lawac01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2008,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "College Park, Georgia",
+            "college": "Georgia Institute of Technology",
+            "dob": "November 7, 1988",
+            "first_name": "Gani",
+            "last_name": "Lawal",
+            "middle_name": "Oladimeji",
+            "preferred_name": "Gani"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2011,
+            "height": 206.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lawalga01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2011,
+            "shooting_hand": "Right",
+            "weight": 106.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Lake Charles, Louisiana",
+            "college": "McNeese State University",
+            "dob": "December 8, 1952",
+            "first_name": "Edmund",
+            "last_name": "Lawrence",
+            "middle_name": "",
+            "preferred_name": "Edmund"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1981,
+            "height": 213.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1982,
+            "shooting_hand": "Right",
+            "weight": 103.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "college": "Villanova University",
+            "dob": "September 2, 1974",
+            "first_name": "Jason",
+            "last_name": "Lawson",
+            "middle_name": "L.",
+            "preferred_name": "Jason"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1998,
+            "height": 211.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1998,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Clinton, Maryland",
+            "college": "University of North Carolina",
+            "dob": "November 3, 1987",
+            "first_name": "Tywon",
+            "last_name": "Lawson",
+            "middle_name": "Ronnell",
+            "preferred_name": "Ty"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2017,
+            "height": 180.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lawsoty01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2010,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Norwood, Massachusetts",
+            "college": "University of Maryland",
+            "dob": "March 7, 1994",
+            "first_name": "Jake",
+            "last_name": "Layman",
+            "middle_name": "Douglas",
+            "preferred_name": "Jake"
+        },
+        "player": {
+            "aba": false,
+            "height": 206.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/laymaja01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Newark, New Jersey",
+            "college": "University of Southern California",
+            "dob": "December 24, 1948",
+            "first_name": "Dennis",
+            "last_name": "Layton",
+            "middle_name": "",
+            "preferred_name": "Mo"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1978,
+            "height": 185.0,
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 1974,
+            "shooting_hand": "Left",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Tel Aviv, Israel",
+            "college": "University of California, Los Angeles",
+            "dob": "April 30, 1997",
+            "first_name": "Ty",
+            "last_name": "Leaf",
+            "middle_name": "Jacob",
+            "preferred_name": "T.J."
+        },
+        "player": {
+            "aba": false,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leaftj01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2018,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Cleveland, Ohio",
+            "college": "Niagara University",
+            "dob": "November 27, 1945",
+            "first_name": "Emanuel",
+            "last_name": "Leaks",
+            "middle_name": "",
+            "preferred_name": "Manny"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1974,
+            "height": 203.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1969,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "college": "Temple University",
+            "dob": "January 31, 1935",
+            "first_name": "Harold",
+            "last_name": "Lear",
+            "middle_name": "C.",
+            "preferred_name": "Hal"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1957,
+            "height": 183.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1957,
+            "shooting_hand": "Left",
+            "weight": 73.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Muncie, Indiana",
+            "college": "Oklahoma City University",
+            "dob": "May 27, 1957",
+            "first_name": "Allen",
+            "last_name": "Leavell",
+            "middle_name": "Frazier",
+            "preferred_name": "Allen"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1989,
+            "height": 185.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leaveal01.jpg",
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 1980,
+            "shooting_hand": "Right",
+            "weight": 77.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Carlisle, Pennsylvania",
+            "college": "University of North Carolina",
+            "dob": "October 5, 1966",
+            "first_name": "Jeffrey",
+            "last_name": "Lebo",
+            "middle_name": "Brian",
+            "preferred_name": "Jeff"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1990,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1990,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Inglewood, California",
+            "college": "University of Wyoming",
+            "dob": "May 27, 1966",
+            "first_name": "Eric",
+            "last_name": "Leckner",
+            "middle_name": "Charles",
+            "preferred_name": "Eric"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1997,
+            "height": 211.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1989,
+            "shooting_hand": "Right",
+            "weight": 120.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Providence, Rhode Island",
+            "dob": "September 10, 1992",
+            "first_name": "Ricky",
+            "last_name": "Ledo",
+            "middle_name": "",
+            "preferred_name": "Ricky"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2015,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ledori01.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2014,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Santurce, Puerto Rico",
+            "college": "Marquette University",
+            "dob": "December 5, 1956",
+            "first_name": "Alfred",
+            "last_name": "Lee",
+            "middle_name": "",
+            "preferred_name": "Butch"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1980,
+            "height": 183.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1979,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Nashville, Tennessee",
+            "college": "Vanderbilt University",
+            "dob": "March 14, 1944",
+            "first_name": "Clyde",
+            "last_name": "Lee",
+            "middle_name": "Wayne",
+            "preferred_name": "Clyde"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1976,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leecl01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 1967,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Indianapolis, Indiana",
+            "college": "Western Kentucky University",
+            "dob": "October 3, 1985",
+            "first_name": "Courtney",
+            "last_name": "Lee",
+            "middle_name": "",
+            "preferred_name": "Courtney"
+        },
+        "player": {
+            "aba": false,
+            "height": 196.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leeco01.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2009,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Baltimore, Maryland",
+            "college": "Drexel University, University of Louisville",
+            "dob": "October 21, 1992",
+            "first_name": "Damion",
+            "last_name": "Lee",
+            "middle_name": "",
+            "preferred_name": "Damion"
+        },
+        "player": {
+            "aba": false,
+            "height": 198.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leeda03.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Modesto, California",
+            "college": "University of San Francisco",
+            "dob": "March 31, 1942",
+            "first_name": "David",
+            "last_name": "Lee",
+            "middle_name": "G.",
+            "preferred_name": "David"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1969,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1968,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "St. Louis, Missouri",
+            "college": "University of Florida",
+            "dob": "April 29, 1983",
+            "first_name": "David",
+            "last_name": "Lee",
+            "middle_name": "",
+            "preferred_name": "David"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2017,
+            "height": 206.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leeda02.jpg",
+            "positions": [
+                "SF",
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2006,
+            "shooting_hand": "Left",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Washington",
+            "first_name": "Richard",
+            "last_name": "Lee",
+            "middle_name": "",
+            "preferred_name": "Dick"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1968,
+            "positions": [
+                "F"
+            ],
+            "rookie_season": 1969,
+            "shooting_hand": "Right"
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Washington, Illinois",
+            "college": "Texas A&M University, Purdue University",
+            "dob": "October 24, 1964",
+            "first_name": "Douglas",
+            "last_name": "Lee",
+            "middle_name": "Edward",
+            "preferred_name": "Doug"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1995,
+            "height": 196.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1992,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Michigan",
+            "dob": "November 23, 1936",
+            "first_name": "George",
+            "last_name": "Lee",
+            "middle_name": "C.",
+            "preferred_name": "George"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1968,
+            "height": 193.0,
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG"
+            ],
+            "rookie_season": 1961,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Reseda, California",
+            "college": "University of California, Los Angeles",
+            "dob": "December 12, 1951",
+            "first_name": "Gregory",
+            "last_name": "Lee",
+            "middle_name": "Scott",
+            "preferred_name": "Greg"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1976,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1975,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "West Memphis, Arkansas",
+            "college": "University of Memphis",
+            "dob": "December 28, 1962",
+            "first_name": "Keith",
+            "last_name": "Lee",
+            "middle_name": "DeWayne",
+            "preferred_name": "Keith"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1989,
+            "height": 208.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1986,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Baltimore, Maryland",
+            "college": "Western Kentucky University, Towson University",
+            "dob": "June 3, 1967",
+            "first_name": "Marvin",
+            "last_name": "Lee",
+            "middle_name": "Kurk",
+            "preferred_name": "Kurk"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1991,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1991,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Riverside, California",
+            "college": "University of California, Los Angeles",
+            "dob": "May 22, 1990",
+            "first_name": "Malcolm",
+            "last_name": "Lee",
+            "middle_name": "T.",
+            "preferred_name": "Malcolm"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2015,
+            "height": 196.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leema01.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "La Jolla, California",
+            "college": "University of California, San Diego State University",
+            "dob": "May 1, 1955",
+            "first_name": "Rock",
+            "last_name": "Lee",
+            "middle_name": "Alan",
+            "preferred_name": "Rock"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1982,
+            "height": 208.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1983,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Boston, Massachusetts",
+            "college": "University of Oregon",
+            "dob": "November 2, 1952",
+            "first_name": "Ronald",
+            "last_name": "Lee",
+            "middle_name": "Henry",
+            "preferred_name": "Ron"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1982,
+            "height": 193.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1977,
+            "shooting_hand": "Right",
+            "weight": 87.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Boston, Massachusetts",
+            "college": "Marshall University",
+            "dob": "January 27, 1950",
+            "first_name": "Russell",
+            "last_name": "Lee",
+            "middle_name": "E.",
+            "preferred_name": "Russ"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1975,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1973,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "college": "Dartmouth College",
+            "dob": "July 17, 1927",
+            "first_name": "Edward",
+            "last_name": "Leede",
+            "middle_name": "Horst",
+            "preferred_name": "Ed"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1951,
+            "height": 190.0,
+            "positions": [
+                "G",
+                "F"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "college": "Case Western Reserve University",
+            "dob": "August 31, 1923",
+            "first_name": "Henry",
+            "last_name": "Lefkowitz",
+            "middle_name": "A.",
+            "preferred_name": "Hank"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1947,
+            "height": 188.0,
+            "positions": [
+                "F"
+            ],
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Washington, District of Columbia",
+            "college": "La Salle University",
+            "dob": "December 26, 1966",
+            "first_name": "Timothy",
+            "last_name": "Legler",
+            "middle_name": "Eugene",
+            "preferred_name": "Tim"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1900,
+            "height": 193.0,
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 1991,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Riverside, New Jersey",
+            "college": "Campbell University",
+            "dob": "May 1, 1942",
+            "first_name": "George",
+            "last_name": "Lehmann",
+            "middle_name": "",
+            "preferred_name": "George"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1974,
+            "height": 183.0,
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1970,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "Bradley University",
+            "dob": "July 26, 1992",
+            "first_name": "Walt",
+            "last_name": "Lemon",
+            "middle_name": "",
+            "preferred_name": "Walt"
+        },
+        "player": {
+            "aba": false,
+            "height": 190.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lemonwa01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Left",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Antratsit, Ukraine",
+            "college": "University of Maryland",
+            "dob": "June 16, 1993",
+            "first_name": "Olexiy",
+            "last_name": "Len",
+            "middle_name": "",
+            "preferred_name": "Alex"
+        },
+        "player": {
+            "aba": false,
+            "height": 216.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lenal01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2014,
+            "shooting_hand": "Right",
+            "weight": 113.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Detroit, Michigan",
+            "college": "University of Minnesota",
+            "dob": "May 14, 1973",
+            "first_name": "Voshon",
+            "last_name": "Lenard",
+            "middle_name": "Kelan",
+            "preferred_name": "Voshon"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2006,
+            "height": 193.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lenarvo01.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1997,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Clarkton, Missouri",
+            "college": "University of Houston",
+            "dob": "February 23, 1945",
+            "first_name": "Leary",
+            "last_name": "Lentz",
+            "middle_name": "Lee",
+            "preferred_name": "Leary"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1969,
+            "height": 198.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1968,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Belleville, Illinois",
+            "college": "University of Missouri",
+            "dob": "February 16, 1967",
+            "first_name": "Gary",
+            "last_name": "Leonard",
+            "middle_name": "Francis",
+            "preferred_name": "Gary"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1992,
+            "height": 216.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1990,
+            "shooting_hand": "Right",
+            "weight": 113.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Riverside, California",
+            "college": "San Diego State University",
+            "dob": "June 29, 1991",
+            "first_name": "Kawhi",
+            "last_name": "Leonard",
+            "middle_name": "",
+            "preferred_name": "Kawhi"
+        },
+        "player": {
+            "aba": false,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leonaka01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2012,
+            "shooting_hand": "Right",
+            "weight": 104.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Robinson, Illinois",
+            "college": "University of Illinois at Urbana-Champaign",
+            "dob": "February 27, 1992",
+            "first_name": "Meyers",
+            "last_name": "Leonard",
+            "middle_name": "",
+            "preferred_name": "Meyers"
+        },
+        "player": {
+            "aba": false,
+            "height": 216.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leoname01.jpg",
+            "positions": [
+                "F",
+                "C",
+                "PF"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 115.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Terre Haute, Indiana",
+            "college": "Indiana University",
+            "dob": "July 17, 1932",
+            "first_name": "William",
+            "last_name": "Leonard",
+            "middle_name": "Robert",
+            "preferred_name": "Slick"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1963,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1957,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Niles, Illinois",
+            "college": "Cleveland State University, Bradley University",
+            "dob": "August 18, 1963",
+            "first_name": "James",
+            "last_name": "Les",
+            "middle_name": "Allen",
+            "preferred_name": "Jim"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1995,
+            "height": 180.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1989,
+            "shooting_hand": "Right",
+            "weight": 74.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Atlanta, Georgia",
+            "college": "University of Georgia",
+            "dob": "March 29, 1990",
+            "first_name": "Travis",
+            "last_name": "Leslie",
+            "middle_name": "Demetrius",
+            "preferred_name": "Travis"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2012,
+            "height": 193.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leslitr01.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2012,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Canton, Mississippi",
+            "college": "University of Iowa",
+            "dob": "January 1, 1959",
+            "first_name": "Ronnie",
+            "last_name": "Lester",
+            "middle_name": "",
+            "preferred_name": "Ronnie"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1986,
+            "height": 188.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1981,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Pensacola, Florida",
+            "college": "University of Florida",
+            "dob": "December 23, 1965",
+            "first_name": "Clifford",
+            "last_name": "Lett",
+            "middle_name": "Earl",
+            "preferred_name": "Clifford"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1991,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1991,
+            "shooting_hand": "Right",
+            "weight": 77.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Long Lake, Minnesota",
+            "college": "University of Wisconsin",
+            "dob": "May 14, 1989",
+            "first_name": "Jon",
+            "last_name": "Leuer",
+            "middle_name": "",
+            "preferred_name": "Jon"
+        },
+        "player": {
+            "aba": false,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leuerjo01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2012,
+            "shooting_hand": "Right",
+            "weight": 103.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "St. John's University",
+            "dob": "April 11, 1920",
+            "first_name": "Andrew",
+            "last_name": "Levane",
+            "middle_name": "Joseph",
+            "preferred_name": "Andrew"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1953,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Pine Bluff, Arkansas",
+            "college": "Arizona State University",
+            "dob": "August 18, 1960",
+            "first_name": "Lafayette",
+            "last_name": "Lever",
+            "middle_name": "",
+            "preferred_name": "Fat"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1994,
+            "height": 190.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leverfa01.jpg",
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 1983,
+            "shooting_hand": "Right",
+            "weight": 77.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Columbus, Ohio",
+            "college": "University of Michigan",
+            "dob": "August 25, 1994",
+            "first_name": "Caris",
+            "last_name": "LeVert",
+            "middle_name": "Coleman",
+            "preferred_name": "Caris"
+        },
+        "player": {
+            "aba": false,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/leverca01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "San Diego, California",
+            "college": "Wichita State University",
+            "dob": "January 4, 1961",
+            "first_name": "Clifford",
+            "last_name": "Levingston",
+            "middle_name": "Eugene",
+            "preferred_name": "Cliff"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1995,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/levincl01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1983,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of North Carolina",
+            "dob": "March 20, 1945",
+            "first_name": "Robert",
+            "last_name": "Lewis",
+            "middle_name": "Franklin",
+            "preferred_name": "Bobby"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1971,
+            "height": 190.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1968,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Washington, District of Columbia",
+            "college": "University of Maryland",
+            "dob": "September 24, 1969",
+            "first_name": "Cedric",
+            "last_name": "Lewis",
+            "middle_name": "",
+            "preferred_name": "Cedric"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1996,
+            "height": 208.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1997,
+            "shooting_hand": "Right",
+            "weight": 106.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "Eastern Kentucky University",
+            "dob": "January 6, 1921",
+            "first_name": "Frederick",
+            "last_name": "Lewis",
+            "middle_name": "Bott",
+            "preferred_name": "Freddie"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1950,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "F"
+            ],
+            "rookie_season": 1949,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Huntington, West Virginia",
+            "college": "Arizona State University",
+            "dob": "July 1, 1943",
+            "first_name": "Frederick",
+            "last_name": "Lewis",
+            "middle_name": "L.",
+            "preferred_name": "Freddie"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1977,
+            "height": 183.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lewisfr02.jpg",
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1968,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Boyd, Texas",
+            "college": "University of Oklahoma",
+            "dob": "March 25, 1917",
+            "first_name": "Grady",
+            "last_name": "Lewis",
+            "middle_name": "W.",
+            "preferred_name": "Grady"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1949,
+            "height": 201.0,
+            "positions": [
+                "F",
+                "C"
+            ],
+            "rookie_season": 1947,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Liberal, Kansas",
+            "college": "Butler County Community College, Seward County Community College",
+            "dob": "April 28, 1975",
+            "first_name": "Martin",
+            "last_name": "Lewis",
+            "middle_name": "",
+            "preferred_name": "Martin"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1997,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1997,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Missoula, Montana",
+            "college": "Duke University",
+            "dob": "March 18, 1946",
+            "first_name": "Michael",
+            "last_name": "Lewis",
+            "middle_name": "J.",
+            "preferred_name": "Mike"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1974,
+            "height": 203.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1969,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Little Rock, Arkansas",
+            "college": "University of Minnesota",
+            "dob": "June 26, 1977",
+            "first_name": "Quincy",
+            "last_name": "Lewis",
+            "middle_name": "Lavell",
+            "preferred_name": "Quincy"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2004,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG"
+            ],
+            "rookie_season": 2000,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "college": "La Salle University",
+            "dob": "March 28, 1963",
+            "first_name": "Ralph",
+            "last_name": "Lewis",
+            "middle_name": "Adolphus",
+            "preferred_name": "Ralph"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1990,
+            "height": 198.0,
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG"
+            ],
+            "rookie_season": 1988,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Pineville, Louisiana",
+            "dob": "August 8, 1979",
+            "first_name": "Rashard",
+            "last_name": "Lewis",
+            "middle_name": "Quovon",
+            "preferred_name": "Rashard"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2014,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lewisra02.jpg",
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2000,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Baltimore, Maryland",
+            "college": "Northeastern University",
+            "dob": "November 21, 1965",
+            "first_name": "Reginald",
+            "last_name": "Lewis",
+            "middle_name": "C.",
+            "preferred_name": "Reggie"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1993,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lewisre01.jpg",
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG"
+            ],
+            "rookie_season": 1988,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "University of Illinois at Urbana-Champaign",
+            "dob": "October 27, 1968",
+            "first_name": "Marcus",
+            "last_name": "Liberty",
+            "middle_name": "",
+            "preferred_name": "Marcus"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1994,
+            "height": 203.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1991,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Walnut Creek, California",
+            "college": "Stanford University",
+            "dob": "January 8, 1967",
+            "first_name": "Todd",
+            "last_name": "Lichti",
+            "middle_name": "Samuel",
+            "preferred_name": "Todd"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1994,
+            "height": 193.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1990,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New York, New York",
+            "college": "Long Island University",
+            "dob": "September 10, 1945",
+            "first_name": "Barry",
+            "last_name": "Liebowitz",
+            "middle_name": "",
+            "preferred_name": "Barry"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1968,
+            "height": 188.0,
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1968,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "University of Kentucky",
+            "dob": "March 31, 1988",
+            "first_name": "DeAndre",
+            "last_name": "Liggins",
+            "middle_name": "Desmond",
+            "preferred_name": "DeAndre"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2018,
+            "height": 198.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/liggide01.jpg",
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 94.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Nashville, Tennessee",
+            "college": "Vanderbilt University",
+            "dob": "May 29, 1952",
+            "first_name": "William",
+            "last_name": "Ligon",
+            "middle_name": "N.",
+            "preferred_name": "Bill"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1975,
+            "height": 193.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1975,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Kokomo, Indiana",
+            "dob": "February 22, 1944",
+            "first_name": "James",
+            "last_name": "Ligon",
+            "middle_name": "Thomas",
+            "preferred_name": "Goose"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1974,
+            "height": 201.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1968,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Oakland, California",
+            "college": "Weber State University",
+            "dob": "July 15, 1990",
+            "first_name": "Damian",
+            "last_name": "Lillard",
+            "middle_name": "Lamonte Ollie",
+            "preferred_name": "Damian"
+        },
+        "player": {
+            "aba": false,
+            "height": 190.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lillada01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Torrance, California",
+            "college": "Harvard University",
+            "dob": "August 23, 1988",
+            "first_name": "Jeremy",
+            "last_name": "Lin",
+            "middle_name": "Shu-How",
+            "preferred_name": "Jeremy"
+        },
+        "player": {
+            "aba": false,
+            "height": 190.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/linje01.jpg",
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2011,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Eau Claire, Wisconsin",
+            "college": "University of Minnesota, South Dakota State University",
+            "dob": "June 10, 1958",
+            "first_name": "Steven",
+            "last_name": "Lingenfelter",
+            "middle_name": "Rodney",
+            "preferred_name": "Steve"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1984,
+            "height": 206.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1983,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Dallas, Texas",
+            "college": "Arizona State University",
+            "dob": "October 1, 1958",
+            "first_name": "Alton",
+            "last_name": "Lister",
+            "middle_name": "Lavelle",
+            "preferred_name": "Alton"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1998,
+            "height": 213.0,
+            "positions": [
+                "F",
+                "C",
+                "PF"
+            ],
+            "rookie_season": 1982,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "college": "Delta State University",
+            "dob": "March 29, 1946",
+            "first_name": "Samuel",
+            "last_name": "Little",
+            "middle_name": "Ray",
+            "preferred_name": "Samuel"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1970,
+            "height": 183.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1971,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Washington, District of Columbia",
+            "college": "High Point University",
+            "dob": "June 29, 1943",
+            "first_name": "Eugene",
+            "last_name": "Littles",
+            "middle_name": "Scape",
+            "preferred_name": "Gene"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1975,
+            "height": 183.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1970,
+            "shooting_hand": "Right",
+            "weight": 72.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New Orleans, Louisiana",
+            "college": "Louisiana State University",
+            "dob": "April 2, 1975",
+            "first_name": "Randy",
+            "last_name": "Livingston",
+            "middle_name": "Anthony",
+            "preferred_name": "Randy"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2007,
+            "height": 193.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1997,
+            "shooting_hand": "Right",
+            "weight": 94.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Peoria, Illinois",
+            "dob": "September 11, 1985",
+            "first_name": "Shaun",
+            "last_name": "Livingston",
+            "middle_name": "",
+            "preferred_name": "Shaun"
+        },
+        "player": {
+            "aba": false,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/livinsh01.jpg",
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2005,
+            "shooting_hand": "Right",
+            "weight": 87.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Wyoming",
+            "dob": "October 9, 1925",
+            "first_name": "George",
+            "last_name": "Livingstone",
+            "middle_name": "Ronald",
+            "preferred_name": "Ron"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1951,
+            "height": 208.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "El Rosario, Mexico",
+            "college": "Grand Canyon University",
+            "dob": "July 17, 1973",
+            "first_name": "Horacio",
+            "last_name": "Llamas Grey",
+            "middle_name": "",
+            "preferred_name": "Horacio"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1998,
+            "height": 211.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1998,
+            "shooting_hand": "Right",
+            "weight": 129.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Upper Darby, Pennsylvania",
+            "college": "Rutgers University",
+            "dob": "January 3, 1946",
+            "first_name": "Robert",
+            "last_name": "Lloyd",
+            "middle_name": "E.",
+            "preferred_name": "Bobby"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1969,
+            "height": 188.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1968,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "college": "Yankton College",
+            "dob": "May 22, 1947",
+            "first_name": "Charles",
+            "last_name": "Lloyd",
+            "middle_name": "P.",
+            "preferred_name": "Chuck"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1971,
+            "height": 203.0,
+            "positions": [
+                "F",
+                "C"
+            ],
+            "rookie_season": 1972,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "college": "West Virginia State University",
+            "dob": "April 3, 1928",
+            "first_name": "Earl",
+            "last_name": "Lloyd",
+            "middle_name": "Francis",
+            "preferred_name": "Earl"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1960,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1951,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "college": "Drake University",
+            "dob": "February 22, 1959",
+            "first_name": "Lewis",
+            "last_name": "Lloyd",
+            "middle_name": "Kevin",
+            "preferred_name": "Lewis"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1990,
+            "height": 198.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1982,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "Arizona State University",
+            "dob": "December 19, 1952",
+            "first_name": "Scott",
+            "last_name": "Lloyd",
+            "middle_name": "G.",
+            "preferred_name": "Scott"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1983,
+            "height": 208.0,
+            "positions": [
+                "F",
+                "C",
+                "PF"
+            ],
+            "rookie_season": 1977,
+            "shooting_hand": "Right",
+            "weight": 104.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Wichita, Kansas",
+            "college": "University of Kansas",
+            "dob": "May 26, 1944",
+            "first_name": "Reinhold",
+            "last_name": "Lochmann",
+            "middle_name": "D.",
+            "preferred_name": "Riney"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1970,
+            "height": 198.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1968,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Louisville",
+            "dob": "June 5, 1927",
+            "first_name": "Robert",
+            "last_name": "Lochmueller",
+            "middle_name": "L.",
+            "preferred_name": "Bob"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1953,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1953,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Reedley, California",
+            "college": "University of Kentucky",
+            "dob": "May 22, 1966",
+            "first_name": "Robert",
+            "last_name": "Lock",
+            "middle_name": "Alan",
+            "preferred_name": "Rob"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1989,
+            "height": 206.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1990,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Thomaston, Georgia",
+            "college": "Auburn University",
+            "dob": "September 14, 1960",
+            "first_name": "Darrell",
+            "last_name": "Lockhart",
+            "middle_name": "",
+            "preferred_name": "Darrell"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1984,
+            "height": 206.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1984,
+            "shooting_hand": "Right",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Nassau, Bahamas",
+            "college": "University of Tennessee",
+            "dob": "June 25, 1967",
+            "first_name": "Ian",
+            "last_name": "Lockhart",
+            "middle_name": "DeWitt",
+            "preferred_name": "Ian"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1991,
+            "height": 203.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1991,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Cassopolis, Michigan",
+            "college": "Kentucky State University, Alabama State University",
+            "dob": "March 15, 1959",
+            "first_name": "Kevin",
+            "last_name": "Loder",
+            "middle_name": "Allen",
+            "preferred_name": "Kevin"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1984,
+            "height": 198.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1982,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Oakland, California",
+            "college": "University of San Francisco",
+            "dob": "November 8, 1929",
+            "first_name": "Donald",
+            "last_name": "Lofgran",
+            "middle_name": "James",
+            "preferred_name": "Don"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1954,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1951,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "St. Paul, Minnesota",
+            "college": "Illinois State University, Texas Southern University, New Mexico State University",
+            "dob": "November 18, 1992",
+            "first_name": "Zach",
+            "last_name": "Lofton",
+            "middle_name": "",
+            "preferred_name": "Zach"
+        },
+        "player": {
+            "aba": false,
+            "height": 193.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/loftoza01.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Asheville, North Carolina",
+            "college": "Western Carolina University",
+            "dob": "March 14, 1946",
+            "first_name": "Henry",
+            "last_name": "Logan",
+            "middle_name": "Lee",
+            "preferred_name": "Henry"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1970,
+            "height": 183.0,
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1969,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Richmond, Indiana",
+            "college": "Indiana University",
+            "dob": "January 1, 1921",
+            "first_name": "John",
+            "last_name": "Logan",
+            "middle_name": "Arnold",
+            "preferred_name": "John"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1951,
+            "height": 188.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1947,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New Ulm, Minnesota",
+            "college": "University of Iowa",
+            "dob": "September 29, 1964",
+            "first_name": "Brad",
+            "last_name": "Lohaus",
+            "middle_name": "Allen",
+            "preferred_name": "Brad"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1998,
+            "height": 211.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1988,
+            "shooting_hand": "Left",
+            "weight": 104.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Rochester, New York",
+            "college": "University of Cincinnati",
+            "dob": "October 1, 1972",
+            "first_name": "Arthur",
+            "last_name": "Long",
+            "middle_name": "Donnell",
+            "preferred_name": "Art"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2003,
+            "height": 206.0,
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2002,
+            "shooting_hand": "Right",
+            "weight": 113.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Wayne, Michigan",
+            "college": "Eastern Michigan University",
+            "dob": "March 12, 1966",
+            "first_name": "Grant",
+            "last_name": "Long",
+            "middle_name": "Andrew",
+            "preferred_name": "Grant"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2003,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/longgr01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1989,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Romulus, Michigan",
+            "college": "University of Detroit Mercy",
+            "dob": "August 28, 1956",
+            "first_name": "John",
+            "last_name": "Long",
+            "middle_name": "Eddie",
+            "preferred_name": "John"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1997,
+            "height": 196.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1979,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Louisville, Kentucky",
+            "college": "Wake Forest University",
+            "dob": "February 8, 1944",
+            "first_name": "Paul",
+            "last_name": "Long",
+            "middle_name": "Richard",
+            "preferred_name": "Paul"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1971,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1969,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Morgan City, Louisiana",
+            "college": "University of Louisiana at Lafayette",
+            "dob": "January 29, 1993",
+            "first_name": "Shawn",
+            "last_name": "Long",
+            "middle_name": "",
+            "preferred_name": "Shawn"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2017,
+            "height": 206.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/longsh01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2018,
+            "shooting_hand": "Right",
+            "weight": 115.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Fort Wayne, Indiana",
+            "college": "University of New Mexico",
+            "dob": "March 1, 1950",
+            "first_name": "Willie",
+            "last_name": "Long",
+            "middle_name": "",
+            "preferred_name": "Willie"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1974,
+            "height": 203.0,
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1972,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Melbourne, Australia",
+            "college": "University of New Mexico",
+            "dob": "January 19, 1969",
+            "first_name": "Lucien",
+            "last_name": "Longley",
+            "middle_name": "James",
+            "preferred_name": "Luc"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2001,
+            "height": 218.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1992,
+            "shooting_hand": "Right",
+            "weight": 120.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Milwaukee, Wisconsin",
+            "college": "University of California, Los Angeles",
+            "dob": "February 6, 1996",
+            "first_name": "Kevon",
+            "last_name": "Looney",
+            "middle_name": "Grant",
+            "preferred_name": "Kevon"
+        },
+        "player": {
+            "aba": false,
+            "height": 206.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/looneke01.jpg",
+            "positions": [
+                "F",
+                "C",
+                "PF"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "North Hollywood, California",
+            "college": "Stanford University",
+            "dob": "April 1, 1988",
+            "first_name": "Brook",
+            "last_name": "Lopez",
+            "middle_name": "Robert",
+            "preferred_name": "Brook"
+        },
+        "player": {
+            "aba": false,
+            "height": 213.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lopezbr01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2009,
+            "shooting_hand": "Right",
+            "weight": 122.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Santo Domingo, Dominican Republic",
+            "college": "St. John's University",
+            "dob": "December 19, 1974",
+            "first_name": "Luis",
+            "last_name": "Lopez",
+            "middle_name": "Felipe",
+            "preferred_name": "Felipe"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2002,
+            "height": 196.0,
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 2000,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Vic, Spain",
+            "dob": "April 15, 1980",
+            "first_name": "Raul",
+            "last_name": "Lopez",
+            "middle_name": "",
+            "preferred_name": "Raul"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2005,
+            "height": 185.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2004,
+            "shooting_hand": "Right",
+            "weight": 77.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "North Hollywood, California",
+            "college": "Stanford University",
+            "dob": "April 1, 1988",
+            "first_name": "Robin",
+            "last_name": "Lopez",
+            "middle_name": "Byron",
+            "preferred_name": "Robin"
+        },
+        "player": {
+            "aba": false,
+            "height": 213.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lopezro01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2009,
+            "shooting_hand": "Right",
+            "weight": 124.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Nashville, Tennessee",
+            "college": "Jackson State University",
+            "dob": "July 27, 1972",
+            "first_name": "Ryan",
+            "last_name": "Lorthridge",
+            "middle_name": "",
+            "preferred_name": "Ryan"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1995,
+            "height": 193.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1996,
+            "shooting_hand": "Left",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "San Francisco, California",
+            "college": "University of Oregon",
+            "dob": "February 4, 1930",
+            "first_name": "James",
+            "last_name": "Loscutoff",
+            "middle_name": "",
+            "preferred_name": "Jim"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1964,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1956,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "college": "Seattle University",
+            "dob": "December 11, 1945",
+            "first_name": "Plummer",
+            "last_name": "Lott",
+            "middle_name": "E.",
+            "preferred_name": "Plummer"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1969,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1968,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "Boston College, St. John's University",
+            "dob": "March 28, 1940",
+            "first_name": "Kevin",
+            "last_name": "Loughery",
+            "middle_name": "Michael",
+            "preferred_name": "Kevin"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1973,
+            "height": 190.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/loughke01.jpg",
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 1963,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Bastrop, Louisiana",
+            "college": "Southern University and A&M College",
+            "dob": "December 8, 1942",
+            "first_name": "Robert",
+            "last_name": "Love",
+            "middle_name": "Earl",
+            "preferred_name": "Bob"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1977,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lovebo01.jpg",
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1967,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Santa Monica, California",
+            "college": "University of California, Los Angeles",
+            "dob": "September 7, 1988",
+            "first_name": "Kevin",
+            "last_name": "Love",
+            "middle_name": "Wesley",
+            "preferred_name": "Kevin"
+        },
+        "player": {
+            "aba": false,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/loveke01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2009,
+            "shooting_hand": "Right",
+            "weight": 113.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Los Angeles, California",
+            "college": "University of Oregon",
+            "dob": "April 9, 1949",
+            "first_name": "Stanley",
+            "last_name": "Love",
+            "middle_name": "S.",
+            "preferred_name": "Stan"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1975,
+            "height": 206.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1976,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Petersburg, Indiana",
+            "college": "University of Kansas",
+            "dob": "September 7, 1929",
+            "first_name": "Clyde",
+            "last_name": "Lovellette",
+            "middle_name": "Edward",
+            "preferred_name": "Clyde"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1964,
+            "height": 206.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1954,
+            "shooting_hand": "Right",
+            "weight": 106.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Washington, District of Columbia",
+            "college": "North Carolina State University",
+            "dob": "January 21, 1960",
+            "first_name": "Sidney",
+            "last_name": "Lowe",
+            "middle_name": "Rochell",
+            "preferred_name": "Sidney"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1990,
+            "height": 183.0,
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 1984,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Puget Sound",
+            "dob": "November 12, 1949",
+            "first_name": "Charles",
+            "last_name": "Lowery",
+            "middle_name": "P.",
+            "preferred_name": "Charlie"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1972,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1972,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "college": "Villanova University",
+            "dob": "March 25, 1986",
+            "first_name": "Kyle",
+            "last_name": "Lowry",
+            "middle_name": "",
+            "preferred_name": "Kyle"
+        },
+        "player": {
+            "aba": false,
+            "height": 185.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lowryky01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2007,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Atlanta, Georgia",
+            "college": "Furman University, University of Indianapolis",
+            "dob": "July 27, 1993",
+            "first_name": "Jordan",
+            "last_name": "Loyd",
+            "middle_name": "",
+            "preferred_name": "Jordan"
+        },
+        "player": {
+            "aba": false,
+            "height": 193.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/loydjo01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "college": "Fordham University",
+            "dob": "July 4, 1922",
+            "first_name": "Albert",
+            "last_name": "Lucas",
+            "middle_name": "Thomas",
+            "preferred_name": "Al"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1949,
+            "height": 190.0,
+            "positions": [
+                "G",
+                "F"
+            ],
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Middletown, Ohio",
+            "college": "Ohio State University",
+            "dob": "March 30, 1940",
+            "first_name": "Jerry",
+            "last_name": "Lucas",
+            "middle_name": "Ray",
+            "preferred_name": "Jerry"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1974,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lucasje01.jpg",
+            "positions": [
+                "F",
+                "C",
+                "PF"
+            ],
+            "rookie_season": 1964,
+            "shooting_hand": "Right",
+            "weight": 104.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Durham, North Carolina",
+            "college": "University of Maryland",
+            "dob": "October 31, 1953",
+            "first_name": "John",
+            "last_name": "Lucas",
+            "middle_name": "Harding",
+            "preferred_name": "John"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1990,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1977,
+            "shooting_hand": "Left",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Sterling Heights, Michigan",
+            "college": "Michigan State University",
+            "dob": "May 24, 1989",
+            "first_name": "Kalin",
+            "last_name": "Lucas",
+            "middle_name": "Jay",
+            "preferred_name": "Kalin"
+        },
+        "player": {
+            "aba": false,
+            "height": 185.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lucaska01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2015,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Pittsburgh, Pennsylvania",
+            "college": "Marquette University",
+            "dob": "February 18, 1952",
+            "first_name": "Maurice",
+            "last_name": "Lucas",
+            "middle_name": "D.",
+            "preferred_name": "Maurice"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1988,
+            "height": 206.0,
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 1975,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Washington, District of Columbia",
+            "college": "Baylor University, Oklahoma State University",
+            "dob": "November 21, 1982",
+            "first_name": "John",
+            "last_name": "Lucas",
+            "middle_name": "Harding",
+            "preferred_name": "John"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2017,
+            "height": 180.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lucasjo02.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2006,
+            "shooting_hand": "Right",
+            "weight": 75.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Houston",
+            "dob": "July 27, 1939",
+            "first_name": "Theodore",
+            "last_name": "Luckenbill",
+            "middle_name": "",
+            "preferred_name": "Ted"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1963,
+            "height": 198.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1962,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Mexico, Missouri",
+            "college": "University of Nebraska",
+            "dob": "May 3, 1977",
+            "first_name": "Tyronn",
+            "last_name": "Lue",
+            "middle_name": "Jamar",
+            "preferred_name": "Tyronn"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2009,
+            "height": 183.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/luety01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2000,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "college": "St. Francis College",
+            "dob": "November 2, 1928",
+            "first_name": "James",
+            "last_name": "Luisi",
+            "middle_name": "A.",
+            "preferred_name": "Jim"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1954,
+            "height": 188.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1955,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "college": "Georgetown University",
+            "dob": "October 5, 1920",
+            "first_name": "Aloysius",
+            "last_name": "Lujack",
+            "middle_name": "R.",
+            "preferred_name": "Al"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1947,
+            "height": 190.0,
+            "positions": [
+                "F"
+            ],
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Dayton, Ohio",
+            "college": "Miami University",
+            "dob": "December 20, 1951",
+            "first_name": "Phil",
+            "last_name": "Lumpkin",
+            "middle_name": "",
+            "preferred_name": "Phil"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1976,
+            "height": 183.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1975,
+            "shooting_hand": "Right",
+            "weight": 74.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "New York University",
+            "dob": "July 11, 1923",
+            "first_name": "Raymond",
+            "last_name": "Lumpp",
+            "middle_name": "G.",
+            "preferred_name": "Ray"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1953,
+            "height": 185.0,
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1949,
+            "shooting_hand": "Left",
+            "weight": 80.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Cannes, France",
+            "dob": "May 9, 1995",
+            "first_name": "Timothe",
+            "last_name": "Luwawu-Cabarrot",
+            "middle_name": "",
+            "preferred_name": "Timothe"
+        },
+        "player": {
+            "aba": false,
+            "height": 198.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/luwawti01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Hudson, New York",
+            "college": "Syracuse University",
+            "dob": "April 9, 1996",
+            "first_name": "Tyler",
+            "last_name": "Lydon",
+            "middle_name": "Robert",
+            "preferred_name": "Tyler"
+        },
+        "player": {
+            "aba": false,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lydonty01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2018,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Saskatoon, Canada",
+            "college": "University of Kentucky",
+            "dob": "November 5, 1995",
+            "first_name": "Trey",
+            "last_name": "Lyles",
+            "middle_name": "Anthony",
+            "preferred_name": "Trey"
+        },
+        "player": {
+            "aba": false,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lylestr01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2016,
+            "shooting_hand": "Right",
+            "weight": 106.0
+        }
+    },
+    {
+        "person": {
+            "college": "Oklahoma Baptist University",
+            "first_name": "Robert",
+            "last_name": "Lynam",
+            "middle_name": "Bracey",
+            "preferred_name": "R.B."
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1968,
+            "height": 185.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1968,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Roanoke, Virginia",
+            "college": "University of North Carolina",
+            "dob": "September 3, 1970",
+            "first_name": "George",
+            "last_name": "Lynch",
+            "middle_name": "DeWitt",
+            "preferred_name": "George"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2005,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/lynchge01.jpg",
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG"
+            ],
+            "rookie_season": 1994,
+            "shooting_hand": "Right",
+            "weight": 98.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Bloomington, Minnesota",
+            "college": "University of Minnesota",
+            "dob": "December 24, 1968",
+            "first_name": "Kevin",
+            "last_name": "Lynch",
+            "middle_name": "Joseph",
+            "preferred_name": "Kevin"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1993,
+            "height": 196.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1992,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "Wilberforce University",
+            "dob": "May 24, 1943",
+            "first_name": "Lonnie",
+            "last_name": "Lynn",
+            "middle_name": "",
+            "preferred_name": "Lonnie"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1970,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1970,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Covina, California",
+            "college": "University of California, Los Angeles",
+            "dob": "November 25, 1945",
+            "first_name": "Michael",
+            "last_name": "Lynn",
+            "middle_name": "Edward",
+            "preferred_name": "Mike"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1971,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1970,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    }
+]

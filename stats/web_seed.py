@@ -32,6 +32,8 @@ def update_auto_increments():
 states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','U.S. Virgin Islands','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 
 def add_player(player, person):
+    
+    # add location if it does not exist
     city, state = person.pop('birth_place').split(", ")
     if state not in states:
         country = state
@@ -41,24 +43,40 @@ def add_player(player, person):
     location = { 'city': city, 'country': country, 'precision': 'city'}
     if state:
         location['state'] = state
-
     player_location = Location.objects.filter(precision="city", country=location['country'], city=location['city'])
     if len(player_location) == 0:
         print('Location not found!')
         player_location = Location(**location)
-        print(player_location)
-        # player_location.save()
+        player_location.save()
     else:
         player_location = player_location[0]
+    
+    # save person to database
     person['birthplace_id'] = player_location.id
     person = Person(**person)
     person.save()
-    # player['rookie_season_id'] = Season.objects.find(year=player.pop('rookie_season'), league_id=1)
-    # player['final_season_id'] = Season.objects.find(year=player.pop('final_season'), league_id=1)
-    # player['id'] = person.id
-    # player = Player(**player)
-    # player.save()
 
+    # save player to database
+    player['id'] = person.id
+    league_id = 1
+    if player['aba'] == True:
+        league_id = 2
+    player['rookie_season_id'] = Season.objects.get(year=player.pop('rookie_season'), league_id=league_id).id
+    if player['aba'] == True and player['final_season'] > 1976:
+        league_id = 1
+    player['final_season_id'] = Season.objects.get(year=player.pop('final_season'), league_id=league_id).id
+    if player['aba'] == True:
+        player.pop('aba')
+    positions = player.pop('positions')
+    player = Player(**player)
+    player.save()
+
+    # save positions to database
+    for position in positions:
+        position_id = Position.objects.get(abbreviation=position)
+        player_position = PlayerPosition(player_id=player.id, position_id=position_id)
+        player_position.save()
+        
 # if __name__ == "__main__":
 #     player_urls = get_player_urls()
 #     for url in player_urls:

@@ -1,0 +1,448 @@
+[
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "St. John's University",
+            "dob": "December 7, 1925",
+            "first_name": "Max",
+            "last_name": "Zaslofsky",
+            "middle_name": "",
+            "preferred_name": "Max"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1956,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1947,
+            "shooting_hand": "Right",
+            "weight": 77.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "St. John's University",
+            "dob": "October 13, 1930",
+            "first_name": "Robert",
+            "last_name": "Zawoluk",
+            "middle_name": "Michael",
+            "preferred_name": "Zeke"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1955,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1953,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Washington, Indiana",
+            "college": "Indiana University",
+            "dob": "October 5, 1992",
+            "first_name": "Cody",
+            "last_name": "Zeller",
+            "middle_name": "Allen",
+            "preferred_name": "Cody"
+        },
+        "player": {
+            "aba": false,
+            "height": 213.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/zelleco01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2014,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "college": "Miami University",
+            "dob": "June 8, 1939",
+            "first_name": "David",
+            "last_name": "Zeller",
+            "middle_name": "A.",
+            "preferred_name": "Dave"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1962,
+            "height": 185.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1962,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "college": "Drake University",
+            "dob": "November 20, 1947",
+            "first_name": "Gary",
+            "last_name": "Zeller",
+            "middle_name": "Lynn",
+            "preferred_name": "Gary"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1972,
+            "height": 190.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1973,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "college": "Washington & Jefferson College",
+            "dob": "July 10, 1919",
+            "first_name": "Harry",
+            "last_name": "Zeller",
+            "middle_name": "Raymond",
+            "preferred_name": "Harry"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1947,
+            "height": 193.0,
+            "positions": [
+                "F",
+                "C"
+            ],
+            "rookie_season": 1947,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Ames, Iowa",
+            "college": "University of Notre Dame",
+            "dob": "April 7, 1987",
+            "first_name": "Lucas",
+            "last_name": "Zeller",
+            "middle_name": "Joseph",
+            "preferred_name": "Luke"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2013,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/zellelu01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Visalia, California",
+            "college": "University of North Carolina",
+            "dob": "January 17, 1990",
+            "first_name": "Tyler",
+            "last_name": "Zeller",
+            "middle_name": "Paul",
+            "preferred_name": "Tyler"
+        },
+        "player": {
+            "aba": false,
+            "height": 213.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/zellety01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 114.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New Orleans, Louisiana",
+            "college": "Arizona State University",
+            "dob": "October 1, 1957",
+            "first_name": "Anthony",
+            "last_name": "Zeno",
+            "middle_name": "Michael",
+            "preferred_name": "Tony"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1980,
+            "height": 203.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1980,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Seattle, Washington",
+            "college": "Seattle Pacific University, University of Washington",
+            "dob": "April 13, 1964",
+            "first_name": "Phil",
+            "last_name": "Zevenbergen",
+            "middle_name": "",
+            "preferred_name": "Phil"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1988,
+            "height": 208.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1989,
+            "shooting_hand": "Right",
+            "weight": 104.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Beijing, China",
+            "dob": "July 8, 1977",
+            "first_name": "Wang",
+            "last_name": "Zhizhi",
+            "middle_name": "",
+            "preferred_name": "Wang"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2005,
+            "height": 213.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2002,
+            "shooting_hand": "Left",
+            "weight": 115.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Zlin, Czech Republic",
+            "college": "University of California, Los Angeles",
+            "dob": "August 2, 1973",
+            "first_name": "Jiri",
+            "last_name": "Zidek",
+            "middle_name": "",
+            "preferred_name": "George"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1998,
+            "height": 213.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1996,
+            "shooting_hand": "Right",
+            "weight": 113.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Monroe, Louisiana",
+            "college": "Mississippi State University",
+            "dob": "December 2, 1981",
+            "first_name": "Derrick",
+            "last_name": "Zimmerman",
+            "middle_name": "Dewayne",
+            "preferred_name": "Derrick"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2006,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2007,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Hendersonville, Tennessee",
+            "college": "University of Nevada, Las Vegas",
+            "dob": "September 9, 1996",
+            "first_name": "Stephen",
+            "last_name": "Zimmerman",
+            "middle_name": "Eric",
+            "preferred_name": "Stephen"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2017,
+            "height": 213.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/zimmest01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Left",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Heidelberg, Germany",
+            "dob": "February 18, 1994",
+            "first_name": "Paul",
+            "last_name": "Zipser",
+            "middle_name": "Viktor L.",
+            "preferred_name": "Paul"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2018,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/zipsepa01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Split, Croatia",
+            "dob": "January 4, 1997",
+            "first_name": "Ante",
+            "last_name": "Zizic",
+            "middle_name": "Toni",
+            "preferred_name": "Ante"
+        },
+        "player": {
+            "aba": false,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/zizican01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2018,
+            "shooting_hand": "Right",
+            "weight": 115.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Uxbridge, Canada",
+            "college": "Kent State University",
+            "dob": "December 20, 1953",
+            "first_name": "Jim",
+            "last_name": "Zoet",
+            "middle_name": "",
+            "preferred_name": "Jim"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1983,
+            "height": 216.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1983,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "college": "Duquesne University",
+            "dob": "June 7, 1948",
+            "first_name": "William",
+            "last_name": "Zopf",
+            "middle_name": "Charles",
+            "preferred_name": "Bill"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1971,
+            "height": 185.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1971,
+            "shooting_hand": "Right",
+            "weight": 77.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Mostar, Bosnia and Herzegovina",
+            "dob": "March 18, 1997",
+            "first_name": "Ivica",
+            "last_name": "Zubac",
+            "middle_name": "",
+            "preferred_name": "Ivica"
+        },
+        "player": {
+            "aba": false,
+            "height": 216.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/zubaciv01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Renton, Pennsylvania",
+            "college": "George Washington University",
+            "dob": "December 19, 1919",
+            "first_name": "Matthew",
+            "last_name": "Zunic",
+            "middle_name": "",
+            "preferred_name": "Matt"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1949,
+            "height": 190.0,
+            "positions": [
+                "G",
+                "F"
+            ],
+            "rookie_season": 1949,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    }
+]

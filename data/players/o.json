@@ -1,0 +1,2002 @@
+[
+    {
+        "person": {
+            "birth_place": "Bellflower, California",
+            "college": "University of California, Los Angeles",
+            "dob": "February 22, 1975",
+            "first_name": "Charles",
+            "last_name": "O'Bannon",
+            "middle_name": "Edward",
+            "preferred_name": "Charles"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1999,
+            "height": 196.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1998,
+            "shooting_hand": "Right",
+            "weight": 94.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Los Angeles, California",
+            "college": "University of California, Los Angeles",
+            "dob": "August 14, 1972",
+            "first_name": "Edward",
+            "last_name": "O'Bannon",
+            "middle_name": "Charles",
+            "preferred_name": "Ed"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1997,
+            "height": 203.0,
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG"
+            ],
+            "rookie_season": 1996,
+            "shooting_hand": "Left",
+            "weight": 100.0
+        }
+    },
+    {
+        "person": {
+            "college": "Colorado State University",
+            "dob": "March 7, 1928",
+            "first_name": "John",
+            "last_name": "O'Boyle",
+            "middle_name": "W.",
+            "preferred_name": "John"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1953,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1953,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "college": "Pepperdine University",
+            "dob": "January 26, 1927",
+            "first_name": "Robert",
+            "last_name": "O'Brien",
+            "middle_name": "Lee",
+            "preferred_name": "Bob"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1949,
+            "height": 193.0,
+            "positions": [
+                "F"
+            ],
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "San Diego, California",
+            "college": "San Diego State University",
+            "dob": "April 8, 1992",
+            "first_name": "Jaleel",
+            "last_name": "O'Brien",
+            "middle_name": "Steven",
+            "preferred_name": "J.J."
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2016,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/obriejj01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 103.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Falls Church, Virginia",
+            "college": "University of Maryland",
+            "dob": "November 7, 1951",
+            "first_name": "James",
+            "last_name": "O'Brien",
+            "middle_name": "M.",
+            "preferred_name": "Jim"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1975,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1975,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "Boston College",
+            "dob": "April 9, 1950",
+            "first_name": "James",
+            "last_name": "O'Brien",
+            "middle_name": "J.",
+            "preferred_name": "Jimmy"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1975,
+            "height": 185.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1972,
+            "shooting_hand": "Right",
+            "weight": 77.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Henshaw, Kentucky",
+            "college": "Butler University",
+            "dob": "April 8, 1928",
+            "first_name": "Ralph",
+            "last_name": "O'Brien",
+            "middle_name": "E.",
+            "preferred_name": "Ralph"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1953,
+            "height": 175.0,
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 1952,
+            "shooting_hand": "Right",
+            "weight": 72.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Cleveland, Mississippi",
+            "college": "Louisiana State University",
+            "dob": "June 1, 1993",
+            "first_name": "Johnny",
+            "last_name": "O'Bryant",
+            "middle_name": "Lee",
+            "preferred_name": "Johnny"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2018,
+            "height": 206.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/obryajo01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2015,
+            "shooting_hand": "Right",
+            "weight": 116.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Oskaloosa, Iowa",
+            "college": "Bradley University",
+            "dob": "June 20, 1986",
+            "first_name": "Patrick",
+            "last_name": "O'Bryant",
+            "middle_name": "Fitzgerald",
+            "preferred_name": "Patrick"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2010,
+            "height": 213.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/obryapa01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2007,
+            "shooting_hand": "Right",
+            "weight": 117.0
+        }
+    },
+    {
+        "person": {
+            "college": "College of the Holy Cross",
+            "dob": "April 13, 1928",
+            "first_name": "Dermott",
+            "last_name": "O'Connell",
+            "middle_name": "F.",
+            "preferred_name": "Dermie"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1950,
+            "height": 183.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 78.0
+        }
+    },
+    {
+        "person": {
+            "college": "Loyola College in Maryland",
+            "dob": "March 10, 1925",
+            "first_name": "Andrew",
+            "last_name": "O'Donnell",
+            "middle_name": "J.",
+            "preferred_name": "Andy"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1950,
+            "height": 185.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1951,
+            "shooting_hand": "Right",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New York, New York",
+            "college": "Georgetown University",
+            "dob": "January 19, 1920",
+            "first_name": "Francis",
+            "last_name": "O'Grady",
+            "middle_name": "David",
+            "preferred_name": "Buddy"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1949,
+            "height": 180.0,
+            "positions": [
+                "G"
+            ],
+            "shooting_hand": "Right",
+            "weight": 72.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "college": "Villanova University",
+            "dob": "August 24, 1948",
+            "first_name": "Francis",
+            "last_name": "O'Hanlon",
+            "middle_name": "Brian",
+            "preferred_name": "Fran"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1971,
+            "height": 185.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1971,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "San Francisco, California",
+            "college": "Santa Clara University",
+            "dob": "September 29, 1923",
+            "first_name": "Richard",
+            "last_name": "O'Keefe",
+            "middle_name": "Thomas",
+            "preferred_name": "Dick"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1951,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "F"
+            ],
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Jersey City, New Jersey",
+            "college": "Georgetown University",
+            "dob": "June 3, 1928",
+            "first_name": "Thomas",
+            "last_name": "O'Keefe",
+            "middle_name": "V.",
+            "preferred_name": "Tommy"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1951,
+            "height": 188.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1951,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Jersey City, New Jersey",
+            "college": "University of North Carolina",
+            "dob": "February 7, 1958",
+            "first_name": "Michael",
+            "last_name": "O'Koren",
+            "middle_name": "F.",
+            "preferred_name": "Mike"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1988,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1981,
+            "shooting_hand": "Right",
+            "weight": 93.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Boston, Massachusetts",
+            "college": "Manhattan College",
+            "dob": "April 25, 1948",
+            "first_name": "Vincent",
+            "last_name": "O'Malley",
+            "middle_name": "Grady",
+            "preferred_name": "Grady"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1970,
+            "height": 196.0,
+            "positions": [
+                "F"
+            ],
+            "rookie_season": 1970,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Columbia, South Carolina",
+            "dob": "October 13, 1978",
+            "first_name": "Jermaine",
+            "last_name": "O'Neal",
+            "middle_name": "",
+            "preferred_name": "Jermaine"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2014,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/onealje01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 1997,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Newark, New Jersey",
+            "college": "Louisiana State University",
+            "dob": "March 6, 1972",
+            "first_name": "Shaquille",
+            "last_name": "O'Neal",
+            "middle_name": "Rashaun",
+            "preferred_name": "Shaquille"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2011,
+            "height": 216.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/onealsh01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1993,
+            "shooting_hand": "Right",
+            "weight": 147.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Killeen, Texas",
+            "college": "Baylor University",
+            "dob": "June 5, 1993",
+            "first_name": "Royce",
+            "last_name": "O'Neale",
+            "middle_name": "Khalil",
+            "preferred_name": "Royce"
+        },
+        "player": {
+            "aba": false,
+            "height": 198.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/onealro01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2018,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of California",
+            "first_name": "Mike",
+            "last_name": "O'Neill",
+            "middle_name": "",
+            "preferred_name": "Mike"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1953,
+            "height": 190.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1953,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Queens, New York",
+            "college": "Norfolk State University",
+            "dob": "March 26, 1990",
+            "first_name": "Kyle",
+            "last_name": "O'Quinn",
+            "middle_name": "Brandon",
+            "preferred_name": "Kyle"
+        },
+        "player": {
+            "aba": false,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/oquinky01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 113.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "San Francisco, California",
+            "college": "University of Notre Dame",
+            "dob": "July 10, 1925",
+            "first_name": "Kevin",
+            "last_name": "O'Shea",
+            "middle_name": "Christopher",
+            "preferred_name": "Kevin"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1953,
+            "height": 188.0,
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 1951,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Tennessee",
+            "dob": "May 23, 1921",
+            "first_name": "Garland",
+            "last_name": "O'Shields",
+            "middle_name": "L.",
+            "preferred_name": "Garland"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1947,
+            "height": 185.0,
+            "positions": [
+                "G",
+                "F"
+            ],
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Bronx, New York",
+            "college": "Fordham University",
+            "dob": "March 3, 1968",
+            "first_name": "Daniel",
+            "last_name": "O'Sullivan",
+            "middle_name": "James",
+            "preferred_name": "Dan"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1996,
+            "height": 208.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1991,
+            "shooting_hand": "Right",
+            "weight": 113.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Cleveland, Ohio",
+            "college": "Virginia Union University",
+            "dob": "December 18, 1963",
+            "first_name": "Charles",
+            "last_name": "Oakley",
+            "middle_name": "",
+            "preferred_name": "Charles"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2004,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/oaklech01.jpg",
+            "positions": [
+                "F",
+                "C",
+                "PF"
+            ],
+            "rookie_season": 1986,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Las Varillas, Argentina",
+            "dob": "March 21, 1975",
+            "first_name": "Fabricio",
+            "last_name": "Oberto",
+            "middle_name": "Raul Jesus",
+            "preferred_name": "Fabricio"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2011,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/obertfa01.jpg",
+            "positions": [
+                "F",
+                "C",
+                "PF"
+            ],
+            "rookie_season": 2006,
+            "shooting_hand": "Right",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Baltimore, Maryland",
+            "college": "Villanova University",
+            "dob": "December 15, 1993",
+            "first_name": "Daniel",
+            "last_name": "Ochefu",
+            "middle_name": "",
+            "preferred_name": "Daniel"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2017,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ochefda01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Buffalo, New York",
+            "college": "Ohio State University",
+            "dob": "January 22, 1988",
+            "first_name": "Gregory",
+            "last_name": "Oden",
+            "middle_name": "Wayne",
+            "preferred_name": "Greg"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2014,
+            "height": 213.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/odengr01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2009,
+            "shooting_hand": "Right",
+            "weight": 113.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Jamaica, New York",
+            "college": "University of Rhode Island",
+            "dob": "November 6, 1979",
+            "first_name": "Lamar",
+            "last_name": "Odom",
+            "middle_name": "Joseph",
+            "preferred_name": "Lamar"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2013,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/odomla01.jpg",
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2000,
+            "shooting_hand": "Left",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "San Luis Obispo, California",
+            "college": "Santa Clara University",
+            "dob": "December 29, 1946",
+            "first_name": "Carlos",
+            "last_name": "Ogden",
+            "middle_name": "",
+            "preferred_name": "Bud"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1971,
+            "height": 198.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1970,
+            "shooting_hand": "Left",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "college": "Santa Clara University",
+            "dob": "January 25, 1948",
+            "first_name": "Ralph",
+            "last_name": "Ogden",
+            "middle_name": "",
+            "preferred_name": "Ralph"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1971,
+            "height": 196.0,
+            "positions": [
+                "F"
+            ],
+            "rookie_season": 1971,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Lancaster, Ohio",
+            "college": "University of Alabama at Birmingham",
+            "dob": "July 5, 1967",
+            "first_name": "Raymond",
+            "last_name": "Ogg",
+            "middle_name": "Alan",
+            "preferred_name": "Alan"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1993,
+            "height": 218.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1992,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Murphysboro, Illinois",
+            "college": "University of Illinois at Urbana-Champaign",
+            "dob": "April 18, 1936",
+            "first_name": "Donald",
+            "last_name": "Ohl",
+            "middle_name": "Jay",
+            "preferred_name": "Don"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1970,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1961,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Wuppertal, Germany",
+            "dob": "August 30, 1988",
+            "first_name": "Tim",
+            "last_name": "Ohlbrecht",
+            "middle_name": "",
+            "preferred_name": "Tim"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2013,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ohlbrti01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2014,
+            "shooting_hand": "Right",
+            "weight": 115.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Overland Park, Kansas",
+            "college": "Southern Methodist University",
+            "dob": "December 5, 1994",
+            "first_name": "(Semi,",
+            "last_name": "Ojeleye Factory, The Man Made of Granite)",
+            "middle_name": "Muscles Jesus, The Ox, Thor, The",
+            "preferred_name": "Semi"
+        },
+        "player": {
+            "aba": false,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ojelese01.jpg",
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2018,
+            "shooting_hand": "Right",
+            "weight": 109.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Houston, Texas",
+            "college": "University of Connecticut",
+            "dob": "September 28, 1982",
+            "first_name": "Chukwuemeka",
+            "last_name": "Okafor",
+            "middle_name": "Noubuisi",
+            "preferred_name": "Emeka"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2018,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/okafoem01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2005,
+            "shooting_hand": "Right",
+            "weight": 114.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "Duke University",
+            "dob": "December 15, 1995",
+            "first_name": "Jahlil",
+            "last_name": "Okafor",
+            "middle_name": "",
+            "preferred_name": "Jahlil"
+        },
+        "player": {
+            "aba": false,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/okafoja01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2016,
+            "shooting_hand": "Right",
+            "weight": 124.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Bordeaux, France",
+            "dob": "October 23, 1997",
+            "first_name": "Elie-Franck",
+            "last_name": "Okobo",
+            "middle_name": "",
+            "preferred_name": "Elie"
+        },
+        "player": {
+            "aba": false,
+            "height": 190.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/okoboel01.jpg",
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Left",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Lagos, Nigeria",
+            "college": "Georgia Institute of Technology",
+            "dob": "September 1, 1998",
+            "first_name": "Joshua",
+            "last_name": "Okogie",
+            "middle_name": "Aloiye",
+            "preferred_name": "Josh"
+        },
+        "player": {
+            "aba": false,
+            "height": 193.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/okogijo01.jpg",
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Right",
+            "weight": 96.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Yalova, Turkey",
+            "dob": "May 26, 1979",
+            "first_name": "Mehmet",
+            "last_name": "Okur",
+            "middle_name": "",
+            "preferred_name": "Mehmet"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2012,
+            "height": 211.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/okurme01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2003,
+            "shooting_hand": "Right",
+            "weight": 112.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Silver Spring, Maryland",
+            "college": "Indiana University",
+            "dob": "May 4, 1992",
+            "first_name": "Kehinde",
+            "last_name": "Oladipo",
+            "middle_name": "Babatunde Victor",
+            "preferred_name": "Victor"
+        },
+        "player": {
+            "aba": false,
+            "height": 193.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/oladivi01.jpg",
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 2014,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Lagos, Nigeria",
+            "college": "University of Houston",
+            "dob": "January 21, 1963",
+            "first_name": "Hakeem",
+            "last_name": "Olajuwon",
+            "middle_name": "Abdul",
+            "preferred_name": "Hakeem"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2002,
+            "height": 213.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/olajuha01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1985,
+            "shooting_hand": "Right",
+            "weight": 115.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Melrose, Minnesota",
+            "college": "University of Minnesota",
+            "dob": "April 21, 1956",
+            "first_name": "Mark",
+            "last_name": "Olberding",
+            "middle_name": "Allen",
+            "preferred_name": "Mark"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1987,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/olberma01.jpg",
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1976,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "Seattle University",
+            "dob": "July 4, 1957",
+            "first_name": "Jawann",
+            "last_name": "Oldham",
+            "middle_name": "",
+            "preferred_name": "Jawann"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1991,
+            "height": 213.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1981,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Beaver Dam, Kentucky",
+            "college": "Western Kentucky University",
+            "dob": "June 22, 1923",
+            "first_name": "John",
+            "last_name": "Oldham",
+            "middle_name": "O.",
+            "preferred_name": "John"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1951,
+            "height": 190.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Bridgeport, Connecticut",
+            "college": "Seattle University",
+            "dob": "February 20, 1955",
+            "first_name": "Frank",
+            "last_name": "Oleynick",
+            "middle_name": "",
+            "preferred_name": "Frank"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1977,
+            "height": 188.0,
+            "positions": [
+                "PG",
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1976,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "college": "Villanova University",
+            "dob": "March 1, 1955",
+            "first_name": "John",
+            "last_name": "Olive",
+            "middle_name": "",
+            "preferred_name": "John"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1980,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1979,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "Georgia Institute of Technology",
+            "dob": "June 1, 1968",
+            "first_name": "Brian",
+            "last_name": "Oliver",
+            "middle_name": "Darnell",
+            "preferred_name": "Brian"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1998,
+            "height": 193.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1991,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Quincy, Illinois",
+            "college": "University of Iowa",
+            "dob": "November 5, 1978",
+            "first_name": "Dean",
+            "last_name": "Oliver",
+            "middle_name": "Daniel",
+            "preferred_name": "Dean"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2003,
+            "height": 180.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2003,
+            "shooting_hand": "Left",
+            "weight": 81.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Menifee, Arkansas",
+            "college": "Purdue University",
+            "dob": "July 12, 1969",
+            "first_name": "Jimmy",
+            "last_name": "Oliver",
+            "middle_name": "Allen",
+            "preferred_name": "Jimmy"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1999,
+            "height": 196.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1992,
+            "shooting_hand": "Right",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Dallas, Texas",
+            "college": "University of Connecticut",
+            "dob": "December 27, 1972",
+            "first_name": "Kevin",
+            "last_name": "Ollie",
+            "middle_name": "Jermaine",
+            "preferred_name": "Kevin"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2010,
+            "height": 193.0,
+            "positions": [
+                "PG",
+                "SG",
+                "G"
+            ],
+            "rookie_season": 1998,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Whiting, Indiana",
+            "college": "Drake University",
+            "dob": "June 30, 1922",
+            "first_name": "Eugene",
+            "last_name": "Ollrich",
+            "middle_name": "William",
+            "preferred_name": "Gene"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1950,
+            "height": 180.0,
+            "positions": [
+                "G"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 72.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Lagos, Nigeria",
+            "college": "University of the Pacific",
+            "dob": "April 3, 1975",
+            "first_name": "Michael",
+            "last_name": "Olowokandi",
+            "middle_name": "",
+            "preferred_name": "Michael"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2007,
+            "height": 213.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2000,
+            "shooting_hand": "Right",
+            "weight": 122.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Louisville",
+            "dob": "July 25, 1940",
+            "first_name": "Enoch",
+            "last_name": "Olsen",
+            "middle_name": "Eli",
+            "preferred_name": "Bud"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1970,
+            "height": 203.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1970,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Toronto, Canada",
+            "college": "Gonzaga University",
+            "dob": "April 19, 1991",
+            "first_name": "Kelly",
+            "last_name": "Olynyk",
+            "middle_name": "Tyler",
+            "preferred_name": "Kelly"
+        },
+        "player": {
+            "aba": false,
+            "height": 213.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/olynyke01.jpg",
+            "positions": [
+                "F",
+                "C",
+                "PF"
+            ],
+            "rookie_season": 2014,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Lanham, Maryland",
+            "college": "Syracuse University",
+            "dob": "July 13, 1987",
+            "first_name": "Arinze",
+            "last_name": "Onuaku",
+            "middle_name": "",
+            "preferred_name": "Arinze"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2017,
+            "height": 206.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/onuakar01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2014,
+            "shooting_hand": "Right",
+            "weight": 115.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Baltimore, Maryland",
+            "college": "University of Louisville",
+            "dob": "November 1, 1996",
+            "first_name": "Chinanu",
+            "last_name": "Onuaku",
+            "middle_name": "Michael",
+            "preferred_name": "Chinanu"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2018,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/onuakch01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2017,
+            "shooting_hand": "Right",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "St. Louis, Missouri",
+            "college": "Saint Louis University",
+            "dob": "May 1, 1946",
+            "first_name": "Barry",
+            "last_name": "Orms",
+            "middle_name": "D.",
+            "preferred_name": "Barry"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1970,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1970,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Yale, Kansas",
+            "college": "Beloit College",
+            "dob": "June 10, 1927",
+            "first_name": "John",
+            "last_name": "Orr",
+            "middle_name": "Michael",
+            "preferred_name": "Johnny"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1950,
+            "height": 190.0,
+            "positions": [
+                "F"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Cincinnati, Ohio",
+            "college": "Syracuse University",
+            "dob": "May 7, 1958",
+            "first_name": "Louis",
+            "last_name": "Orr",
+            "middle_name": "M.",
+            "preferred_name": "Louis"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1988,
+            "height": 203.0,
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1981,
+            "shooting_hand": "Right",
+            "weight": 79.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Albonito, Puerto Rico",
+            "college": "Oregon State University",
+            "dob": "October 25, 1963",
+            "first_name": "Jose",
+            "last_name": "Ortiz",
+            "middle_name": "Rafael",
+            "preferred_name": "Jose"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1990,
+            "height": 208.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1989,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Oklahoma City, Oklahoma",
+            "college": "University of Kentucky",
+            "dob": "August 6, 1990",
+            "first_name": "Daniel",
+            "last_name": "Orton",
+            "middle_name": "Joseph",
+            "preferred_name": "Daniel"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2014,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ortonda01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 2013,
+            "shooting_hand": "Right",
+            "weight": 115.0
+        }
+    },
+    {
+        "person": {
+            "college": "Western Kentucky University",
+            "dob": "January 21, 1939",
+            "first_name": "Charles",
+            "last_name": "Osborne",
+            "middle_name": "H.",
+            "preferred_name": "Chuck"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1962,
+            "height": 198.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1962,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Ohrid, FYR Macedonia",
+            "dob": "April 8, 1995",
+            "first_name": "Cedi",
+            "last_name": "Osman",
+            "middle_name": "",
+            "preferred_name": "Cedi"
+        },
+        "player": {
+            "aba": false,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/osmande01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2018,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Illinois at Urbana-Champaign",
+            "dob": "July 6, 1928",
+            "first_name": "Walter",
+            "last_name": "Osterkorn",
+            "middle_name": "Raymond",
+            "preferred_name": "Wally"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1955,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1952,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Dallas, Texas",
+            "college": "University of Kansas",
+            "dob": "March 6, 1973",
+            "first_name": "Gregory",
+            "last_name": "Ostertag",
+            "middle_name": "Donovan",
+            "preferred_name": "Greg"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2006,
+            "height": 218.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ostergr01.jpg",
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1996,
+            "shooting_hand": "Right",
+            "weight": 127.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Clovis, New Mexico",
+            "college": "University of Arizona",
+            "dob": "March 16, 1969",
+            "first_name": "Matthew",
+            "last_name": "Othick",
+            "middle_name": "Brian",
+            "preferred_name": "Matt"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1993,
+            "height": 188.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1993,
+            "shooting_hand": "Right",
+            "weight": 74.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Bellefontaine, Ohio",
+            "college": "Bowling Green State University",
+            "dob": "April 18, 1921",
+            "first_name": "Donald",
+            "last_name": "Otten",
+            "middle_name": "F.",
+            "preferred_name": "Don"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1953,
+            "height": 208.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Bellefontaine, Ohio",
+            "college": "Bowling Green State University",
+            "dob": "December 16, 1925",
+            "first_name": "Mac",
+            "last_name": "Otten",
+            "middle_name": "William",
+            "preferred_name": "Mac"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1950,
+            "height": 201.0,
+            "positions": [
+                "F",
+                "C"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New Orleans, Louisiana",
+            "college": "University of Kansas",
+            "dob": "December 9, 1995",
+            "first_name": "Kelly",
+            "last_name": "Oubre",
+            "middle_name": "Paul",
+            "preferred_name": "Kelly"
+        },
+        "player": {
+            "aba": false,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/oubreke01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2016,
+            "shooting_hand": "Left",
+            "weight": 92.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "San Antonio, Texas",
+            "college": "South Plains College, University of Houston",
+            "dob": "April 13, 1971",
+            "first_name": "Charles",
+            "last_name": "Outlaw",
+            "middle_name": "",
+            "preferred_name": "Bo"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2008,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/outlabo01.jpg",
+            "positions": [
+                "SF",
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 1995,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Starkville, Mississippi",
+            "dob": "September 18, 1984",
+            "first_name": "Travis",
+            "last_name": "Outlaw",
+            "middle_name": "Marquez",
+            "preferred_name": "Travis"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2014,
+            "height": 206.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/outlatr01.jpg",
+            "positions": [
+                "SF",
+                "F",
+                "PF"
+            ],
+            "rookie_season": 2004,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "college": "East Central University",
+            "dob": "December 16, 1927",
+            "first_name": "Claudell",
+            "last_name": "Overton",
+            "middle_name": "",
+            "preferred_name": "Claude"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1953,
+            "height": 188.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1953,
+            "shooting_hand": "Right",
+            "weight": 88.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "college": "La Salle University",
+            "dob": "August 3, 1969",
+            "first_name": "Douglas",
+            "last_name": "Overton",
+            "middle_name": "M.",
+            "preferred_name": "Doug"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2004,
+            "height": 190.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 1993,
+            "shooting_hand": "Right",
+            "weight": 86.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Indianapolis, Indiana",
+            "college": "Indiana University, University of Houston",
+            "dob": "October 31, 1980",
+            "first_name": "Andre",
+            "last_name": "Owens",
+            "middle_name": "",
+            "preferred_name": "Andre"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2008,
+            "height": 193.0,
+            "positions": [
+                "PG",
+                "G"
+            ],
+            "rookie_season": 2006,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Carlisle, Pennsylvania",
+            "college": "Syracuse University",
+            "dob": "May 1, 1969",
+            "first_name": "Billy",
+            "last_name": "Owens",
+            "middle_name": "Eugene",
+            "preferred_name": "Billy"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2001,
+            "height": 203.0,
+            "positions": [
+                "SF",
+                "G",
+                "F",
+                "SG",
+                "PF"
+            ],
+            "rookie_season": 1992,
+            "shooting_hand": "Right",
+            "weight": 99.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Akron, Ohio",
+            "college": "Tulane University, University of Texas at Austin",
+            "dob": "March 1, 1979",
+            "first_name": "Haywood",
+            "last_name": "Owens",
+            "middle_name": "Chris",
+            "preferred_name": "Chris"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2003,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2004,
+            "shooting_hand": "Right",
+            "weight": 111.0
+        }
+    },
+    {
+        "person": {
+            "college": "University of Nevada, Las Vegas",
+            "dob": "December 26, 1953",
+            "first_name": "Eddie",
+            "last_name": "Owens",
+            "middle_name": "",
+            "preferred_name": "Eddie"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1978,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1979,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Los Angeles, California",
+            "college": "Arizona State University",
+            "dob": "May 1, 1950",
+            "first_name": "Jim",
+            "last_name": "Owens",
+            "middle_name": "",
+            "preferred_name": "Jim"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1975,
+            "height": 196.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1974,
+            "shooting_hand": "Right",
+            "weight": 90.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "San Francisco, California",
+            "college": "University of California, Los Angeles",
+            "dob": "May 31, 1969",
+            "first_name": "Keith",
+            "last_name": "Owens",
+            "middle_name": "Kensel",
+            "preferred_name": "Keith"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1992,
+            "height": 201.0,
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 1992,
+            "shooting_hand": "Right",
+            "weight": 102.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Mesa, Arizona",
+            "college": "Oral Roberts University",
+            "dob": "January 8, 1983",
+            "first_name": "Larry",
+            "last_name": "Owens",
+            "middle_name": "",
+            "preferred_name": "Larry"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2012,
+            "height": 201.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/owensla01.jpg",
+            "positions": [
+                "SF",
+                "F"
+            ],
+            "rookie_season": 2012,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
+            "college": "Baylor University",
+            "dob": "September 2, 1925",
+            "first_name": "James",
+            "last_name": "Owens",
+            "middle_name": "L.",
+            "preferred_name": "Red"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1952,
+            "height": 190.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 1950,
+            "shooting_hand": "Right",
+            "weight": 83.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Bronx, New York",
+            "college": "University of South Carolina",
+            "dob": "June 28, 1949",
+            "first_name": "Thomas",
+            "last_name": "Owens",
+            "middle_name": "William",
+            "preferred_name": "Tom"
+        },
+        "player": {
+            "aba": true,
+            "final_season": 1983,
+            "height": 208.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/owensto01.jpg",
+            "positions": [
+                "F",
+                "PF",
+                "C"
+            ],
+            "rookie_season": 1972,
+            "shooting_hand": "Right",
+            "weight": 97.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "San Bernardino, California",
+            "college": "University of Arizona",
+            "dob": "December 11, 1972",
+            "first_name": "Raymond",
+            "last_name": "Owes",
+            "middle_name": "",
+            "preferred_name": "Ray"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 1997,
+            "height": 206.0,
+            "positions": [
+                "F",
+                "PF"
+            ],
+            "rookie_season": 1997,
+            "shooting_hand": "Right",
+            "weight": 101.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Ibadan, Nigeria",
+            "dob": "May 11, 1981",
+            "first_name": "Olumide",
+            "last_name": "Oyedeji",
+            "middle_name": "",
+            "preferred_name": "Olumide"
+        },
+        "player": {
+            "aba": false,
+            "final_season": 2003,
+            "height": 208.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2001,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    }
+]
