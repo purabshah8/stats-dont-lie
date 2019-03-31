@@ -1,9 +1,63 @@
-import os, sys, django, psycopg2, json
+import os, django, json
+from util import get_datetime, update_auto_increments
+from stats.scraper import get_player_urls, get_player_info
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
 django.setup()
 
-from stats.web_scraper import get_player_urls, get_player_info
-from stats.web_seed import add_player
+from stats.models import Location, Person, Player, Position, Season, PlayerPosition
+
+def add_player(player, person):
+    states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','U.S. Virgin Islands','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
+    
+    # add location if it does not exist
+    city, state = person.pop('birth_place').split(", ")
+    if state not in states:
+        country = state
+        state = None
+    else:
+        country = 'USA'
+    location = { 'city': city, 'country': country, 'precision': 'city'}
+    if state:
+        location['state'] = state
+    if Location.objects.filter(**location).exists():
+        player_location = Location.objects.filter(**location)[0]
+    else:
+        player_location = Location(**location)
+        player_location.save()
+    
+    # save person to database
+    person['birthplace_id'] = player_location.id
+    person['dob'] = get_datetime(person['dob'])
+    if Person.objects.filter(**person).exists():
+        person = Person.objects.filter(**person)[0]
+    else:
+        person = Person(**person)
+        person.save()
+
+    # save player to database
+    player['id'] = person
+    league_id = 1
+    if player['aba'] == True:
+        league_id = 2
+    player['rookie_season_id'] = Season.objects.get(year=player.pop('rookie_season'), league_id=league_id).id
+    if player['aba'] == True and player['final_season'] > 1976:
+        league_id = 1
+    player['final_season_id'] = Season.objects.get(year=player.pop('final_season'), league_id=league_id).id
+    player.pop('aba')
+    positions = player.pop('positions')
+    if Player.objects.filter(**player).exists():
+        player = Player.objects.filter(**player)[0]
+    else:
+        player = Player(**player)
+        player.save()
+
+    # save positions to database
+    for position in positions:
+        position_id = Position.objects.get(abbreviation=position).id
+        if not PlayerPosition.objects.filter(player_id=person.id, position_id=position_id):
+            player_position = PlayerPosition(player_id=person.id, position_id=position_id)
+            player_position.save()
 
 def save_players(letter):
     info = []
@@ -23,7 +77,7 @@ def load_players(letter, repeat=False):
             player_data = json.load(file)
             for datum in player_data:
                 add_player(datum['player'], datum['person'])
-                print("Saved {0} {1} to database.")
+                print(f"Saved {datum['person']['preferred_name']} {datum['person']['last_name']} to database.")
         
     except FileNotFoundError:
         if repeat:
@@ -33,7 +87,8 @@ def load_players(letter, repeat=False):
             save_players(letter)
             load_players(letter, True)
 
-if __name__ == '__main__':
-    # letters = "abcdefghijklmnopqrstuvwyz"
-    # for letter in letters:
-        # load_players(letter)
+# if __name__ == '__main__':
+#     update_auto_increments()
+#     letters = "abcdefghijklmnopqrstuvwyz"
+#     for letter in letters:
+#         load_players(letter)

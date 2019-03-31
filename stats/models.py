@@ -109,12 +109,12 @@ class Season(models.Model):
 
 
 class Person(models.Model):
-    last_name = models.CharField(max_length=16)
-    first_name = models.CharField(max_length=16)
-    middle_name = models.CharField(max_length=16, blank=True, null=True)
-    preferred_name = models.CharField(max_length=16, blank=True, null=True)
+    last_name = models.CharField(max_length=32)
+    first_name = models.CharField(max_length=32)
+    middle_name = models.CharField(max_length=32, blank=True, null=True)
+    preferred_name = models.CharField(max_length=32, blank=True, null=True)
     dob = models.DateField()
-    college = models.CharField(max_length=32, blank=True, null=True)
+    college = models.CharField(max_length=64, blank=True, null=True)
     birthplace = models.ForeignKey(Location, models.DO_NOTHING)
 
     def __str__(self):
@@ -129,7 +129,8 @@ class Referee(models.Model):
     rookie_season = models.ForeignKey('Season', models.DO_NOTHING)
 
     def __str__(self):
-        return Person.objects.get(id=self.id)
+        return self.id.__str__()
+        
     class Meta:
         db_table = 'referee'
 
@@ -142,7 +143,7 @@ class TeamEmployee(models.Model):
     end_date = models.DateField(blank=True, null=True)
     
     def __str__(self):
-        return Person.objects.get(id=self.id)
+        return self.id.__str__()
 
     class Meta:
         db_table = 'team_employee'
@@ -158,7 +159,7 @@ class Player(models.Model):
     image_url = models.CharField(max_length=128)
 
     def __str__(self):
-        return Person.objects.get(id=self.id)
+        return self.id.__str__()
 
     class Meta:
         db_table = 'player'
@@ -171,6 +172,7 @@ class Position(models.Model):
 
     def __str__(self):
         return self.abbreviation
+
     class Meta:
         db_table = 'position'
 

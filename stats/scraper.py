@@ -1,5 +1,5 @@
 import requests, bs4, re, pytz
-from dateutil.parser import parse
+from util import get_datetime
 
 def get_box_score_urls(season="2019"):
     months = ['october', 'november', 'december', 'january', 'february', 'march', 'april', 'may', 'june']
@@ -196,11 +196,8 @@ def get_season_dates(year):
         playoff_start = date_list[1].split("–")[0].strip()
         if playoff_start[-4:] != str(year):
             playoff_start += f" {year}"
-        est = pytz.timezone('America/New_York')
-        season_start = parse(season_start)
-        season_start = est.localize(season_start)
-        playoff_start = parse(playoff_start)
-        playoff_start = est.localize(playoff_start)
+        season_start = get_datetime(season_start)
+        playoff_start = get_datetime(playoff_start)
     else:
         response.raise_for_status()
     return [season_start, playoff_start]

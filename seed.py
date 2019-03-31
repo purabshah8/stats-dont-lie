@@ -1,10 +1,10 @@
 import os, sys, django, psycopg2, pytz
-from dateutil.parser import parse
+from util import get_datetime
+from stats.scraper import get_season_dates
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
 django.setup()
 
-from stats.web_scraper import get_season_dates
 
 leagues = [
     (1, "nba", 1946),
@@ -134,11 +134,8 @@ playoff_dates = ["March 23, 1968", "April 5, 1969", "April 17, 1970", "April 1, 
 
 highest_id = seasons[-1][0]+1
 for i in range(len(playoff_dates)):
-    est = pytz.timezone('America/New_York')
-    season_start = parse(start_dates[i])
-    season_start = est.localize(season_start)
-    playoff_start = parse(playoff_dates[i])
-    playoff_start = est.localize(playoff_start)
+    season_start = get_datetime(start_dates[i])
+    playoff_start = get_datetime(playoff_dates[i])
     aba_season_info = (highest_id + i, 2, 1968 + i, season_start, playoff_start)
     seasons.append(aba_season_info)
 

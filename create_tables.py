@@ -90,12 +90,12 @@ def create_tables():
         """ 
             CREATE TABLE person(
                 id SERIAL PRIMARY KEY,
-                last_name VARCHAR(16) NOT NULL,
-                first_name VARCHAR(16) NOT NULL,
-                middle_name VARCHAR(16),
-                preferred_name VARCHAR(16),
+                last_name VARCHAR(32) NOT NULL,
+                first_name VARCHAR(32) NOT NULL,
+                middle_name VARCHAR(32),
+                preferred_name VARCHAR(32),
                 dob DATE NOT NULL,
-                college VARCHAR(32),
+                college VARCHAR(64),
                 birthplace_id INTEGER NOT NULL
                     REFERENCES location(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE
