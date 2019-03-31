@@ -36,6 +36,7 @@ class Division(models.Model):
 
 
 class Location(models.Model):
+    precision = models.CharField(max_length=16)
     address = models.TextField(blank=True, null=True)
     city = models.CharField(max_length=64, blank=True, null=True)
     state = models.CharField(max_length=64, blank=True, null=True)
@@ -43,16 +44,24 @@ class Location(models.Model):
     postal_code = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        address =  self.address
-        if self.city:
-            address += ", " + self.city
-        if self.state:
-            address += ", " + self.state
-        if self.country and self.country != 'USA':
-            address += " " + self.country
-        if self.postal_code:
-            address += " " + str(self.postal_code)
-        return address
+        if self.precision == 'country':
+            return self.country
+        if self.precision == 'city':
+            loc = self.city
+            if self.state:
+                loc += ", " + self.state
+            return loc + ", " + self.country
+        if self.precision == 'address': 
+            address =  self.address
+            if self.city:
+                address += ", " + self.city
+            if self.state:
+                address += ", " + self.state
+            if self.postal_code:
+                address += " " + str(self.postal_code)
+            if self.country and self.country != 'USA':
+                address += " " + self.country
+            return address
 
     class Meta:
         db_table = 'location'
@@ -89,12 +98,11 @@ class Team(models.Model):
 class Season(models.Model):
     league = models.ForeignKey(League, models.DO_NOTHING)
     year = models.IntegerField()
-    preseason_start = models.DateField(blank=True, null=True)
     season_start = models.DateField(blank=True, null=True)
     playoff_start = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return self.year
+        return self.league.name.upper() + " " + str(self.year)
 
     class Meta:
         db_table = 'season'

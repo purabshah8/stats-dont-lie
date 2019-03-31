@@ -41,6 +41,7 @@ def create_tables():
         """ 
             CREATE TABLE location(
                 id SERIAL PRIMARY KEY,
+                precision VARCHAR(32) NOT NULL,
                 address TEXT,
                 city VARCHAR(64),
                 state VARCHAR(64),
@@ -82,7 +83,6 @@ def create_tables():
                     REFERENCES league(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 year INTEGER NOT NULL,
-                preseason_start DATE,
                 season_start DATE,
                 playoff_start DATE
             );

@@ -1,5 +1,10 @@
-import psycopg2
-import sys
+import os, sys, django, psycopg2, pytz
+from dateutil.parser import parse
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
+django.setup()
+
+from stats.web_scraper import get_season_dates
 
 leagues = [
     (1, "nba", 1946),
@@ -21,35 +26,35 @@ divisions = [
 ]
 
 locations = [
-    (1, "601 Biscayne Boulevard", "Miami", "FL", "USA", 33132),
-    (2, "2500 Victory Avenue", "Dallas", "TX", "USA", 75219),
-    (3, "400 W Church Street", "Orlando", "FL", "USA", 32801),
-    (4, "1 AT&T Center Parkway", "San Antonio", "TX", "USA", 78219),
-    (5, "125 South Pennsylvania Street", "Indianapolis", "IN", "USA", 46204),
-    (6, "620 Atlantic Avenue", "Brooklyn", "NY", "USA", 11217),
-    (7, "601 F Street NW", "Washington", "DC", "USA", 20004),
-    (8, "100 W Reno Avenue", "Oklahoma City", "OK", "USA", 73102),
-    (9, "191 Beale Street", "Memphis", "TN", "USA", 38103),
-    (10, "1111 Vel R. Phillips Avenue", "Milwaukee", "WI", "USA", 53203),
-    (11, "500 David J. Stern Walk", "Sacramento", "CA", "USA", 95814),
-    (12, "2645 Woodward Ave", "Detroit", "MI", "USA", 48201),
-    (13, "4 Pennsylvania Plaza", "New York", "NY", "USA", 10001),
-    (14, "1 Center Court", "Portland", "OR", "USA", 97227),
-    (15, "7000 Coliseum Way", "Oakland", "CA", "USA", 94621),
-    (16, "1000 Chopper Circle", "Denver", "CO", "USA", 80204),
-    (17, "1 Center Ct", "Cleveland", "OH", "USA", 44115),
-    (18, "40 Bay Street", "Toronto", "ON", "Canada", None),
-    (19, "1501 Girod Street", "New Orleans", "LA", "USA", 70113),
-    (20, "333 East Trade Street", "Charlotte", "NC", "USA", 28202),
-    (21, "1111 S. Figueroa Street", "Los Angeles", "CA", "USA", 90015),
-    (22, "1 State Farm Drive", "Atlanta", "GA", "USA", 30303),
-    (23, "201 East Jefferson Street", "Phoenix", "AZ", "USA", 85004),
-    (24, "600 First Avenue North", "Minneapolis", "MN", "USA", 55403),
-    (25, "100 Legends Way", "Boston", "MA", "USA", 2114),
-    (26, "1510 Polk Street", "Houston", "TX", "USA", 77002),
-    (27, "1901 West Madison Street", "Chicago", "IL", "USA", 60612),
-    (28, "301 South Temple", "Salt Lake City", "UT", "USA", 84101),
-    (29, "3601 South Broad Street", "Philadelphia", "PA", "USA", 19148),
+    (1, "address", "601 Biscayne Boulevard", "Miami", "FL", "USA", 33132),
+    (2, "address", "2500 Victory Avenue", "Dallas", "TX", "USA", 75219),
+    (3, "address", "400 W Church Street", "Orlando", "FL", "USA", 32801),
+    (4, "address", "1 AT&T Center Parkway", "San Antonio", "TX", "USA", 78219),
+    (5, "address", "125 South Pennsylvania Street", "Indianapolis", "IN", "USA", 46204),
+    (6, "address", "620 Atlantic Avenue", "Brooklyn", "NY", "USA", 11217),
+    (7, "address", "601 F Street NW", "Washington", "DC", "USA", 20004),
+    (8, "address", "100 W Reno Avenue", "Oklahoma City", "OK", "USA", 73102),
+    (9, "address", "191 Beale Street", "Memphis", "TN", "USA", 38103),
+    (10, "address", "1111 Vel R. Phillips Avenue", "Milwaukee", "WI", "USA", 53203),
+    (11, "address", "500 David J. Stern Walk", "Sacramento", "CA", "USA", 95814),
+    (12, "address", "2645 Woodward Ave", "Detroit", "MI", "USA", 48201),
+    (13, "address", "4 Pennsylvania Plaza", "New York", "NY", "USA", 10001),
+    (14, "address", "1 Center Court", "Portland", "OR", "USA", 97227),
+    (15, "address", "7000 Coliseum Way", "Oakland", "CA", "USA", 94621),
+    (16, "address", "1000 Chopper Circle", "Denver", "CO", "USA", 80204),
+    (17, "address", "1 Center Ct", "Cleveland", "OH", "USA", 44115),
+    (18, "address", "40 Bay Street", "Toronto", "ON", "Canada", None),
+    (19, "address", "1501 Girod Street", "New Orleans", "LA", "USA", 70113),
+    (20, "address", "333 East Trade Street", "Charlotte", "NC", "USA", 28202),
+    (21, "address", "1111 S. Figueroa Street", "Los Angeles", "CA", "USA", 90015),
+    (22, "address", "1 State Farm Drive", "Atlanta", "GA", "USA", 30303),
+    (23, "address", "201 East Jefferson Street", "Phoenix", "AZ", "USA", 85004),
+    (24, "address", "600 First Avenue North", "Minneapolis", "MN", "USA", 55403),
+    (25, "address", "100 Legends Way", "Boston", "MA", "USA", 2114),
+    (26, "address", "1510 Polk Street", "Houston", "TX", "USA", 77002),
+    (27, "address", "1901 West Madison Street", "Chicago", "IL", "USA", 60612),
+    (28, "address", "301 South Temple", "Salt Lake City", "UT", "USA", 84101),
+    (29, "address", "3601 South Broad Street", "Philadelphia", "PA", "USA", 19148),
 ]
 
 arenas = [
@@ -117,6 +122,27 @@ teams = [
     (30, 6, "Kings", "Sacramento", 11, 1924, "SAC"),
 ]
 
+seasons = []
+
+for yr in range(1947, 2020):
+    i = yr - 1946
+    season_start, playoff_start = get_season_dates(yr)
+    season_info = (i, 1, yr, season_start, playoff_start)
+    seasons.append(season_info)
+
+start_dates = ["October 13, 1967", "October 18, 1968", "October 17, 1969", "October 14, 1970", "October 13, 1971", "October 12, 1972", "October 10, 1973", "October 18, 1974", "October 24, 1975"]
+playoff_dates = ["March 23, 1968", "April 5, 1969", "April 17, 1970", "April 1, 1971", "March 31, 1972", "March 30, 1973", "March 29, 1974", "April 4, 1975", "April 8, 1976"]
+
+highest_id = seasons[-1][0]+1
+for i in range(len(playoff_dates)):
+    est = pytz.timezone('America/New_York')
+    season_start = parse(start_dates[i])
+    season_start = est.localize(season_start)
+    playoff_start = parse(playoff_dates[i])
+    playoff_start = est.localize(playoff_start)
+    aba_season_info = (highest_id + i, 2, 1968 + i, season_start, playoff_start)
+    seasons.append(aba_season_info)
+
 def insert(table, values):
     connection = None
 
@@ -141,6 +167,6 @@ def insert(table, values):
 
 tables = ["league", "conference", "division", "location", "arena", "team", "season", "person", "team_employee", "referee", "player", "position", "player_position"]
 
-seed_data = [leagues, conferences, divisions, locations, arenas, teams]
+seed_data = [leagues, conferences, divisions, locations, arenas, teams, seasons]
 for i in range(len(seed_data)):
     insert(tables[i], seed_data[i])
