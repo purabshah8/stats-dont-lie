@@ -1,4 +1,5 @@
-import requests, bs4, re
+import requests, bs4, re, pytz
+from dateutil.parser import parse
 
 def get_box_score_urls(season="2019"):
     months = ['october', 'november', 'december', 'january', 'february', 'march', 'april', 'may', 'june']
@@ -169,3 +170,32 @@ def get_player_info(url):
         player['final_season'] = final_season
 
     return player, person
+
+def get_season_dates(year):
+    url = "https://en.wikipedia.org/wiki/{0}-{1}_NBA_season".format(year-1, year % 100)
+    if year % 100 < 10:
+        url = "https://en.wikipedia.org/wiki/{0}-{1}_NBA_season".format(year-1, '0' + str(year % 100))
+    response = requests.get(url)
+    if response.status_code == 200:
+        season_soup = bs4.BeautifulSoup(response.text, 'html.parser')
+        dates = season_soup("table", class_="infobox")[0].select("tbody tr")[3]
+        date_string = None
+        for i,d in enumerate(dates):
+            if i != 0:
+                date_string = d.get_text(separator="\n")
+        date_list = date_string.split("\n")
+        date_list = [date.replace("\xa0", " ").replace(" (Playoffs)", "").strip() for date in date_list]
+        season_start = date_list[0].split(" – ")[0].strip()
+        if year == 1999:
+            season_start += " 1999"
+        playoff_start = date_list[1].split("–")[0].strip()
+        if playoff_start[-4:] != str(year):
+            playoff_start += " {0}".format(year)
+        est = pytz.timezone('America/New_York')
+        season_start = parse(season_start)
+        season_start = est.localize(season_start)
+        playoff_start = parse(playoff_start)
+        playoff_start = est.localize(playoff_start)
+    else:
+        response.raise_for_status()
+    return [season_start, playoff_start]
