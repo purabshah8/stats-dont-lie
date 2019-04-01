@@ -37,9 +37,9 @@
             "final_season": 1955,
             "height": 201.0,
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 1953,
             "shooting_hand": "Right",
@@ -107,7 +107,7 @@
                 "G",
                 "SG"
             ],
-            "rookie_season": 1972,
+            "rookie_season": 1970,
             "shooting_hand": "Right",
             "weight": 92.0
         }
@@ -194,8 +194,8 @@
             "final_season": 1980,
             "height": 203.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1980,
             "shooting_hand": "Right",
@@ -328,8 +328,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/zipsepa01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2017,
             "shooting_hand": "Right",
@@ -437,8 +437,8 @@
             "final_season": 1949,
             "height": 190.0,
             "positions": [
-                "F",
-                "G"
+                "G",
+                "F"
             ],
             "rookie_season": 1949,
             "shooting_hand": "Right",

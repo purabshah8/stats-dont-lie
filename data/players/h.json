@@ -14,10 +14,10 @@
             "final_season": 1977,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
-            "rookie_season": 1975,
+            "rookie_season": 1976,
             "shooting_hand": "Right",
             "weight": 95.0
         }
@@ -55,7 +55,7 @@
             "preferred_name": "Jim"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1968,
             "height": 208.0,
             "positions": [
@@ -105,10 +105,10 @@
             "height": 193.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hagancl01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
-            "rookie_season": 1967,
+            "rookie_season": 1956,
             "shooting_hand": "Right",
             "weight": 95.0
         }
@@ -147,7 +147,7 @@
             "preferred_name": "Tom"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1971,
             "height": 190.0,
             "positions": [
@@ -219,9 +219,9 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hairsha01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 1965,
             "shooting_hand": "Right",
@@ -243,8 +243,8 @@
             "final_season": 1976,
             "height": 201.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1976,
             "shooting_hand": "Right",
@@ -290,10 +290,10 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hairspj02.jpg",
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 2015,
             "shooting_hand": "Right",
@@ -315,9 +315,9 @@
             "final_season": 2010,
             "height": 208.0,
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2003,
             "shooting_hand": "Right",
@@ -382,8 +382,8 @@
             "final_season": 1951,
             "height": 185.0,
             "positions": [
-                "F",
-                "G"
+                "G",
+                "F"
             ],
             "rookie_season": 1949,
             "shooting_hand": "Right",
@@ -400,7 +400,7 @@
             "preferred_name": "Hal"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1968,
             "height": 185.0,
             "positions": [
@@ -427,9 +427,9 @@
             "final_season": 1998,
             "height": 208.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1989,
             "shooting_hand": "Right",
@@ -451,12 +451,12 @@
             "final_season": 1973,
             "height": 196.0,
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
-            "rookie_season": 1971,
+            "rookie_season": 1968,
             "shooting_hand": "Left",
             "weight": 90.0
         }
@@ -476,8 +476,8 @@
             "final_season": 2007,
             "height": 203.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2007,
             "shooting_hand": "Right",
@@ -521,10 +521,10 @@
             "final_season": 2005,
             "height": 201.0,
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 1997,
             "shooting_hand": "Right",
@@ -567,8 +567,8 @@
             "final_season": 1950,
             "height": 183.0,
             "positions": [
-                "F",
-                "G"
+                "G",
+                "F"
             ],
             "rookie_season": 1950,
             "shooting_hand": "Right",
@@ -613,10 +613,10 @@
             "final_season": 1971,
             "height": 203.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
-            "rookie_season": 1969,
+            "rookie_season": 1967,
             "shooting_hand": "Right",
             "weight": 95.0
         }
@@ -632,7 +632,7 @@
             "preferred_name": "Joe"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1976,
             "height": 178.0,
             "positions": [
@@ -660,8 +660,8 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hamiljo02.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2012,
             "shooting_hand": "Right",
@@ -706,8 +706,8 @@
             "final_season": 1949,
             "height": 185.0,
             "positions": [
-                "F",
-                "G"
+                "G",
+                "F"
             ],
             "rookie_season": 1949,
             "shooting_hand": "Right",
@@ -730,10 +730,10 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hamilri01.jpg",
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 2000,
             "shooting_hand": "Right",
@@ -778,8 +778,8 @@
             "final_season": 1960,
             "height": 198.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1959,
             "shooting_hand": "Left",
@@ -801,8 +801,8 @@
             "final_season": 2002,
             "height": 203.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2002,
             "shooting_hand": "Right",
@@ -846,9 +846,9 @@
             "final_season": 2006,
             "height": 211.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 2001,
             "shooting_hand": "Left",
@@ -888,13 +888,13 @@
             "preferred_name": "Julian"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1972,
             "height": 196.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hammoju01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1968,
             "shooting_hand": "Left",
@@ -916,8 +916,8 @@
             "final_season": 2001,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1990,
             "shooting_hand": "Right",
@@ -957,7 +957,7 @@
             "preferred_name": "Joe"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1968,
             "height": 183.0,
             "positions": [
@@ -984,8 +984,8 @@
             "final_season": 1997,
             "height": 201.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1995,
             "shooting_hand": "Right",
@@ -1050,8 +1050,8 @@
             "final_season": 1975,
             "height": 203.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1974,
             "shooting_hand": "Right",
@@ -1073,8 +1073,8 @@
             "final_season": 1957,
             "height": 201.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1950,
             "shooting_hand": "Right",
@@ -1164,8 +1164,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hansbty01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2010,
             "shooting_hand": "Right",
@@ -1255,8 +1255,8 @@
             "final_season": 2004,
             "height": 198.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2004,
             "shooting_hand": "Right",
@@ -1278,8 +1278,8 @@
             "final_season": 1998,
             "height": 203.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1998,
             "shooting_hand": "Right",
@@ -1301,9 +1301,9 @@
             "final_season": 1990,
             "height": 201.0,
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 1981,
             "shooting_hand": "Right",
@@ -1326,8 +1326,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/haranlu01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2011,
             "shooting_hand": "Right",
@@ -1351,9 +1351,9 @@
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hardaan01.jpg",
             "positions": [
                 "G",
-                "SG",
                 "F",
                 "SF",
+                "SG",
                 "PG"
             ],
             "rookie_season": 1994,
@@ -1423,9 +1423,9 @@
             "height": 196.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hardeja01.jpg",
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 2010,
             "shooting_hand": "Left",
@@ -1447,7 +1447,7 @@
             "positions": [
                 "C"
             ],
-            "rookie_season": 1968,
+            "rookie_season": 1964,
             "shooting_hand": "Right",
             "weight": 112.0
         }
@@ -1467,8 +1467,8 @@
             "final_season": 1965,
             "height": 203.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1963,
             "shooting_hand": "Right",
@@ -1507,7 +1507,7 @@
             "preferred_name": "Darrell"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1968,
             "height": 201.0,
             "positions": [
@@ -1533,9 +1533,9 @@
             "final_season": 1982,
             "height": 203.0,
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1979,
             "shooting_hand": "Right",
@@ -1553,7 +1553,7 @@
             "preferred_name": "Ira"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1973,
             "height": 206.0,
             "positions": [
@@ -1579,8 +1579,8 @@
             "final_season": 1951,
             "height": 188.0,
             "positions": [
-                "F",
-                "G"
+                "G",
+                "F"
             ],
             "rookie_season": 1950,
             "shooting_hand": "Right",
@@ -1602,8 +1602,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/harklma01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2013,
             "shooting_hand": "Right",
@@ -1628,7 +1628,7 @@
                 "G",
                 "PG"
             ],
-            "rookie_season": 1967,
+            "rookie_season": 1963,
             "shooting_hand": "Left",
             "weight": 79.0
         }
@@ -1719,8 +1719,8 @@
             "height": 208.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/harpeju01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2012,
             "shooting_hand": "Right",
@@ -1742,8 +1742,8 @@
             "final_season": 1982,
             "height": 208.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1981,
             "shooting_hand": "Right",
@@ -1791,10 +1791,10 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/harprma01.jpg",
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 1999,
             "shooting_hand": "Right",
@@ -1816,9 +1816,9 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/harremo01.jpg",
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 2016,
             "shooting_hand": "Right",
@@ -1841,9 +1841,9 @@
             "height": 208.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/harrejo01.jpg",
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 2012,
             "shooting_hand": "Right",
@@ -1888,8 +1888,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/harrial01.jpg",
             "positions": [
-                "F",
                 "SF",
+                "F",
                 "C",
                 "PF"
             ],
@@ -1937,9 +1937,9 @@
             "final_season": 2008,
             "height": 206.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1997,
             "shooting_hand": "Left",
@@ -1984,8 +1984,8 @@
             "final_season": 1975,
             "height": 208.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1975,
             "shooting_hand": "Right",
@@ -2003,7 +2003,7 @@
             "preferred_name": "Billy"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1975,
             "height": 188.0,
             "positions": [
@@ -2030,9 +2030,9 @@
             "final_season": 1954,
             "height": 201.0,
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 1950,
             "shooting_hand": "Right",
@@ -2102,8 +2102,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/harriel01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2014,
             "shooting_hand": "Right",
@@ -2221,8 +2221,8 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/harrimi01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2008,
             "shooting_hand": "Right",
@@ -2291,9 +2291,9 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/harrito02.jpg",
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 2012,
             "shooting_hand": "Right",
@@ -2384,9 +2384,9 @@
             "final_season": 1958,
             "height": 185.0,
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 1950,
             "shooting_hand": "Right",
@@ -2499,8 +2499,8 @@
             "height": 213.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/harteis01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2019,
             "shooting_hand": "Left",
@@ -2522,8 +2522,8 @@
             "final_season": 2003,
             "height": 211.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1994,
             "shooting_hand": "Right",
@@ -2545,9 +2545,9 @@
             "final_season": 2005,
             "height": 203.0,
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 2001,
             "shooting_hand": "Left",
@@ -2591,9 +2591,9 @@
             "final_season": 1976,
             "height": 190.0,
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 1968,
             "shooting_hand": "Right",
@@ -2615,9 +2615,9 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hasleud01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 2004,
             "shooting_hand": "Right",
@@ -2640,10 +2640,10 @@
             "height": 196.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hassetr01.jpg",
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 2002,
             "shooting_hand": "Right",
@@ -2709,9 +2709,9 @@
             "final_season": 1993,
             "height": 208.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1983,
             "shooting_hand": "Right",
@@ -2733,9 +2733,9 @@
             "final_season": 2003,
             "height": 206.0,
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 2002,
             "shooting_hand": "Right",
@@ -2782,10 +2782,10 @@
             "height": 196.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/havlijo01.jpg",
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 1963,
             "shooting_hand": "Right",
@@ -2808,9 +2808,9 @@
             "height": 216.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hawessp01.jpg",
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 2008,
             "shooting_hand": "Right",
@@ -2832,9 +2832,9 @@
             "final_season": 1984,
             "height": 206.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1975,
             "shooting_hand": "Right",
@@ -2880,11 +2880,11 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hawkico01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
-            "rookie_season": 1967,
+            "rookie_season": 1969,
             "shooting_hand": "Right",
             "weight": 95.0
         }
@@ -2996,9 +2996,9 @@
             "final_season": 1969,
             "height": 196.0,
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 1960,
             "shooting_hand": "Right",
@@ -3044,9 +3044,9 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hayesch01.jpg",
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 2006,
             "shooting_hand": "Right",
@@ -3069,9 +3069,9 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hayesel01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 1969,
             "shooting_hand": "Right",
@@ -3094,10 +3094,10 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hayesja01.jpg",
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 2004,
             "shooting_hand": "Right",
@@ -3115,7 +3115,7 @@
             "preferred_name": "Jim"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1971,
             "height": 190.0,
             "positions": [
@@ -3143,8 +3143,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hayesni01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2018,
             "shooting_hand": "Right",
@@ -3188,9 +3188,9 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/haywago01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 2011,
             "shooting_hand": "Right",
@@ -3213,8 +3213,8 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/haywala01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2011,
             "shooting_hand": "Right",
@@ -3260,10 +3260,10 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/haywosp01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
-            "rookie_season": 1969,
+            "rookie_season": 1971,
             "shooting_hand": "Right",
             "weight": 102.0
         }
@@ -3279,7 +3279,6 @@
             "preferred_name": "John"
         },
         "player": {
-            "aba": false,
             "final_season": 1949,
             "height": 188.0,
             "positions": [
@@ -3329,9 +3328,9 @@
             "height": 190.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/headlu01.jpg",
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 2006,
             "shooting_hand": "Right",
@@ -3396,8 +3395,8 @@
             "final_season": 1981,
             "height": 198.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1971,
             "shooting_hand": "Right",
@@ -3465,8 +3464,8 @@
             "final_season": 1996,
             "height": 203.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1996,
             "shooting_hand": "Right",
@@ -3489,9 +3488,9 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/heinsto01.jpg",
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1957,
             "shooting_hand": "Right",
@@ -3513,8 +3512,8 @@
             "final_season": 1957,
             "height": 198.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1956,
             "shooting_hand": "Right",
@@ -3536,10 +3535,10 @@
             "final_season": 2007,
             "height": 206.0,
             "positions": [
-                "F",
                 "SF",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 1996,
             "shooting_hand": "Right",
@@ -3561,8 +3560,8 @@
             "final_season": 1987,
             "height": 203.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1987,
             "shooting_hand": "Right",
@@ -3584,8 +3583,8 @@
             "final_season": 2002,
             "height": 201.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1998,
             "shooting_hand": "Right",
@@ -3677,8 +3676,8 @@
             "final_season": 1999,
             "height": 203.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1999,
             "shooting_hand": "Right",
@@ -3700,9 +3699,9 @@
             "final_season": 1987,
             "height": 211.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1986,
             "shooting_hand": "Right",
@@ -3748,9 +3747,9 @@
             "final_season": 1983,
             "height": 190.0,
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 1975,
             "shooting_hand": "Right",
@@ -3772,8 +3771,8 @@
             "final_season": 2000,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1997,
             "shooting_hand": "Left",
@@ -3816,9 +3815,9 @@
             "final_season": 1955,
             "height": 201.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1953,
             "shooting_hand": "Right",
@@ -3857,7 +3856,6 @@
             "preferred_name": "Bill"
         },
         "player": {
-            "aba": false,
             "final_season": 1950,
             "height": 206.0,
             "positions": [
@@ -3929,8 +3927,8 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/henrymy01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2018,
             "shooting_hand": "Right",
@@ -3976,10 +3974,10 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/henryxa01.jpg",
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 2011,
             "shooting_hand": "Left",
@@ -4001,9 +3999,9 @@
             "height": 211.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hensojo01.jpg",
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 2013,
             "shooting_hand": "Right",
@@ -4043,12 +4041,12 @@
             "preferred_name": "Charles"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1971,
             "height": 196.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1971,
             "shooting_hand": "Right",
@@ -4113,8 +4111,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hernaju01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2017,
             "shooting_hand": "Right",
@@ -4180,8 +4178,8 @@
             "final_season": 1999,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1992,
             "shooting_hand": "Right",
@@ -4202,9 +4200,9 @@
             "final_season": 2009,
             "height": 206.0,
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2007,
             "shooting_hand": "Right",
@@ -4266,7 +4264,7 @@
             "preferred_name": "Dan"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1971,
             "height": 203.0,
             "positions": [
@@ -4292,9 +4290,9 @@
             "final_season": 1971,
             "height": 203.0,
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1966,
             "shooting_hand": "Right",
@@ -4316,8 +4314,8 @@
             "final_season": 1975,
             "height": 201.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1969,
             "shooting_hand": "Right",
@@ -4335,12 +4333,11 @@
             "preferred_name": "Jack"
         },
         "player": {
-            "aba": false,
             "final_season": 1948,
             "height": 198.0,
             "positions": [
-                "F",
-                "C"
+                "C",
+                "F"
             ],
             "shooting_hand": "Right",
             "weight": 88.0
@@ -4361,12 +4358,12 @@
             "final_season": 1970,
             "height": 196.0,
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
-            "rookie_season": 1967,
+            "rookie_season": 1963,
             "shooting_hand": "Right",
             "weight": 92.0
         }
@@ -4385,8 +4382,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hezonma01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2016,
             "shooting_hand": "Right",
@@ -4430,8 +4427,8 @@
             "final_season": 1948,
             "height": 180.0,
             "positions": [
-                "F",
-                "G"
+                "G",
+                "F"
             ],
             "rookie_season": 1948,
             "shooting_hand": "Right",
@@ -4453,8 +4450,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hicksis01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2018,
             "shooting_hand": "Right",
@@ -4476,8 +4473,8 @@
             "final_season": 1979,
             "height": 201.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1977,
             "shooting_hand": "Right",
@@ -4500,9 +4497,9 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hicksjj01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 2009,
             "shooting_hand": "Right",
@@ -4543,7 +4540,7 @@
             "preferred_name": "Bill"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1975,
             "height": 188.0,
             "positions": [
@@ -4590,12 +4587,12 @@
             "preferred_name": "Earle"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1971,
             "height": 203.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1971,
             "shooting_hand": "Right",
@@ -4617,8 +4614,8 @@
             "final_season": 1991,
             "height": 206.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1990,
             "shooting_hand": "Right",
@@ -4640,9 +4637,9 @@
             "final_season": 1995,
             "height": 201.0,
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1983,
             "shooting_hand": "Right",
@@ -4664,9 +4661,9 @@
             "final_season": 1998,
             "height": 206.0,
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1991,
             "shooting_hand": "Right",
@@ -4711,9 +4708,9 @@
             "final_season": 1984,
             "height": 190.0,
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 1980,
             "shooting_hand": "Right",
@@ -4735,8 +4732,8 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/highsha01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2019,
             "shooting_hand": "Right",
@@ -4758,10 +4755,10 @@
             "final_season": 1972,
             "height": 203.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
-            "rookie_season": 1967,
+            "rookie_season": 1962,
             "shooting_hand": "Right",
             "weight": 87.0
         }
@@ -4780,9 +4777,9 @@
             "height": 211.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hilarne01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 2003,
             "shooting_hand": "Right",
@@ -4896,10 +4893,10 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hillgr01.jpg",
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 1995,
             "shooting_hand": "Right",
@@ -4922,9 +4919,9 @@
             "height": 208.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hilljo01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 2010,
             "shooting_hand": "Right",
@@ -4942,12 +4939,12 @@
             "preferred_name": "Simmie"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1974,
             "height": 201.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1970,
             "shooting_hand": "Right",
@@ -4969,8 +4966,8 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hillso01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2014,
             "shooting_hand": "Right",
@@ -4992,8 +4989,8 @@
             "final_season": 2009,
             "height": 213.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2009,
             "shooting_hand": "Left",
@@ -5016,9 +5013,9 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hillty01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 1991,
             "shooting_hand": "Right",
@@ -5086,11 +5083,11 @@
             "final_season": 1980,
             "height": 206.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
-            "rookie_season": 1971,
+            "rookie_season": 1976,
             "shooting_hand": "Right",
             "weight": 97.0
         }
@@ -5133,9 +5130,9 @@
             "height": 193.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hinriki01.jpg",
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 2004,
             "shooting_hand": "Right",
@@ -5157,9 +5154,9 @@
             "final_season": 1991,
             "height": 206.0,
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1984,
             "shooting_hand": "Right",
@@ -5176,7 +5173,6 @@
             "preferred_name": "Mel"
         },
         "player": {
-            "aba": false,
             "final_season": 1947,
             "height": 168.0,
             "positions": [
@@ -5201,8 +5197,8 @@
             "final_season": 1957,
             "height": 203.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1952,
             "shooting_hand": "Right",
@@ -5271,9 +5267,9 @@
             "final_season": 1996,
             "height": 213.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1992,
             "shooting_hand": "Right",
@@ -5318,9 +5314,9 @@
             "final_season": 1992,
             "height": 188.0,
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 1983,
             "shooting_hand": "Right",
@@ -5359,7 +5355,6 @@
             "preferred_name": "Paul"
         },
         "player": {
-            "aba": false,
             "final_season": 1955,
             "height": 188.0,
             "positions": [
@@ -5385,8 +5380,8 @@
             "final_season": 1968,
             "height": 201.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1967,
             "shooting_hand": "Right",
@@ -5449,7 +5444,6 @@
             "preferred_name": "Doug"
         },
         "player": {
-            "aba": false,
             "final_season": 1949,
             "height": 193.0,
             "positions": [
@@ -5474,8 +5468,8 @@
             "final_season": 2006,
             "height": 206.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2006,
             "shooting_hand": "Left",
@@ -5520,9 +5514,9 @@
             "height": 193.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/holidjr01.jpg",
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 2010,
             "shooting_hand": "Right",
@@ -5589,8 +5583,8 @@
             "final_season": 1952,
             "height": 193.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1950,
             "shooting_hand": "Right",
@@ -5612,8 +5606,8 @@
             "height": 196.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hollajo02.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2016,
             "shooting_hand": "Right",
@@ -5683,9 +5677,9 @@
             "height": 213.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/holliry01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 2007,
             "shooting_hand": "Right",
@@ -5707,8 +5701,8 @@
             "final_season": 1979,
             "height": 198.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1979,
             "shooting_hand": "Right",
@@ -5730,8 +5724,8 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/holliro01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2016,
             "shooting_hand": "Left",
@@ -5748,7 +5742,7 @@
             "preferred_name": "Dennis"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1968,
             "height": 190.0,
             "positions": [
@@ -5775,9 +5769,9 @@
             "height": 208.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/holmeri01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 2016,
             "shooting_hand": "Right",
@@ -5798,8 +5792,8 @@
             "final_season": 1956,
             "height": 190.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1953,
             "shooting_hand": "Right",
@@ -5820,8 +5814,8 @@
             "final_season": 1971,
             "height": 201.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1971,
             "shooting_hand": "Right",
@@ -5843,9 +5837,9 @@
             "final_season": 1990,
             "height": 193.0,
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 1985,
             "shooting_hand": "Left",
@@ -5888,8 +5882,8 @@
             "final_season": 1959,
             "height": 198.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1957,
             "shooting_hand": "Right",
@@ -5934,8 +5928,8 @@
             "final_season": 1999,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1998,
             "shooting_hand": "Right",
@@ -5958,8 +5952,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/honeyty01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2012,
             "shooting_hand": "Right",
@@ -5981,8 +5975,8 @@
             "final_season": 2000,
             "height": 203.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2000,
             "shooting_hand": "Right",
@@ -6023,7 +6017,7 @@
             "preferred_name": "Bobby"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1969,
             "height": 183.0,
             "positions": [
@@ -6046,12 +6040,12 @@
             "preferred_name": "Carroll"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1968,
             "height": 201.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1968,
             "shooting_hand": "Right",
@@ -6075,7 +6069,7 @@
             "positions": [
                 "C"
             ],
-            "rookie_season": 1967,
+            "rookie_season": 1963,
             "shooting_hand": "Right",
             "weight": 104.0
         }
@@ -6095,9 +6089,9 @@
             "final_season": 1960,
             "height": 203.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1957,
             "shooting_hand": "Right",
@@ -6141,10 +6135,10 @@
             "final_season": 1992,
             "height": 196.0,
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 1988,
             "shooting_hand": "Right",
@@ -6211,8 +6205,8 @@
             "final_season": 1982,
             "height": 203.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1981,
             "shooting_hand": "Right",
@@ -6278,10 +6272,10 @@
             "final_season": 1968,
             "height": 201.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
-            "rookie_season": 1967,
+            "rookie_season": 1961,
             "shooting_hand": "Right",
             "weight": 99.0
         }
@@ -6327,8 +6321,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hornede01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2012,
             "shooting_hand": "Right",
@@ -6350,9 +6344,9 @@
             "final_season": 2008,
             "height": 206.0,
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1993,
             "shooting_hand": "Right",
@@ -6374,8 +6368,8 @@
             "final_season": 1990,
             "height": 203.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1990,
             "shooting_hand": "Right",
@@ -6397,8 +6391,8 @@
             "final_season": 1972,
             "height": 203.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1969,
             "shooting_hand": "Right",
@@ -6420,9 +6414,9 @@
             "final_season": 1958,
             "height": 201.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1954,
             "shooting_hand": "Right",
@@ -6444,10 +6438,10 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/houseda01.jpg",
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 2017,
             "shooting_hand": "Right",
@@ -6518,8 +6512,8 @@
             "final_season": 1996,
             "height": 196.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1993,
             "shooting_hand": "Right",
@@ -6541,8 +6535,8 @@
             "final_season": 1995,
             "height": 203.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1995,
             "shooting_hand": "Right",
@@ -6564,8 +6558,8 @@
             "final_season": 1993,
             "height": 198.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1992,
             "shooting_hand": "Right",
@@ -6586,9 +6580,9 @@
             "height": 211.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/howardw01.jpg",
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 2005,
             "shooting_hand": "Right",
@@ -6610,8 +6604,8 @@
             "final_season": 1972,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1971,
             "shooting_hand": "Right",
@@ -6634,8 +6628,8 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/howarjo01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2004,
             "shooting_hand": "Right",
@@ -6658,8 +6652,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/howarju01.jpg",
             "positions": [
-                "F",
                 "SF",
+                "F",
                 "C",
                 "PF"
             ],
@@ -6706,8 +6700,8 @@
             "final_season": 1979,
             "height": 201.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1979,
             "shooting_hand": "Right",
@@ -6729,8 +6723,8 @@
             "final_season": 1998,
             "height": 206.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1993,
             "shooting_hand": "Left",
@@ -6753,9 +6747,9 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/howelba01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 1960,
             "shooting_hand": "Right",
@@ -6773,7 +6767,6 @@
             "preferred_name": "Bob"
         },
         "player": {
-            "aba": false,
             "final_season": 1949,
             "height": 198.0,
             "positions": [
@@ -6799,9 +6792,9 @@
             "final_season": 1989,
             "height": 203.0,
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 1980,
             "shooting_hand": "Right",
@@ -6824,9 +6817,9 @@
             "height": 190.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hudsole01.jpg",
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 2010,
             "shooting_hand": "Right",
@@ -6849,10 +6842,10 @@
             "height": 196.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hudsolo01.jpg",
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 1967,
             "shooting_hand": "Right",
@@ -6945,8 +6938,8 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/huestjo01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2016,
             "shooting_hand": "Right",
@@ -7038,7 +7031,7 @@
             "positions": [
                 "C"
             ],
-            "rookie_season": 1975,
+            "rookie_season": 1976,
             "shooting_hand": "Left",
             "weight": 99.0
         }
@@ -7060,9 +7053,9 @@
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hughela01.jpg",
             "positions": [
                 "G",
-                "SG",
                 "F",
                 "SF",
+                "SG",
                 "PG"
             ],
             "rookie_season": 1999,
@@ -7085,8 +7078,8 @@
             "final_season": 2000,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2000,
             "shooting_hand": "Right",
@@ -7109,8 +7102,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hummero01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2014,
             "shooting_hand": "Right",
@@ -7132,9 +7125,9 @@
             "final_season": 1976,
             "height": 206.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1971,
             "shooting_hand": "Right",
@@ -7156,9 +7149,9 @@
             "final_season": 2005,
             "height": 203.0,
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2003,
             "shooting_hand": "Right",
@@ -7206,9 +7199,9 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/humphkr01.jpg",
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2005,
             "shooting_hand": "Right",
@@ -7251,8 +7244,8 @@
             "final_season": 2005,
             "height": 201.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2004,
             "shooting_hand": "Right",
@@ -7319,10 +7312,10 @@
             "final_season": 1973,
             "height": 201.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
-            "rookie_season": 1967,
+            "rookie_season": 1964,
             "shooting_hand": "Right",
             "weight": 95.0
         }
@@ -7366,9 +7359,9 @@
             "final_season": 2010,
             "height": 203.0,
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 2009,
             "shooting_hand": "Right",
@@ -7414,9 +7407,9 @@
             "final_season": 2010,
             "height": 213.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 2002,
             "shooting_hand": "Right",
@@ -7439,8 +7432,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/huntevi01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2018,
             "shooting_hand": "Right",
@@ -7485,8 +7478,8 @@
             "final_season": 1947,
             "height": 188.0,
             "positions": [
-                "F",
-                "G"
+                "G",
+                "F"
             ],
             "rookie_season": 1947,
             "shooting_hand": "Right",
@@ -7526,7 +7519,6 @@
             "preferred_name": "Paul"
         },
         "player": {
-            "aba": false,
             "final_season": 1948,
             "height": 190.0,
             "positions": [
@@ -7551,9 +7543,9 @@
             "final_season": 1958,
             "height": 198.0,
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 1952,
             "shooting_hand": "Right",
@@ -7575,8 +7567,8 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/hutchch01.jpg",
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2019,
             "shooting_hand": "Right",
@@ -7619,8 +7611,8 @@
             "final_season": 1971,
             "height": 198.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1971,
             "shooting_hand": "Right",

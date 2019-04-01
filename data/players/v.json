@@ -10,7 +10,7 @@
             "preferred_name": "Stephen"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1970,
             "height": 185.0,
             "positions": [
@@ -106,8 +106,8 @@
             "final_season": 1981,
             "height": 201.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1981,
             "shooting_hand": "Right",
@@ -175,10 +175,10 @@
             "final_season": 1977,
             "height": 196.0,
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 1966,
             "shooting_hand": "Right",
@@ -200,8 +200,8 @@
             "final_season": 1950,
             "height": 190.0,
             "positions": [
-                "F",
-                "G"
+                "G",
+                "F"
             ],
             "rookie_season": 1947,
             "shooting_hand": "Right",
@@ -223,10 +223,10 @@
             "final_season": 1983,
             "height": 201.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
-            "rookie_season": 1974,
+            "rookie_season": 1976,
             "shooting_hand": "Right",
             "weight": 88.0
         }
@@ -272,9 +272,9 @@
             "height": 208.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/vanhoke01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 1998,
             "shooting_hand": "Right",
@@ -297,9 +297,9 @@
             "height": 185.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/vanlino01.jpg",
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 1970,
             "shooting_hand": "Right",
@@ -316,12 +316,12 @@
             "preferred_name": "Dennis Van"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1976,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1976,
             "shooting_hand": "Right",
@@ -343,8 +343,8 @@
             "final_season": 1952,
             "height": 190.0,
             "positions": [
-                "F",
-                "G"
+                "G",
+                "F"
             ],
             "rookie_season": 1948,
             "shooting_hand": "Right",
@@ -366,8 +366,8 @@
             "final_season": 1996,
             "height": 203.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1996,
             "shooting_hand": "Right",
@@ -389,8 +389,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/vandeja01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2019,
             "shooting_hand": "Right",
@@ -412,10 +412,10 @@
             "final_season": 1956,
             "height": 190.0,
             "positions": [
-                "F",
                 "SF",
                 "G",
-                "SG"
+                "SG",
+                "F"
             ],
             "rookie_season": 1950,
             "shooting_hand": "Right",
@@ -438,9 +438,9 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/vandeki01.jpg",
             "positions": [
-                "F",
                 "SF",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1981,
             "shooting_hand": "Right",
@@ -551,9 +551,9 @@
             "height": 208.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/varejan01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 2005,
             "shooting_hand": "Right",
@@ -576,8 +576,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/varnaja01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2013,
             "shooting_hand": "Right",
@@ -600,9 +600,9 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/vasqugr01.jpg",
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 2011,
             "shooting_hand": "Right",
@@ -628,7 +628,7 @@
                 "SG",
                 "PG"
             ],
-            "rookie_season": 1967,
+            "rookie_season": 1962,
             "shooting_hand": "Right",
             "weight": 86.0
         }
@@ -644,7 +644,7 @@
             "preferred_name": "David"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1976,
             "height": 211.0,
             "positions": [
@@ -670,8 +670,8 @@
             "final_season": 1999,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1996,
             "shooting_hand": "Right",
@@ -693,9 +693,9 @@
             "final_season": 2009,
             "height": 185.0,
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 1998,
             "shooting_hand": "Right",
@@ -740,8 +740,8 @@
             "final_season": 1947,
             "height": 193.0,
             "positions": [
-                "F",
-                "C"
+                "C",
+                "F"
             ],
             "rookie_season": 1947,
             "shooting_hand": "Right",
@@ -764,8 +764,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/vaughlo01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1991,
             "shooting_hand": "Right",
@@ -791,7 +791,7 @@
                 "SG",
                 "PG"
             ],
-            "rookie_season": 1967,
+            "rookie_season": 1973,
             "shooting_hand": "Right",
             "weight": 86.0
         }
@@ -811,8 +811,8 @@
             "final_season": 1987,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1982,
             "shooting_hand": "Right",
@@ -834,8 +834,8 @@
             "height": 211.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/veselja01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2012,
             "shooting_hand": "Right",
@@ -856,8 +856,8 @@
             "final_season": 1993,
             "height": 198.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1993,
             "shooting_hand": "Right",
@@ -878,8 +878,8 @@
             "final_season": 1992,
             "height": 206.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1992,
             "shooting_hand": "Right",
@@ -902,8 +902,8 @@
             "height": 211.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/villach01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2006,
             "shooting_hand": "Right",
@@ -926,9 +926,9 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/vinceja01.jpg",
             "positions": [
-                "F",
+                "PF",
                 "SF",
-                "PF"
+                "F"
             ],
             "rookie_season": 1982,
             "shooting_hand": "Right",
@@ -950,9 +950,9 @@
             "final_season": 1992,
             "height": 188.0,
             "positions": [
-                "PG",
                 "G",
-                "SG"
+                "SG",
+                "PG"
             ],
             "rookie_season": 1986,
             "shooting_hand": "Right",
@@ -973,8 +973,8 @@
             "final_season": 2008,
             "height": 203.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 2007,
             "shooting_hand": "Right",
@@ -1015,12 +1015,12 @@
             "preferred_name": "Claude"
         },
         "player": {
-            "aba": true,
+            "aba": false,
             "final_season": 1973,
             "height": 198.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1973,
             "shooting_hand": "Right",
@@ -1042,8 +1042,8 @@
             "final_season": 1990,
             "height": 206.0,
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 1990,
             "shooting_hand": "Right",
@@ -1065,8 +1065,8 @@
             "final_season": 1950,
             "height": 193.0,
             "positions": [
-                "F",
-                "C"
+                "C",
+                "F"
             ],
             "rookie_season": 1950,
             "shooting_hand": "Right",
@@ -1109,8 +1109,8 @@
             "final_season": 1950,
             "height": 185.0,
             "positions": [
-                "F",
-                "G"
+                "G",
+                "F"
             ],
             "rookie_season": 1950,
             "shooting_hand": "Right",
@@ -1132,8 +1132,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/vonleno01.jpg",
             "positions": [
-                "F",
-                "PF"
+                "PF",
+                "F"
             ],
             "rookie_season": 2015,
             "shooting_hand": "Right",
@@ -1178,8 +1178,8 @@
             "final_season": 1988,
             "height": 201.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
             "rookie_season": 1982,
             "shooting_hand": "Right",
@@ -1265,9 +1265,9 @@
             "final_season": 2006,
             "height": 208.0,
             "positions": [
-                "F",
+                "PF",
                 "C",
-                "PF"
+                "F"
             ],
             "rookie_season": 2005,
             "shooting_hand": "Right",

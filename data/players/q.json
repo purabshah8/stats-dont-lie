@@ -13,9 +13,9 @@
             "height": 216.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/qizh01.jpg",
             "positions": [
+                "PF",
                 "F",
-                "C",
-                "PF"
+                "C"
             ],
             "rookie_season": 2018,
             "shooting_hand": "Right",
@@ -61,10 +61,10 @@
             "final_season": 1972,
             "height": 196.0,
             "positions": [
-                "F",
-                "SF"
+                "SF",
+                "F"
             ],
-            "rookie_season": 1972,
+            "rookie_season": 1968,
             "shooting_hand": "Right",
             "weight": 97.0
         }
