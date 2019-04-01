@@ -112,7 +112,7 @@ def get_player_info(url):
             person["first_name"] = full_name[0]
             
             # players with 3 names (and James Michael McAdoo)
-            special_names = ["Carlos Navarro", "John Ramos", "Ray Richardson", "Michael Ray McAdoo", "Vander Velden"]
+            special_names = ["Jo English", "Rod Hundley", "Carlos Navarro", "John Ramos", "Ray Richardson", "Michael Ray McAdoo", "Vander Velden", "Rod Williams"]
             if person["last_name"] in special_names or re.search(r"^[vV][ao]n ", person["last_name"]):
                 names = person["last_name"].split(" ")
                 person["middle_name"] = " ".join(names[0:-1])
@@ -155,20 +155,22 @@ def get_player_info(url):
         if 'Debut:' in info_arr:
             debut_info = " ".join(info_arr).split("&blacksquare")
             if len(debut_info) > 1:
-                debut_info = debut_info[1].strip().split(" ")
+                debut_years = [info.split(" ")[-1] for info in debut_info]
+                if debut_years[0] < debut_years[1]:
+                    debut_idx = 0
+                else:
+                    debut_idx = 1
+                debut_info = debut_info[debut_idx].strip().split(" ")
                 debut_date = get_datetime(debut_info[-1].split(":")[-1])
+                player['aba'] = True
             else:
                 debut_date = get_datetime(debut_info[-1].split(":")[-1])
+                player['aba'] = False
             rookie_year = debut_date.year + 1
             if debut_date.month < 7:
                 rookie_year -= 1
             player["rookie_season"] = rookie_year
-            
-        if 'ABA' in info_arr:
-            player['aba'] = True
-    
-    if 'aba' not in player:
-        player['aba'] = False
+
 
     player_seasons = player_soup.find_all(attrs={"data-stat": "season", "scope":"row", "class": "left"})
     player_seasons = [season for season in player_seasons if season("a")]

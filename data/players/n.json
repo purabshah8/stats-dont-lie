@@ -1763,11 +1763,13 @@
         "player": {
             "aba": false,
             "final_season": 1954,
+            "height": 208.0,
             "positions": [
                 "C"
             ],
             "rookie_season": 1954,
-            "shooting_hand": "Right"
+            "shooting_hand": "Right",
+            "weight": 0.0
         }
     },
     {

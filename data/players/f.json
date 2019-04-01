@@ -2742,7 +2742,10 @@
             "birth_place": "Atlanta, Georgia",
             "college": "Guilford College",
             "dob": "December 9, 1953",
-            "preferred_name": "World"
+            "first_name": "Lloyd",
+            "last_name": "Free",
+            "middle_name": "Bernard",
+            "preferred_name": "World B."
         },
         "player": {
             "aba": false,

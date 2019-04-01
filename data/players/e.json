@@ -1619,7 +1619,10 @@
             "birth_place": "Frankfurt, Germany",
             "college": "University of South Carolina",
             "dob": "February 4, 1970",
-            "preferred_name": "Jo"
+            "first_name": "Stephen",
+            "last_name":"English",
+            "middle_name":"",
+            "preferred_name": "Jo Jo"
         },
         "player": {
             "aba": false,

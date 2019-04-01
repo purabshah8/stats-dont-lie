@@ -4827,7 +4827,10 @@
             "birth_place": "Harlan, Kentucky",
             "college": "University of Kentucky",
             "dob": "July 14, 1926",
-            "preferred_name": "Wah"
+            "first_name": "Wallace",
+            "last_name": "Jones",
+            "middle_name": "Clayton",
+            "preferred_name": "Wah Wah"
         },
         "player": {
             "aba": false,

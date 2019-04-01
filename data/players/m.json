@@ -4152,9 +4152,9 @@
             "birth_place": "Harpersville, Alabama",
             "college": "Indiana University",
             "dob": "August 12, 1950",
-            "first_name": "(Big",
-            "last_name": "McGinnis the Magnificent, Big George)",
-            "middle_name": "Mac, Baby Bull,",
+            "first_name": "George",
+            "last_name": "McGinnis",
+            "middle_name": "F.",
             "preferred_name": "George"
         },
         "player": {
@@ -6230,9 +6230,9 @@
             "birth_place": "Joliet, Illinois",
             "college": "DePaul University",
             "dob": "June 18, 1924",
-            "first_name": "(Mr.",
-            "last_name": "Mikan the Magnificent, The Monster, Big Mike)",
-            "middle_name": "Basketball,",
+            "first_name": "George",
+            "last_name": "Mikan",
+            "middle_name": "Lawrence",
             "preferred_name": "George"
         },
         "player": {
@@ -7325,11 +7325,13 @@
         "player": {
             "aba": false,
             "final_season": 1950,
+            "height": 198.0,
             "positions": [
                 "C"
             ],
             "rookie_season": 1950,
-            "shooting_hand": "Right"
+            "shooting_hand": "Right",
+            "weight": 0.0
         }
     },
     {

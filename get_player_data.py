@@ -1,6 +1,7 @@
 import os, django, json
 from util import get_datetime, update_auto_increments
 from stats.scraper import get_player_urls, get_player_info
+from django.core.exceptions import ObjectDoesNotExist
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
 django.setup()
@@ -12,15 +13,19 @@ def add_player(player, person):
     if 'birth_place' in person:
         states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','U.S. Virgin Islands','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
         # add location if it does not exist
-        city, state = person.pop('birth_place').split(", ")
-        if state not in states:
-            country = state
-            state = None
+        locs = person.pop('birth_place').split(", ")
+        if len(locs) > 1:
+            city, state = locs
+            if state not in states:
+                country = state
+                state = None
+            else:
+                country = 'USA'
+            location = { 'city': city, 'country': country, 'precision': 'city'}
+            if state:
+                location['state'] = state
         else:
-            country = 'USA'
-        location = { 'city': city, 'country': country, 'precision': 'city'}
-        if state:
-            location['state'] = state
+            location = {'country': locs[0], 'precision': 'country'}
         if Location.objects.filter(**location).exists():
             player_location = Location.objects.filter(**location)[0]
         else:
@@ -40,12 +45,21 @@ def add_player(player, person):
     # save player to database
     player['id'] = person
     league_id = 1
+    if 'aba' not in player:
+        player['aba'] = False
+    if 'rookie_season' not in player:
+        player['rookie_season'] = 1947
     if player['aba'] == True:
         league_id = 2
+    if not Season.objects.filter(year=player['rookie_season'], league_id=league_id).exists():
+        league_id = 1
     player['rookie_season_id'] = Season.objects.get(year=player.pop('rookie_season'), league_id=league_id).id
+
     if 'final_season' in player:
         if player['aba'] == True and player['final_season'] > 1976:
             league_id = 1
+        if not Season.objects.filter(year=player['final_season'], league_id=league_id).exists():
+            league_id = 2
         player['final_season_id'] = Season.objects.get(year=player.pop('final_season'), league_id=league_id).id
     player.pop('aba')
     positions = player.pop('positions')
@@ -90,8 +104,23 @@ def load_players(letter, repeat=False):
             save_players(letter)
             load_players(letter, True)
 
+
+def delete_player(info):
+    try:
+        person = Person.objects.get(**info)
+        player = person.player
+        name = person.preferred_name + " " + person.last_name
+        player_positions = PlayerPosition.objects.filter(player=person.id)
+        for pos in player_positions:
+            pos.delete()
+        player.delete()
+        person.delete()
+        print(f'{name} removed from database.')
+    except ObjectDoesNotExist:
+        print("No matching player in database.")
+
 # if __name__ == '__main__':
 #     update_auto_increments()
-#     letters = "abcdefghijklmnopqrstuvwyz"
+#     letters = "cdefghijklmnopqrstuvwyz"
 #     for letter in letters:
 #         load_players(letter)

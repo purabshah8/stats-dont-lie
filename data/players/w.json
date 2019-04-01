@@ -867,6 +867,9 @@
             "birth_place": "San Marcos, Texas",
             "college": "Baylor University",
             "dob": "March 22, 1994",
+            "first_name": "Taurean",
+            "last_name": "Waller-Prince",
+            "middle_name": "",
             "preferred_name": "Taurean"
         },
         "player": {
@@ -1842,8 +1845,8 @@
             "college": "George Washington University",
             "dob": "October 13, 1994",
             "first_name": "Watanabe",
-            "last_name": "Watanabe Y\u016bta Watanabe",
-            "middle_name": "",
+            "last_name": "Watanabe",
+            "middle_name": "Y\u016bta",
             "preferred_name": "Yuta"
         },
         "player": {
@@ -2820,11 +2823,13 @@
         "player": {
             "aba": false,
             "final_season": 1948,
+            "height": 180.0,
             "positions": [
                 "G"
             ],
             "rookie_season": 1947,
-            "shooting_hand": "Right"
+            "shooting_hand": "Right",
+            "weight": 0.0
         }
     },
     {
@@ -2954,9 +2959,9 @@
             "birth_place": "Chelyan, West Virginia",
             "college": "West Virginia University",
             "dob": "May 28, 1938",
-            "first_name": "College:",
-            "last_name": "West Virginia University",
-            "middle_name": "",
+            "first_name": "Jerry:",
+            "last_name": "West",
+            "middle_name": "Alan",
             "preferred_name": "Jerry"
         },
         "player": {
@@ -3465,7 +3470,10 @@
             "birth_place": "St. Louis, Missouri",
             "college": "University of Kansas",
             "dob": "November 16, 1946",
-            "preferred_name": "Jo"
+            "first_name": "Joseph",
+            "last_name": "White",
+            "middle_name": "Henry",
+            "preferred_name": "Jo Jo"
         },
         "player": {
             "aba": false,
@@ -5172,7 +5180,10 @@
             "birth_place": "Sorrento, Louisiana",
             "college": "Tulane University",
             "dob": "August 9, 1962",
-            "preferred_name": "Hot"
+            "first_name": "John",
+            "last_name": "Williams",
+            "middle_name": "",
+            "preferred_name": "Hot Rod"
         },
         "player": {
             "aba": false,
@@ -7426,11 +7437,13 @@
         "player": {
             "aba": false,
             "final_season": 1950,
+            "height": 178.0,
             "positions": [
                 "G"
             ],
             "rookie_season": 1950,
-            "shooting_hand": "Right"
+            "shooting_hand": "Right",
+            "weight": 0.0
         }
     },
     {

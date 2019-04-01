@@ -1608,11 +1608,13 @@
         "player": {
             "aba": false,
             "final_season": 1968,
+            "height": 198.0,
             "positions": [
                 "F"
             ],
             "rookie_season": 1968,
-            "shooting_hand": "Right"
+            "shooting_hand": "Right",
+            "weight": 0.0
         }
     },
     {
