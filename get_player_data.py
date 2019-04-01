@@ -8,26 +8,27 @@ django.setup()
 from stats.models import Location, Person, Player, Position, Season, PlayerPosition
 
 def add_player(player, person):
-    states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','U.S. Virgin Islands','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
     
-    # add location if it does not exist
-    city, state = person.pop('birth_place').split(", ")
-    if state not in states:
-        country = state
-        state = None
-    else:
-        country = 'USA'
-    location = { 'city': city, 'country': country, 'precision': 'city'}
-    if state:
-        location['state'] = state
-    if Location.objects.filter(**location).exists():
-        player_location = Location.objects.filter(**location)[0]
-    else:
-        player_location = Location(**location)
-        player_location.save()
+    if 'birth_place' in person:
+        states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','U.S. Virgin Islands','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
+        # add location if it does not exist
+        city, state = person.pop('birth_place').split(", ")
+        if state not in states:
+            country = state
+            state = None
+        else:
+            country = 'USA'
+        location = { 'city': city, 'country': country, 'precision': 'city'}
+        if state:
+            location['state'] = state
+        if Location.objects.filter(**location).exists():
+            player_location = Location.objects.filter(**location)[0]
+        else:
+            player_location = Location(**location)
+            player_location.save()
+        person['birthplace_id'] = player_location.id
     
     # save person to database
-    person['birthplace_id'] = player_location.id
     person['dob'] = get_datetime(person['dob'])
     if Person.objects.filter(**person).exists():
         person = Person.objects.filter(**person)[0]
@@ -41,9 +42,10 @@ def add_player(player, person):
     if player['aba'] == True:
         league_id = 2
     player['rookie_season_id'] = Season.objects.get(year=player.pop('rookie_season'), league_id=league_id).id
-    if player['aba'] == True and player['final_season'] > 1976:
-        league_id = 1
-    player['final_season_id'] = Season.objects.get(year=player.pop('final_season'), league_id=league_id).id
+    if 'final_season' in player:
+        if player['aba'] == True and player['final_season'] > 1976:
+            league_id = 1
+        player['final_season_id'] = Season.objects.get(year=player.pop('final_season'), league_id=league_id).id
     player.pop('aba')
     positions = player.pop('positions')
     if Player.objects.filter(**player).exists():

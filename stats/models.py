@@ -155,8 +155,8 @@ class Player(models.Model):
     weight = models.IntegerField()
     shooting_hand = models.CharField(max_length=5)
     rookie_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="rookie_season")
-    final_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="final_season")
-    image_url = models.CharField(max_length=128)
+    final_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="final_season", null=True)
+    image_url = models.CharField(max_length=128, null=True)
 
     def __str__(self):
         return self.id.__str__()

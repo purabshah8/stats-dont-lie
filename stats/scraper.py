@@ -155,11 +155,15 @@ def get_player_info(url):
         if 'Debut:' in info_arr:
             debut_info = " ".join(info_arr).split("&blacksquare")
             if len(debut_info) > 1:
-                debut_info[1] = debut_info[1].strip().split(" ")
-                player["rookie_season"] = int(debut_info[1][-1]) + 1
+                debut_info = debut_info[1].strip().split(" ")
+                debut_date = get_datetime(debut_info[-1].split(":")[-1])
             else:
-                player["rookie_season"] = int(info_arr[-1]) + 1
-        
+                debut_date = get_datetime(debut_info[-1].split(":")[-1])
+            rookie_year = debut_date.year + 1
+            if debut_date.month < 7:
+                rookie_year -= 1
+            player["rookie_season"] = rookie_year
+            
         if 'ABA' in info_arr:
             player['aba'] = True
     

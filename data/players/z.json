@@ -37,8 +37,8 @@
             "final_season": 1955,
             "height": 201.0,
             "positions": [
-                "SF",
                 "F",
+                "SF",
                 "PF"
             ],
             "rookie_season": 1953,
@@ -82,8 +82,8 @@
             "final_season": 1962,
             "height": 185.0,
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 1962,
             "shooting_hand": "Right",
@@ -107,7 +107,7 @@
                 "G",
                 "SG"
             ],
-            "rookie_season": 1973,
+            "rookie_season": 1972,
             "shooting_hand": "Right",
             "weight": 92.0
         }
@@ -194,8 +194,8 @@
             "final_season": 1980,
             "height": 203.0,
             "positions": [
-                "SF",
-                "F"
+                "F",
+                "SF"
             ],
             "rookie_season": 1980,
             "shooting_hand": "Right",
@@ -219,7 +219,7 @@
             "positions": [
                 "C"
             ],
-            "rookie_season": 1989,
+            "rookie_season": 1988,
             "shooting_hand": "Right",
             "weight": 104.0
         }
@@ -240,7 +240,7 @@
             "positions": [
                 "C"
             ],
-            "rookie_season": 2002,
+            "rookie_season": 2001,
             "shooting_hand": "Left",
             "weight": 115.0
         }
@@ -282,10 +282,10 @@
             "final_season": 2006,
             "height": 190.0,
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
-            "rookie_season": 2007,
+            "rookie_season": 2006,
             "shooting_hand": "Right",
             "weight": 88.0
         }
@@ -328,8 +328,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/zipsepa01.jpg",
             "positions": [
-                "SF",
-                "F"
+                "F",
+                "SF"
             ],
             "rookie_season": 2017,
             "shooting_hand": "Right",
@@ -393,8 +393,8 @@
             "final_season": 1971,
             "height": 185.0,
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 1971,
             "shooting_hand": "Right",
@@ -437,8 +437,8 @@
             "final_season": 1949,
             "height": 190.0,
             "positions": [
-                "G",
-                "F"
+                "F",
+                "G"
             ],
             "rookie_season": 1949,
             "shooting_hand": "Right",

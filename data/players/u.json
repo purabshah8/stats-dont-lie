@@ -15,10 +15,10 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ubileed01.jpg",
             "positions": [
-                "SF",
-                "F"
+                "F",
+                "SF"
             ],
-            "rookie_season": 2013,
+            "rookie_season": 2012,
             "shooting_hand": "Right",
             "weight": 92.0
         }
@@ -39,8 +39,8 @@
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/udohek01.jpg",
             "positions": [
                 "F",
-                "PF",
-                "C"
+                "C",
+                "PF"
             ],
             "rookie_season": 2011,
             "shooting_hand": "Right",
@@ -63,13 +63,13 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/udokaim01.jpg",
             "positions": [
-                "SF",
                 "G",
-                "F",
                 "SG",
+                "F",
+                "SF",
                 "PF"
             ],
-            "rookie_season": 2005,
+            "rookie_season": 2004,
             "shooting_hand": "Right",
             "weight": 97.0
         }
@@ -89,9 +89,9 @@
             "height": 190.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/udrihbe01.jpg",
             "positions": [
-                "PG",
+                "G",
                 "SG",
-                "G"
+                "PG"
             ],
             "rookie_season": 2005,
             "shooting_hand": "Left",
@@ -112,8 +112,8 @@
             "final_season": 2010,
             "height": 196.0,
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 2009,
             "shooting_hand": "Right",
@@ -135,8 +135,8 @@
             "height": 178.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ulisty01.jpg",
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 2017,
             "shooting_hand": "Right",
@@ -206,7 +206,7 @@
                 "G",
                 "SG"
             ],
-            "rookie_season": 1990,
+            "rookie_season": 1989,
             "shooting_hand": "Right",
             "weight": 81.0
         }
@@ -230,7 +230,7 @@
                 "F",
                 "PF"
             ],
-            "rookie_season": 2018,
+            "rookie_season": 2017,
             "shooting_hand": "Right",
             "weight": 100.0
         }
@@ -251,8 +251,8 @@
             "height": 190.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/uzohbe01.jpg",
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 2011,
             "shooting_hand": "Right",

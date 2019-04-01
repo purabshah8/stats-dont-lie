@@ -96,7 +96,7 @@ def create_tables():
                 preferred_name VARCHAR(32),
                 dob DATE NOT NULL,
                 college VARCHAR(64),
-                birthplace_id INTEGER NOT NULL
+                birthplace_id INTEGER
                     REFERENCES location(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE
             );
@@ -136,10 +136,10 @@ def create_tables():
                 rookie_season_id INTEGER NOT NULL
                     REFERENCES season(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE,
-                final_season_id INTEGER NOT NULL
+                final_season_id INTEGER
                     REFERENCES season(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE,
-                image_url VARCHAR(128) NOT NULL
+                image_url VARCHAR(128)
             );
         """,
         """

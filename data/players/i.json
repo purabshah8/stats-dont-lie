@@ -37,8 +37,8 @@
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ibakase01.jpg",
             "positions": [
                 "F",
-                "PF",
-                "C"
+                "C",
+                "PF"
             ],
             "rookie_season": 2010,
             "shooting_hand": "Right",
@@ -60,9 +60,9 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/iguodan01.jpg",
             "positions": [
+                "F",
                 "SF",
                 "G",
-                "F",
                 "SG"
             ],
             "rookie_season": 2005,
@@ -191,10 +191,10 @@
             "final_season": 1976,
             "height": 190.0,
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
-            "rookie_season": 1975,
+            "rookie_season": 1974,
             "shooting_hand": "Right",
             "weight": 81.0
         }
@@ -213,8 +213,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/inglejo01.jpg",
             "positions": [
-                "SF",
                 "F",
+                "SF",
                 "PF"
             ],
             "rookie_season": 2015,
@@ -237,8 +237,8 @@
             "height": 203.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/inglida01.jpg",
             "positions": [
-                "SF",
-                "F"
+                "F",
+                "SF"
             ],
             "rookie_season": 2016,
             "shooting_hand": "Right",
@@ -263,7 +263,7 @@
                 "G",
                 "SG"
             ],
-            "rookie_season": 2019,
+            "rookie_season": 2018,
             "shooting_hand": "Right",
             "weight": 86.0
         }
@@ -283,8 +283,8 @@
             "height": 206.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/ingrabr01.jpg",
             "positions": [
-                "SF",
-                "F"
+                "F",
+                "SF"
             ],
             "rookie_season": 2017,
             "shooting_hand": "Right",
@@ -308,7 +308,7 @@
                 "F",
                 "PF"
             ],
-            "rookie_season": 1959,
+            "rookie_season": 1958,
             "shooting_hand": "Right",
             "weight": 95.0
         }
@@ -374,8 +374,8 @@
             "final_season": 1976,
             "height": 198.0,
             "positions": [
-                "SF",
-                "F"
+                "F",
+                "SF"
             ],
             "rookie_season": 1971,
             "shooting_hand": "Right",
@@ -397,8 +397,8 @@
             "height": 190.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/irvinky01.jpg",
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 2012,
             "shooting_hand": "Right",
@@ -445,10 +445,10 @@
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/isselda01.jpg",
             "positions": [
                 "F",
-                "PF",
-                "C"
+                "C",
+                "PF"
             ],
-            "rookie_season": 1971,
+            "rookie_season": 1970,
             "shooting_hand": "Right",
             "weight": 106.0
         }
@@ -468,8 +468,8 @@
             "final_season": 1993,
             "height": 178.0,
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 1992,
             "shooting_hand": "Right",
@@ -492,9 +492,9 @@
             "height": 183.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/iversal01.jpg",
             "positions": [
-                "PG",
+                "G",
                 "SG",
-                "G"
+                "PG"
             ],
             "rookie_season": 1997,
             "shooting_hand": "Right",
@@ -516,8 +516,8 @@
             "final_season": 1969,
             "height": 183.0,
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 1969,
             "shooting_hand": "Right",
@@ -586,8 +586,8 @@
             "height": 201.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/iwundwe01.jpg",
             "positions": [
-                "SF",
-                "F"
+                "F",
+                "SF"
             ],
             "rookie_season": 2018,
             "shooting_hand": "Right",

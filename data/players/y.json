@@ -60,8 +60,8 @@
             "height": 196.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/yardlge01.jpg",
             "positions": [
-                "SF",
-                "F"
+                "F",
+                "SF"
             ],
             "rookie_season": 1954,
             "shooting_hand": "Right",
@@ -151,7 +151,7 @@
                 "F",
                 "PF"
             ],
-            "rookie_season": 1983,
+            "rookie_season": 1982,
             "shooting_hand": "Left",
             "weight": 99.0
         }
@@ -171,8 +171,8 @@
             "final_season": 1995,
             "height": 190.0,
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 1985,
             "shooting_hand": "Right",
@@ -219,8 +219,8 @@
             "height": 188.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/youngjo01.jpg",
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 2016,
             "shooting_hand": "Right",
@@ -241,10 +241,10 @@
             "final_season": 1999,
             "height": 201.0,
             "positions": [
-                "SF",
-                "F"
+                "F",
+                "SF"
             ],
-            "rookie_season": 2000,
+            "rookie_season": 1999,
             "shooting_hand": "Right",
             "weight": 96.0
         }
@@ -264,8 +264,8 @@
             "final_season": 1990,
             "height": 201.0,
             "positions": [
-                "SF",
-                "F"
+                "F",
+                "SF"
             ],
             "rookie_season": 1985,
             "shooting_hand": "Right",
@@ -313,7 +313,7 @@
                 "G",
                 "SG"
             ],
-            "rookie_season": 1988,
+            "rookie_season": 1987,
             "shooting_hand": "Right",
             "weight": 95.0
         }
@@ -334,9 +334,9 @@
             "height": 198.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/youngsa01.jpg",
             "positions": [
+                "F",
                 "SF",
                 "G",
-                "F",
                 "SG"
             ],
             "rookie_season": 2010,
@@ -404,8 +404,8 @@
             "height": 188.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/youngtr01.jpg",
             "positions": [
-                "PG",
-                "G"
+                "G",
+                "PG"
             ],
             "rookie_season": 2019,
             "shooting_hand": "Right",
