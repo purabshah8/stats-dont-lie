@@ -94,8 +94,8 @@ def create_tables():
                 first_name VARCHAR(32) NOT NULL,
                 middle_name VARCHAR(32),
                 preferred_name VARCHAR(32),
-                dob DATE NOT NULL,
-                college VARCHAR(64),
+                dob DATE,
+                college TEXT,
                 birthplace_id INTEGER
                     REFERENCES location(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE

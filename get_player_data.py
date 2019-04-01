@@ -29,7 +29,8 @@ def add_player(player, person):
         person['birthplace_id'] = player_location.id
     
     # save person to database
-    person['dob'] = get_datetime(person['dob'])
+    if 'dob' in person:
+        person['dob'] = get_datetime(person['dob'])
     if Person.objects.filter(**person).exists():
         person = Person.objects.filter(**person)[0]
     else:

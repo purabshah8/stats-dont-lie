@@ -174,6 +174,8 @@ def get_player_info(url):
     player_seasons = [season for season in player_seasons if season("a")]
     final_season = player_seasons[-1].get_text()
     final_season = int(final_season[0:2] + final_season[-2:])
+    if final_season == 1900:
+        final_season = 2000
     if final_season != 2019:
         player['final_season'] = final_season
     

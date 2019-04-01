@@ -7241,7 +7241,7 @@
         },
         "player": {
             "aba": false,
-            "final_season": 1900,
+            "final_season": 2000,
             "height": 188.0,
             "positions": [
                 "G",
@@ -9421,7 +9421,7 @@
         },
         "player": {
             "aba": false,
-            "final_season": 1900,
+            "final_season": 2000,
             "height": 185.0,
             "positions": [
                 "G",
@@ -9443,7 +9443,7 @@
         },
         "player": {
             "aba": false,
-            "final_season": 1900,
+            "final_season": 2000,
             "height": 231.0,
             "positions": [
                 "C"

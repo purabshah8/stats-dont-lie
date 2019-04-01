@@ -648,7 +648,7 @@
         },
         "player": {
             "aba": false,
-            "final_season": 1900,
+            "final_season": 2000,
             "height": 211.0,
             "positions": [
                 "F",
@@ -2426,7 +2426,7 @@
         },
         "player": {
             "aba": false,
-            "final_season": 1900,
+            "final_season": 2000,
             "height": 206.0,
             "positions": [
                 "F",
@@ -2942,7 +2942,7 @@
         },
         "player": {
             "aba": false,
-            "final_season": 1900,
+            "final_season": 2000,
             "height": 185.0,
             "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/johnske02.jpg",
             "positions": [
@@ -3885,7 +3885,7 @@
         },
         "player": {
             "aba": false,
-            "final_season": 1900,
+            "final_season": 2000,
             "height": 190.0,
             "positions": [
                 "G",
@@ -5067,7 +5067,7 @@
         },
         "player": {
             "aba": false,
-            "final_season": 1900,
+            "final_season": 2000,
             "height": 193.0,
             "positions": [
                 "G",

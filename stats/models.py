@@ -113,8 +113,8 @@ class Person(models.Model):
     first_name = models.CharField(max_length=32)
     middle_name = models.CharField(max_length=32, blank=True, null=True)
     preferred_name = models.CharField(max_length=32, blank=True, null=True)
-    dob = models.DateField()
-    college = models.CharField(max_length=64, blank=True, null=True)
+    dob = models.DateField(blank=True, null=True)
+    college = models.TextField(blank=True, null=True)
     birthplace = models.ForeignKey(Location, models.DO_NOTHING)
 
     def __str__(self):
