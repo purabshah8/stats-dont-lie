@@ -1,6 +1,7 @@
-import os, sys, django, psycopg2, pytz
+import os, sys, django, psycopg2, pytz, csv
+from dateutil.parser import parse
 from util import get_datetime
-from stats.scraper import get_season_dates
+from scraper import get_season_dates
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
 django.setup()
@@ -126,21 +127,28 @@ teams = [
 ]
 
 seasons = []
-for yr in range(1947, 2020):
-    i = yr - 1946
-    season_start, playoff_start = get_season_dates(yr)
-    season_info = (i, 1, yr, season_start, playoff_start)
-    seasons.append(season_info)
+with open('data/season_info.csv') as f:
+    csv_reader = csv.reader(f, delimiter='|')
+    for row in csv_reader:
+        row[-1] = parse(row[-1])
+        row[-2] = parse(row[-2])
+        seasons.append(tuple(row))
 
-start_dates = ["October 13, 1967", "October 18, 1968", "October 17, 1969", "October 14, 1970", "October 13, 1971", "October 12, 1972", "October 10, 1973", "October 18, 1974", "October 24, 1975"]
-playoff_dates = ["March 23, 1968", "April 5, 1969", "April 17, 1970", "April 1, 1971", "March 31, 1972", "March 30, 1973", "March 29, 1974", "April 4, 1975", "April 8, 1976"]
+# for yr in range(1947, 2020):
+#     i = yr - 1946
+#     season_start, playoff_start = get_season_dates(yr)
+#     season_info = (i, 1, yr, season_start, playoff_start)
+#     seasons.append(season_info)
 
-highest_id = seasons[-1][0]+1
-for i in range(len(playoff_dates)):
-    season_start = get_datetime(start_dates[i])
-    playoff_start = get_datetime(playoff_dates[i])
-    aba_season_info = (highest_id + i, 2, 1968 + i, season_start, playoff_start)
-    seasons.append(aba_season_info)
+# start_dates = ["October 13, 1967", "October 18, 1968", "October 17, 1969", "October 14, 1970", "October 13, 1971", "October 12, 1972", "October 10, 1973", "October 18, 1974", "October 24, 1975"]
+# playoff_dates = ["March 23, 1968", "April 5, 1969", "April 17, 1970", "April 1, 1971", "March 31, 1972", "March 30, 1973", "March 29, 1974", "April 4, 1975", "April 8, 1976"]
+
+# highest_id = seasons[-1][0]+1
+# for i in range(len(playoff_dates)):
+#     season_start = get_datetime(start_dates[i])
+#     playoff_start = get_datetime(playoff_dates[i])
+#     aba_season_info = (highest_id + i, 2, 1968 + i, season_start, playoff_start)
+#     seasons.append(aba_season_info)
 
 positions = [
     (1, 'Point Guard', 'PG'),
@@ -196,6 +204,6 @@ def insert(table, values):
 tables = ["league", "conference", "division", "location", "arena", "team", "season", "position", "team_season"]
 seed_data = [leagues, conferences, divisions, locations, arenas, teams, seasons, positions, team_seasons]
 
-# if __name__ == '__main__':
-    # for i in range(len(seed_data)):
-    #     insert(tables[i], seed_data[i])
+if __name__ == '__main__':
+    for i in range(len(seed_data)):
+        insert(tables[i], seed_data[i])

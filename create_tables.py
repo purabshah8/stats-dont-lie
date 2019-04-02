@@ -1,17 +1,16 @@
 import psycopg2
 import sys
 
-
 def create_tables():
     commands = [
-        # """
-        #     DROP TABLE IF EXISTS 
-        #         league, conference, division, location, arena, 
-        #         team, season, person, team_employee, referee, 
-        #         player, position, player_position, team_season, 
-        #         player_team_season, game, game_period, 
-        #         statline, advanced_statline,player_statline;
-        # """,
+        """
+            DROP TABLE IF EXISTS 
+                league, conference, division, location, arena, 
+                team, season, person, team_employee, referee, 
+                player, position, player_position, team_season, 
+                player_team_season, game, game_period, 
+                statline, advanced_statline, player_statline;
+        """,
         """ 
             CREATE TABLE league(
                 id SERIAL PRIMARY KEY,

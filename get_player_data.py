@@ -1,6 +1,6 @@
 import os, django, json
 from util import get_datetime, update_auto_increments
-from stats.scraper import get_player_urls, get_player_info
+from scraper import get_player_urls, get_player_info
 from django.core.exceptions import ObjectDoesNotExist
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
@@ -9,7 +9,6 @@ django.setup()
 from stats.models import Location, Person, Player, Position, Season, PlayerPosition
 
 def add_player(player, person):
-    
     if 'birth_place' in person:
         states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','U.S. Virgin Islands','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
         # add location if it does not exist

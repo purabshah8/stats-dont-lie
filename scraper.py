@@ -1,4 +1,4 @@
-import requests, bs4, re, pytz
+import requests, bs4, re, pytz, csv
 from util import get_datetime
 
 def get_box_score_urls(season="2019"):
@@ -209,3 +209,19 @@ def get_season_dates(year):
     else:
         response.raise_for_status()
     return [season_start, playoff_start]
+
+def save_season_info():
+    with open('data/season_info.csv', mode='w') as file:
+        writer = csv.writer(file, delimiter='|', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        for year in range(1947, 2020):
+            i = year - 1946
+            season_start, playoff_start = get_season_dates(year)
+            season_info = [i, 1, year, season_start, playoff_start]
+            writer.writerow(season_info)
+        start_dates = ["October 13, 1967", "October 18, 1968", "October 17, 1969", "October 14, 1970", "October 13, 1971", "October 12, 1972", "October 10, 1973", "October 18, 1974", "October 24, 1975"]
+        playoff_dates = ["March 23, 1968", "April 5, 1969", "April 17, 1970", "April 1, 1971", "March 31, 1972", "March 30, 1973", "March 29, 1974", "April 4, 1975", "April 8, 1976"]
+        for year in range(1968, 1977):
+            j = year - 1968
+            season_info = [i, 2, year, get_datetime(start_dates[j]), get_datetime(playoff_dates[j])]
+            writer.writerow(season_info)
+            i += 1
