@@ -55,6 +55,7 @@ locations = [
     (27, "address", "1901 West Madison Street", "Chicago", "IL", "USA", 60612),
     (28, "address", "301 South Temple", "Salt Lake City", "UT", "USA", 84101),
     (29, "address", "3601 South Broad Street", "Philadelphia", "PA", "USA", 19148),
+    (30, "address", "305 Harrison Street", "Seattle", "WA", "USA", 98109)
 ]
 
 arenas = [
@@ -87,39 +88,41 @@ arenas = [
     (27, "United Center", 27, 20917, 1995),
     (28, "Vivint Smart Home Arena", 28, 18306, 1992),
     (29, "Wells Fargo Center", 29, 20478, 1997), # 82 => 29
+    (30, "Key Arena", 30, 17459, 1962)
 ]
 
 teams = [
-    (1, 1, "Celtics", "Boston", 25, 1947, "BOS"),
-    (2, 1, "Nets", "Brooklyn", 6, 1968, "BKN"),
-    (3, 1, "76ers", "Philadelphia", 29, 1947, "PHI"),
-    (4, 1, "Knicks", "New York", 13, 1947, "NYK"),
-    (5, 1, "Raptors", "Toronto", 18, 1996, "TOR"),
-    (6, 2, "Bulls", "Chicago", 27, 1967, "CHI"),
-    (7, 2, "Cavaliers", "Cleveland", 17, 1971, "CLE"),
-    (8, 2, "Pistons", "Detroit", 12, 1942, "DET"),
-    (9, 2, "Pacers", "Indiana", 5, 1968, "IND"),
-    (10, 2, "Bucks", "Milwaukee", 10, 1969, "MIL"),
-    (11, 3, "Hawks", "Atlanta", 22, 1947, "ATL"),
-    (12, 3, "Hornets", "Charlotte", 20, 1989, "CHA"),
-    (13, 3, "Heat", "Miami", 1, 1989, "MIA"),
-    (14, 3, "Magic", "Orlando", 3, 1990, "ORL"),
-    (15, 3, "Wizards", "Washington", 7, 1962, "WAS"),
-    (16, 4, "Mavericks", "Dallas", 2, 1981, "DAL"),
-    (17, 4, "Rockets", "Houston", 26, 1968, "HOU"),
-    (18, 4, "Grizzlies", "Memphis", 9, 1996, "MEM"),
-    (19, 4, "Pelicans", "New Orleans", 19, 2003, "NOP"),
-    (20, 4, "Spurs", "San Antonio", 4, 1968, "SAS"),
-    (21, 5, "Nuggets", "Denver", 16, 1968, "DEN"),
-    (22, 5, "Timberwolves", "Minnesota", 24, 1990, "MIN"),
-    (23, 5, "Thunder", "Oklahoma City", 8, 2009, "OKC"),
-    (24, 5, "Trail Blazers", "Portland", 14, 1971, "POR"),
-    (25, 5, "Jazz", "Utah", 28, 1975, "UTA"),
-    (26, 6, "Warriors", "Golden State", 15, 1947, "GSW"),
-    (27, 6, "Clippers", "Los Angeles", 21, 1971, "LAC"),
-    (28, 6, "Lakers", "Los Angeles", 21, 1948, "LAL"),
-    (29, 6, "Suns", "Phoenix", 23, 1969, "PHX"),
-    (30, 6, "Kings", "Sacramento", 11, 1924, "SAC"),
+    (1, 1, "Celtics", "Boston", 25, 1947, None, "BOS"),
+    (2, 1, "Nets", "Brooklyn", 6, 1968, None, "BKN"),
+    (3, 1, "76ers", "Philadelphia", 29, 1947, None, "PHI"),
+    (4, 1, "Knicks", "New York", 13, 1947, None, "NYK"),
+    (5, 1, "Raptors", "Toronto", 18, 1996, None, "TOR"),
+    (6, 2, "Bulls", "Chicago", 27, 1967, None, "CHI"),
+    (7, 2, "Cavaliers", "Cleveland", 17, 1971, None, "CLE"),
+    (8, 2, "Pistons", "Detroit", 12, 1942, None, "DET"),
+    (9, 2, "Pacers", "Indiana", 5, 1968, None, "IND"),
+    (10, 2, "Bucks", "Milwaukee", 10, 1969, None, "MIL"),
+    (11, 3, "Hawks", "Atlanta", 22, 1947, None, "ATL"),
+    (12, 3, "Hornets", "Charlotte", 20, 1989, None, "CHA"),
+    (13, 3, "Heat", "Miami", 1, 1989, None, "MIA"),
+    (14, 3, "Magic", "Orlando", 3, 1990, None, "ORL"),
+    (15, 3, "Wizards", "Washington", 7, 1962, None, "WAS"),
+    (16, 4, "Mavericks", "Dallas", 2, 1981, None, "DAL"),
+    (17, 4, "Rockets", "Houston", 26, 1968, None, "HOU"),
+    (18, 4, "Grizzlies", "Memphis", 9, 1996, None, "MEM"),
+    (19, 4, "Pelicans", "New Orleans", 19, 2003, None, "NOP"),
+    (20, 4, "Spurs", "San Antonio", 4, 1968, None, "SAS"),
+    (21, 5, "Nuggets", "Denver", 16, 1968, None, "DEN"),
+    (22, 5, "Timberwolves", "Minnesota", 24, 1990, None, "MIN"),
+    (23, 5, "Thunder", "Oklahoma City", 8, 2009, None, "OKC"),
+    (24, 5, "Trail Blazers", "Portland", 14, 1971, None, "POR"),
+    (25, 5, "Jazz", "Utah", 28, 1975, None, "UTA"),
+    (26, 6, "Warriors", "Golden State", 15, 1947, None, "GSW"),
+    (27, 6, "Clippers", "Los Angeles", 21, 1971, None, "LAC"),
+    (28, 6, "Lakers", "Los Angeles", 21, 1948, None, "LAL"),
+    (29, 6, "Suns", "Phoenix", 23, 1969, None, "PHX"),
+    (30, 6, "Kings", "Sacramento", 11, 1924, None, "SAC"),
+    (31, 6, "Supersonics", "Seattle", 30, 1967, 2008,"SEA")
 ]
 
 seasons = []
@@ -149,6 +152,24 @@ positions = [
     (7, 'Forward', 'F'),
 ]
 
+aba_teams = ["Nets", "Spurs", "Pacers", "Nuggets"]
+team_seasons = []
+i = 1
+for season in seasons:
+    year = season[2]
+    league_id = season[1]
+    if league_id == 1 and year < 1977:
+        active_teams = [team for team in teams if team[5] <= year and team[2] not in aba_teams]
+    elif league_id == 2 and year < 1977:
+        active_teams = [team for team in teams if team[2] in aba_teams]
+    else:
+        active_teams = [team for team in teams if team[5] <= year]
+    
+    for team in active_teams:
+        team_season = (i, team[0], season[0])
+        team_seasons.append(team_season)
+        i += 1
+
 
 def insert(table, values):
     connection = None
@@ -172,8 +193,9 @@ def insert(table, values):
         if connection:
             connection.close()
 
-tables = ["league", "conference", "division", "location", "arena", "team", "season", "position"]
+tables = ["league", "conference", "division", "location", "arena", "team", "season", "position", "team_season"]
+seed_data = [leagues, conferences, divisions, locations, arenas, teams, seasons, positions, team_seasons]
 
-seed_data = [leagues, conferences, divisions, locations, arenas, teams, seasons, positions]
-for i in range(len(seed_data)):
-    insert(tables[i], seed_data[i])
+# if __name__ == '__main__':
+    # for i in range(len(seed_data)):
+    #     insert(tables[i], seed_data[i])

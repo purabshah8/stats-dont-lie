@@ -4,13 +4,14 @@ import sys
 
 def create_tables():
     commands = [
-        """
-            DROP TABLE IF EXISTS 
-                league, conference, division, 
-                location, arena, team, season, 
-                person, team_employee, referee,
-                player, position, player_position;
-        """,
+        # """
+        #     DROP TABLE IF EXISTS 
+        #         league, conference, division, location, arena, 
+        #         team, season, person, team_employee, referee, 
+        #         player, position, player_position, team_season, 
+        #         player_team_season, game, game_period, 
+        #         statline, advanced_statline,player_statline;
+        # """,
         """ 
             CREATE TABLE league(
                 id SERIAL PRIMARY KEY,
@@ -73,6 +74,7 @@ def create_tables():
                     REFERENCES arena(id) 
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 year_founded INTEGER NOT NULL,
+                year_defunct INTEGER,
                 abbreviation VARCHAR(8) NOT NULL
             );
         """,
@@ -159,7 +161,131 @@ def create_tables():
                     REFERENCES position(id)
                     ON DELETE CASCADE ON UPDATE CASCADE
             );
-        """
+        """,
+        """ 
+            CREATE TABLE team_season(
+                id SERIAL PRIMARY KEY,
+                team_id INTEGER NOT NULL
+                    REFERENCES team(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                season_id INTEGER NOT NULL
+                    REFERENCES season(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE
+            );
+        """,
+        """ 
+            CREATE TABLE player_team_season(
+                id SERIAL PRIMARY KEY,
+                player_id INTEGER NOT NULL
+                    REFERENCES player(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                team_season_id INTEGER NOT NULL
+                    REFERENCES team_season(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE
+            );
+        """,
+        """ 
+            CREATE TABLE game(
+                id VARCHAR(16) PRIMARY KEY,
+                home_id INTEGER NOT NULL
+                    REFERENCES team(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                away_id INTEGER NOT NULL
+                    REFERENCES team(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                home_score INTEGER NOT NULL,
+                away_score INTEGER NOT NULL,
+                winner_id INTEGER NOT NULL
+                    REFERENCES team(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                ref_one_id INTEGER
+                    REFERENCES referee(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                ref_two_id INTEGER
+                    REFERENCES referee(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                ref_three_id INTEGER
+                    REFERENCES referee(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                tipoff TIMESTAMP,
+                attendance INTEGER,
+                game_length INTEGER,
+            );
+        """,
+        """ 
+            CREATE TABLE game_period(
+                id SERIAL PRIMARY KEY,
+                game_id INTEGER NOT NULL
+                    REFERENCES game(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                number INTEGER NOT NULL,
+                home_score INTEGER NOT NULL,
+                away_score INTEGER NOT NULL
+            );
+        """,
+        """ 
+            CREATE TABLE statline(
+                id SERIAL PRIMARY KEY,
+                game_id INTEGER NOT NULL
+                    REFERENCES game(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                team_id INTEGER NOT NULL
+                    REFERENCES team(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                mp INTEGER,
+                fg INTEGER NOT NULL,
+                fga INTEGER,
+                fg_pct FLOAT,
+                tp INTEGER,
+                tpa INTEGER,
+                tp_pct FLOAT,
+                ft INTEGER,
+                fta INTEGER,
+                ft_pct FLOAT,
+                orb INTEGER,
+                drb INTEGER,
+                trb INTEGER,
+                ast INTEGER,
+                stl INTEGER,
+                blk INTEGER,
+                tov INTEGER,
+                pf INTEGER,
+                pts INTEGER NOT NULL,
+            );
+        """,
+        """ 
+            CREATE TABLE advanced_statline(
+                id INTEGER NOT NULL PRIMARY KEY
+                    REFERENCES statline(id)
+                    ON DELETE RESTRICT ON UPDATE CASCADE,
+                ts FLOAT,
+                efg FLOAT,
+                tpar FLOAT,
+                ftr FLOAT,
+                orb_pct FLOAT NOT NULL,
+                drb_pct FLOAT NOT NULL,
+                trb_pct FLOAT NOT NULL,
+                ast_pct FLOAT NOT NULL,
+                stl_pct FLOAT NOT NULL,
+                blk_pct FLOAT NOT NULL,
+                tov_pct FLOAT,
+                usg_rate FLOAT NOT NULL,
+                ortg INTEGER NOT NULL,
+                drtg INTEGER NOT NULL,
+            );
+        """,        
+        """ 
+            CREATE TABLE player_statline(
+                id INTEGER NOT NULL PRIMARY KEY
+                    REFERENCES statline(id)
+                    ON DELETE RESTRICT ON UPDATE CASCADE,
+                player_id INTEGER NOT NULL
+                    REFERENCES player(id)
+                    ON DELETE CASCADE ON UPDATE CASCADE,
+                started BOOL,
+                plus_minus integer NOT NULL
+            );
+        """,
     ]
 
     connection = None
