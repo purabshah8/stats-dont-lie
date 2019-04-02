@@ -208,7 +208,7 @@ def create_tables():
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 tipoff TIMESTAMP,
                 attendance INTEGER,
-                game_length INTEGER,
+                duration INTEGER,
             );
         """,
         """ 

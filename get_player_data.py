@@ -118,8 +118,8 @@ def delete_player(info):
     except ObjectDoesNotExist:
         print("No matching player in database.")
 
-# if __name__ == '__main__':
-#     update_auto_increments()
-#     letters = "cdefghijklmnopqrstuvwyz"
-#     for letter in letters:
-#         load_players(letter)
+if __name__ == '__main__':
+    update_auto_increments()
+    letters = "abcdefghijklmnopqrstuvwyz"
+    for letter in letters:
+        load_players(letter)
