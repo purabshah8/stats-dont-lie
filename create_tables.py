@@ -208,13 +208,13 @@ def create_tables():
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 tipoff TIMESTAMP,
                 attendance INTEGER,
-                duration INTEGER,
+                duration INTEGER
             );
         """,
         """ 
             CREATE TABLE game_period(
                 id SERIAL PRIMARY KEY,
-                game_id INTEGER NOT NULL
+                game_id VARCHAR(16) NOT NULL
                     REFERENCES game(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 number INTEGER NOT NULL,
@@ -225,7 +225,7 @@ def create_tables():
         """ 
             CREATE TABLE statline(
                 id SERIAL PRIMARY KEY,
-                game_id INTEGER NOT NULL
+                game_id VARCHAR(16) NOT NULL
                     REFERENCES game(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 team_id INTEGER NOT NULL
@@ -249,7 +249,7 @@ def create_tables():
                 blk INTEGER,
                 tov INTEGER,
                 pf INTEGER,
-                pts INTEGER NOT NULL,
+                pts INTEGER NOT NULL
             );
         """,
         """ 
@@ -270,7 +270,7 @@ def create_tables():
                 tov_pct FLOAT,
                 usg_rate FLOAT NOT NULL,
                 ortg INTEGER NOT NULL,
-                drtg INTEGER NOT NULL,
+                drtg INTEGER NOT NULL
             );
         """,        
         """ 
@@ -291,7 +291,7 @@ def create_tables():
     try:
         connection = psycopg2.connect("dbname=nba user=purab password=godricshallows")
         cursor = connection.cursor()
-        tables = ["league", "conference", "division", "location", "arena", "team", "season", "person", "team_employee", "referee", "player", "position", "player_position"]
+        tables = ["league", "conference", "division", "location", "arena", "team", "season", "person", "team_employee", "referee", "player", "position", "player_position", "team_season", "player_team_season", "game", "game_period", "statline", "advanced_statline", "player_statline"]
         for i, command in enumerate(commands):
             cursor.execute(command)
             if i == 0:

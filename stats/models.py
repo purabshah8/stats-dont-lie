@@ -94,6 +94,11 @@ class Team(models.Model):
     class Meta:
         db_table = 'team'
 
+    @classmethod
+    def find(cls,team_name):
+        city, nickname = team_name.split(" ")
+        return cls.objects.get(city=city, name=nickname)
+
 
 class Season(models.Model):
     league = models.ForeignKey(League, models.DO_NOTHING)
@@ -121,6 +126,11 @@ class Person(models.Model):
         return self.preferred_name + " " + self.last_name
     class Meta:
         db_table = 'person'
+
+    @classmethod
+    def find(cls, full_name):
+        preferred_name, last_name = full_name.split(" ")
+        return cls.objects.get(preferred_name=preferred_name, last_name=last_name)
 
 
 class Referee(models.Model):
@@ -183,3 +193,104 @@ class PlayerPosition(models.Model):
 
     class Meta:
         db_table = 'player_position'
+
+
+class TeamSeason(models.Model):
+    team = models.ForeignKey(Team, models.DO_NOTHING)
+    season = models.ForeignKey(Season, models.DO_NOTHING)
+
+    class Meta:
+        db_table = 'team_season'
+
+
+class PlayerTeamSeason(models.Model):
+    player = models.ForeignKey(Player, models.DO_NOTHING)
+    team_season = models.ForeignKey('TeamSeason', models.DO_NOTHING)
+
+    class Meta:
+        db_table = 'player_team_season'
+
+class Game(models.Model):
+    id = models.CharField(primary_key=True, max_length=16)
+    home = models.ForeignKey('Team', models.DO_NOTHING, related_name="home_team")
+    away = models.ForeignKey('Team', models.DO_NOTHING, related_name="away_team")
+    home_score = models.IntegerField()
+    away_score = models.IntegerField()
+    winner = models.ForeignKey('Team', models.DO_NOTHING, related_name="winner")
+    ref_one = models.ForeignKey('Referee', models.DO_NOTHING, blank=True, null=True, related_name="first_ref")
+    ref_two = models.ForeignKey('Referee', models.DO_NOTHING, blank=True, null=True, related_name="second_ref")
+    ref_three = models.ForeignKey('Referee', models.DO_NOTHING, blank=True, null=True, related_name="third_ref")
+    tipoff = models.DateTimeField(blank=True, null=True)
+    attendance = models.IntegerField(blank=True, null=True)
+    duration = models.IntegerField(blank=True, null=True)
+    
+    class Meta:
+        db_table = 'game'
+
+
+class GamePeriod(models.Model):
+    game = models.ForeignKey(Game, models.DO_NOTHING)
+    number = models.IntegerField()
+    home_score = models.IntegerField()
+    away_score = models.IntegerField()
+
+    class Meta:
+        db_table = 'game_period'
+
+
+class Statline(models.Model):
+    game = models.ForeignKey(Game, models.DO_NOTHING)
+    team = models.ForeignKey('Team', models.DO_NOTHING)
+    mp = models.IntegerField(blank=True, null=True)
+    fg = models.IntegerField()
+    fga = models.IntegerField(blank=True, null=True)
+    fg_pct = models.FloatField(blank=True, null=True)
+    tp = models.IntegerField(blank=True, null=True)
+    tpa = models.IntegerField(blank=True, null=True)
+    tp_pct = models.FloatField(blank=True, null=True)
+    ft = models.IntegerField(blank=True, null=True)
+    fta = models.IntegerField(blank=True, null=True)
+    ft_pct = models.FloatField(blank=True, null=True)
+    orb = models.IntegerField(blank=True, null=True)
+    drb = models.IntegerField(blank=True, null=True)
+    trb = models.IntegerField(blank=True, null=True)
+    ast = models.IntegerField(blank=True, null=True)
+    stl = models.IntegerField(blank=True, null=True)
+    blk = models.IntegerField(blank=True, null=True)
+    tov = models.IntegerField(blank=True, null=True)
+    pf = models.IntegerField(blank=True, null=True)
+    pts = models.IntegerField()
+
+    class Meta:
+        db_table = 'statline'
+
+
+class AdvancedStatline(models.Model):
+    id = models.OneToOneField('Statline', models.DO_NOTHING, db_column='id', primary_key=True)
+    ts = models.FloatField(blank=True, null=True)
+    efg = models.FloatField(blank=True, null=True)
+    tpar = models.FloatField(blank=True, null=True)
+    ftr = models.FloatField(blank=True, null=True)
+    orb_pct = models.FloatField()
+    drb_pct = models.FloatField()
+    trb_pct = models.FloatField()
+    ast_pct = models.FloatField()
+    stl_pct = models.FloatField()
+    blk_pct = models.FloatField()
+    tov_pct = models.FloatField(blank=True, null=True)
+    usg_rate = models.FloatField()
+    ortg = models.IntegerField()
+    drtg = models.IntegerField()
+
+    class Meta:
+        db_table = 'advanced_statline'
+
+
+class PlayerStatline(models.Model):
+    id = models.OneToOneField('Statline', models.DO_NOTHING, db_column='id', primary_key=True)
+    player = models.ForeignKey(Player, models.DO_NOTHING)
+    started = models.BooleanField(blank=True, null=True)
+    plus_minus = models.IntegerField()
+
+    class Meta:
+        db_table = 'player_statline'

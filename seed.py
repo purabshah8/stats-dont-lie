@@ -1,4 +1,4 @@
-import os, sys, django, psycopg2, pytz, csv
+import os, sys, django, psycopg2, pytz, csv, datetime
 from dateutil.parser import parse
 from util import get_datetime
 from scraper import get_season_dates
@@ -132,6 +132,7 @@ with open('data/season_info.csv') as f:
     for row in csv_reader:
         row[-1] = parse(row[-1])
         row[-2] = parse(row[-2])
+        row = [int(col) for col in row if not isinstance(col, datetime.datetime)]
         seasons.append(tuple(row))
 
 # for yr in range(1947, 2020):
