@@ -1,4 +1,5 @@
 from django.db import models
+from util import aba_teams
 
 class League(models.Model):
     name = models.CharField(max_length=8)
@@ -91,14 +92,18 @@ class Team(models.Model):
 
     def __str__(self):
         return self.city + " " + self.name
+
     class Meta:
         db_table = 'team'
 
+    def get_season(self, year):
+        league_id = 2 if self.name in aba_teams and year < 1977 else 1
+        return TeamSeason(team_id=self.id, season_id=Season.objects.get(year=year, league_id=league_id).id)
+    
     @classmethod
     def find(cls,team_name):
         city, nickname = team_name.split(" ")
         return cls.objects.get(city=city, name=nickname)
-
 
 class Season(models.Model):
     league = models.ForeignKey(League, models.DO_NOTHING)
@@ -199,6 +204,8 @@ class TeamSeason(models.Model):
     team = models.ForeignKey(Team, models.DO_NOTHING)
     season = models.ForeignKey(Season, models.DO_NOTHING)
 
+    def __str__(self):
+        return self.team.name + " " + str(self.season.year)
     class Meta:
         db_table = 'team_season'
 
@@ -224,6 +231,8 @@ class Game(models.Model):
     attendance = models.IntegerField(blank=True, null=True)
     duration = models.IntegerField(blank=True, null=True)
     
+    def __str__(self):
+        self.id
     class Meta:
         db_table = 'game'
 

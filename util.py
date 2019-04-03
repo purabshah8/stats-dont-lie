@@ -2,6 +2,8 @@ import sys, django, psycopg2, pytz
 from dateutil.parser import parse
 from django.utils.six import StringIO
 
+aba_teams = ["Nets", "Spurs", "Pacers", "Nuggets"]
+
 
 def get_datetime(datetime_str):
     est = pytz.timezone('America/New_York')

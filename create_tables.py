@@ -257,20 +257,20 @@ def create_tables():
                 id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES statline(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE,
-                ts FLOAT,
-                efg FLOAT,
-                tpar FLOAT,
-                ftr FLOAT,
-                orb_pct FLOAT NOT NULL,
-                drb_pct FLOAT NOT NULL,
-                trb_pct FLOAT NOT NULL,
-                ast_pct FLOAT NOT NULL,
-                stl_pct FLOAT NOT NULL,
-                blk_pct FLOAT NOT NULL,
-                tov_pct FLOAT,
-                usg_rate FLOAT NOT NULL,
-                ortg INTEGER NOT NULL,
-                drtg INTEGER NOT NULL
+                'ts', FLOAT,
+                'efg', FLOAT,
+                'tpar', FLOAT,
+                'ftr', FLOAT,
+                'orb_pct', FLOAT NOT NULL,
+                'drb_pct', FLOAT NOT NULL,
+                'trb_pct', FLOAT NOT NULL,
+                'ast_pct', FLOAT NOT NULL,
+                'stl_pct', FLOAT NOT NULL,
+                'blk_pct', FLOAT NOT NULL,
+                'tov_pct', FLOAT,
+                'usg_rate', FLOAT NOT NULL,
+                'ortg', INTEGER NOT NULL,
+                'drtg', INTEGER NOT NULL
             );
         """,        
         """ 
