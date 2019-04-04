@@ -26,21 +26,23 @@ def get_box_score_info(url):
             'home_stats': {}, 
             'away_stats': {} 
             } 
-        
+
         teams = box_soup.find("h1").get_text().split(' at ')
         teams[1] = teams[1].split(" Box Score, ")[0]
         info['away_team'], info['home_team'] = teams
-        
+
         tables = box_soup("tbody")
         footers = box_soup("tfoot")
-        for (i, table) in enumerate(tables):
+        for i, table in enumerate(tables):
             team_data = {}
     
             table = [row for row in table.children if isinstance(row, bs4.element.Tag) and len(row.select("a")) > 0]
-            for row in table:
+            for j, row in enumerate(table):
                 stats = row.select("td")
                 if len(stats) > 1:
                     data_row = [str_to_data(stat.text) for stat in stats if stat.text != '']
+                started = True if j < 5 else False
+                data_row.append(started)
                 name = row.select("a")[0].text
                 team_data[name] = data_row
             
@@ -117,7 +119,7 @@ def get_player_info(url):
     """Fetch a player's information from bbref and return a dict of dicts containing personal and player information"""
     player_response = requests.get("https://www.basketball-reference.com" + url)
     player_soup = bs4.BeautifulSoup(player_response.text, 'html.parser')
-    
+
     person = {}
     player = {}
     
@@ -267,6 +269,55 @@ def save_season_info():
             season_info = [i, 2, year, get_datetime(start_dates[j]), get_datetime(playoff_dates[j])]
             writer.writerow(season_info)
             i += 1
+
+def get_ref_urls():
+    response = requests.get("https://www.basketball-reference.com/referees/")
+    ref_soup = bs4.BeautifulSoup(response.text, 'html.parser')
+    links = ref_soup.find(id="all_referees")("a")
+    links = [l for l in links if 'referees'in l['href']]
+    return links
+
+def get_ref_info(url):
+    ref_response = requests.get("https://www.basketball-reference.com" + url)
+    ref_soup = bs4.BeautifulSoup(ref_response.text, 'html.parser')
+
+    person = {}
+    referee = {}
+
+    ref_info = ref_soup.find(attrs={"itemtype": "https://schema.org/Person"})
+    referee['jersey_number'] = ref_info("svg")
+    name = ref_info.find("h1").next_sibling.next_sibling.get_text().split(" ")
+    ref_info = ref_info("p")
+    person['preferred_name'] = name[0]
+
+    last_name = name[1]
+
+    raw_info = []
+    for info in ref_info:
+        raw_info.append(info.get_text().replace("\n", " "))
+    ignore = ['Pronunciation', 'High School', 'Hall of Fame', 'Draft', 'Experience', 'Relatives', 'Died', 'Recruiting', '(born']
+
+    for info in raw_info:
+        if any(string in info for string in ignore):
+            continue
+        # clean up info
+        info = info.replace("\xa0", " ").split(" ")
+        info_arr = [x for x in info if x]
+
+        if last_name in info_arr:
+            full_name = " ".join(info_arr).split('▪')[0].split(" ")
+            last_name_idx = full_name.index(last_name)
+            person["last_name"] = " ".join(full_name[last_name_idx:]).strip().strip("I").strip().replace("Jr.", "").strip()
+            person["middle_name"] = " ".join(full_name[1:last_name_idx]).strip()
+            person["first_name"] = full_name[0]
+            
+            # players with 3 names (and James Michael McAdoo)
+            special_names = ["Jo English", "Rod Hundley", "Carlos Navarro", "John Ramos", "Ray Richardson", "Michael Ray McAdoo", "Vander Velden", "Rod Williams"]
+            if person["last_name"] in special_names or re.search(r"^[vV][ao]n ", person["last_name"]):
+                names = person["last_name"].split(" ")
+                person["middle_name"] = " ".join(names[0:-1])
+                person["preferred_name"] = person["preferred_name"] + " " + names[0]
+                person["last_name"] = names[-1]
 
 def str_to_data(el):
     if '.' in el:
