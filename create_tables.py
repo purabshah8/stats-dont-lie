@@ -123,7 +123,10 @@ def create_tables():
                 jersey_number INTEGER NOT NULL,
                 rookie_season_id INTEGER NOT NULL
                     REFERENCES season(id)
-                    ON DELETE RESTRICT ON UPDATE CASCADE
+                    ON DELETE RESTRICT ON UPDATE CASCADE,
+                final_season_id INTEGER NOT NULL
+                    REFERENCES season(id)
+                    ON DELETE RESTRICT ON UPDATE CASCADE,
             );
         """,
         """ 

@@ -102,7 +102,12 @@ class Team(models.Model):
     
     @classmethod
     def find(cls,team_name):
-        city, nickname = team_name.split(" ")
+        name = team_name.split(" ")
+        if len(name) > 2:
+            city = name[0] + " " + name[1]
+            nickname = name[-1]
+        else:
+            city, nickname = name
         return cls.objects.get(city=city, name=nickname)
 
 class Season(models.Model):

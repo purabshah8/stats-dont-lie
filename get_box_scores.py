@@ -16,9 +16,13 @@ def save_game(info):
     home = Team.find(info['home_team'])
     away = Team.find(info['away_team'])
 
-    game_info = {}
-    game_info['home_id'] = home.id
-    game_info['away_id'] = away.id
+    game_info = {
+        'home_id': home.id,
+        'away_id': away.id,
+        'tipoff': info['tipoff'],
+        'attendance': info['attendance'],
+        'duration': info['duration']
+    }
     
     date = str(info['tipoff'].year) + str(info['tipoff'].month).zfill(2) + str(info['tipoff'].day).zfill(2)
     game_info['id'] = date + away.abbreviation + home.abbreviation
@@ -29,9 +33,6 @@ def save_game(info):
     game_info['home_score'] = home_score
     game_info['winner_id'] = game_info['home_id'] if home_score > away_score else game_info['away_id']
     
-    game_info['tipoff'] = info['tipoff']
-    game_info['attendance'] = info['attendance']
-    game_info['duration'] = info['duration']
     
     officials = info['officials']
     ref_keys = ['ref_one', 'ref_two', 'ref_three']
@@ -43,14 +44,18 @@ def save_game(info):
 
     home_quarters = info['scoring']['home']
     away_quarters = info['scoring']['away']
+    quarters = []
     for i,q in enumerate(home_quarters):
         quarter = { 'game_id': game.id, 'number': i+1, 'home_score': q, 'away_score': away_quarters[i] }
         quarter = GamePeriod(**quarter)
+        # quarter.save()
+        quarters.append(quarter)
+    
+    
     game_time = info['tipoff']
     year = game_time.year if game_time.month < 7 else game_time.year + 1
     teams = [home, away]
     team_loc = 'home'
-
     for team in teams:
         team_season = team.get_season(year)
         team_players = info[team_loc + '_stats']['basic'].keys()
@@ -58,31 +63,32 @@ def save_game(info):
         team_players = [player for player in team_players if player != 'Team Totals']
         for name in team_players:
             person = Person.find(name)
-            if PlayerTeamSeason.objects.filter(player_id=person.id, team_season_id=team_season.id).exists():
-                team_membership = PlayerTeamSeason.objects.get(player_id=person.id, team_season_id=team_season.id)
-            else:
+            if not PlayerTeamSeason.objects.filter(player_id=person.id, team_season_id=team_season.id).exists():
                 team_membership = PlayerTeamSeason(player_id=person.id, team_season_id=team_season.id)
                 team_membership.save()
             
             basic_stats = info[team + '_stats']['basic'][name]
-            statline = dict(zip(basic_stat_names, basic_stats[:-1]))
-            plus_minus = statline.pop('plus_minus')
+            started = basic_stats.pop()
+            plus_minus = basic_stats.pop()
+            statline = dict(zip(basic_stat_names, basic_stats))
             statline['game_id'] = game.id
             statline['team_id'] = team.id
             basic_statline = Statline(**statline)
             basic_statline.save()
             
-            statline = { 'plus_minus' : basic_stats[-1] }
-            statline['player_id'] = person.id
-            statline['started'] = False # to change
-            statline['id'] = basic_statline.id
+            statline = { 
+                'id': basic_statline.id,
+                'player_id': person.id,
+                'started': started,
+                'plus_minus' : plus_minus
+                }
             player_statline = PlayerStatline(**statline)
             player_statline.save()
 
             advanced_stats = info[team + '_stats']['advanced'][name]
             statline = dict(zip(advanced_stat_names, advanced_stats))
-            statline['id'] = basic_statline.id
             statline.pop('mp')
+            statline['id'] = basic_statline.id
             advanced_statline = AdvancedStatline(**statline)
             advanced_statline.save()
-    print("Created the follwing objects: {Game,}")
+    print(f"Created the follwing objects: {game}, {basic_statline}, {player_statline}, {advanced_statline}, {quarters}")
