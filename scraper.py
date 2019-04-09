@@ -335,7 +335,14 @@ def get_ref_info(url):
         person["first_name"] = person["middle_name"]
         person["middle_name"] = ""
 
-    seasons = ref_soup(class_="left", attrs={"data-stat": "season"})
+    def has_correct_classes(css_class):
+        return css_class == "left " or css_class == "left"
+
+    seasons = ref_soup(class_=has_correct_classes, attrs={"data-stat": "season"})
+    if not seasons:
+        season_comment = ref_soup.find(id="all_raw_p").contents[-2]
+        season_soup = bs4.BeautifulSoup(season_comment, 'html.parser')
+        seasons = season_soup(class_=has_correct_classes, attrs={"data-stat": "season"})
 
     def extract_year(season):
         year = int(season.text[:2] + season.text[-2:])
@@ -348,25 +355,26 @@ def get_ref_info(url):
     referee["rookie_season"] = extract_year(seasons[0])
     referee["final_season"] = extract_year(seasons[-2])
     ref_info = ref_info("p")
-
+    ref_info = [i.get_text() for i in ref_info]
     raw_info = []
     for info in ref_info:
-        raw_info.append(info.get_text().replace("\n", " "))
-    ignore = ["Pronunciation", "High School", "Relatives", "Died", "(born"]
+        contents = info.split("\n")
+        contents = [c for c in contents if c]
+        raw_info += contents
+    # ignore = ["Pronunciation", "High School", "Relatives", "Died", "(born"]
 
     for info in raw_info:
-        if any(string in info for string in ignore):
-            continue
+        # if any(string in info for string in ignore):
+        #     continue
         # clean up info
         info = info.replace("\xa0", " ").split(" ")
         info_arr = [x for x in info if x]
-
         if "Born:" in info_arr:
             birth_date = " ".join(info_arr[1:4])
             person["dob"] = birth_date
             if len(info_arr) > 4:
                 in_idx = info_arr.index("in")
-                person["birth_place"] = " ".join(info_arr[in_idx+1:-1])
+                person["birth_place"] = " ".join(info_arr[in_idx+1:])
 
         if "College:" in info_arr or "Colleges:" in info_arr:
             person["college"] = " ".join(info_arr[1:])

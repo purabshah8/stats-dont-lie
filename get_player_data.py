@@ -3,7 +3,7 @@ import os
 import django
 import json
 from util import get_datetime, update_auto_increments, states
-from scraper import get_player_urls, get_player_info
+from scraper import *
 from django.core.exceptions import ObjectDoesNotExist
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
@@ -88,7 +88,8 @@ def save_players(letter):
     urls = get_player_urls(letter)
     print(f"Retrieved urls for players with last name beginning with {letter}")
     for url in urls:
-        print(f"Fetching {url.split("/")[-1].split(".html")[0]}...")
+        short_url = url.split("/")[-1].split(".html")[0]
+        print(f"Fetching {short_url}...")
         info.append(get_player_info(url))
         print("Done!")
     with open(f"data/players/{letter}.json", "w") as file:
@@ -103,7 +104,8 @@ def load_players(letter, repeat=False):
                 person = save_person(datum["person"])
                 player = save_player(datum["player"], person)
                 # add_player(datum["player"], datum["person"])
-                print(f"Saved {person["preferred_name"] + person["last_name"]} to database.")
+                name = person["preferred_name"] + " " + person["last_name"]
+                print(f"Saved {name} to database.")
 
     except FileNotFoundError:
         if repeat:
@@ -129,6 +131,31 @@ def delete_player(info):
     except ObjectDoesNotExist:
         print("No matching player in database.")
 
+
+def save_ref(person, referee):
+    referee["id"] = person
+    
+    first_season = Season.objects.get(year=referee["rookie_season"], league_id=1)
+    referee["rookie_season"] = first_season
+    
+    if referee["final_season"]:
+        last_season = Season.objects.get(year=referee["final_season"], league_id=1)
+        referee["final_season"] = last_season
+
+    referee = Referee(**referee)
+    referee.save()
+
+
+def load_refs():
+    urls = get_ref_urls()
+    info = []
+    for url in urls:
+        info.append(get_ref_info(url))
+        short_url = url.split("/")[-1].split(".html")[0]
+        print(f"added ref @ {short_url}")
+
+    with open(f"data/referees.json", "w") as file:
+        json.dump(info, file, indent=4, sort_keys=True)
 
 if __name__ == "__main__":
     update_auto_increments()

@@ -1,0 +1,2472 @@
+[
+    {
+        "person": {
+            "first_name": "Ray",
+            "last_name": "Acosta",
+            "preferred_name": "Ray"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 54,
+            "rookie_season": 2018
+        }
+    },
+    {
+        "person": {
+            "first_name": "Brandon",
+            "last_name": "Adair",
+            "preferred_name": "Brandon"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 67,
+            "rookie_season": 2018
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New Orleans, Louisiana",
+            "college": "Southern University and A&M College",
+            "dob": "April 8, 1967",
+            "first_name": "Bennie",
+            "last_name": "Adams",
+            "preferred_name": "Bennie"
+        },
+        "referee": {
+            "final_season": 2018,
+            "jersey_number": 47,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Pat",
+            "last_name": "Adams",
+            "preferred_name": "Pat"
+        },
+        "referee": {
+            "final_season": 1998,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Bruce",
+            "last_name": "Alexander",
+            "preferred_name": "Bruce"
+        },
+        "referee": {
+            "final_season": 2000,
+            "jersey_number": 26,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Steve",
+            "last_name": "Anderson",
+            "preferred_name": "Steve"
+        },
+        "referee": {
+            "final_season": 2017,
+            "jersey_number": 76,
+            "rookie_season": 2012
+        }
+    },
+    {
+        "person": {
+            "first_name": "Hank",
+            "last_name": "Armstrong",
+            "preferred_name": "Hank"
+        },
+        "referee": {
+            "final_season": 2001,
+            "jersey_number": 46,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ron",
+            "last_name": "Arthur",
+            "preferred_name": "Ron"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Suren",
+            "last_name": "Arzoumanian",
+            "preferred_name": "Suren"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Ishpeming, Michigan",
+            "college": "Michigan Technological University",
+            "dob": "March 12, 1964",
+            "first_name": "Mark",
+            "last_name": "Ayotte",
+            "preferred_name": "Mark"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 56,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mark",
+            "last_name": "Bakko",
+            "preferred_name": "Mark"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Hamilton, Ohio",
+            "college": "University of Central Florida",
+            "dob": "May 30, 1975",
+            "first_name": "Brent",
+            "last_name": "Barnaky",
+            "preferred_name": "Brent"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 70,
+            "rookie_season": 2010
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "St. Francis College",
+            "dob": "December 10, 1939",
+            "first_name": "Dick",
+            "last_name": "Bavetta",
+            "preferred_name": "Dick"
+        },
+        "referee": {
+            "final_season": 2014,
+            "jersey_number": 27,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Bruce",
+            "last_name": "Bell",
+            "preferred_name": "Bruce"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Gary",
+            "last_name": "Benson",
+            "preferred_name": "Gary"
+        },
+        "referee": {
+            "final_season": 2005,
+            "jersey_number": 30,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ted",
+            "last_name": "Bernhardt",
+            "preferred_name": "Ted"
+        },
+        "referee": {
+            "final_season": 2006,
+            "jersey_number": 16,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Roanoke, Virginia",
+            "college": "University of Richmond",
+            "dob": "September 24, 1970",
+            "first_name": "Curtis",
+            "last_name": "Blair",
+            "preferred_name": "Curtis"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 74,
+            "rookie_season": 2009
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mike",
+            "last_name": "Bobiak",
+            "preferred_name": "Mike"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Putnam, Connecticut",
+            "dob": "September 28, 1966",
+            "first_name": "Matt",
+            "last_name": "Boland",
+            "preferred_name": "Matt"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 18,
+            "rookie_season": 2000
+        }
+    },
+    {
+        "person": {
+            "first_name": "Scott",
+            "last_name": "Bolnick",
+            "preferred_name": "Scott"
+        },
+        "referee": {
+            "final_season": 2013,
+            "jersey_number": 78,
+            "rookie_season": 2011
+        }
+    },
+    {
+        "person": {
+            "first_name": "George",
+            "last_name": "Borgia",
+            "preferred_name": "George"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Joe",
+            "last_name": "Borgia",
+            "preferred_name": "Joe"
+        },
+        "referee": {
+            "final_season": 1999,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Eric",
+            "last_name": "Britto",
+            "preferred_name": "Eric"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Lorenzo",
+            "last_name": "Bronson",
+            "preferred_name": "Lorenzo"
+        },
+        "referee": {
+            "final_season": 2004,
+            "jersey_number": 75,
+            "rookie_season": 2004
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Norfolk, Virginia",
+            "college": "Old Dominion University",
+            "dob": "September 14, 1964",
+            "first_name": "Tony",
+            "last_name": "Brothers",
+            "preferred_name": "Tony"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 25,
+            "rookie_season": 1995
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Florida",
+            "college": "Clark Atlanta University",
+            "dob": "January 4, 1967",
+            "first_name": "Tony",
+            "last_name": "Brown",
+            "preferred_name": "Tony"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 6,
+            "rookie_season": 2003
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Orlando, Florida",
+            "dob": "April 17, 1983",
+            "first_name": "Nick",
+            "last_name": "Buchert",
+            "preferred_name": "Nick"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 54,
+            "rookie_season": 2010
+        }
+    },
+    {
+        "person": {
+            "first_name": "John",
+            "last_name": "Butler",
+            "preferred_name": "John"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 53,
+            "rookie_season": null
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "dob": "April 7, 1959",
+            "first_name": "Mike",
+            "last_name": "Callahan",
+            "preferred_name": "Mike"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 24,
+            "rookie_season": 1991
+        }
+    },
+    {
+        "person": {
+            "first_name": "James",
+            "last_name": "Capers",
+            "preferred_name": "James"
+        },
+        "referee": {
+            "final_season": 1993,
+            "jersey_number": 19,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "Northern Illinois University",
+            "dob": "November 8, 1961",
+            "first_name": "James",
+            "last_name": "Capers",
+            "preferred_name": "James"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 19,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jim",
+            "last_name": "Clark",
+            "preferred_name": "Jim"
+        },
+        "referee": {
+            "final_season": 2009,
+            "jersey_number": 6,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ken",
+            "last_name": "Clark",
+            "preferred_name": "Ken"
+        },
+        "referee": {
+            "final_season": 1990,
+            "rookie_season": 1990
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ed",
+            "last_name": "Clarke",
+            "preferred_name": "Ed"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New Orleans, Louisiana",
+            "college": "Xavier University of Louisiana",
+            "dob": "July 15, 1965",
+            "first_name": "Derrick",
+            "last_name": "Collins",
+            "preferred_name": "Derrick"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 11,
+            "rookie_season": 2000
+        }
+    },
+    {
+        "person": {
+            "first_name": "Allen",
+            "last_name": "Conner",
+            "middle_name": "",
+            "preferred_name": "Sir"
+        },
+        "referee": {
+            "final_season": 2013,
+            "jersey_number": 64,
+            "rookie_season": 2012
+        }
+    },
+    {
+        "person": {
+            "first_name": "Keith",
+            "last_name": "Cooper",
+            "preferred_name": "Keith"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Sean",
+            "last_name": "Corbin",
+            "preferred_name": "Sean"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 33,
+            "rookie_season": 1994
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mike",
+            "last_name": "Costabile",
+            "preferred_name": "Mike"
+        },
+        "referee": {
+            "final_season": 1993,
+            "rookie_season": 1990
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "Northeastern Illinois University",
+            "dob": "November 23, 1953",
+            "first_name": "Dan",
+            "last_name": "Crawford",
+            "preferred_name": "Dan"
+        },
+        "referee": {
+            "final_season": 2017,
+            "jersey_number": 43,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "dob": "August 30, 1951",
+            "first_name": "Joe",
+            "last_name": "Crawford",
+            "preferred_name": "Joe"
+        },
+        "referee": {
+            "final_season": 2016,
+            "jersey_number": 17,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mike",
+            "last_name": "Crumb",
+            "preferred_name": "Mike"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Los Angeles, California",
+            "college": "California State University, Long Beach",
+            "dob": "August 8, 1968",
+            "first_name": "Kevin",
+            "last_name": "Cutler",
+            "preferred_name": "Kevin"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 34,
+            "rookie_season": 2010
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mousa",
+            "last_name": "Dagher",
+            "preferred_name": "Mousa"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 57,
+            "rookie_season": null
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Minnetonka, Minnesota",
+            "college": "University of Minnesota",
+            "dob": "July 12, 1972",
+            "first_name": "Eric",
+            "last_name": "Dalen",
+            "preferred_name": "Eric"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 75,
+            "rookie_season": 2009
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "United States Naval Academy",
+            "dob": "December 13, 1967",
+            "first_name": "Marc",
+            "last_name": "Davis",
+            "preferred_name": "Marc"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 8,
+            "rookie_season": 1999
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Paterson, New Jersey",
+            "college": "New Jersey City University",
+            "dob": "November 1, 1951",
+            "first_name": "Bob",
+            "last_name": "Delaney",
+            "preferred_name": "Bob"
+        },
+        "referee": {
+            "final_season": 2011,
+            "jersey_number": 26,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "J.B.",
+            "last_name": "DeRosa",
+            "preferred_name": "J.B."
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 62,
+            "rookie_season": 2018
+        }
+    },
+    {
+        "person": {
+            "dob": "April 9, 1957",
+            "first_name": "Joe",
+            "last_name": "DeRosa",
+            "preferred_name": "Joe"
+        },
+        "referee": {
+            "final_season": 2010,
+            "jersey_number": 14,
+            "rookie_season": 1990
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Havertown, Pennsylvania",
+            "college": "Villanova University",
+            "dob": "January 7, 1967",
+            "first_name": "Tim",
+            "last_name": "Donaghy",
+            "preferred_name": "Tim"
+        },
+        "referee": {
+            "final_season": 2007,
+            "jersey_number": 21,
+            "rookie_season": 1995
+        }
+    },
+    {
+        "person": {
+            "first_name": "Tom",
+            "last_name": "Drakeford",
+            "preferred_name": "Tom"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Terry",
+            "last_name": "Durham",
+            "preferred_name": "Terry"
+        },
+        "referee": {
+            "final_season": 2002,
+            "jersey_number": 31,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ron",
+            "last_name": "Elisiak",
+            "preferred_name": "Ron"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1995
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mitchell",
+            "last_name": "Ervin",
+            "preferred_name": "Mitchell"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 27,
+            "rookie_season": 2015
+        }
+    },
+    {
+        "person": {
+            "first_name": "Hugh",
+            "last_name": "Evans",
+            "preferred_name": "Hugh"
+        },
+        "referee": {
+            "final_season": 2001,
+            "jersey_number": 25,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Cincinnati, Ohio",
+            "college": "University of Alabama at Birmingham",
+            "dob": "July 1, 1958",
+            "first_name": "Kevin",
+            "last_name": "Fehr",
+            "preferred_name": "Kevin"
+        },
+        "referee": {
+            "final_season": 2013,
+            "jersey_number": 7,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Nolan",
+            "last_name": "Fine",
+            "preferred_name": "Nolan"
+        },
+        "referee": {
+            "final_season": 2004,
+            "jersey_number": 11,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Dover, New Jersey",
+            "dob": "February 15, 1981",
+            "first_name": "Kane",
+            "last_name": "Fitzgerald",
+            "preferred_name": "Kane"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 35,
+            "rookie_season": 2010
+        }
+    },
+    {
+        "person": {
+            "first_name": "Tyler",
+            "last_name": "Ford",
+            "preferred_name": "Tyler"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 39,
+            "rookie_season": 2015
+        }
+    },
+    {
+        "person": {
+            "first_name": "Gary",
+            "last_name": "Forest",
+            "preferred_name": "Gary"
+        },
+        "referee": {
+            "final_season": 2005,
+            "rookie_season": 2000
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Fairfax, Virginia",
+            "college": "Furman University",
+            "dob": "April 18, 1975",
+            "first_name": "Brian",
+            "last_name": "Forte",
+            "preferred_name": "Brian"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 45,
+            "rookie_season": 2008
+        }
+    },
+    {
+        "person": {
+            "first_name": "Joe",
+            "last_name": "Forte",
+            "preferred_name": "Joe"
+        },
+        "referee": {
+            "final_season": 2010,
+            "jersey_number": 45,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Silver Spring, Maryland",
+            "college": "University of Maryland",
+            "dob": "April 8, 1967",
+            "first_name": "Scott",
+            "last_name": "Foster",
+            "preferred_name": "Scott"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 48,
+            "rookie_season": 1995
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Saint Paul, Minnesota",
+            "college": "University of Minnesota",
+            "dob": "January 13, 1974",
+            "first_name": "Pat",
+            "last_name": "Fraher",
+            "preferred_name": "Pat"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 26,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Bellingham, Washington",
+            "college": "Brigham Young University",
+            "dob": "December 25, 1949",
+            "first_name": "Bernie",
+            "last_name": "Fryer",
+            "preferred_name": "Bernie"
+        },
+        "referee": {
+            "final_season": 2007,
+            "jersey_number": 7,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "John",
+            "last_name": "Fullilove",
+            "preferred_name": "John"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ed",
+            "last_name": "Gaines",
+            "preferred_name": "Ed"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Darell",
+            "last_name": "Garretson",
+            "preferred_name": "Darell"
+        },
+        "referee": {
+            "final_season": 1995,
+            "jersey_number": 10,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Long Beach, California",
+            "dob": "July 1, 1958",
+            "first_name": "Ron",
+            "last_name": "Garretson",
+            "preferred_name": "Ron"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 10,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Michael",
+            "last_name": "Glass",
+            "preferred_name": "Michael"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jacyn",
+            "last_name": "Goble",
+            "preferred_name": "Jacyn"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 68,
+            "rookie_season": 2017
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Miami, Florida",
+            "college": "Florida International University",
+            "dob": "November 25, 1978",
+            "first_name": "John",
+            "last_name": "Goble",
+            "preferred_name": "John"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 30,
+            "rookie_season": 2008
+        }
+    },
+    {
+        "person": {
+            "first_name": "Marcel",
+            "last_name": "Godfrey",
+            "preferred_name": "Marcel"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jason",
+            "last_name": "Goldenberg",
+            "preferred_name": "Jason"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 65,
+            "rookie_season": 2017
+        }
+    },
+    {
+        "person": {
+            "first_name": "Nate",
+            "last_name": "Green",
+            "preferred_name": "Nate"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 65,
+            "rookie_season": null
+        }
+    },
+    {
+        "person": {
+            "first_name": "Luis",
+            "last_name": "Grillo",
+            "preferred_name": "Luis"
+        },
+        "referee": {
+            "final_season": 2009,
+            "jersey_number": 8,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Roy",
+            "last_name": "Gulbeyan",
+            "preferred_name": "Roy"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Athens, Georgia",
+            "college": "North Carolina State University",
+            "dob": "May 21, 1974",
+            "first_name": "David",
+            "last_name": "Guthrie",
+            "preferred_name": "David"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 16,
+            "rookie_season": 2006
+        }
+    },
+    {
+        "person": {
+            "first_name": "John",
+            "last_name": "Heatley",
+            "preferred_name": "John"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Joe",
+            "last_name": "Henderson",
+            "preferred_name": "Joe"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Michael",
+            "last_name": "Henderson",
+            "preferred_name": "Michael"
+        },
+        "referee": {
+            "final_season": 2006,
+            "jersey_number": 62,
+            "rookie_season": 2002
+        }
+    },
+    {
+        "person": {
+            "first_name": "Rusty",
+            "last_name": "Herring",
+            "preferred_name": "Rusty"
+        },
+        "referee": {
+            "final_season": 1991,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "college": "California State University, Dominguez Hills",
+            "first_name": "Hue",
+            "last_name": "Hollins",
+            "preferred_name": "Hue"
+        },
+        "referee": {
+            "final_season": 2003,
+            "jersey_number": 42,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "dob": "November 24, 1980",
+            "first_name": "Lauren",
+            "last_name": "Holtkamp",
+            "preferred_name": "Lauren"
+        },
+        "referee": {
+            "final_season": 2018,
+            "jersey_number": 37,
+            "rookie_season": 2013
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jim",
+            "last_name": "Huetter",
+            "preferred_name": "Jim"
+        },
+        "referee": {
+            "final_season": 1991,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Darrell",
+            "last_name": "Humphrey",
+            "preferred_name": "Darrell"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Philadelphia, Pennsylvania",
+            "college": "Temple University",
+            "dob": "January 17, 1955",
+            "first_name": "Steve",
+            "last_name": "Javie",
+            "preferred_name": "Steve"
+        },
+        "referee": {
+            "final_season": 2011,
+            "jersey_number": 29,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Fort Worth, Texas",
+            "college": "University of Florida",
+            "dob": "December 11, 1954",
+            "first_name": "David",
+            "last_name": "Jones",
+            "preferred_name": "David"
+        },
+        "referee": {
+            "final_season": 2016,
+            "jersey_number": 36,
+            "rookie_season": 1990
+        }
+    },
+    {
+        "person": {
+            "first_name": "Lee",
+            "last_name": "Jones",
+            "preferred_name": "Lee"
+        },
+        "referee": {
+            "final_season": 1996,
+            "jersey_number": 8,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Anthony",
+            "last_name": "Jordan",
+            "preferred_name": "Anthony"
+        },
+        "referee": {
+            "final_season": 2006,
+            "jersey_number": 72,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "college": "University of Pittsburgh",
+            "first_name": "Dee",
+            "last_name": "Kantner",
+            "preferred_name": "Dee"
+        },
+        "referee": {
+            "final_season": 2002,
+            "jersey_number": 65,
+            "rookie_season": 1998
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Phoenix, Arizona",
+            "college": "Arizona State University",
+            "dob": "November 10, 1966",
+            "first_name": "Bill",
+            "last_name": "Kennedy",
+            "preferred_name": "Bill"
+        },
+        "referee": {
+            "final_season": 2018,
+            "jersey_number": 55,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jess",
+            "last_name": "Kersey",
+            "preferred_name": "Jess"
+        },
+        "referee": {
+            "final_season": 2007,
+            "jersey_number": 20,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jim",
+            "last_name": "Kinsey",
+            "preferred_name": "Jim"
+        },
+        "referee": {
+            "final_season": 2002,
+            "jersey_number": 53,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Flint, Michigan",
+            "college": "Southern University and A&M College",
+            "dob": "November 22, 1974",
+            "first_name": "Courtney",
+            "last_name": "Kirkland",
+            "preferred_name": "Courtney"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 61,
+            "rookie_season": 2000
+        }
+    },
+    {
+        "person": {
+            "first_name": "Kipp",
+            "last_name": "Kissinger",
+            "preferred_name": "Kipp"
+        },
+        "referee": {
+            "final_season": 2015,
+            "jersey_number": 39,
+            "rookie_season": 2015
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Kiev, Ukraine",
+            "college": "St. John's University",
+            "dob": "August 5, 1979",
+            "first_name": "Marat",
+            "last_name": "Kogut",
+            "preferred_name": "Marat"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 68,
+            "rookie_season": 2010
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mike",
+            "last_name": "Krom",
+            "preferred_name": "Mike"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Little Rock, Arkansas",
+            "college": "Philander Smith College",
+            "dob": "February 26, 1975",
+            "first_name": "Karl",
+            "last_name": "Lane",
+            "preferred_name": "Karl"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 77,
+            "rookie_season": 2011
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mike",
+            "last_name": "Lauerman",
+            "preferred_name": "Mike"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Daytona Beach, Florida",
+            "college": "Bethune-Cookman College",
+            "dob": "May 20, 1971",
+            "first_name": "Eric",
+            "last_name": "Lewis",
+            "preferred_name": "Eric"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 42,
+            "rookie_season": 2005
+        }
+    },
+    {
+        "person": {
+            "first_name": "Joe",
+            "last_name": "Lindsay",
+            "preferred_name": "Joe"
+        },
+        "referee": {
+            "final_season": 1997,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Drexel Hil, Pennsylvania",
+            "college": "West Chester University of Pennsylvania",
+            "dob": "August 21, 1977",
+            "first_name": "Mark",
+            "last_name": "Lindsay",
+            "preferred_name": "Mark"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 29,
+            "rookie_season": 2008
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jack",
+            "last_name": "Madden",
+            "preferred_name": "Jack"
+        },
+        "referee": {
+            "final_season": 1996,
+            "jersey_number": 14,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Great Lakes, Illinois",
+            "college": "Dakota State University",
+            "dob": "October 7, 1967",
+            "first_name": "Tre",
+            "last_name": "Maddox",
+            "preferred_name": "Tre"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 73,
+            "rookie_season": 2011
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Media, Pennsylvania",
+            "college": "Philadelphia University",
+            "dob": "March 17, 1971",
+            "first_name": "Ed",
+            "last_name": "Malloy",
+            "preferred_name": "Ed"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 14,
+            "rookie_season": 2003
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mike",
+            "last_name": "Maloney",
+            "preferred_name": "Mike"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mike",
+            "last_name": "Mathis",
+            "preferred_name": "Mike"
+        },
+        "referee": {
+            "final_season": 2002,
+            "jersey_number": 13,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ron",
+            "last_name": "Mathis",
+            "preferred_name": "Ron"
+        },
+        "referee": {
+            "final_season": 1991,
+            "rookie_season": 1991
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Saint Paul, Minnesota",
+            "college": "University of Minnesota",
+            "dob": "April 23, 1955",
+            "first_name": "Ken",
+            "last_name": "Mauer",
+            "preferred_name": "Ken"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 41,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Woody",
+            "last_name": "Mayfield",
+            "preferred_name": "Woody"
+        },
+        "referee": {
+            "final_season": 1998,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Keith",
+            "last_name": "McClellan",
+            "preferred_name": "Keith"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "San Angelo, Texas",
+            "college": "University of Texas at Arlington",
+            "dob": "February 14, 1966",
+            "first_name": "Monty",
+            "last_name": "McCutchen",
+            "preferred_name": "Monty"
+        },
+        "referee": {
+            "final_season": 2018,
+            "jersey_number": 13,
+            "rookie_season": 1994
+        }
+    },
+    {
+        "person": {
+            "first_name": "Rashan",
+            "last_name": "Michel",
+            "preferred_name": "Rashan"
+        },
+        "referee": {
+            "final_season": 2001,
+            "jersey_number": 50,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ed",
+            "last_name": "Middleton",
+            "preferred_name": "Ed"
+        },
+        "referee": {
+            "final_season": 1998,
+            "jersey_number": 18,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Paul",
+            "last_name": "Mihalak",
+            "preferred_name": "Paul"
+        },
+        "referee": {
+            "final_season": 1997,
+            "jersey_number": 22,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New Albany, Indiana",
+            "college": "San Diego State University",
+            "dob": "September 3, 1957",
+            "first_name": "Rodney",
+            "last_name": "Mott",
+            "preferred_name": "Rodney"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 71,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ashley",
+            "last_name": "Moyer-Gleich",
+            "preferred_name": "Ashley"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 75,
+            "rookie_season": null
+        }
+    },
+    {
+        "person": {
+            "first_name": "Quintin",
+            "last_name": "Murphy",
+            "preferred_name": "Quintin"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Matt",
+            "last_name": "Myers",
+            "preferred_name": "Matt"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 67,
+            "rookie_season": 2012
+        }
+    },
+    {
+        "person": {
+            "first_name": "Brett",
+            "last_name": "Nansel",
+            "preferred_name": "Brett"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 67,
+            "rookie_season": 2015
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jack",
+            "last_name": "Nies",
+            "preferred_name": "Jack"
+        },
+        "referee": {
+            "final_season": 2009,
+            "jersey_number": 35,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Tommy",
+            "last_name": "Nunez",
+            "preferred_name": "Tommy"
+        },
+        "referee": {
+            "final_season": 2003,
+            "jersey_number": 28,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Phoenix, Arizona",
+            "college": "Grand Canyon University",
+            "dob": "September 7, 1959",
+            "first_name": "Tommy",
+            "last_name": "Nunez",
+            "preferred_name": "Tommy"
+        },
+        "referee": {
+            "final_season": 2012,
+            "jersey_number": 28,
+            "rookie_season": 2005
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ronnie",
+            "last_name": "Nunn",
+            "preferred_name": "Ronnie"
+        },
+        "referee": {
+            "final_season": 2003,
+            "jersey_number": 34,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jake",
+            "last_name": "O'Donnell",
+            "preferred_name": "Jake"
+        },
+        "referee": {
+            "final_season": 1995,
+            "jersey_number": 11,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Tom",
+            "last_name": "O'Neill",
+            "preferred_name": "Tom"
+        },
+        "referee": {
+            "final_season": 1990,
+            "rookie_season": 1990
+        }
+    },
+    {
+        "person": {
+            "first_name": "Bill",
+            "last_name": "Oakes",
+            "preferred_name": "Bill"
+        },
+        "referee": {
+            "final_season": 2000,
+            "jersey_number": 21,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ron",
+            "last_name": "Olesiak",
+            "preferred_name": "Ron"
+        },
+        "referee": {
+            "final_season": 2009,
+            "jersey_number": 44,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Larry",
+            "last_name": "Onusz",
+            "preferred_name": "Larry"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Pomona, California",
+            "dob": "October 20, 1973",
+            "first_name": "J.T.",
+            "last_name": "Orr",
+            "preferred_name": "J.T."
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 72,
+            "rookie_season": 2010
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Lynwood, California",
+            "college": "California State Polytechnic University, Pomona",
+            "dob": "July 20, 1964",
+            "first_name": "Violet",
+            "last_name": "Palmer",
+            "preferred_name": "Violet"
+        },
+        "referee": {
+            "final_season": 2015,
+            "jersey_number": 12,
+            "rookie_season": 1998
+        }
+    },
+    {
+        "person": {
+            "college": "University of Arizona",
+            "first_name": "Brenda",
+            "last_name": "Pantoja",
+            "preferred_name": "Brenda"
+        },
+        "referee": {
+            "final_season": 2014,
+            "jersey_number": 39,
+            "rookie_season": 2013
+        }
+    },
+    {
+        "person": {
+            "first_name": "Gediminas",
+            "last_name": "Petraitis",
+            "preferred_name": "Gediminas"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 53,
+            "rookie_season": 2015
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Weatherford, Texas",
+            "college": "Tarleton State University",
+            "dob": "April 10, 1970",
+            "first_name": "Jason",
+            "last_name": "Phillips",
+            "preferred_name": "Jason"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 23,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Surry, Virginia",
+            "dob": "December 24, 1967",
+            "first_name": "Olandis",
+            "last_name": "Poole",
+            "preferred_name": "Olandis"
+        },
+        "referee": {
+            "final_season": 2014,
+            "jersey_number": 50,
+            "rookie_season": 2005
+        }
+    },
+    {
+        "person": {
+            "first_name": "Michael",
+            "last_name": "Price",
+            "preferred_name": "Michael"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Pete",
+            "last_name": "Quinn",
+            "preferred_name": "Pete"
+        },
+        "referee": {
+            "final_season": 1991,
+            "rookie_season": 1990
+        }
+    },
+    {
+        "person": {
+            "first_name": "Phenizee",
+            "last_name": "Ransom",
+            "preferred_name": "Phenizee"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 70,
+            "rookie_season": 2017
+        }
+    },
+    {
+        "person": {
+            "first_name": "Troy",
+            "last_name": "Raymond",
+            "preferred_name": "Troy"
+        },
+        "referee": {
+            "final_season": 2004,
+            "jersey_number": 56,
+            "rookie_season": 2004
+        }
+    },
+    {
+        "person": {
+            "first_name": "Blane",
+            "last_name": "Reichelt",
+            "preferred_name": "Blane"
+        },
+        "referee": {
+            "final_season": 2005,
+            "jersey_number": 37,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "college": "California State University, Dominguez Hills",
+            "dob": "February 3, 1962",
+            "first_name": "Derek",
+            "last_name": "Richardson",
+            "preferred_name": "Derek"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 63,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Brooklyn, New York",
+            "dob": "August 21, 1964",
+            "first_name": "Leroy",
+            "last_name": "Richardson",
+            "preferred_name": "Leroy"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 20,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Randy",
+            "last_name": "Richardson",
+            "preferred_name": "Randy"
+        },
+        "referee": {
+            "final_season": 2018,
+            "jersey_number": 53,
+            "rookie_season": 2018
+        }
+    },
+    {
+        "person": {
+            "first_name": "Phil",
+            "last_name": "Robinson",
+            "preferred_name": "Phil"
+        },
+        "referee": {
+            "final_season": 2011,
+            "jersey_number": 11,
+            "rookie_season": 1999
+        }
+    },
+    {
+        "person": {
+            "first_name": "Robbie",
+            "last_name": "Robinson",
+            "preferred_name": "Robbie"
+        },
+        "referee": {
+            "final_season": 2007,
+            "jersey_number": 53,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Anderson, Indiana",
+            "college": "Troy University",
+            "dob": "March 18, 1974",
+            "first_name": "Eli",
+            "last_name": "Roe",
+            "preferred_name": "Eli"
+        },
+        "referee": {
+            "final_season": 2016,
+            "jersey_number": 44,
+            "rookie_season": 2006
+        }
+    },
+    {
+        "person": {
+            "first_name": "Nicholas",
+            "last_name": "Roe",
+            "preferred_name": "Nicholas"
+        },
+        "referee": {
+            "final_season": 2006,
+            "jersey_number": 64,
+            "rookie_season": 2006
+        }
+    },
+    {
+        "person": {
+            "first_name": "Doug",
+            "last_name": "Rogan",
+            "preferred_name": "Doug"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Wally",
+            "last_name": "Rooney",
+            "preferred_name": "Wally"
+        },
+        "referee": {
+            "final_season": 1993,
+            "jersey_number": 16,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ed",
+            "last_name": "Rush",
+            "middle_name": "T.",
+            "preferred_name": "Ed"
+        },
+        "referee": {
+            "final_season": 2000,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Columbus, Georgia",
+            "college": "Georgia State University",
+            "dob": "September 19, 1961",
+            "first_name": "Eddie",
+            "last_name": "Rush",
+            "middle_name": "F.",
+            "preferred_name": "Eddie"
+        },
+        "referee": {
+            "final_season": 2014,
+            "jersey_number": 32,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Bill",
+            "last_name": "Saar",
+            "preferred_name": "Bill"
+        },
+        "referee": {
+            "final_season": 1994,
+            "jersey_number": 24,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Natalie",
+            "last_name": "Sago",
+            "preferred_name": "Natalie"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 76,
+            "rookie_season": null
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Stamford, Connecticut",
+            "college": "Long Island University, C.W. Post Campus",
+            "dob": "January 9, 1950",
+            "first_name": "Bennett",
+            "last_name": "Salvatore",
+            "preferred_name": "Bennett"
+        },
+        "referee": {
+            "final_season": 2015,
+            "jersey_number": 15,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Bob",
+            "last_name": "Schoewe",
+            "preferred_name": "Bob"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Evan",
+            "last_name": "Scott",
+            "preferred_name": "Evan"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 78,
+            "rookie_season": null
+        }
+    },
+    {
+        "person": {
+            "first_name": "Kevin",
+            "last_name": "Scott",
+            "preferred_name": "Kevin"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 79,
+            "rookie_season": 2011
+        }
+    },
+    {
+        "person": {
+            "first_name": "Lamont",
+            "last_name": "Simpson",
+            "preferred_name": "Lamont"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Aaron",
+            "last_name": "Smith",
+            "preferred_name": "Aaron"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 68,
+            "rookie_season": 2016
+        }
+    },
+    {
+        "person": {
+            "first_name": "Bert",
+            "last_name": "Smith",
+            "preferred_name": "Bert"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Memphis, Tennessee",
+            "dob": "February 5, 1955",
+            "first_name": "Michael",
+            "last_name": "Smith",
+            "preferred_name": "Michael"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 38,
+            "rookie_season": 1994
+        }
+    },
+    {
+        "person": {
+            "birth_place": "El Paso, Texas",
+            "college": "San Diego State University",
+            "dob": "February 23, 1957",
+            "first_name": "Bill",
+            "last_name": "Spooner",
+            "preferred_name": "Bill"
+        },
+        "referee": {
+            "final_season": 2018,
+            "jersey_number": 22,
+            "rookie_season": 1990
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Atlanta, Georgia",
+            "college": "Morehouse College",
+            "dob": "November 29, 1956",
+            "first_name": "Derrick",
+            "last_name": "Stafford",
+            "preferred_name": "Derrick"
+        },
+        "referee": {
+            "final_season": 2018,
+            "jersey_number": 9,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jonathan",
+            "last_name": "Sterling",
+            "preferred_name": "Jonathan"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 17,
+            "rookie_season": 2018
+        }
+    },
+    {
+        "person": {
+            "first_name": "Troy",
+            "last_name": "Stevenson",
+            "preferred_name": "Troy"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Pottstown, Pennsylvania",
+            "dob": "December 15, 1927",
+            "first_name": "Earl",
+            "last_name": "Strom",
+            "preferred_name": "Earl"
+        },
+        "referee": {
+            "final_season": 1990,
+            "jersey_number": 12,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Ben",
+            "last_name": "Taylor",
+            "preferred_name": "Ben"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 46,
+            "rookie_season": 2012
+        }
+    },
+    {
+        "person": {
+            "first_name": "Dedric",
+            "last_name": "Taylor",
+            "preferred_name": "Dedric"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 21,
+            "rookie_season": 2014
+        }
+    },
+    {
+        "person": {
+            "first_name": "Jess",
+            "last_name": "Thompson",
+            "preferred_name": "Jess"
+        },
+        "referee": {
+            "final_season": 1991,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Norwich, Connecticut",
+            "dob": "March 12, 1978",
+            "first_name": "Josh",
+            "last_name": "Tiven",
+            "preferred_name": "Josh"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 58,
+            "rookie_season": 2010
+        }
+    },
+    {
+        "person": {
+            "first_name": "George",
+            "last_name": "Toliver",
+            "preferred_name": "George"
+        },
+        "referee": {
+            "final_season": 2004,
+            "jersey_number": 23,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Enumelaw, Washington",
+            "college": "Linfield College",
+            "dob": "March 3, 1973",
+            "first_name": "Scott",
+            "last_name": "Twardoski",
+            "preferred_name": "Scott"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 52,
+            "rookie_season": 2010
+        }
+    },
+    {
+        "person": {
+            "first_name": "Don",
+            "last_name": "Vaden",
+            "preferred_name": "Don"
+        },
+        "referee": {
+            "final_season": 2003,
+            "jersey_number": 12,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Justin",
+            "last_name": "Duyne",
+            "middle_name": "Van",
+            "preferred_name": "Justin"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 64,
+            "rookie_season": 2014
+        }
+    },
+    {
+        "person": {
+            "first_name": "Vladimir",
+            "last_name": "Voyard-Tadal",
+            "preferred_name": "Vladimir"
+        },
+        "referee": {
+            "final_season": 2018,
+            "jersey_number": 76,
+            "rookie_season": 2017
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Jacksonville, Illinois",
+            "college": "Emporia State University",
+            "dob": "September 11, 1966",
+            "first_name": "Scott",
+            "last_name": "Wall",
+            "preferred_name": "Scott"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 31,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "C.J.",
+            "last_name": "Washington",
+            "preferred_name": "C.J."
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 75,
+            "rookie_season": 2015
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Fort Smith, Arkansas",
+            "college": "Norfolk State University",
+            "dob": "December 25, 1957",
+            "first_name": "Tom",
+            "last_name": "Washington",
+            "preferred_name": "Tom"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 49,
+            "rookie_season": 1992
+        }
+    },
+    {
+        "person": {
+            "first_name": "Tom",
+            "last_name": "White",
+            "preferred_name": "Tom"
+        },
+        "referee": {
+            "final_season": 1992,
+            "rookie_season": 1992
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Pasadena, California",
+            "college": "California State University, Long Beach",
+            "dob": "November 5, 1958",
+            "first_name": "Greg",
+            "last_name": "Willard",
+            "preferred_name": "Greg"
+        },
+        "referee": {
+            "final_season": 2012,
+            "jersey_number": 57,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Allen",
+            "last_name": "Williams",
+            "preferred_name": "Allen"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Memphis, Tennessee",
+            "college": "Purdue University",
+            "dob": "May 23, 1979",
+            "first_name": "James",
+            "last_name": "Williams",
+            "preferred_name": "James"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 60,
+            "rookie_season": 2010
+        }
+    },
+    {
+        "person": {
+            "first_name": "Kenneth",
+            "last_name": "Wilson",
+            "preferred_name": "Kenneth"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Keith",
+            "last_name": "Winfrey",
+            "preferred_name": "Keith"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Columbia, South Carolina",
+            "college": "California State University, Fullerton",
+            "dob": "March 25, 1962",
+            "first_name": "Leon",
+            "last_name": "Wood",
+            "preferred_name": "Leon"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 40,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "first_name": "Tommie",
+            "last_name": "Wood",
+            "preferred_name": "Tommie"
+        },
+        "referee": {
+            "final_season": 2000,
+            "rookie_season": 1989
+        }
+    },
+    {
+        "person": {
+            "first_name": "Barney",
+            "last_name": "Woodfield",
+            "preferred_name": "Barney"
+        },
+        "referee": {
+            "final_season": 1990,
+            "rookie_season": 1990
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Charlotte, North Carolina",
+            "college": "Oral Roberts University",
+            "dob": "January 23, 1966",
+            "first_name": "Haywoode",
+            "last_name": "Workman",
+            "preferred_name": "Haywoode"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 66,
+            "rookie_season": 2009
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New York, New York",
+            "college": "Spring Hill College",
+            "dob": "August 29, 1971",
+            "first_name": "Sean",
+            "last_name": "Wright",
+            "preferred_name": "Sean"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 65,
+            "rookie_season": 2006
+        }
+    },
+    {
+        "person": {
+            "first_name": "Mark",
+            "last_name": "Wunderlich",
+            "preferred_name": "Mark"
+        },
+        "referee": {
+            "final_season": 2010,
+            "jersey_number": 18,
+            "rookie_season": 1991
+        }
+    },
+    {
+        "person": {
+            "first_name": "Lionel",
+            "last_name": "Yates",
+            "preferred_name": "Lionel"
+        },
+        "referee": {
+            "final_season": 1996,
+            "rookie_season": 1996
+        }
+    },
+    {
+        "person": {
+            "birth_place": "New York, New York",
+            "college": "State University of New York at New Paltz",
+            "dob": "April 29, 1975",
+            "first_name": "Zach",
+            "last_name": "Zarba",
+            "preferred_name": "Zach"
+        },
+        "referee": {
+            "final_season": null,
+            "jersey_number": 28,
+            "rookie_season": 2004
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Harvey, Illinois",
+            "college": "Eastern Utah University",
+            "dob": "August 31, 1965",
+            "first_name": "Gary",
+            "last_name": "Zielinski",
+            "preferred_name": "Gary"
+        },
+        "referee": {
+            "final_season": 2018,
+            "jersey_number": 59,
+            "rookie_season": 1996
+        }
+    }
+]
