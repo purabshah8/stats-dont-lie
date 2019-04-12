@@ -120,11 +120,11 @@ def create_tables():
                 id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES person(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE,
-                jersey_number INTEGER NOT NULL,
+                jersey_number INTEGER,
                 rookie_season_id INTEGER NOT NULL
                     REFERENCES season(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE,
-                final_season_id INTEGER NOT NULL
+                final_season_id INTEGER
                     REFERENCES season(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE,
             );
@@ -314,7 +314,23 @@ def create_tables():
         if connection:
             connection.close()
 
-
+def execute_command(command):
+    connection = None
+    try:
+        connection = psycopg2.connect("dbname=nba user=purab password=godricshallows")
+        cursor = connection.cursor()
+        cursor.execute(command)
+        cursor.close()
+        connection.commit()
+    except psycopg2.DatabaseError as e:
+        if connection:
+            connection.rollback()
+            print("rolling back...")
+        print('Error %s' % e)
+        sys.exit(1)
+    finally:
+        if connection:
+            connection.close()
 
 if __name__ == '__main__':
     create_tables()

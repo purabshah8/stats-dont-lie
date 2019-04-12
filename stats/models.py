@@ -133,9 +133,13 @@ class Person(models.Model):
     birthplace = models.ForeignKey(Location, models.DO_NOTHING)
 
     def __str__(self):
-        return self.preferred_name + " " + self.last_name
+        return self.get_name()
+
     class Meta:
         db_table = 'person'
+
+    def get_name(self):
+        return self.preferred_name + " " + self.last_name
 
     @classmethod
     def find(cls, full_name):
@@ -147,6 +151,7 @@ class Referee(models.Model):
     id = models.OneToOneField(Person, models.DO_NOTHING, db_column='id', primary_key=True)
     jersey_number = models.IntegerField()
     rookie_season = models.ForeignKey('Season', models.DO_NOTHING)
+    final_season = models.ForeignKey('Season', models.DO_NOTHING)
 
     def __str__(self):
         return self.id.__str__()

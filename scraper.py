@@ -1,11 +1,21 @@
 import csv
 import re
+import json
 
 import pytz
 
 import bs4
 import requests
 from util import get_datetime
+
+def str_to_data(el):
+    if "." in el:
+        return float(el)
+    elif ":" in el:
+        stat = el.split(":")
+        return 60 * int(stat[0]) + int(stat[1])
+    else:
+        return int(el)
 
 
 def get_box_score_urls(season=2019):
@@ -280,7 +290,7 @@ def get_season_dates(year):
     return [season_start, playoff_start]
 
 
-def save_season_info():
+def get_season_info():
     with open("data/season_info.csv", mode="w") as file:
         writer = csv.writer(file, delimiter="|",
                             quotechar='"', quoting=csv.QUOTE_MINIMAL)
@@ -382,11 +392,25 @@ def get_ref_info(url):
     return {"person": person, "referee": referee}
 
 
-def str_to_data(el):
-    if "." in el:
-        return float(el)
-    elif ":" in el:
-        stat = el.split(":")
-        return 60 * int(stat[0]) + int(stat[1])
-    else:
-        return int(el)
+def scrape_players(letter):
+    info = []
+    urls = get_player_urls(letter)
+    print(f"Retrieved urls for players with last name beginning with {letter}.")
+    for url in urls:
+        short_url = url.split("/")[-1].split(".html")[0]
+        print(f"Fetching {short_url}...")
+        info.append(get_player_info(url))
+        print("Done!")
+    with open(f"data/players/{letter}.json", "w") as file:
+        json.dump(info, file, indent=4, sort_keys=True)
+
+def scrape_refs():
+    urls = get_ref_urls()
+    info = []
+    for url in urls:
+        info.append(get_ref_info(url))
+        short_url = url.split("/")[-1].split(".html")[0]
+        print(f"added ref @ {short_url}")
+
+    with open(f"data/referees.json", "w") as file:
+        json.dump(info, file, indent=4, sort_keys=True)
