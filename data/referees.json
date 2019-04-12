@@ -348,7 +348,7 @@
         "referee": {
             "final_season": null,
             "jersey_number": 53,
-            "rookie_season": null
+            "rookie_season": 2019
         }
     },
     {
@@ -445,7 +445,6 @@
         "person": {
             "first_name": "Allen",
             "last_name": "Conner",
-            "middle_name": "",
             "preferred_name": "Sir"
         },
         "referee": {
@@ -552,7 +551,7 @@
         "referee": {
             "final_season": null,
             "jersey_number": 57,
-            "rookie_season": null
+            "rookie_season": 2019
         }
     },
     {
@@ -952,7 +951,7 @@
         "referee": {
             "final_season": null,
             "jersey_number": 65,
-            "rookie_season": null
+            "rookie_season": 2019
         }
     },
     {
@@ -1299,7 +1298,7 @@
     },
     {
         "person": {
-            "birth_place": "Drexel Hil, Pennsylvania",
+            "birth_place": "Drexel Hill, Pennsylvania",
             "college": "West Chester University of Pennsylvania",
             "dob": "August 21, 1977",
             "first_name": "Mark",
@@ -1500,7 +1499,7 @@
         "referee": {
             "final_season": null,
             "jersey_number": 75,
-            "rookie_season": null
+            "rookie_season": 2019
         }
     },
     {
@@ -1952,7 +1951,7 @@
         "referee": {
             "final_season": null,
             "jersey_number": 76,
-            "rookie_season": null
+            "rookie_season": 2019
         }
     },
     {
@@ -1990,7 +1989,7 @@
         "referee": {
             "final_season": null,
             "jersey_number": 78,
-            "rookie_season": null
+            "rookie_season": 2019
         }
     },
     {
