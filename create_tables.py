@@ -284,7 +284,7 @@ def create_tables():
                 player_id INTEGER NOT NULL
                     REFERENCES player(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
-                started BOOL,
+                started BOOL,–
                 plus_minus integer NOT NULL
             );
         """,

@@ -17,17 +17,16 @@ def str_to_data(el):
     else:
         return int(el)
 
+nba_months = ["october", "november", "december", "january", 
+            "february", "march", "april", "may", "june"]
 
-def get_box_score_urls(season=2019):
-    months = ["october", "november", "december", "january",
-              "february", "march", "april", "may", "june"]
-    if season == 2019:
+def get_box_score_urls(season=2019, months=nba_months):
+    if season == 2019 and len(months) > 7:
         months.pop()
         months.pop()
     urls = []
     for month in months:
-        response = requests.get(
-            f"https://www.basketball-reference.com/leagues/NBA_{season}_games-{month}.html")
+        response = requests.get(f"https://www.basketball-reference.com/leagues/NBA_{season}_games-{month}.html")
         if response.status_code == 200:
             scores_soup = bs4.BeautifulSoup(response.text, "html.parser")
             box_scores = scores_soup.find_all("a", string="Box Score")
@@ -44,7 +43,19 @@ def get_box_score_info(url):
         box_soup = bs4.BeautifulSoup(response.text, "html.parser")
         info = {
             "home_stats": {},
-            "away_stats": {}
+            "away_stats": {},
+        }
+        stat_map = {
+            "fg3": "tp",
+            "fg3a": "tpa",
+            "fg3_pct": "tp_pct",
+            "ts_pct": "ts",
+            "efg_pct": "efg",
+            "fg3a_per_fga_pct": "tpar",
+            "fta_per_fga_pct": "ftr",
+            "usg_pct": "usg_rate",
+            "off_rtg": "ortg",
+            "def_rtg": "drtg"
         }
 
         teams = box_soup.find("h1").get_text().split(" at ")
@@ -54,38 +65,51 @@ def get_box_score_info(url):
         tables = box_soup("tbody")
         footers = box_soup("tfoot")
         for i, table in enumerate(tables):
-            team_data = {}
+            
+            box_type = "basic" if i % 2 == 0 else "advanced"
+            team_stats = "away_stats" if i < 2 else "home_stats"
+            team_data = info[team_stats]
 
-            table = [row for row in table.children if isinstance(
-                row, bs4.element.Tag) and len(row.select("a")) > 0]
+            table = [
+                row for row in table.children 
+                if isinstance(row, bs4.element.Tag) 
+                and len(row.select("a")) > 0
+            ]
             for j, row in enumerate(table):
                 stats = row.select("td")
+                data_dict = {}
                 if len(stats) > 1:
-                    data_row = [str_to_data(stat.text)
-                                for stat in stats if stat.text != ""]
-                started = True if j < 5 else False
-                data_row.append(started)
-                name = row.select("a")[0].text
-                team_data[name] = data_row
+                    for stat in stats:
+                        stat_name = stat_map[stat["data-stat"]] if stat["data-stat"] in stat_map else stat["data-stat"]
+                        stat_val = stat.text if stat.text else "0.0"
+                        stat_val = str_to_data(stat_val)
+                        data_dict[stat_name] = stat_val
 
-            footer = [row for row in footers[i].children if isinstance(
-                row, bs4.element.Tag)]
+                    if box_type == "basic":
+                        started = True if j < 5 else False
+                        data_dict["started"] = started
+              
+                name = row.select("a")[0].text
+                if name in team_data:
+                    team_data[name].update(data_dict)
+                else:
+                    team_data[name] = data_dict
+            footer = [
+                row for row in footers[i].children 
+                if isinstance(row, bs4.element.Tag)
+            ]
             for row in footer:
                 stats = row(class_="right")
-                team_data["Team Totals"] = [str_to_data(
-                    stat.text) for stat in stats if stat.text != ""]
-                team_data["Team Totals"][0] *= 60
-
-            if i % 2 == 0:
-                box_type = "basic"
-            else:
-                box_type = "advanced"
-            if i < 2:
-                team_stats = "away_stats"
-            else:
-                team_stats = "home_stats"
-
-            info[team_stats][box_type] = team_data
+                data_dict = {}
+                for stat in stats:
+                    stat_name = stat_map[stat["data-stat"]] if stat["data-stat"] in stat_map else stat["data-stat"]
+                    stat_val = stat.text if stat.text else "0.0"
+                    stat_val = str_to_data(stat_val)
+                    data_dict[stat_name] = stat_val
+                data_dict["mp"] *= 60
+                team_data["Team Totals"]= data_dict
+            
+            info[team_stats] = team_data
 
         scores = box_soup.find(id="all_line_score")
         score = [s for s in scores if isinstance(s, bs4.element.Comment)][0]
@@ -99,23 +123,29 @@ def get_box_score_info(url):
         info["scoring"] = {"away": away_quarters, "home": home_quarters}
 
         scorebox = box_soup.find(class_="scorebox_meta")
-        info["tipoff"] = get_datetime(scorebox.div.get_text())
+        info["tipoff"] = scorebox.div.get_text()
         info["location"] = scorebox.div.next_sibling.get_text().split(",")[0]
 
         misc_info = box_soup.find(text="Inactive:").parent.parent
         misc_info = misc_info.text.replace("\xa0", " ").split("\n")
         misc_info = [el for el in misc_info if el]
-        info["attendance"] = int(
-            misc_info[-2].split(": ")[-1].replace(",", ""))
+        # breakpoint()
+        attendance_idx = -2
+        if len(misc_info) < 5:
+            attendance_idx = -1
+        else:
+            game_length = misc_info[-1].split(": ")[-1]
+            game_length = game_length.split(":")
+            info["duration"] = 60 * int(game_length[0]) + int(game_length[1])
+
+        info["attendance"] = int(misc_info[attendance_idx].split(": ")[-1].replace(",", ""))
         info["officials"] = misc_info[2][11:].split(", ")
 
         inactives = misc_info[1].split("   ")
         info["away_stats"]["inactive"] = inactives[0][4:].split(", ")
         info["home_stats"]["inactive"] = inactives[1][4:].split(", ")
 
-        game_length = misc_info[-1].split(": ")[-1]
-        game_length = game_length.split(":")
-        info["duration"] = 60 * int(game_length[0]) + int(game_length[1])
+        
 
     else:
         response.raise_for_status()
@@ -412,5 +442,19 @@ def scrape_refs():
         short_url = url.split("/")[-1].split(".html")[0]
         print(f"added ref @ {short_url}")
 
-    with open(f"data/referees.json", "w") as file:
+    with open("data/referees.json", "w") as file:
         json.dump(info, file, indent=4, sort_keys=True)
+
+
+def scrape_games(season, months=nba_months):
+    for month in months:
+        urls = get_box_score_urls(season, [month])
+        games = []
+        for url in urls:
+            game = get_box_score_info(url)
+            games.append(game)
+            print_str = game["away_team"] + " @ " + game["home_team"] + " " + str(game["tipoff"])
+            print(f"Downloaded {print_str} ")
+        
+        with open(f"data/seasons/{season}/{month}.json", "w") as file:
+            json.dump(games, file, indent=4, sort_keys=True)

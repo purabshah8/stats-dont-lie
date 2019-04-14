@@ -98,7 +98,8 @@ class Team(models.Model):
 
     def get_season(self, year):
         league_id = 2 if self.name in aba_teams and year < 1977 else 1
-        return TeamSeason(team_id=self.id, season_id=Season.objects.get(year=year, league_id=league_id).id)
+        season = Season.objects.get(year=year, league_id=league_id)
+        return TeamSeason.objects.get(team_id=self.id, season_id=season.id)
     
     @classmethod
     def find(cls,team_name):
@@ -150,14 +151,17 @@ class Person(models.Model):
 class Referee(models.Model):
     id = models.OneToOneField(Person, models.DO_NOTHING, db_column='id', primary_key=True)
     jersey_number = models.IntegerField()
-    rookie_season = models.ForeignKey('Season', models.DO_NOTHING)
-    final_season = models.ForeignKey('Season', models.DO_NOTHING)
+    rookie_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="ref_rookie_season")
+    final_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="ref_final_season", null=True)
 
     def __str__(self):
         return self.id.__str__()
         
     class Meta:
         db_table = 'referee'
+
+    def get_name(self):
+        return self.id.get_name()
 
 
 class TeamEmployee(models.Model):
@@ -173,6 +177,9 @@ class TeamEmployee(models.Model):
     class Meta:
         db_table = 'team_employee'
 
+    def get_name(self):
+        return self.id.get_name()
+
 
 class Player(models.Model):
     id = models.OneToOneField(Person, models.DO_NOTHING, db_column='id', primary_key=True)
@@ -182,13 +189,15 @@ class Player(models.Model):
     rookie_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="rookie_season")
     final_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="final_season", null=True)
     image_url = models.CharField(max_length=128, null=True)
-
+    
     def __str__(self):
         return self.id.__str__()
 
     class Meta:
         db_table = 'player'
 
+    def get_name(self):
+        return self.id.get_name()
 
 class Position(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -208,7 +217,7 @@ class PlayerPosition(models.Model):
 
     class Meta:
         db_table = 'player_position'
-
+    
 
 class TeamSeason(models.Model):
     team = models.ForeignKey(Team, models.DO_NOTHING)
@@ -216,6 +225,7 @@ class TeamSeason(models.Model):
 
     def __str__(self):
         return self.team.name + " " + str(self.season.year)
+    
     class Meta:
         db_table = 'team_season'
 
@@ -223,6 +233,9 @@ class TeamSeason(models.Model):
 class PlayerTeamSeason(models.Model):
     player = models.ForeignKey(Player, models.DO_NOTHING)
     team_season = models.ForeignKey('TeamSeason', models.DO_NOTHING)
+
+    def __str__(self):
+        return self.player.get_name() + " " + self.team_season.__str__()
 
     class Meta:
         db_table = 'player_team_season'
@@ -242,7 +255,8 @@ class Game(models.Model):
     duration = models.IntegerField(blank=True, null=True)
     
     def __str__(self):
-        self.id
+        return self.id
+    
     class Meta:
         db_table = 'game'
 
@@ -252,6 +266,9 @@ class GamePeriod(models.Model):
     number = models.IntegerField()
     home_score = models.IntegerField()
     away_score = models.IntegerField()
+
+    def __str__(self):
+        return self.game.id + " Q" + str(self.number)
 
     class Meta:
         db_table = 'game_period'
@@ -280,6 +297,9 @@ class Statline(models.Model):
     pf = models.IntegerField(blank=True, null=True)
     pts = models.IntegerField()
 
+    def __str__(self):
+        return self.game.id + " " + self.team.abbreviation + str(self.id)
+    
     class Meta:
         db_table = 'statline'
 
