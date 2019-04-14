@@ -2340,6 +2340,29 @@
             "weight": 99.0
         }
     },
+    { 
+        "person" : {
+            "birth_place": "Pontiac, Michigan",
+            "college": "University of Georgia",
+            "dob": "August 14, 1996",
+            "first_name": "Yante",
+            "last_name": "Maten",
+            "middle_name": "Khaaliq Daiyann",
+            "preferred_name": "Yante"
+        }, 
+        "player": {
+            "aba": false,
+            "height": 203.0,
+            "image_url": "https://d2cwpp38twqe55.cloudfront.net/req/201902151/images/players/matenya01.jpg",
+            "positions": [
+                "PF",
+                "F"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Right",
+            "weight": 108.0
+        }
+    },
     {
         "person": {
             "birth_place": "Melbourne, Australia",
