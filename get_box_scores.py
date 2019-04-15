@@ -46,16 +46,16 @@ def save_game(info):
     officials = info["officials"]
     ref_keys = ["ref_one", "ref_two", "ref_three"]
     for i, ref_name in enumerate(officials):
-        person = Person.find(ref_name)
-        game_info[ref_keys[i]] = person.referee
+        referee = Referee.find(ref_name)
+        game_info[ref_keys[i]] = referee
     
     if Game.objects.filter(**game_info).exists():
         game = Game.objects.get(**game_info)
-        return game
-    game = Game(**game_info)
-    game.save()
+    else:
+        game = Game(**game_info)
+        game.save()
 
-    home_quarters = info["scorin`g"]["home"]
+    home_quarters = info["scoring"]["home"]
     away_quarters = info["scoring"]["away"]
     quarters = []
     for i, home_score in enumerate(home_quarters):
@@ -65,8 +65,11 @@ def save_game(info):
             "home_score": home_score,
             "away_score": away_quarters[i]
         }
-        quarter = GamePeriod(**quarter)
-        quarter.save()
+        if GamePeriod.objects.filter(**quarter).exists():
+            quarter = GamePeriod.objects.get(**quarter)
+        else:
+            quarter = GamePeriod(**quarter)
+            quarter.save()
         quarters.append(quarter)
 
     year = game_time.year if game_time.month < 7 else game_time.year + 1
@@ -80,44 +83,47 @@ def save_game(info):
         invalid_keys = ["Team Totals", "inactive"]
         team_players = [player for player in team_players if bool(team_stats[player]) and player not in invalid_keys]
         for name in team_players:
-            print(f"{name}")
-            person = Person.find(name)
-            if not PlayerTeamSeason.objects.filter(player_id=person.id, team_season_id=team_season.id).exists():
-                team_membership = PlayerTeamSeason(
-                    player_id=person.id, team_season_id=team_season.id)
+            person = Person.find(name, year)
+            if person is None:
+                print("ERROR: Person not found")
+                pass # add logic for multiple objects returned
+                
+            pts_info = { "player_id": person.id, "team_season_id": team_season.id }
+            if not PlayerTeamSeason.objects.filter(**pts_info).exists():
+                team_membership = PlayerTeamSeason(**pts_info)
                 team_membership.save()
             
             player_stats = team_stats[name]
-            # breakpoint()
             basic_statline = { stat:player_stats[stat] for stat in basic_stat_names }
             basic_statline["game_id"] = game.id
             basic_statline["team_id"] = team.id
-            basic_statline = Statline(**basic_statline)
-            basic_statline.save()
+            if Statline.objects.filter(**basic_statline).exists():
+                basic_statline = Statline.objects.get(**basic_statline)
+            else:
+                basic_statline = Statline(**basic_statline)
+                basic_statline.save()
 
-            # basic_stats = info[team_loc + "_stats"]["basic"][name]
-            # started = basic_stats.pop()
-            # plus_minus = basic_stats.pop()
-            # statline = dict(zip(basic_stat_names, basic_stats))
-            # breakpoint()
             player_statline = {
                 "id": basic_statline,
                 "player_id": person.id,
                 "started": player_stats["started"],
                 "plus_minus": player_stats["plus_minus"],
             }
-            player_statline = PlayerStatline(**player_statline)
-            player_statline.save()
+            if PlayerStatline.objects.filter(**player_statline).exists():
+                player_statline = PlayerStatline.objects.get(**player_statline)
+            else:
+                # breakpoint()
+                player_statline = PlayerStatline(**player_statline)
+                player_statline.save()
 
-            # breakpoint()
-            advanced_statline = { stat:player_stats[stat] for stat in advanced_stat_names }
-            # advanced_stats = info[team + "_stats"]["advanced"][name]
-            # statline = dict(zip(advanced_stat_names, advanced_stats))
-            # statline.pop("mp")
-            
+            advanced_statline = { stat:player_stats[stat] for stat in advanced_stat_names }   
             advanced_statline["id"] = basic_statline
-            advanced_statline = AdvancedStatline(**advanced_statline)
-            advanced_statline.save()
+            if AdvancedStatline.objects.filter(**advanced_statline).exists():
+                advanced_statline = AdvancedStatline.objects.get(**advanced_statline)
+            else:
+                advanced_statline = AdvancedStatline(**advanced_statline)
+                advanced_statline.save()
+        
         team_loc = "away"
 
     # print(f"""Created the follwing objects: 
@@ -136,3 +142,20 @@ def load_and_save_games(season):
                     print(f"Saved {game.id} to database.")
         except FileNotFoundError:
             pass
+
+
+def delete_all_games():
+    games = Game.objects.all()
+    stats = Statline.objects.all()
+    player_stats = PlayerStatline.objects.all()
+    adv_stats = AdvancedStatline.objects.all()
+    to_delete = [player_stats, adv_stats, stats, games]
+    for class_objs in to_delete:
+        for obj in class_objs:
+            obj.delete()
+
+
+# %load_ext autoreload
+# %autoreload 2
+# from get_box_scores import *
+# update_auto_increments()

@@ -139,10 +139,9 @@ def load_and_save_players(letter, repeat=False):
         with open(f"data/players/{letter}.json") as file:
             player_data = json.load(file)
             for datum in player_data:
-                person = save_person_to_db(datum["person"])
-                save_player_to_db(datum["player"], person)
-                name = person["preferred_name"] + " " + person["last_name"]
-                print(f"Saved {name} to database.")
+                save_player_to_db(**datum)
+                # name = person["preferred_name"] + " " + person["last_name"]
+                # print(f"Saved {name} to database.")
 
     except FileNotFoundError:
         if repeat:

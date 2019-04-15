@@ -1,5 +1,8 @@
+import re
 from django.db import models
 from util import aba_teams
+from datetime import date
+from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 class League(models.Model):
     name = models.CharField(max_length=8)
@@ -104,12 +107,18 @@ class Team(models.Model):
     @classmethod
     def find(cls,team_name):
         name = team_name.split(" ")
-        if len(name) > 2:
-            city = name[0] + " " + name[1]
-            nickname = name[-1]
+        if "Blazers" in name:
+            city = name[0]
+            nickname = " ".join(name[1:])
         else:
-            city, nickname = name
-        return cls.objects.get(city=city, name=nickname)
+            city = " ".join(name[:-1])
+            nickname = name[-1]
+        try:
+            return cls.objects.get(city=city, name=nickname)
+        except:
+            print("Multiple Teams Found")
+            breakpoint()
+            return
 
 class Season(models.Model):
     league = models.ForeignKey(League, models.DO_NOTHING)
@@ -122,6 +131,7 @@ class Season(models.Model):
 
     class Meta:
         db_table = 'season'
+
 
 
 class Person(models.Model):
@@ -143,9 +153,46 @@ class Person(models.Model):
         return self.preferred_name + " " + self.last_name
 
     @classmethod
-    def find(cls, full_name):
-        preferred_name, last_name = full_name.split(" ")
-        return cls.objects.get(preferred_name=preferred_name, last_name=last_name)
+    def find(cls, full_name, year=None):
+        names = full_name.split(" ")
+        if len(names) == 2:
+            preferred_name, last_name = names
+        elif re.search(r"^[vV][ao]n", names[1]) or full_name == "Luc Mbah a Moute":
+            preferred_name = names[0]
+            last_name = " ".join(names[1:])
+        else:
+            preferred_name = " ".join(names[:1])
+            last_name = names[-1]
+        try:
+            return cls.objects.get(preferred_name=preferred_name, last_name=last_name)
+        except ObjectDoesNotExist:
+            breakpoint()
+            print(f"Could not find a match for {full_name}")
+        except MultipleObjectsReturned:
+            if year:
+                active_players = []
+                people = cls.objects.filter(preferred_name=preferred_name, last_name=last_name)
+                for person in people:
+                    player = person.player
+                    first_year = player.rookie_season.year
+                    if player.final_season is None:
+                        last_year = year
+                    else:
+                        last_year = player.final_season.year
+                    is_active = first_year <= year and year <= last_year
+                    if is_active:
+                        active_players.append(player)
+                if len(active_players) == 1:
+                    return active_players[0].id
+                else:
+                    breakpoint()
+                    print(f"Found multiple matching players for {full_name}")
+                    return
+            else:
+                breakpoint()
+                print(f"Found multiple matches for {full_name}")
+
+            
 
 
 class Referee(models.Model):
@@ -160,8 +207,42 @@ class Referee(models.Model):
     class Meta:
         db_table = 'referee'
 
+    def is_active(self, year):
+        first_year = self.rookie_season.year
+        if self.final_season is None:
+            last_year = date.today().year
+        else:
+            last_year = self.final_season.year
+        return first_year <= year and year <= last_year
+        
+
     def get_name(self):
         return self.id.get_name()
+    
+    @classmethod
+    def find(cls, full_name):
+        names = full_name.split(" ")
+        if len(names) == 2:
+            preferred_name, last_name = names
+        elif re.search(r"^[vV][ao]n", names[1]):
+            preferred_name = names[0]
+            last_name = " ".join(names[1:])
+        else:
+            preferred_name = " ".join(names[:1])
+            last_name = names[-1]
+        matches = cls.objects.filter(id__preferred_name=preferred_name, id__last_name=last_name)
+        if len(matches) == 1:
+            return matches[0]
+        elif len(matches) < 1:
+            raise ObjectDoesNotExist(f"Could not find a match for Player {full_name}")
+        else:
+            # print(f"Found multiple matches for Referee {full_name}")
+            active_refs = []
+            for ref in matches:
+                if ref.is_active():
+                    active_refs.append(ref)
+            # breakpoint()
+            return active_refs[0]
 
 
 class TeamEmployee(models.Model):
@@ -198,6 +279,28 @@ class Player(models.Model):
 
     def get_name(self):
         return self.id.get_name()
+
+    @classmethod
+    def find(cls, full_name):
+        names = full_name.split(" ")
+        if len(names) == 2:
+            preferred_name, last_name = names
+        elif re.search(r"^[vV][ao]n", names[1]) or full_name == "Luc Mbah a Moute":
+            preferred_name = names[0]
+            last_name = " ".join(names[1:])
+        else:
+            preferred_name = " ".join(names[:1])
+            last_name = names[-1]
+        matches = cls.objects.filter(id__preferred_name=preferred_name, id__last_name=last_name)
+        if len(matches) == 1:
+            return matches[0]
+        elif len(matches) < 1:
+            raise ObjectDoesNotExist(f"Could not find a match for Player {full_name}")
+        else:
+            print(f"Found multiple matches for Player {full_name}")
+            breakpoint()
+            return
+
 
 class Position(models.Model):
     id = models.IntegerField(primary_key=True)

@@ -106,7 +106,7 @@ def create_tables():
             CREATE TABLE team_employee(
                 id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES person(id)
-                    ON DELETE RESTRICT ON UPDATE CASCADE,
+                    ON DELETE CASCADE ON UPDATE CASCADE,
                 team_id INTEGER NOT NULL
                     REFERENCES team(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE,
@@ -119,7 +119,7 @@ def create_tables():
             CREATE TABLE referee(
                 id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES person(id)
-                    ON DELETE RESTRICT ON UPDATE CASCADE,
+                    ON DELETE CASCADE ON UPDATE CASCADE,
                 jersey_number INTEGER,
                 rookie_season_id INTEGER NOT NULL
                     REFERENCES season(id)
@@ -133,7 +133,7 @@ def create_tables():
             CREATE TABLE player(
                 id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES person(id)
-                    ON DELETE RESTRICT ON UPDATE CASCADE,
+                    ON DELETE CASCADE ON UPDATE CASCADE,
                 height INTEGER NOT NULL,
                 weight INTEGER NOT NULL,
                 shooting_hand VARCHAR(5) NOT NULL,
@@ -202,13 +202,13 @@ def create_tables():
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 ref_one_id INTEGER
                     REFERENCES referee(id)
-                    ON DELETE CASCADE ON UPDATE CASCADE,
+                    ON DELETE RESTRICT ON UPDATE CASCADE,
                 ref_two_id INTEGER
                     REFERENCES referee(id)
-                    ON DELETE CASCADE ON UPDATE CASCADE,
+                    ON DELETE RESTRICT ON UPDATE CASCADE,
                 ref_three_id INTEGER
                     REFERENCES referee(id)
-                    ON DELETE CASCADE ON UPDATE CASCADE,
+                    ON DELETE RESTRICT ON UPDATE CASCADE,
                 tipoff TIMESTAMP,
                 attendance INTEGER,
                 duration INTEGER
@@ -259,7 +259,7 @@ def create_tables():
             CREATE TABLE advanced_statline(
                 id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES statline(id)
-                    ON DELETE RESTRICT ON UPDATE CASCADE,
+                    ON DELETE CASCADE ON UPDATE CASCADE,
                 'ts', FLOAT,
                 'efg', FLOAT,
                 'tpar', FLOAT,
@@ -280,15 +280,28 @@ def create_tables():
             CREATE TABLE player_statline(
                 id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES statline(id)
-                    ON DELETE RESTRICT ON UPDATE CASCADE,
+                    ON DELETE CASCADE ON UPDATE CASCADE,
                 player_id INTEGER NOT NULL
                     REFERENCES player(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
-                started BOOL,–
+                started BOOL,
                 plus_minus integer NOT NULL
             );
         """,
     ]
+
+# FOREIGN KEY CHANGES NOT IMPLEMENTED YET
+#
+# RESTRICT ==> CASCADE
+#   advanced_statline: id
+#   player_statline: id, player_id
+#   team_employee: id
+#   referee: id
+#   player: id
+#
+# CASCADE ==> RESTRICT
+#   game: ref_one_id, ref_two_id, ref_three_id
+#  
 
     connection = None
     try:
