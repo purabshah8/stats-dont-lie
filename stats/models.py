@@ -231,18 +231,19 @@ class Referee(models.Model):
             preferred_name = " ".join(names[:1])
             last_name = names[-1]
         matches = cls.objects.filter(id__preferred_name=preferred_name, id__last_name=last_name)
-        if len(matches) == 1:
-            return matches[0]
-        elif len(matches) < 1:
-            raise ObjectDoesNotExist(f"Could not find a match for Player {full_name}")
-        else:
-            # print(f"Found multiple matches for Referee {full_name}")
-            active_refs = []
-            for ref in matches:
-                if ref.is_active():
-                    active_refs.append(ref)
-            # breakpoint()
-            return active_refs[0]
+        return matches
+        # if len(matches) == 1:
+        #     return matches[0]
+        # elif len(matches) < 1:
+        #     raise ObjectDoesNotExist(f"Could not find a match for Player {full_name}")
+        # else:
+        #     # print(f"Found multiple matches for Referee {full_name}")
+        #     active_refs = []
+        #     for ref in matches:
+        #         if ref.is_active():
+        #             active_refs.append(ref)
+        #     # breakpoint()
+        #     return active_refs[0]
 
 
 class TeamEmployee(models.Model):

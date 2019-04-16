@@ -25,13 +25,15 @@ def save_game(info):
     away = Team.find(info["away_team"])
     
     game_time = get_datetime(info["tipoff"])
+    year = game_time.year if game_time.month < 7 else game_time.year + 1
     game_info = {
         "home_id": home.id,
         "away_id": away.id,
         "tipoff": game_time,
         "attendance": info["attendance"],
-        "duration": info["duration"]
     }
+    if "duration" in info:        
+        game_info["duration"] = info["duration"]
 
     date = str(game_time.year) + str(game_time.month).zfill(2) + \
         str(game_time.day).zfill(2)
@@ -46,7 +48,21 @@ def save_game(info):
     officials = info["officials"]
     ref_keys = ["ref_one", "ref_two", "ref_three"]
     for i, ref_name in enumerate(officials):
-        referee = Referee.find(ref_name)
+        if i >= 3:
+            break
+        referees = Referee.find(ref_name)
+        if len(referees) == 1:
+            referee = referees[0]
+        else:
+            active_refs = []
+            for ref in referees:
+                if ref.is_active(year):
+                    active_refs.append(ref)
+            if len(active_refs) == 1:
+                referee = active_refs[0]
+            else:
+                breakpoint()
+                
         game_info[ref_keys[i]] = referee
     
     if Game.objects.filter(**game_info).exists():
@@ -72,7 +88,6 @@ def save_game(info):
             quarter.save()
         quarters.append(quarter)
 
-    year = game_time.year if game_time.month < 7 else game_time.year + 1
     teams = [home, away]
     team_loc = "home"
 
@@ -131,8 +146,9 @@ def save_game(info):
     #         {advanced_statline}, {quarters}""")
     return game
 
-def load_and_save_games(season):
-    nba_months = ["october", "november", "december", "january", "february", "march", "april", "may", "june"]
+def load_and_save_games(season, nba_months=None):
+    if nba_months is None:
+        nba_months = ["october", "november", "december", "january", "february", "march", "april", "may", "june"]
     for month in nba_months:
         try:
             with open(f"data/seasons/{season}/{month}.json") as file:
