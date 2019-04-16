@@ -826,6 +826,28 @@
     },
     {
         "person": {
+            "birth_place": "Chicago, Illinois",
+            "college": "DePaul University",
+            "dob": "October 16, 1994",
+            "first_name": "Billy",
+            "last_name": "Garrett",
+            "middle_name": "",
+            "preferred_name": "Billy"
+        },
+        "player": {
+            "aba": false,
+            "height": 198.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Right",
+            "weight": 96.0
+        }
+    },
+    {
+        "person": {
             "birth_place": "Parsons, Tennessee",
             "college": "Austin Peay State University, Oral Roberts University",
             "dob": "July 11, 1956",

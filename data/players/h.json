@@ -1060,6 +1060,28 @@
     },
     {
         "person": {
+            "birth_place": "Little Rock, Arkansas",
+            "college": "Texas Tech University",
+            "dob": "September 2, 1993",
+            "first_name": "Gerald",
+            "last_name": "Hannahs",
+            "middle_name": "Ellis",
+            "preferred_name": "Dusty"
+        },
+        "player": {
+            "aba": false,
+            "height": 190.0,
+            "positions": [
+                "G",
+                "SG"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Right",
+            "weight": 95.0
+        }
+    },
+    {
+        "person": {
             "birth_place": "Los Angeles, California",
             "college": "University of Southern California",
             "dob": "July 19, 1923",
@@ -7156,6 +7178,27 @@
             "rookie_season": 2003,
             "shooting_hand": "Right",
             "weight": 106.0
+        }
+    },
+    {
+        "person": {
+            "birth_place": "Sydney, Australia",
+            "college": "University of Kentucky",
+            "dob": "January 5, 1998",
+            "first_name": "Isaac",
+            "last_name": "Humphries",
+            "middle_name": "",
+            "preferred_name": "Isaac"
+        },
+        "player": {
+            "aba": false,
+            "height": 213.0,
+            "positions": [
+                "C"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Right",
+            "weight": 115.0
         }
     },
     {

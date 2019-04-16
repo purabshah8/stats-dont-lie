@@ -4326,6 +4326,28 @@
     },
     {
         "person": {
+            "birth_place": "Nashville, Tennessee",
+            "college": "New Mexico State University",
+            "dob": "April 9, 1995",
+            "first_name": "Jemerrio",
+            "last_name": "Jones",
+            "middle_name": "",
+            "preferred_name": "Jemerrio"
+        },
+        "player": {
+            "aba": false,
+            "height": 196.0,
+            "positions": [
+                "F",
+                "SF"
+            ],
+            "rookie_season": 2019,
+            "shooting_hand": "Right",
+            "weight": 78.0
+        }
+    },
+    {
+        "person": {
             "birth_place": "Tallulah, Louisiana",
             "college": "Grambling State University",
             "dob": "January 1, 1945",
