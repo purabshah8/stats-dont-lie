@@ -169,9 +169,3 @@ def delete_all_games():
     for class_objs in to_delete:
         for obj in class_objs:
             obj.delete()
-
-
-# %load_ext autoreload
-# %autoreload 2
-# from get_box_scores import *
-# update_auto_increments()

@@ -4,6 +4,11 @@ from util import aba_teams
 from datetime import date
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
+
+# %load_ext autoreload
+# %autoreload 2
+# from stats.models import *
+
 class League(models.Model):
     name = models.CharField(max_length=8)
     year_founded = models.IntegerField()
@@ -104,6 +109,10 @@ class Team(models.Model):
         season = Season.objects.get(year=year, league_id=league_id)
         return TeamSeason.objects.get(team_id=self.id, season_id=season.id)
     
+    def get_roster(self,year):
+        team_season = self.get_season(year)
+        return list(PlayerTeamSeason.objects.filter(team_season=team_season))
+
     @classmethod
     def find(cls,team_name):
         name = team_name.split(" ")
@@ -120,6 +129,7 @@ class Team(models.Model):
             breakpoint()
             return
 
+
 class Season(models.Model):
     league = models.ForeignKey(League, models.DO_NOTHING)
     year = models.IntegerField()
@@ -131,7 +141,6 @@ class Season(models.Model):
 
     class Meta:
         db_table = 'season'
-
 
 
 class Person(models.Model):
@@ -193,8 +202,6 @@ class Person(models.Model):
                 print(f"Found multiple matches for {full_name}")
 
             
-
-
 class Referee(models.Model):
     id = models.OneToOneField(Person, models.DO_NOTHING, db_column='id', primary_key=True)
     jersey_number = models.IntegerField()
@@ -232,18 +239,6 @@ class Referee(models.Model):
             last_name = names[-1]
         matches = cls.objects.filter(id__preferred_name=preferred_name, id__last_name=last_name)
         return matches
-        # if len(matches) == 1:
-        #     return matches[0]
-        # elif len(matches) < 1:
-        #     raise ObjectDoesNotExist(f"Could not find a match for Player {full_name}")
-        # else:
-        #     # print(f"Found multiple matches for Referee {full_name}")
-        #     active_refs = []
-        #     for ref in matches:
-        #         if ref.is_active():
-        #             active_refs.append(ref)
-        #     # breakpoint()
-        #     return active_refs[0]
 
 
 class TeamEmployee(models.Model):
@@ -344,6 +339,7 @@ class PlayerTeamSeason(models.Model):
     class Meta:
         db_table = 'player_team_season'
 
+
 class Game(models.Model):
     id = models.CharField(primary_key=True, max_length=16)
     home = models.ForeignKey('Team', models.DO_NOTHING, related_name="home_team")
@@ -363,6 +359,13 @@ class Game(models.Model):
     
     class Meta:
         db_table = 'game'
+
+    def get_stats(self, team):
+        if team == "home":
+            return Statline.objects.filter(team=self.home, game=self.id)
+        else:
+            return Statline.objects.filter(team=self.away, game=self.id)
+
 
 
 class GamePeriod(models.Model):
