@@ -139,6 +139,7 @@ def save_game(info):
                 advanced_statline = AdvancedStatline(**advanced_statline)
                 advanced_statline.save()
         
+        team_stats["Team Totals"]
         team_loc = "away"
 
     # print(f"""Created the follwing objects: 

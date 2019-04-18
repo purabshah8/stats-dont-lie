@@ -106,8 +106,13 @@ def get_box_score_info(url):
                     stat_val = stat.text if stat.text else "0.0"
                     stat_val = str_to_data(stat_val)
                     data_dict[stat_name] = stat_val
-                data_dict["mp"] *= 60
-                team_data["Team Totals"]= data_dict
+                if box_type == "advanced":
+                    data_dict["mp"] *= 3600
+            
+            if "Team Totals" in team_data:
+                team_data["Team Totals"].update(data_dict)
+            else:
+                team_data["Team Totals"] = data_dict
             
             info[team_stats] = team_data
 

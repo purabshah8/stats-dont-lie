@@ -45,9 +45,20 @@ class TeamEmployeeType(DjangoObjectType):
         model = TeamEmployee
 
 class PlayerType(DjangoObjectType):
+    person = graphene.Field(PersonType)
+    positions = graphene.List(graphene.String)
     class Meta:
         model = Player
 
+    def resolve_person(self, info):
+        return self.id
+
+    def resolve_positions(self,info):
+        positions = []
+        position_queryset = self.playerposition_set.all()
+        for playerpos in position_queryset:
+            positions.append(playerpos.position.abbreviation)
+        return positions
 
 class PositionType(DjangoObjectType):
     class Meta:
@@ -129,16 +140,8 @@ class Query(object):
         season = Season.objects.get(year=year, league_id=1)
         return TeamSeason.objects.get(team_id=team_id, season=season)
 
-    # def resolve_roster(self, info, **kwargs):
-    #     team_id = kwargs.get("team_id")
-    #     year = kwargs.get("year")
-
-    #     team = Team.objects.get(pk=team_id)
-    #     players = team.get_roster(year)
-    #     return players
-
     def resolve_all_teams(self, info, **kwargs):
-        return Team.objects.all()
+        return Team.objects.exclude(id=31)
     
     def resolve_all_leagues(self, info, **kwargs):
         return League.objects.all()
@@ -236,3 +239,8 @@ class Query(object):
 
         if name is not None:
             return Person.find(name)
+
+
+
+def get_team_totals(team_id):
+    
