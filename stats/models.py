@@ -1,6 +1,7 @@
 import re
 from django.db import models
-from util import aba_teams
+from django.db.models import Sum, Avg
+from util import ABA_TEAMS, BASIC_STAT_NAMES, ADVANCED_STAT_NAMES
 from datetime import date
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
@@ -105,7 +106,7 @@ class Team(models.Model):
         db_table = 'team'
 
     def get_season(self, year):
-        league_id = 2 if self.name in aba_teams and year < 1977 else 1
+        league_id = 2 if self.name in ABA_TEAMS and year < 1977 else 1
         season = Season.objects.get(year=year, league_id=league_id)
         return TeamSeason.objects.get(team_id=self.id, season_id=season.id)
     
@@ -323,8 +324,40 @@ class TeamSeason(models.Model):
     season = models.ForeignKey(Season, models.DO_NOTHING)
 
     def __str__(self):
-        return self.team.name + " " + str(self.season.year)
+        return self.team.name + " " + str(self.season.year)    
+
+    def get_regular_statlines(self):
+        return Statline.objects.filter(team=self.team, 
+            playerstatline__isnull=True, 
+            game__tipoff__lt=self.season.playoff_start, 
+            game__tipoff__gte=self.season.season_start)
+
+    def get_playoff_statlines(self):
+        return Statline.objects.filter(team=self.team, 
+            playerstatline__isnull=True, 
+            game__tipoff__gte=self.season.playoff_start, 
+            game__tipoff__lt=date(self.season.year, 7, 1))
     
+    def get_raw_stats(self):
+        raw_stats = {}
+        team_stats = self.get_regular_statlines()
+        for stat in BASIC_STAT_NAMES:
+            stat_values = team_stats.values_list(stat, flat=True)
+            raw_stats[stat] = list(stat_values)
+        return raw_stats
+
+    def get_season_totals(self):
+        team_stats = self.get_regular_statlines()
+        totals = team_stats.aggregate(mp=Sum("mp"), fg=Sum("fg"), 
+            fga=Sum("fga"), tp=Sum("tp"), tpa=Sum("tpa"), 
+            ft=Sum("ft"), fta=Sum("fta"), orb=Sum("orb"), 
+            drb=Sum("drb"), trb=Sum("trb"), ast=Sum("ast"), 
+            stl=Sum("stl"), blk=Sum("blk"), tov=Sum("tov"), 
+            pf=Sum("pf"), pts=Sum("pts"))
+        totals["fg_pct"] = totals["fg"] / totals["fga"]
+        totals["tp_pct"] = totals["tp"] / totals["tpa"]
+        totals["ft_pct"] = totals["ft"] / totals["fta"]
+        return totals
     class Meta:
         db_table = 'team_season'
 
@@ -336,6 +369,46 @@ class PlayerTeamSeason(models.Model):
     def __str__(self):
         return self.player.get_name() + " " + self.team_season.__str__()
 
+    def get_regular_statlines(self):
+        return Statline.objects.filter(team=self.team_season.team, 
+            playerstatline__isnull=False, playerstatline__player=self.player.id.id, 
+            game__tipoff__lt=self.team_season.season.playoff_start, 
+            game__tipoff__gte=self.team_season.season.season_start)
+
+    def get_playoff_statlines(self):
+        return Statline.objects.filter(team=self.team_season.team, 
+            playerstatline__isnull=False, playerstatline__player=self.player.id.id, 
+            game__tipoff__gte=self.team_season.season.playoff_start, 
+            game__tipoff__lt=date(self.team_season.season.year, 7, 1))
+    
+    def get_raw_stats(self):
+        raw_stats = {}
+        team_stats = self.get_regular_statlines()
+        for stat in BASIC_STAT_NAMES:
+            stat_values = team_stats.values_list(stat, flat=True)
+            raw_stats[stat] = list(stat_values)
+        return raw_stats
+
+    def get_season_totals(self):
+        team_stats = self.get_regular_statlines()
+        totals = team_stats.aggregate(mp=Sum("mp"), fg=Sum("fg"), 
+            fga=Sum("fga"), tp=Sum("tp"), tpa=Sum("tpa"), 
+            ft=Sum("ft"), fta=Sum("fta"), orb=Sum("orb"), 
+            drb=Sum("drb"), trb=Sum("trb"), ast=Sum("ast"), 
+            stl=Sum("stl"), blk=Sum("blk"), tov=Sum("tov"), 
+            pf=Sum("pf"), pts=Sum("pts"))
+        totals["fg_pct"] = totals["fg"] / totals["fga"]
+        totals["tp_pct"] = totals["tp"] / totals["tpa"]
+        totals["ft_pct"] = totals["ft"] / totals["fta"]
+        starts = 0
+        plus_minus = 0
+        for stat in team_stats:
+            plus_minus += stat.playerstatline.plus_minus
+            if stat.playerstatline.started:
+                starts += 1
+        totals["plus_minus"] = plus_minus
+        totals["starts"] = starts
+        return totals
     class Meta:
         db_table = 'player_team_season'
 
