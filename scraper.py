@@ -6,21 +6,10 @@ import pytz
 
 import bs4
 import requests
-from util import get_datetime
+from util import get_datetime, NBA_MONTHS
 
-def str_to_data(el):
-    if "." in el:
-        return float(el)
-    elif ":" in el:
-        stat = el.split(":")
-        return 60 * int(stat[0]) + int(stat[1])
-    else:
-        return int(el)
 
-nba_months = ["october", "november", "december", "january", 
-            "february", "march", "april", "may", "june"]
-
-def get_box_score_urls(season=2019, months=nba_months):
+def get_box_score_urls(season=2019, months=NBA_MONTHS):
     if season == 2019 and len(months) > 7:
         months.pop()
         months.pop()
@@ -406,12 +395,8 @@ def get_ref_info(url):
         contents = info.split("\n")
         contents = [c for c in contents if c]
         raw_info += contents
-    # ignore = ["Pronunciation", "High School", "Relatives", "Died", "(born"]
 
     for info in raw_info:
-        # if any(string in info for string in ignore):
-        #     continue
-        # clean up info
         info = info.replace("\xa0", " ").split(" ")
         info_arr = [x for x in info if x]
         if "Born:" in info_arr:
@@ -451,7 +436,7 @@ def scrape_refs():
         json.dump(info, file, indent=4, sort_keys=True)
 
 
-def scrape_games(season, months=nba_months):
+def scrape_games(season, months=NBA_MONTHS):
     for month in months:
         urls = get_box_score_urls(season, [month])
         games = []
@@ -463,3 +448,13 @@ def scrape_games(season, months=nba_months):
         
         with open(f"data/seasons/{season}/{month}.json", "w") as file:
             json.dump(games, file, indent=4, sort_keys=True)
+
+
+def str_to_data(el):
+    if "." in el:
+        return float(el)
+    elif ":" in el:
+        stat = el.split(":")
+        return 60 * int(stat[0]) + int(stat[1])
+    else:
+        return int(el)

@@ -1,22 +1,20 @@
-from stats.models import *
 import os
 import django
 import json
-from util import get_datetime, update_auto_increments
+from stats.models import *
+from util import *
 from scraper import get_box_score_urls, get_box_score_info
 from django.core.exceptions import ObjectDoesNotExist
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
 django.setup()
 
-# from stats.models import Team, Game, PlayerTeamSeason, Statline
-
-basic_stat_names = ["mp", "fg", "fga", "fg_pct", "tp", "tpa", "tp_pct", "ft",
-                    "fta", "ft_pct", "orb", "drb", "trb", "ast", "stl", "blk", 
-                    "tov", "pf", "pts"]
-advanced_stat_names = ["ts", "efg", "tpar", "ftr", "orb_pct", "drb_pct",
-                       "trb_pct", "ast_pct", "stl_pct", "blk_pct", "tov_pct", 
-                       "usg_rate", "ortg", "drtg"]
+# BASIC_STAT_NAMES = ["mp", "fg", "fga", "fg_pct", "tp", "tpa", "tp_pct", "ft",
+#                     "fta", "ft_pct", "orb", "drb", "trb", "ast", "stl", "blk", 
+#                     "tov", "pf", "pts"]
+# ADVANCED_STAT_NAMES = ["ts", "efg", "tpar", "ftr", "orb_pct", "drb_pct",
+#                        "trb_pct", "ast_pct", "stl_pct", "blk_pct", "tov_pct", 
+#                        "usg_rate", "ortg", "drtg"]
 
 # player_stat_names = ["started", "plus_minus"]
 
@@ -109,7 +107,7 @@ def save_game(info):
                 team_membership.save()
             
             player_stats = team_stats[name]
-            basic_statline = { stat:player_stats[stat] for stat in basic_stat_names }
+            basic_statline = { stat:player_stats[stat] for stat in BASIC_STAT_NAMES }
             basic_statline["game_id"] = game.id
             basic_statline["team_id"] = team.id
             if Statline.objects.filter(**basic_statline).exists():
@@ -131,7 +129,7 @@ def save_game(info):
                 player_statline = PlayerStatline(**player_statline)
                 player_statline.save()
 
-            advanced_statline = { stat:player_stats[stat] for stat in advanced_stat_names }   
+            advanced_statline = { stat:player_stats[stat] for stat in ADVANCED_STAT_NAMES }   
             advanced_statline["id"] = basic_statline
             if AdvancedStatline.objects.filter(**advanced_statline).exists():
                 advanced_statline = AdvancedStatline.objects.get(**advanced_statline)
@@ -139,17 +137,28 @@ def save_game(info):
                 advanced_statline = AdvancedStatline(**advanced_statline)
                 advanced_statline.save()
         
-        team_stats["Team Totals"]
+        # save team totals (basic & advanced)
+        basic_team_statline = {stat:team_stats["Team Totals"][stat] for stat in BASIC_STAT_NAMES}
+        basic_team_statline["game_id"] = game.id
+        basic_team_statline["team_id"] = team.id
+
+        if Statline.objects.filter(**basic_team_statline).exists():
+                basic_team_statline = Statline.objects.get(**basic_team_statline)
+        else:
+            basic_team_statline = Statline(**basic_team_statline)
+            basic_team_statline.save()
+        advanced_team_statline = {stat:team_stats["Team Totals"][stat] for stat in ADVANCED_STAT_NAMES}
+        advanced_team_statline["id"] = basic_team_statline
+        if AdvancedStatline.objects.filter(**advanced_team_statline).exists():
+                advanced_team_statline = AdvancedStatline.objects.get(**advanced_team_statline)
+        else:
+            advanced_team_statline = AdvancedStatline(**advanced_team_statline)
+            advanced_team_statline.save()
         team_loc = "away"
 
-    # print(f"""Created the follwing objects: 
-    #         {game}, {basic_statline}, {player_statline}, 
-    #         {advanced_statline}, {quarters}""")
     return game
 
-def load_and_save_games(season, nba_months=None):
-    if nba_months is None:
-        nba_months = ["october", "november", "december", "january", "february", "march", "april", "may", "june"]
+def load_and_save_games(season, nba_months=NBA_MONTHS):
     for month in nba_months:
         try:
             with open(f"data/seasons/{season}/{month}.json") as file:

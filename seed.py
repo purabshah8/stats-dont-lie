@@ -1,6 +1,6 @@
 import os, sys, django, psycopg2, pytz, csv, datetime
 from dateutil.parser import parse
-from util import get_datetime
+from util import get_datetime, ABA_TEAMS
 from scraper import get_season_dates
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
@@ -60,35 +60,35 @@ locations = [
 ]
 
 arenas = [
-    (1, "American Airlines Arena", 1, 19600, 2000), # 54 => 1
+    (1, "American Airlines Arena", 1, 19600, 2000),
     (2, "American Airlines Center", 2, 21146, 2002),
     (3, "Amway Center", 3, 18846, 2011),
     (4, "AT&T Center", 4, 18418, 2003),
-    (5, "Bankers Life Fieldhouse", 5, 17923, 2000), # 58 => 5
+    (5, "Bankers Life Fieldhouse", 5, 17923, 2000),
     (6, "Barclays Center", 6, 17732, 2013),
     (7, "Capital One Arena", 7, 20356, 1998),
     (8, "Chesapeake Energy Arena", 8, 18203, 2003),
     (9, "FedEx Forum", 9, 17794, 2005),
-    (10, "Fiserv Forum", 10, 17500, 2019), # 63 => 10
+    (10, "Fiserv Forum", 10, 17500, 2019),
     (11, "Golden 1 Center", 11, 17583, 2017),
     (12, "Little Caesars Arena", 12, 20491, 2018),
     (13, "Madison Square Garden", 13, 19812, 1968),
     (14, "Moda Center", 14, 19441, 1996),
-    (15, "Oracle Arena", 15, 19596, 1972), # 68 => 15
+    (15, "Oracle Arena", 15, 19596, 1972),
     (16, "Pepsi Center", 16, 19520, 2000),
     (17, "Quicken Loans Arena", 17, 20562, 1995),
     (18, "Scotiabank Arena", 18, 19800, 2000),
     (19, "Smoothie King Center", 19, 16867, 2000),
-    (20, "Spectrum Center", 20, 19077, 2006), # 73 => 20
+    (20, "Spectrum Center", 20, 19077, 2006),
     (21, "Staples Center", 21, 19068, 2000),
     (22, "State Farm Arena", 22, 18118, 2000),
     (23, "Talking Stick Resort Arena", 23, 18055, 1993),
     (24, "Target Center", 24, 18978, 1991),
-    (25, "TD Garden", 25, 18624, 1996), # 78 => 25
+    (25, "TD Garden", 25, 18624, 1996),
     (26, "Toyota Center", 26, 18055, 2004),
     (27, "United Center", 27, 20917, 1995),
     (28, "Vivint Smart Home Arena", 28, 18306, 1992),
-    (29, "Wells Fargo Center", 29, 20478, 1997), # 82 => 29
+    (29, "Wells Fargo Center", 29, 20478, 1997),
     (30, "Key Arena", 30, 17459, 1962)
 ]
 
@@ -127,50 +127,35 @@ teams = [
 ]
 
 seasons = []
-with open('data/season_info.csv') as f:
-    csv_reader = csv.reader(f, delimiter='|')
+with open("data/season_info.csv") as f:
+    csv_reader = csv.reader(f, delimiter="|")
     for row in csv_reader:
-        row[-1] = parse(row[-1])
-        row[-2] = parse(row[-2])
+        season_start = parse(row[-1])
+        playoff_start = parse(row[-2])
         row = [int(col) for col in row if not isinstance(col, datetime.datetime)]
+        row.append(season_start)
+        row.append(playoff_start)
         seasons.append(tuple(row))
 
-# for yr in range(1947, 2020):
-#     i = yr - 1946
-#     season_start, playoff_start = get_season_dates(yr)
-#     season_info = (i, 1, yr, season_start, playoff_start)
-#     seasons.append(season_info)
-
-# start_dates = ["October 13, 1967", "October 18, 1968", "October 17, 1969", "October 14, 1970", "October 13, 1971", "October 12, 1972", "October 10, 1973", "October 18, 1974", "October 24, 1975"]
-# playoff_dates = ["March 23, 1968", "April 5, 1969", "April 17, 1970", "April 1, 1971", "March 31, 1972", "March 30, 1973", "March 29, 1974", "April 4, 1975", "April 8, 1976"]
-
-# highest_id = seasons[-1][0]+1
-# for i in range(len(playoff_dates)):
-#     season_start = get_datetime(start_dates[i])
-#     playoff_start = get_datetime(playoff_dates[i])
-#     aba_season_info = (highest_id + i, 2, 1968 + i, season_start, playoff_start)
-#     seasons.append(aba_season_info)
-
 positions = [
-    (1, 'Point Guard', 'PG'),
-    (2, 'Shooting Guard', 'SG'),
-    (3, 'Small Forward', 'SF'),
-    (4, 'Power Forward', 'PF'),
-    (5, 'Center', 'C'),
-    (6, 'Guard', 'G'),
-    (7, 'Forward', 'F'),
+    (1, "Point Guard", "PG"),
+    (2, "Shooting Guard", "SG"),
+    (3, "Small Forward", "SF"),
+    (4, "Power Forward", "PF"),
+    (5, "Center", "C"),
+    (6, "Guard", "G"),
+    (7, "Forward", "F"),
 ]
 
-aba_teams = ["Nets", "Spurs", "Pacers", "Nuggets"]
 team_seasons = []
 i = 1
 for season in seasons:
     year = season[2]
     league_id = season[1]
     if league_id == 1 and year < 1977:
-        active_teams = [team for team in teams if team[5] <= year and team[2] not in aba_teams]
+        active_teams = [team for team in teams if team[5] <= year and team[2] not in ABA_TEAMS]
     elif league_id == 2 and year < 1977:
-        active_teams = [team for team in teams if team[2] in aba_teams]
+        active_teams = [team for team in teams if team[2] in ABA_TEAMS]
     else:
         active_teams = [team for team in teams if team[5] <= year]
     
@@ -187,8 +172,8 @@ def insert(table, values):
         connection = psycopg2.connect("dbname=nba user=purab password=godricshallows")
         cursor = connection.cursor()
         num_args_str = "(" + "%s," * (len(values[0])-1) + "%s)"
-        args = [str(cursor.mogrify(num_args_str, x), 'utf-8') for x in values]
-        args_str = ','.join(args)
+        args = [str(cursor.mogrify(num_args_str, x), "utf-8") for x in values]
+        args_str = ",".join(args)
         cursor.execute("INSERT INTO " + table + " VALUES " + args_str)
         connection.commit()
         print("Populated", table, "table")
@@ -196,7 +181,7 @@ def insert(table, values):
         if connection:
             connection.rollback()
             print("rolling back...")
-        print('Error %s' % e)
+        print("Error %s" % e)
         sys.exit(1)
     finally:
         if connection:
@@ -205,6 +190,6 @@ def insert(table, values):
 tables = ["league", "conference", "division", "location", "arena", "team", "season", "position", "team_season"]
 seed_data = [leagues, conferences, divisions, locations, arenas, teams, seasons, positions, team_seasons]
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for i in range(len(seed_data)):
         insert(tables[i], seed_data[i])

@@ -5,8 +5,11 @@ import pytz
 from dateutil.parser import parse
 from django.utils.six import StringIO
 
-aba_teams = ["Nets", "Spurs", "Pacers", "Nuggets"]
-states = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas",
+ABA_TEAMS = ["Nets", "Spurs", "Pacers", "Nuggets"]
+
+NBA_MONTHS = ["october", "november", "december", "january", "march", "april", "may", "june"]
+
+STATES = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas",
           "California", "Colorado", "Connecticut", "Delaware",
           "District of Columbia", "Federated States of Micronesia", "Florida",
           "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
@@ -19,6 +22,15 @@ states = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas",
           "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
           "Vermont", "U.S. Virgin Islands", "Virginia", "Washington",
           "West Virginia", "Wisconsin", "Wyoming"]
+
+BASIC_STAT_NAMES = ["mp", "fg", "fga", "fg_pct", "tp", "tpa", "tp_pct", "ft",
+                    "fta", "ft_pct", "orb", "drb", "trb", "ast", "stl", "blk", 
+                    "tov", "pf", "pts"]
+ADVANCED_STAT_NAMES = ["ts", "efg", "tpar", "ftr", "orb_pct", "drb_pct",
+                       "trb_pct", "ast_pct", "stl_pct", "blk_pct", "tov_pct", 
+                       "usg_rate", "ortg", "drtg"]
+
+PLAYER_STAT_NAMES = ["started", "plus_minus"]
 
 
 def get_datetime(datetime_str):

@@ -2,7 +2,7 @@ from stats.models import Location, Person, Player, Position, Season, PlayerPosit
 import os
 import django
 import json
-from util import get_datetime, update_auto_increments, states
+from util import get_datetime, update_auto_increments, STATES
 from scraper import scrape_players, scrape_refs
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -15,7 +15,7 @@ def save_person_to_db(person):
         locs = person.pop("birth_place").split(", ")
         if len(locs) > 1:
             city, state = locs
-            if state not in states:
+            if state not in STATES:
                 country = state
                 state = None
             else:
@@ -26,7 +26,7 @@ def save_person_to_db(person):
         else:
             location = {"country": locs[0], "precision": "country"}
         if Location.objects.filter(**location).exists():
-            player_location = Location.objects.filter(**location)[0]
+            player_location = Location.objects.get(**location)
         else:
             player_location = Location(**location)
             player_location.save()
@@ -140,9 +140,6 @@ def load_and_save_players(letter, repeat=False):
             player_data = json.load(file)
             for datum in player_data:
                 save_player_to_db(**datum)
-                # name = person["preferred_name"] + " " + person["last_name"]
-                # print(f"Saved {name} to database.")
-
     except FileNotFoundError:
         if repeat:
             print(
