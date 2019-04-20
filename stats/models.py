@@ -1,7 +1,7 @@
 import re
 from django.db import models
 from django.db.models import Sum, Avg
-from util import ABA_TEAMS, BASIC_STAT_NAMES, ADVANCED_STAT_NAMES
+from util import ABA_TEAMS, BASIC_STAT_NAMES, ADVANCED_STAT_NAMES, PLAYER_STAT_NAMES
 from datetime import date
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
@@ -370,22 +370,25 @@ class PlayerTeamSeason(models.Model):
         return self.player.get_name() + " " + self.team_season.__str__()
 
     def get_regular_statlines(self):
-        return Statline.objects.filter(team=self.team_season.team, 
-            playerstatline__isnull=False, playerstatline__player=self.player.id.id, 
+        return Statline.objects.filter(playerstatline__isnull=False,
+            playerstatline__player=self.player.id.id, 
             game__tipoff__lt=self.team_season.season.playoff_start, 
             game__tipoff__gte=self.team_season.season.season_start)
 
     def get_playoff_statlines(self):
-        return Statline.objects.filter(team=self.team_season.team, 
-            playerstatline__isnull=False, playerstatline__player=self.player.id.id, 
+        return Statline.objects.filter(playerstatline__isnull=False,
+            playerstatline__player=self.player.id.id, 
             game__tipoff__gte=self.team_season.season.playoff_start, 
             game__tipoff__lt=date(self.team_season.season.year, 7, 1))
     
     def get_raw_stats(self):
         raw_stats = {}
-        team_stats = self.get_regular_statlines()
+        player_stats = self.get_regular_statlines()
         for stat in BASIC_STAT_NAMES:
-            stat_values = team_stats.values_list(stat, flat=True)
+            stat_values = player_stats.values_list(stat, flat=True)
+            raw_stats[stat] = list(stat_values)
+        for stat in PLAYER_STAT_NAMES:
+            stat_values = player_stats.values_list("playerstatline__"+stat, flat=True)
             raw_stats[stat] = list(stat_values)
         return raw_stats
 
