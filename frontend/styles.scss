@@ -36,3 +36,32 @@ img {
     max-height: 100%;
     max-width: 100%;
 }
+
+.player-name {
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.preferred-name {
+    font-weight: 500;
+    font-size: 2vw;
+}
+
+.last-name {
+    font-weight: 700;
+    font-size: 2.5vw;
+}
+
+
+.player-info {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5vw;
+}
+
+.info-item {
+    font-size: 1.25vw;
+    margin: 1.25vw auto 1.25vw auto;
+}

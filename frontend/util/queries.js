@@ -28,6 +28,16 @@ const teamSeasonFragments = {
     `,
 };
 
+const teamFragments = {
+    name: gql`
+    fragment teamName on TeamType {
+        city
+        name
+        abbreviation
+    }
+    `,
+};
+
 export const GET_ALL_TEAMS = gql`
     query {
         allTeams {
@@ -54,6 +64,7 @@ query TeamDetails($teamId: Int!) {
                 name
             }
         }
+        yearFounded
     }
 }`;
 
@@ -69,23 +80,69 @@ ${teamSeasonFragments.roster}
 export const GET_PLAYER = gql`
 query ($playerId: Int!) {
     player(id: $playerId) {
-      person {
-        preferredName
-        firstName
-        lastName
-        dob
-        college
-        birthplace {
-          city
-          state
-          country
+        person {
+            preferredName
+            firstName
+            lastName
+            dob
+            college
+            birthplace {
+                city
+                state
+                country
+            }
         }
-      }
-      height
-      weight
-      shootingHand
-      positions
-      imageUrl
+        rookieSeason {
+            year
+        }
+        finalSeason {
+            year
+        }
+        height
+        weight
+        shootingHand
+        positions
+        imageUrl
     }
   }
+`;
+
+export const GET_PLAYER_SEASON = gql`
+query getPlayerSeason($playerId: Int!, $year: Int!) {
+    playerSeason(playerId: $playerId, year: $year) {
+        player {
+            ...playerName
+        }
+        teamSeason {
+            team {
+                ...teamName
+            }
+        }
+        rawStats {
+            mp
+            fg
+            fga
+            fgPct
+            tp
+            tpa
+            tpPct
+            ft
+            fta
+            ftPct
+            orb
+            drb
+            trb
+            ast
+            stl
+            blk
+            tov
+            pf
+            pts
+            plusMinus
+            started
+        }
+    }
+}
+${playerFragments.name}
+${teamFragments.name}
 `;

@@ -1,0 +1,95 @@
+import React from 'react';
+import { Query } from "react-apollo";
+import { Link } from "react-router-dom";
+import { GET_PLAYER } from '../../util/queries';
+import { range } from "lodash";
+
+export default class PlayerDetails extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className="container">
+                <Query query={GET_PLAYER} variables={ { playerId: this.props.playerId } }>
+                    {
+                        ({loading, error, data}) => {
+                            if (loading) return 'Loading...';
+                            if (error) return `Error! ${error.message}`;                            
+                            let player = data.player;
+                            let person = data.player.person;
+                            let rookieSeason = player.rookieSeason.year;
+                            let finalSeason;
+                            if (data.player.finalSeason)
+                                finalSeason = player.finalSeason.year;
+                            else
+                                finalSeason = 2019;
+                            let seasons = range(rookieSeason, finalSeason+1);
+                            seasons = seasons.map(season => {
+                                let startYear = season-1;
+                                let endYear = season - 2000;
+                                if (endYear < 0)
+                                    endYear += 100;
+                                return(
+                                    <option key={season}>
+                                        {startYear + "-" + endYear}
+                                    </option>
+                                );
+                            });
+                            const height = player.height / 2.54;
+                            const feet = Math.floor(height/12);
+                            const inches = parseInt(height) % 12;
+                            const weight = player.weight * 2.2;
+                            const today = new Date();
+                            const dob = new Date(person.dob);
+                            return(
+                                <> 
+                                    <div className="level">
+                                        <div className="level-left">
+                                            <div className="level-item">
+                                                <figure>
+                                                    <img src={player.imageUrl} />
+                                                </figure>
+                                            </div>
+                                            <div className="level-item">
+                                                <div className="player-name">
+                                                    <p className="preferred-name">{person.preferredName}</p>
+                                                    <p className="last-name">{person.lastName}</p>
+                                                </div>
+                                            </div>
+                                            <div className="level-item">
+                                                <div className="player-info">
+                                                    <ul>
+                                                        <li className="info-item">
+                                                           <strong>Height: </strong>{feet}'{inches}"
+                                                        </li>
+                                                        <li className="info-item">
+                                                           <strong>Weight: </strong>{weight} lbs
+                                                        </li>
+                                                        <li className="info-item">
+                                                           <strong>Age: </strong>{Math.floor((today-dob)/31536000000)} (Born {dob.getMonth()+1}/{dob.getDate()}/{dob.getFullYear()}) 
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="level-right">
+                                        </div>
+                                    </div>
+                                    <div className="select">
+                                        <select className="">
+                                            <option disabled selected>Select Season</option>
+                                            {seasons}
+                                        </select>
+                                    </div>
+                                </>
+                            );
+                        }
+                    }
+                </Query>
+            </div>
+        );
+    }
+}
