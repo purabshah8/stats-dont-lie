@@ -98,13 +98,17 @@ query ($playerId: Int!) {
         finalSeason {
             year
         }
+        currentTeam {
+            ...teamName
+        }
         height
         weight
         shootingHand
         positions
         imageUrl
     }
-  }
+}
+${teamFragments.name}
 `;
 
 export const GET_PLAYER_SEASON = gql`

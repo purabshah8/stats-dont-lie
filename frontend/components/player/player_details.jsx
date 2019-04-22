@@ -19,6 +19,7 @@ export default class PlayerDetails extends React.Component {
                             if (error) return `Error! ${error.message}`;                            
                             let player = data.player;
                             let person = data.player.person;
+                            const currentTeam = player.currentTeam;
                             let rookieSeason = player.rookieSeason.year;
                             let finalSeason;
                             if (data.player.finalSeason)
@@ -37,12 +38,20 @@ export default class PlayerDetails extends React.Component {
                                     </option>
                                 );
                             });
-                            const height = player.height / 2.54;
+                            const height = player.height / 2.54; // convert cm to inches
                             const feet = Math.floor(height/12);
                             const inches = parseInt(height) % 12;
-                            const weight = player.weight * 2.2;
+                            const weight = parseInt(player.weight * 2.2); // convert kg to lbs
                             const today = new Date();
                             const dob = new Date(person.dob);
+                            const age = Math.floor((today-dob)/31536000000); // convert ms to years
+                            const collegeLi = person.college ?  <li className="info-item">
+                                                                    <strong>College: </strong>{person.college}
+                                                                </li> : null;
+                            let positions = player.positions;
+                            const isLongerThanOne = el => el.length > 1;
+                            if (positions.some(isLongerThanOne));
+                                positions = positions.filter(isLongerThanOne).join(", ");
                             return(
                                 <> 
                                     <div className="level">
@@ -51,15 +60,20 @@ export default class PlayerDetails extends React.Component {
                                                 <figure>
                                                     <img src={player.imageUrl} />
                                                 </figure>
+                                                <figure className="current-team-logo">
+                                                    <img src={`/static/images/logos/${currentTeam.abbreviation}_logo.svg`} />
+                                                </figure>
                                             </div>
                                             <div className="level-item">
-                                                <div className="player-name">
+                                                <div className="player-info-left">
                                                     <p className="preferred-name">{person.preferredName}</p>
                                                     <p className="last-name">{person.lastName}</p>
+                                                    <p className="positions">{positions}</p>
+                                                    <p className="current-team">{currentTeam.city} {currentTeam.name}</p>
                                                 </div>
                                             </div>
                                             <div className="level-item">
-                                                <div className="player-info">
+                                                <div className="player-info-right">
                                                     <ul>
                                                         <li className="info-item">
                                                            <strong>Height: </strong>{feet}'{inches}"
@@ -68,13 +82,14 @@ export default class PlayerDetails extends React.Component {
                                                            <strong>Weight: </strong>{weight} lbs
                                                         </li>
                                                         <li className="info-item">
-                                                           <strong>Age: </strong>{Math.floor((today-dob)/31536000000)} (Born {dob.getMonth()+1}/{dob.getDate()}/{dob.getFullYear()}) 
+                                                           <strong>Age: </strong>{age} (Born {dob.getUTCMonth()+1}/{dob.getUTCDate()}/{dob.getUTCFullYear()}) 
                                                         </li>
+                                                        {collegeLi}
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                        
+                                        <hr></hr>
                                         <div className="level-right">
                                         </div>
                                     </div>
