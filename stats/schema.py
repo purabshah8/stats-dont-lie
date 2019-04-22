@@ -72,6 +72,7 @@ class PlayerStatlineType(DjangoObjectType):
 class PlayerType(DjangoObjectType):
     person = graphene.Field(PersonType)
     positions = graphene.List(graphene.String)
+    current_team = graphene.Field(TeamType)
 
     class Meta:
         model = Player
@@ -85,6 +86,12 @@ class PlayerType(DjangoObjectType):
         for playerpos in position_queryset:
             positions.append(playerpos.position.abbreviation)
         return positions
+
+    def resolve_current_team(self, info):
+        latest_team_membership = PlayerTeamSeason.objects.filter(
+            player=self, team_season__season__year=2019
+        )
+        return latest_team_membership.last().team_season.team
 
 
 class PositionType(DjangoObjectType):

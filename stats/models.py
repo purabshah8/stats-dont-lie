@@ -277,6 +277,9 @@ class Player(models.Model):
     def get_name(self):
         return self.id.get_name()
 
+    # def get_regular_statlines(self, year):
+
+
     @classmethod
     def find(cls, full_name):
         names = full_name.split(" ")
@@ -442,6 +445,8 @@ class Game(models.Model):
         else:
             return Statline.objects.filter(team=self.away, game=self.id)
 
+    # def get_team_players(self, location):
+        # self.
 
 
 class GamePeriod(models.Model):
