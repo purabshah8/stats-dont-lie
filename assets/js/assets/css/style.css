@@ -6927,19 +6927,34 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
-.team-link, .page-container {
+.ATL-theme .primary-color {
+  background-color: #e14434; }
+
+.ATL-theme .secondary-color {
+  background-color: #c4d600; }
+
+.is-flexed {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
 
+.bold {
+  font-weight: 700; }
+
+.titled {
+  font-size: 4vw; }
+
+.link {
+  color: inherit; }
+
+.link:hover {
+  color: inherit;
+  text-decoration: underline; }
+
 .team-logo {
   width: 8vw;
   height: 8vw; }
-
-.team-name {
-  font-weight: 700;
-  font-size: 1.5vw; }
 
 img {
   max-height: 100%;
