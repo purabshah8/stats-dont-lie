@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,400i,700,700i&subset=latin-ext');
 
 // Set theme colors
-
+@import "./team_colors.scss";
 
 // Update Bulma's global variables
 $family-sans-serif: "Poppins", sans-serif;
@@ -15,21 +15,33 @@ $family-sans-serif: "Poppins", sans-serif;
 
 
 // all other styles
-.team-link, .page-container {
+.is-flexed {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.bold {
+    font-weight: 700;
+}
+
+.titled {
+    font-size: 4vw;
+}
+
+.link {
+    color: inherit;
+}
+
+.link:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+
 .team-logo {
     width: 8vw;
     height: 8vw;
-}
-
-.team-name {
-    font-weight: 700;
-    font-size: 1.5vw;
 }
 
 img {

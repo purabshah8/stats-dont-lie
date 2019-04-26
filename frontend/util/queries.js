@@ -1,6 +1,23 @@
 import gql from "graphql-tag";
 
 
+const personFragments = {
+    details: gql`
+    fragment personDetails on PersonType {
+        id
+        preferredName
+        lastName
+        dob
+        college
+        birthplace {
+            city
+            state
+            country
+        }
+    }
+    `
+};
+
 const playerFragments = {
     name: gql`
     fragment playerName on PlayerType {
@@ -9,8 +26,17 @@ const playerFragments = {
             preferredName
             lastName
         }
+        imageUrl
     }
     `,
+    details: gql `
+    fragment playerDetails on PlayerType {
+        height
+        weight
+        shootingHand
+        positions
+    }
+    `
 };
 
 
@@ -20,7 +46,6 @@ const teamSeasonFragments = {
         roster {
             player {
             ...playerName
-            imageUrl
             }
         }
     }
@@ -31,6 +56,7 @@ const teamSeasonFragments = {
 const teamFragments = {
     name: gql`
     fragment teamName on TeamType {
+        id
         city
         name
         abbreviation
@@ -39,22 +65,18 @@ const teamFragments = {
 };
 
 export const GET_ALL_TEAMS = gql`
-    query {
-        allTeams {
-            id
-            city
-            name
-            abbreviation
-        }
+query {
+    allTeams {
+        ...teamName
     }
+}
+${teamFragments.name}
 `;
 
 export const GET_TEAM = gql`
 query TeamDetails($teamId: Int!) {
     team(id: $teamId) {
-        city
-        name
-        abbreviation
+        ...teamName
         arena {
             name
         }
@@ -66,7 +88,9 @@ query TeamDetails($teamId: Int!) {
         }
         yearFounded
     }
-}`;
+}
+${teamFragments.name}
+`;
 
 export const GET_ROSTER = gql`
 query roster($teamId: Int!, $year: Int!) {
@@ -81,16 +105,7 @@ export const GET_PLAYER = gql`
 query ($playerId: Int!) {
     player(id: $playerId) {
         person {
-            preferredName
-            firstName
-            lastName
-            dob
-            college
-            birthplace {
-                city
-                state
-                country
-            }
+            ...personDetails
         }
         rookieSeason {
             year
@@ -101,21 +116,24 @@ query ($playerId: Int!) {
         currentTeam {
             ...teamName
         }
-        height
-        weight
-        shootingHand
-        positions
+        ...playerDetails
         imageUrl
     }
 }
+${personFragments.details}
 ${teamFragments.name}
+${playerFragments.details}
 `;
 
 export const GET_PLAYER_SEASON = gql`
 query getPlayerSeason($playerId: Int!, $year: Int!) {
     playerSeason(playerId: $playerId, year: $year) {
         player {
-            ...playerName
+            person {
+                ...personDetails
+            }
+            ...playerDetails
+            imageUrl
         }
         teamSeason {
             team {
@@ -147,6 +165,20 @@ query getPlayerSeason($playerId: Int!, $year: Int!) {
         }
     }
 }
-${playerFragments.name}
+${personFragments.details}
 ${teamFragments.name}
+`;
+
+
+export const GET_NAV_STATE = gql`
+query navStateQuery {
+    navMenuIsActive @client
+    theme @client
+}
+`;
+
+export const GET_THEME = gql`
+query themeQuery {
+    theme @client
+}
 `;
