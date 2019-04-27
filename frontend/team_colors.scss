@@ -225,6 +225,14 @@ $WizardsSilver: rgb(196,206,212);
         a.navbar-item:hover {
             color: black;
         }
+
+        a.navbar-burger span {
+            color: white;
+        }
+
+        .navbar-menu {
+            background: $primary
+        }
     }
 }
 

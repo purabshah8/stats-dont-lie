@@ -40,6 +40,12 @@
 .default-theme a.navbar-item:hover {
   color: black; }
 
+.default-theme a.navbar-burger span {
+  color: white; }
+
+.default-theme .navbar-menu {
+  background: #17408b; }
+
 .ATL-theme .primary-color {
   background-color: #e14434; }
 
@@ -80,6 +86,12 @@
 
 .ATL-theme a.navbar-item:hover {
   color: black; }
+
+.ATL-theme a.navbar-burger span {
+  color: white; }
+
+.ATL-theme .navbar-menu {
+  background: #e14434; }
 
 .BOS-theme .primary-color {
   background-color: #007a33; }
@@ -122,6 +134,12 @@
 .BOS-theme a.navbar-item:hover {
   color: black; }
 
+.BOS-theme a.navbar-burger span {
+  color: white; }
+
+.BOS-theme .navbar-menu {
+  background: #007a33; }
+
 .BKN-theme .primary-color {
   background-color: black; }
 
@@ -162,6 +180,12 @@
 
 .BKN-theme a.navbar-item:hover {
   color: black; }
+
+.BKN-theme a.navbar-burger span {
+  color: white; }
+
+.BKN-theme .navbar-menu {
+  background: black; }
 
 .CHA-theme .primary-color {
   background-color: #00788c; }
@@ -204,6 +228,12 @@
 .CHA-theme a.navbar-item:hover {
   color: black; }
 
+.CHA-theme a.navbar-burger span {
+  color: white; }
+
+.CHA-theme .navbar-menu {
+  background: #00788c; }
+
 .CHI-theme .primary-color {
   background-color: #ce1141; }
 
@@ -244,6 +274,12 @@
 
 .CHI-theme a.navbar-item:hover {
   color: black; }
+
+.CHI-theme a.navbar-burger span {
+  color: white; }
+
+.CHI-theme .navbar-menu {
+  background: #ce1141; }
 
 .CLE-theme .primary-color {
   background-color: #6f263d; }
@@ -286,6 +322,12 @@
 .CLE-theme a.navbar-item:hover {
   color: black; }
 
+.CLE-theme a.navbar-burger span {
+  color: white; }
+
+.CLE-theme .navbar-menu {
+  background: #6f263d; }
+
 .DAL-theme .primary-color {
   background-color: #0053bc; }
 
@@ -326,6 +368,12 @@
 
 .DAL-theme a.navbar-item:hover {
   color: black; }
+
+.DAL-theme a.navbar-burger span {
+  color: white; }
+
+.DAL-theme .navbar-menu {
+  background: #0053bc; }
 
 .DEN-theme .primary-color {
   background-color: #0d2240; }
@@ -368,6 +416,12 @@
 .DEN-theme a.navbar-item:hover {
   color: black; }
 
+.DEN-theme a.navbar-burger span {
+  color: white; }
+
+.DEN-theme .navbar-menu {
+  background: #0d2240; }
+
 .DET-theme .primary-color {
   background-color: #c8102e; }
 
@@ -408,6 +462,12 @@
 
 .DET-theme a.navbar-item:hover {
   color: black; }
+
+.DET-theme a.navbar-burger span {
+  color: white; }
+
+.DET-theme .navbar-menu {
+  background: #c8102e; }
 
 .GSW-theme .primary-color {
   background-color: #fdb927; }
@@ -450,6 +510,12 @@
 .GSW-theme a.navbar-item:hover {
   color: black; }
 
+.GSW-theme a.navbar-burger span {
+  color: white; }
+
+.GSW-theme .navbar-menu {
+  background: #fdb927; }
+
 .HOU-theme .primary-color {
   background-color: #ce1141; }
 
@@ -490,6 +556,12 @@
 
 .HOU-theme a.navbar-item:hover {
   color: black; }
+
+.HOU-theme a.navbar-burger span {
+  color: white; }
+
+.HOU-theme .navbar-menu {
+  background: #ce1141; }
 
 .IND-theme .primary-color {
   background-color: #fdbb30; }
@@ -532,6 +604,12 @@
 .IND-theme a.navbar-item:hover {
   color: black; }
 
+.IND-theme a.navbar-burger span {
+  color: white; }
+
+.IND-theme .navbar-menu {
+  background: #fdbb30; }
+
 .LAC-theme .primary-color {
   background-color: #1d4294; }
 
@@ -572,6 +650,12 @@
 
 .LAC-theme a.navbar-item:hover {
   color: black; }
+
+.LAC-theme a.navbar-burger span {
+  color: white; }
+
+.LAC-theme .navbar-menu {
+  background: #1d4294; }
 
 .LAL-theme .primary-color {
   background-color: #552582; }
@@ -614,6 +698,12 @@
 .LAL-theme a.navbar-item:hover {
   color: black; }
 
+.LAL-theme a.navbar-burger span {
+  color: white; }
+
+.LAL-theme .navbar-menu {
+  background: #552582; }
+
 .MEM-theme .primary-color {
   background-color: #5d76a9; }
 
@@ -654,6 +744,12 @@
 
 .MEM-theme a.navbar-item:hover {
   color: black; }
+
+.MEM-theme a.navbar-burger span {
+  color: white; }
+
+.MEM-theme .navbar-menu {
+  background: #5d76a9; }
 
 .MIA-theme .primary-color {
   background-color: #98002e; }
@@ -696,6 +792,12 @@
 .MIA-theme a.navbar-item:hover {
   color: black; }
 
+.MIA-theme a.navbar-burger span {
+  color: white; }
+
+.MIA-theme .navbar-menu {
+  background: #98002e; }
+
 .MIL-theme .primary-color {
   background-color: #00471b; }
 
@@ -736,6 +838,12 @@
 
 .MIL-theme a.navbar-item:hover {
   color: black; }
+
+.MIL-theme a.navbar-burger span {
+  color: white; }
+
+.MIL-theme .navbar-menu {
+  background: #00471b; }
 
 .MIN-theme .primary-color {
   background-color: #236192; }
@@ -778,6 +886,12 @@
 .MIN-theme a.navbar-item:hover {
   color: black; }
 
+.MIN-theme a.navbar-burger span {
+  color: white; }
+
+.MIN-theme .navbar-menu {
+  background: #236192; }
+
 .NOP-theme .primary-color {
   background-color: #001641; }
 
@@ -818,6 +932,12 @@
 
 .NOP-theme a.navbar-item:hover {
   color: black; }
+
+.NOP-theme a.navbar-burger span {
+  color: white; }
+
+.NOP-theme .navbar-menu {
+  background: #001641; }
 
 .NYK-theme .primary-color {
   background-color: #006bb6; }
@@ -860,6 +980,12 @@
 .NYK-theme a.navbar-item:hover {
   color: black; }
 
+.NYK-theme a.navbar-burger span {
+  color: white; }
+
+.NYK-theme .navbar-menu {
+  background: #006bb6; }
+
 .OKC-theme .primary-color {
   background-color: #ef3b24; }
 
@@ -900,6 +1026,12 @@
 
 .OKC-theme a.navbar-item:hover {
   color: black; }
+
+.OKC-theme a.navbar-burger span {
+  color: white; }
+
+.OKC-theme .navbar-menu {
+  background: #ef3b24; }
 
 .ORL-theme .primary-color {
   background-color: #007dc5; }
@@ -942,6 +1074,12 @@
 .ORL-theme a.navbar-item:hover {
   color: black; }
 
+.ORL-theme a.navbar-burger span {
+  color: white; }
+
+.ORL-theme .navbar-menu {
+  background: #007dc5; }
+
 .PHI-theme .primary-color {
   background-color: #006bb6; }
 
@@ -982,6 +1120,12 @@
 
 .PHI-theme a.navbar-item:hover {
   color: black; }
+
+.PHI-theme a.navbar-burger span {
+  color: white; }
+
+.PHI-theme .navbar-menu {
+  background: #006bb6; }
 
 .PHX-theme .primary-color {
   background-color: #e55f20; }
@@ -1024,6 +1168,12 @@
 .PHX-theme a.navbar-item:hover {
   color: black; }
 
+.PHX-theme a.navbar-burger span {
+  color: white; }
+
+.PHX-theme .navbar-menu {
+  background: #e55f20; }
+
 .POR-theme .primary-color {
   background-color: #e03a3e; }
 
@@ -1064,6 +1214,12 @@
 
 .POR-theme a.navbar-item:hover {
   color: black; }
+
+.POR-theme a.navbar-burger span {
+  color: white; }
+
+.POR-theme .navbar-menu {
+  background: #e03a3e; }
 
 .SAC-theme .primary-color {
   background-color: #5b2b82; }
@@ -1106,6 +1262,12 @@
 .SAC-theme a.navbar-item:hover {
   color: black; }
 
+.SAC-theme a.navbar-burger span {
+  color: white; }
+
+.SAC-theme .navbar-menu {
+  background: #5b2b82; }
+
 .SAS-theme .primary-color {
   background-color: #061922; }
 
@@ -1146,6 +1308,12 @@
 
 .SAS-theme a.navbar-item:hover {
   color: black; }
+
+.SAS-theme a.navbar-burger span {
+  color: white; }
+
+.SAS-theme .navbar-menu {
+  background: #061922; }
 
 .TOR-theme .primary-color {
   background-color: #ce1141; }
@@ -1188,6 +1356,12 @@
 .TOR-theme a.navbar-item:hover {
   color: black; }
 
+.TOR-theme a.navbar-burger span {
+  color: white; }
+
+.TOR-theme .navbar-menu {
+  background: #ce1141; }
+
 .UTA-theme .primary-color {
   background-color: #f9a01b; }
 
@@ -1229,6 +1403,12 @@
 .UTA-theme a.navbar-item:hover {
   color: black; }
 
+.UTA-theme a.navbar-burger span {
+  color: white; }
+
+.UTA-theme .navbar-menu {
+  background: #f9a01b; }
+
 .WAS-theme .primary-color {
   background-color: #002b5c; }
 
@@ -1269,6 +1449,12 @@
 
 .WAS-theme a.navbar-item:hover {
   color: black; }
+
+.WAS-theme a.navbar-burger span {
+  color: white; }
+
+.WAS-theme .navbar-menu {
+  background: #002b5c; }
 
 /*! bulma.io v0.7.4 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
@@ -8228,10 +8414,6 @@ img {
   max-height: 100%;
   max-width: 100%; }
 
-.player-name {
-  margin-left: 2vw;
-  margin-right: 2vw; }
-
 .preferred-name {
   font-weight: 500;
   font-size: 2vw; }
@@ -8255,33 +8437,9 @@ img {
   height: 300px;
   width: 300px; }
 
-.team-tile {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  overflow: hidden; }
-
-.team-tile::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 100%;
-  bottom: 0;
-  background: #c9082a;
-  height: 4px;
-  -webkit-transition-property: right;
-  transition-property: right;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out; }
-
-.team-tile:hover::before {
-  right: 0; }
+#bc-container {
+  padding-top: 1rem;
+  padding-left: 0.2rem; }
 
 .zoom-in img {
   -webkit-transform: scale(1) translateY(0);
@@ -8295,6 +8453,21 @@ img {
 
 .footer {
   margin-top: 1.5rem; }
+
+.chart-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: top;
+  overflow: hidden;
+  background: #f8f9fa; }
+
+.chart-svg {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 
 /*# sourceMappingURL=style.css.map*/

@@ -1,21 +1,30 @@
 import React from 'react';
 import * as d3 from "d3";
 
-function Chart(props) {
-    return <svg width={props.width} height={props.height}>
-              <g transform={`translate(${props.paddingLeft}, ${props.paddingTop})`}>
-              </g>
-          </svg>;
+export class Chart extends React.Component {
+  render() {
+    return (
+      <svg></svg>
+    );
+  }
 }
 
-function Axis(props) {
-    function draw(chart, {className, generator, width, height, orientation, data }) {
+
+// function Chart({width, height, paddingLeft, paddingTop}) {
+//     return <svg width={width} height={height}>
+//               <g transform={`translate(${paddingLeft}, ${paddingTop})`}>
+//               </g>
+//           </svg>;
+// }
+
+function Axis({ chart, className, generator, width, height, orientation, data, direction }) {
         const h = orientation === "x" ? 0 : height;
         const w = orientation === "y" ? 0 : width;
         const axis = d3.scaleLinear()
             .domain([d3.min(data), d3.max(data)])
             .range([h, w]);
-    }
+        chart.append("g")
+            .call(d3.axisLeft(axis));
     return;
 }
 
@@ -23,6 +32,7 @@ function Axis(props) {
 
 const D3Components = {
     Chart,
+    Axis,
 };
 
 export default D3Components;

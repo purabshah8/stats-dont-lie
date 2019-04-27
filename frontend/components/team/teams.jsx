@@ -9,7 +9,6 @@ const conferences = ["Eastern Conference", "Western Conference"];
 const Teams = () => {
     return(
         <div className="container">
-            <h2 className="title has-text-centered">NBA Teams</h2>
             <Query query={GET_ALL_TEAMS} >
             {
                 ({loading, error, data, client}) => {
