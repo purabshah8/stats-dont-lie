@@ -55,7 +55,7 @@ export default class PlayerDetails extends React.Component {
                     <div className="level-left">
                         <div className="level-item">
                             <figure>
-                                <img src={imageUrl} />
+                                <img className="player-image" src={imageUrl} />
                             </figure>
                             <figure className="current-team-logo">
                                 <img src={`/static/images/logos/${abbreviation}_logo.svg`} />

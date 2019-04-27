@@ -12,8 +12,10 @@ import Players from "./components/player/players";
 const App = () => {
     return(
         <>
-        <Navbar/>
-        <Route component={Breadcrumb}/>
+        <section className="section is-paddingless">
+            <Navbar/>
+            <Route component={Breadcrumb}/>
+        </section>
         <Switch>
             <Route exact path="/" component={Splash}/>
             <Route exact path="/teams" component={Teams}/>

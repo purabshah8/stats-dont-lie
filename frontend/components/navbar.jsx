@@ -25,10 +25,10 @@ export default class Navbar extends React.Component {
                             });
                         };
                         return(
-                            <section className={`section ${theme}-theme is-paddingless`}>
+                            <div className={`${theme}-theme`}>
                                 <nav className="navbar is-fixed-top">
                                     <div className="navbar-brand">
-                                        <Link className="navbar-item" to="/">Stats Don't Lie</Link>
+                                        <Link onClick={toggleNavMenu} className="navbar-item" to="/">Stats Don't Lie</Link>
                                         <a role="button" aria-label="menu" aria-expanded="false"
                                             className={`navbar-burger ${activeStr}`}
                                             onClick={toggleNavMenu}
@@ -41,16 +41,16 @@ export default class Navbar extends React.Component {
                                     </div>
                                     <div id="mainNavbar" className={`navbar-menu ${activeStr}`}>
                                         <div className="navbar-start">
-                                            <Link className="navbar-item" to="/teams">Teams</Link>
-                                            <Link className="navbar-item" to="/players">Players</Link>
-                                            <Link className="navbar-item" to="#">Seasons</Link>
+                                            <Link onClick={toggleNavMenu} className="navbar-item" to="/teams">Teams</Link>
+                                            <Link onClick={toggleNavMenu} className="navbar-item" to="/players">Players</Link>
+                                            <Link onClick={toggleNavMenu} className="navbar-item" to="#">Seasons</Link>
                                         </div>
                                         <div className="navbar-end">
                                             
                                         </div>
                                     </div>
                                 </nav>
-                            </section>
+                            </div>
                         );
                     }
                 }

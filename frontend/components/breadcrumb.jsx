@@ -11,15 +11,18 @@ export default class Breadcrumb extends Component {
         this.state = {
             path: this.props.history.location.pathname
         };
-        this.listItems = [];
-        const teams = <li><Link to="/teams">Teams</Link></li>;
-        const players = <li><Link to="/players">Players</Link></li>;
-        this.allListItems = { teams, players };
+        
+    }
+
+    liClassCreator(link, className="") {
+        if (this.state.path === link)
+            return className + " is-active";
+        return className;
     }
 
     createPlayerListItem(playerId) {
         return(
-            <li>
+            <li className={this.liClassCreator(`/players/${playerId}`)} key={`player-${playerId}`}>
                 {
                     <Query query={GET_PLAYER} variables={{ playerId }}>
                         {
@@ -43,18 +46,21 @@ export default class Breadcrumb extends Component {
 
     createTeamListItem(teamId) {
         return(
-            <li>
+            <li className={this.liClassCreator(`/teams/${teamId}`)} key={`team-${teamId}`}>
                 {
                     <Query query={GET_TEAM} variables={ { teamId } }>
                         {
                             ({loading, data}) => {
                                 if (loading)
                                     return <progress className="progress" max="100">50%</progress>;
-                                const { city, name } = data.team;
+                                const { city, name, abbreviation } = data.team;
                                 const teamName = city + " " + name;
                                 return(
                                     <Link to={`/teams/${teamId}`}>
-                                        {teamName}
+                                        <span className="icon is-small">
+                                            <img src={`/static/images/logos/${abbreviation}_logo.svg`}/>
+                                        </span>
+                                        <span>{teamName}</span>
                                     </Link>
                                 );
                             }
@@ -74,6 +80,25 @@ export default class Breadcrumb extends Component {
 
     populateListItems() {
         this.listItems = [];
+        const teams = 
+            <li className={this.liClassCreator("/teams")} key="teams">
+                <Link to="/teams">
+                    <span className="icon is-small">
+                        <img src="/static/images/logos/NBA_logo.svg"/>
+                    </span>
+                    <span>Teams</span>
+                </Link>
+            </li>;
+        const players = 
+            <li className={this.liClassCreator("/players")} key="players">
+                <Link to="/players">
+                    <span className="icon is-small">
+                        <i className="fas fa-user"></i>
+                    </span>
+                    <span>Players</span>
+                </Link>
+            </li>;
+        this.allListItems = { teams, players };
         const pathItems = this.state.path.split("/");
         pathItems.forEach((item, idx) => {
             if (this.allListItems[item])
@@ -89,15 +114,21 @@ export default class Breadcrumb extends Component {
 
     render() {
         this.populateListItems();
-        console.log(this.state);
-        console.log(this.listItems);
+
         if (this.state.path === "/")
             return null;
         return (
-            <div className="container">
-                <nav className="breadcrumb" aria-label="breadcrumbs">
+            <div id="bc-container" className="container is-hidden-mobile">
+                <nav className="breadcrumb is-medium has-succeeds-separator" aria-label="breadcrumbs">
                     <ul>
-                        <li><Link to="/">Home</Link></li>
+                        <li>
+                            <Link to="/">
+                            <span className="icon is-small">
+                                <i className="fas fa-basketball-ball"></i>
+                            </span>
+                            <span>Stats Don't Lie</span>
+                            </Link>
+                        </li>
                         {this.listItems}
                     </ul>
                 </nav>
