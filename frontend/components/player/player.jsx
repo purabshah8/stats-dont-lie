@@ -3,7 +3,7 @@ import { Query } from "react-apollo";
 import { range } from "lodash";
 import { GET_PLAYER, GET_PLAYER_SEASON } from "../../util/queries";
 import PlayerDetails from "./player_details";
-import LineChart from "../charts/line_chart";
+import LineChart from "../d3/line_chart";
 export default class Player extends React.Component {
     constructor(props) {
         super(props);
@@ -52,37 +52,36 @@ export default class Player extends React.Component {
     
     render() {
         console.log(this.state);
+        const year = this.state.year ? this.state.year : 2019;
         return(
-            <Query query={GET_PLAYER} variables={ { playerId: this.props.match.params.id } }>
-                {
-                    ({loading, error, data}) => {
-                        if (loading) return 'Loading...';
-                        if (error) return `Error! ${error.message}`;
-
-                        const player = data.player;
-                        return(
-                            <div className="section">
-                                <PlayerDetails data={data} />
-                                <div className="select">
-                                    {this.renderSeasonOptions(player)}
-                                </div>
-                                <LineChart playerid={this.props.match.params.id} year={this.state.year} />
-                            </div>
-                        );
+            <div className="section">
+                <Query query={GET_PLAYER_SEASON} variables={ { playerId: this.props.match.params.id, year } }>
+                    {
+                        ({loading, error, data, client}) => {
+                            if (loading) return <progress className="progress" max="100">50%</progress>;
+                            if (error) return `Error! ${error.message}`;
+                            const playerSeasons = data.playerSeason;
+                            const { player } = playerSeasons[0];
+                            const currentTeamSeason = playerSeasons[playerSeasons.length-1].teamSeason;
+                            const { abbreviation } = currentTeamSeason.team;
+                            client.writeData({ data : {theme: abbreviation} });
+                            let stats = [];
+                            playerSeasons.forEach(ps => stats.push(ps.rawStats));
+                            return(
+                                    <>
+                                        <PlayerDetails player={player} team={currentTeamSeason.team}/>
+                                        <div className="select">
+                                            {this.renderSeasonOptions(player)}
+                                        </div>
+                                        <div className="container">
+                                            <LineChart stats={stats} />
+                                        </div>
+                                    </>
+                            );
+                        }
                     }
-                }
-            </Query>
+                </Query>
+            </div>
         );
     }
-
-    // render() {
-    //     return (
-    //         <>
-    //         <div className="section">
-    //             <PlayerDetails playerId={this.props.match.params.id} />
-    //         </div>
-    //         <LineChart playerId={this.props.match.params.id} />
-    //         </>
-    //     );
-    // }
 }

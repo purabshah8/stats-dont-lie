@@ -1,3 +1,7 @@
+// NBA
+$DarkCornflowerBlue: rgb(23, 64, 139);
+$PhilippineRed: rgb(201, 8, 42);
+
 // Team Colors
 
 // ATL
@@ -179,7 +183,79 @@ $WizardsSilver: rgb(196,206,212);
         .secondary-color {
             background-color: $secondary
         }
+
+        .block {
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .block::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 0;
+            top: 100%;
+            background: $secondary;
+            height: 100%;
+            -webkit-transition-property: top;
+            transition-property: top;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+            
+        }
+
+        .block:hover::before {
+            top: 0;
+        }
+
+        nav.navbar {
+            background: $primary;
+        }
+        
+        a.navbar-item {
+            color: white;
+        }
+
+        a.navbar-item:hover {
+            color: black;
+        }
     }
 }
 
-@include theme(ATL-theme, $HawksRed, $VoltGreen)
+@include theme(default-theme, $DarkCornflowerBlue, $PhilippineRed);
+@include theme(ATL-theme, $HawksRed, $VoltGreen);
+@include theme(BOS-theme, $CelticsGreen, $CelticsGold);
+@include theme(BKN-theme, $Black, $Black);
+@include theme(CHA-theme, $Teal, $HornetsPurple);
+@include theme(CHI-theme, $BullsRed, $BullsBlack);
+@include theme(CLE-theme, $CavaliersWine, $CavaliersYellow);
+@include theme(DAL-theme, $RoyalBlue, $MavericksSilver);
+@include theme(DEN-theme, $NuggetsMidnightBlue, $SunshineYellow);
+@include theme(DET-theme, $PistonsRed, $PistonsNavy);
+@include theme(GSW-theme, $GoldenYellow, $WarriorsRoyalBlue);
+@include theme(HOU-theme, $RocketsRed, $RocketsBlack);
+@include theme(IND-theme, $PacersYellow, $PacersBlue);
+@include theme(LAC-theme, $ClippersBlue, $ClippersRed);
+@include theme(LAL-theme, $LakersPurple, $LakersGold);
+@include theme(MEM-theme, $GrizzliesBlue, $GrizzliesNavy);
+@include theme(MIA-theme, $HeatRed, $HeatYellow);
+@include theme(MIL-theme, $GoodLandGreen, $CreamCityCream);
+@include theme(MIN-theme, $LakeBlue, $AuroraGreen);
+@include theme(NOP-theme, $PelicansNavy, $PelicansRed);
+@include theme(NYK-theme, $KnicksBlue, $KnicksOrange);
+@include theme(OKC-theme, $Sunset, $ThunderBlue);
+@include theme(ORL-theme, $MagicBlue, $MagicSilver);
+@include theme(PHI-theme, $SixersBlue, $SixersRed);
+@include theme(PHX-theme, $SunsOrange, $SunsPurple);
+@include theme(POR-theme, $BlazersRed, $BlazersBlack);
+@include theme(SAC-theme, $KingsPurple, $KingsGray);
+@include theme(SAS-theme, $SpursBlack, $SpursSilver);
+@include theme(TOR-theme, $RaptorsRed, $RaptorsGold);
+@include theme(UTA-theme, $JazzYellow, $JazzNavy);
+@include theme(WAS-theme, $WizardsNavyBlue, $WizardsRed);

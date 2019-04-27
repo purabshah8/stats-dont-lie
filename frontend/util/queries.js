@@ -29,7 +29,7 @@ const playerFragments = {
         imageUrl
     }
     `,
-    details: gql `
+    details: gql`
     fragment playerDetails on PlayerType {
         height
         weight
@@ -46,6 +46,7 @@ const teamSeasonFragments = {
         roster {
             player {
             ...playerName
+            positions
             }
         }
     }
@@ -97,6 +98,7 @@ query roster($teamId: Int!, $year: Int!) {
     teamSeason(teamId: $teamId, year: $year) {
         ...teamRoster
     }
+    theme @client
 }
 ${teamSeasonFragments.roster}
 `;
@@ -131,6 +133,12 @@ query getPlayerSeason($playerId: Int!, $year: Int!) {
         player {
             person {
                 ...personDetails
+            }
+            rookieSeason {
+                year
+            }
+            finalSeason {
+                year
             }
             ...playerDetails
             imageUrl
@@ -167,6 +175,7 @@ query getPlayerSeason($playerId: Int!, $year: Int!) {
 }
 ${personFragments.details}
 ${teamFragments.name}
+${playerFragments.details}
 `;
 
 

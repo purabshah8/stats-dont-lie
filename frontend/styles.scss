@@ -1,8 +1,7 @@
 @charset "utf-8";
-@import "../node_modules/bulma/bulma";
 
 // Google Font Import
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,400i,700,700i&subset=latin-ext');
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,400i,700,700i&subset=latin-ext");
 
 // Set theme colors
 @import "./team_colors.scss";
@@ -12,71 +11,126 @@ $family-sans-serif: "Poppins", sans-serif;
 
 // Update some of Bulma's component variables
 
-
+@import "../node_modules/bulma/bulma";
 
 // all other styles
 .is-flexed {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .bold {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .titled {
-    font-size: 4vw;
+  font-size: 4vw;
+}
+
+.hover-white:hover {
+  color: white;
+  text-decoration-color: white;
 }
 
 .link {
-    color: inherit;
+  color: inherit;
 }
 
 .link:hover {
-    color: inherit;
-    text-decoration: underline;
+  color: inherit;
 }
 
 .team-logo {
-    width: 8vw;
-    height: 8vw;
+  width: 8vw;
+  height: 8vw;
 }
 
 img {
-    max-height: 100%;
-    max-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .player-name {
-    margin-left: 2vw;
-    margin-right: 2vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 
 .preferred-name {
-    font-weight: 500;
-    font-size: 2vw;
+  font-weight: 500;
+  font-size: 2vw;
 }
 
 .last-name {
-    font-weight: 700;
-    font-size: 2.5vw;
+  font-weight: 700;
+  font-size: 2.5vw;
 }
 
 .player-info {
-    margin-left: 2vw;
-    margin-right: 2vw;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 0.5vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.5vw;
 }
 
 .info-item {
-    font-size: 1.25vw;
-    margin: 1.25vw auto 1.25vw auto;
+  font-size: 1.25vw;
+  margin: 1.25vw auto 1.25vw auto;
 }
 
-.current-team-logo {
+.logo-large {
+  height: 300px;
+  width: 300px;
+}
+
+.team-tile {
+    // border: 1px transparent;    
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-tile::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: $PhilippineRed;
+    height: 4px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
     
+};
+
+.team-tile:hover::before {
+    right: 0;
+}
+
+.zoom-in img {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+   
+}
+
+.zoom-in:hover img {
+    -webkit-transform: scale(1.3) translateY(12%);
+    transform: scale(1.3) translateY(12%);
+}
+
+.footer {
+    margin-top: 1.5rem;
 }
