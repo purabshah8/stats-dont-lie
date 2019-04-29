@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { yearToSeason } from "../../util/util";
 
 export default class PlayerDetails extends React.Component {
     constructor(props) {
@@ -49,6 +50,7 @@ export default class PlayerDetails extends React.Component {
         if (positions.some(isLongerThanOne));
             uniquePositions = positions.filter(isLongerThanOne).join(", ");
         const { id, city, name, abbreviation } = this.props.team;
+        const boxHeader = this.props.year === 0 ? "Career" : `${yearToSeason(this.props.year)} Season`;
         return (
             <div className="container">
                 <div className="level">
@@ -58,7 +60,7 @@ export default class PlayerDetails extends React.Component {
                                 <img className="player-image" src={imageUrl} />
                             </figure>
                             <figure className="current-team-logo">
-                                <img src={`/static/images/logos/${abbreviation}_logo.svg`} />
+                                <img src={`/static/images/logos/${abbreviation}.svg`} />
                             </figure>
                         </div>
                         <div className="level-item">
@@ -74,6 +76,20 @@ export default class PlayerDetails extends React.Component {
                         </div>
                     </div>
                     <div className="level-right">
+                        <div className="box level-item">
+                            <div className="box-header">
+                                <span>{boxHeader}</span>
+                            </div>
+                            <div className="box-content">
+                                <div className="box-body columns">
+                                    <div className="column">PPG</div>
+                                    <div className="column">TS%</div>
+                                    <div className="column">Stat2</div>
+                                    <div className="column">Stat3</div>
+                                    <div className="column">Stat4</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

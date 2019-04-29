@@ -12,11 +12,11 @@ const Teams = () => {
             <Query query={GET_ALL_TEAMS} >
             {
                 ({loading, error, data, client}) => {
-                    if (loading) return <progress className="progress" max="100">50%</progress>;
+                    if (loading) return <div className="lds-ring"><div></div><div></div><div></div><div></div></div>;
                     if (error) return `Error! ${error.message}`;
                     client.writeData({ data: {theme: "default"}});
                     return(
-                        <div key="nba-teams" className="columns is-multiline is-centered is-tablet">
+                        <div key="nba-teams" className="columns is-multiline is-centered is-mobile is-vcentered">
                             {
                                 data.allTeams.map((team, i) => (
                                     <React.Fragment key={i}>
@@ -27,11 +27,11 @@ const Teams = () => {
                                                     <h2 className="title">{divisions[i/5]} Division</h2>
                                                 </div> : null
                                         }
-                                        <div className="column is-one-fifth team-tile" key={team.id}>
+                                        <div className="column is-one-fifth-desktop is-one-fifth-fullhd is-one-fifth-widescreen is-full-mobile is-one-fifth-tablet team-tile" key={team.id}>
                                             <Link className="link is-flexed" to={`teams/${team.id}`}>
-                                                <figure className="image">
+                                                <figure className="is-square">
                                                     <img className="team-logo" 
-                                                        src={`/static/images/logos/${team.abbreviation}_logo.svg`}/>
+                                                        src={`/static/images/logos/${team.abbreviation}.svg`}/>
                                                 </figure>
                                             </Link>
                                         </div>

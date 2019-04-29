@@ -16,7 +16,7 @@ export default class Team extends Component {
         <Query query={GET_TEAM} variables={{ teamId: this.props.match.params.id }}>
             {
                 ({loading, error, data, client}) => {
-                    if (loading) return <progress className="progress" max="100">50%</progress>;
+                    if (loading) return <div className="lds-ring"><div></div><div></div><div></div><div></div></div>;
                     if (error) return <div>Error! ${error.message}</div>;
 
                     const { team } = data;
@@ -27,20 +27,20 @@ export default class Team extends Component {
                             <div className="level">
                                 <div className="level-left">
                                     <div className="level-item">
-                                        <figure className="is-square">
-                                            <img src={`/static/images/logos/${abbreviation}_logo.svg`} className="team-logo logo-large" />
+                                        <figure className="is-square is-96x96-touch">
+                                            <img src={`/static/images/logos/${abbreviation}.svg`} className="team-logo" />
                                         </figure>
                                     </div>
                                     <div className="level-item is-flexed">
-                                        <p className="is-size-2">{city}</p>
-                                        <p className="is-size-1">{name}</p>
+                                        <p className="is-size-2 is-size-4-touch">{city}</p>
+                                        <p className="is-size-1 is-size-3-touch">{name}</p>
                                     </div>
                                     <div className="level-item is-flexed">
-                                        <p className="is-size-4">{division.name}</p>
-                                        <p className="is-size-4">
+                                        <p className="is-size-4 is-size-5-touch">{division.name}</p>
+                                        <p className="is-size-4 is-size-5-touch">
                                             {division.conference.name}
                                         </p>
-                                        <p className="is-size-4">
+                                        <p className="is-size-4 is-size-5-touch">
                                             Home: {arena.name}
                                         </p>
                                     </div>
@@ -62,7 +62,7 @@ export default class Team extends Component {
                 variables={ { teamId: this.props.match.params.id, year: 2019 } }>
                 {
                     ({loading, error, data}) => {
-                        if (loading) return <progress className="progress" max="100">50%</progress>;
+                        if (loading) return <div className="lds-ring"><div></div><div></div><div></div><div></div></div>;
                         if (error) return <div>Error! ${error.message}</div>;
                         
                         const { teamSeason, theme } = data;
@@ -105,7 +105,7 @@ export default class Team extends Component {
                         return(
                             <div className="container">
                                 <h2>Roster</h2>
-                                <div className={`columns is-centered is-mobile is-multiline is-3 ${theme}-theme`}>
+                                <div className={`columns is-centered is-tablet is-multiline is-3 ${theme}-theme`}>
                                     {players}
                                 </div>
                             </div>
