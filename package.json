@@ -20,6 +20,8 @@
   "homepage": "https://github.com/purabshah8/stats-dont-lie#readme",
   "devDependencies": {
     "@babel/core": "^7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-async-to-generator": "^7.4.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
@@ -34,7 +36,6 @@
     "webpack-cli": "^3.2.3"
   },
   "dependencies": {
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "apollo-boost": "^0.3.1",
     "d3": "^5.9.2",
     "graphql": "^14.1.1",

@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,400i,700,700i&subset=latin-ext");
 
 // Set theme colors
-@import "./team_colors.scss";
+@import "./themes.scss";
 
 // Update Bulma's global variables
 $family-sans-serif: "Poppins", sans-serif;
@@ -43,8 +43,9 @@ $family-sans-serif: "Poppins", sans-serif;
 }
 
 .team-logo {
-  width: 8vw;
-  height: 8vw;
+  display: block;
+  width: 10rem;
+  height: 10rem;
 }
 
 img {
@@ -75,48 +76,103 @@ img {
   margin: 1.25vw auto 1.25vw auto;
 }
 
-.logo-large {
-  height: 300px;
-  width: 300px;
-}
-
 #bc-container {
   padding-top: 1rem;
-  padding-left: 0.2rem;
+  padding-left: 0.5rem;
 }
 
-// .team-tile {
-//     // border: 1px transparent;    
-//     display: inline-block;
-//     vertical-align: middle;
-//     -webkit-transform: perspective(1px) translateZ(0);
-//     transform: perspective(1px) translateZ(0);
-//     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-//     position: relative;
-//     overflow: hidden;
-// }
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid black;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: black transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-// .team-tile::before {
-//     content: "";
-//     position: absolute;
-//     z-index: -1;
-//     left: 0;
-//     right: 100%;
-//     bottom: 0;
-//     background: $PhilippineRed;
-//     height: 4px;
-//     -webkit-transition-property: right;
-//     transition-property: right;
-//     -webkit-transition-duration: 0.2s;
-//     transition-duration: 0.2s;
-//     -webkit-transition-timing-function: ease-out;
-//     transition-timing-function: ease-out;
+.loader {
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid $DarkCornflowerBlue;
+  border-radius: 50%;
+  border-top: 16px solid $PhilippineRed;
+  border-left: 16px solid #f3f3f3;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.team-tile {
+    // border: 1px transparent;    
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-tile::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: $PhilippineRed;
+    height: 4px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
     
-// };
+};
 
-// .team-tile:hover::before {
-//     right: 0;
-// }
+.team-tile:hover::before {
+    right: 0;
+}
 
 .zoom-in img {
     -webkit-transform: scale(1) translateY(0);

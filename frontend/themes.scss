@@ -1,8 +1,10 @@
+@import "../node_modules/bulma/sass/utilities/functions.sass";
+
+// Team Colors
+
 // NBA
 $DarkCornflowerBlue: rgb(23, 64, 139);
 $PhilippineRed: rgb(201, 8, 42);
-
-// Team Colors
 
 // ATL
 $HawksRed: rgb(225,68,52);
@@ -176,11 +178,12 @@ $WizardsSilver: rgb(196,206,212);
 
 
 @mixin theme($name, $primary, $secondary) {
+    $text-color: findColorInvert($primary);
     .#{$name} {
-        .primary-color {
+        .primary-background {
             background-color: $primary;
         }
-        .secondary-color {
+        .secondary-background {
             background-color: $secondary
         }
 
@@ -214,12 +217,12 @@ $WizardsSilver: rgb(196,206,212);
             top: 0;
         }
 
-        nav.navbar {
+        nav.navbar, .navbar-menu {
             background: $primary;
         }
         
         a.navbar-item {
-            color: white;
+            color: $text-color;
         }
 
         a.navbar-item:hover {
@@ -227,12 +230,9 @@ $WizardsSilver: rgb(196,206,212);
         }
 
         a.navbar-burger span {
-            color: white;
+            color: $text-color;
         }
 
-        .navbar-menu {
-            background: $primary
-        }
     }
 }
 
@@ -263,7 +263,7 @@ $WizardsSilver: rgb(196,206,212);
 @include theme(PHX-theme, $SunsOrange, $SunsPurple);
 @include theme(POR-theme, $BlazersRed, $BlazersBlack);
 @include theme(SAC-theme, $KingsPurple, $KingsGray);
-@include theme(SAS-theme, $SpursBlack, $SpursSilver);
+@include theme(SAS-theme, $SpursSilver, $SpursBlack);
 @include theme(TOR-theme, $RaptorsRed, $RaptorsGold);
 @include theme(UTA-theme, $JazzYellow, $JazzNavy);
 @include theme(WAS-theme, $WizardsNavyBlue, $WizardsRed);
