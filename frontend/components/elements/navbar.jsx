@@ -1,6 +1,6 @@
 import React from 'react';
 import { Query } from "react-apollo";
-import { GET_NAV_STATE } from '../util/queries';
+import { GET_NAV_STATE } from '../../util/queries';
 import { Link } from "react-router-dom";
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Query } from "react-apollo";
-import { GET_TEAM, GET_PLAYER } from "../util/queries";
+import { GET_TEAM, GET_PLAYER } from "../../util/queries";
 
 export default class Breadcrumb extends Component {
 
@@ -28,7 +28,7 @@ export default class Breadcrumb extends Component {
                         {
                             ({loading, data}) => {
                                 if (loading)
-                                    return <progress className="progress" max="100">50%</progress>;
+                                    return null;
                                 const { preferredName, lastName } = data.player.person;
                                 const playerName = preferredName + " " + lastName;
                                 return(
@@ -52,13 +52,13 @@ export default class Breadcrumb extends Component {
                         {
                             ({loading, data}) => {
                                 if (loading)
-                                    return <progress className="progress" max="100">50%</progress>;
+                                    return null;
                                 const { city, name, abbreviation } = data.team;
                                 const teamName = city + " " + name;
                                 return(
                                     <Link to={`/teams/${teamId}`}>
                                         <span className="icon is-small">
-                                            <img src={`/static/images/logos/${abbreviation}_logo.svg`}/>
+                                            <img src={`/static/images/logos/${abbreviation}.svg`}/>
                                         </span>
                                         <span>{teamName}</span>
                                     </Link>
@@ -71,12 +71,21 @@ export default class Breadcrumb extends Component {
         );
     }
 
-    createListItem(property, id) {
+    createSeasonListItem(year, yearType, typeId) {
+        return(
+            <li className={this.liClassCreator(``)}>
+                
+            </li>
+        );
+    }
+
+    createListItem(property, id, year=0) {
         if (property === "teams")
             return this.createTeamListItem(id);
         if (property === "players")
             return this.createPlayerListItem(id);
     }
+
 
     populateListItems() {
         this.listItems = [];
@@ -84,7 +93,7 @@ export default class Breadcrumb extends Component {
             <li className={this.liClassCreator("/teams")} key="teams">
                 <Link to="/teams">
                     <span className="icon is-small">
-                        <img src="/static/images/logos/NBA_logo.svg"/>
+                        <img src="/static/images/logos/NBA.svg"/>
                     </span>
                     <span>Teams</span>
                 </Link>
