@@ -19,7 +19,7 @@ export default class LineChart extends React.Component {
         const circles = this.data.map((y,i) => ({
          x: i+1,
          y,
-         radius: 8,
+         radius: 5,
         }));
         return circles;
     }
@@ -37,14 +37,14 @@ export default class LineChart extends React.Component {
             .range([0, 1280]);
         
         const yScale = d3.scaleLinear()
-            .domain([0,1])
+            .domain([0,100])
             .range([800, 0]);
         
         const xAxis = d3.axisBottom().scale(xScale);
         const yAxis = d3.axisLeft().scale(yScale);
         
         const line = d3.line()
-            .x(function(d,i) {return xScale(i);})
+            .x(function(d,i) {return xScale(i+1);})
             .y(function(d) { return yScale(d);})
             .curve(d3.curveMonotoneX);
         
@@ -61,50 +61,24 @@ export default class LineChart extends React.Component {
             .enter()
             .append("circle")
             .attr("cx",  function (d) { return xScale(d.x); })
-            .attr("cy",  function (d) { return yScale(d.y); })
+            .attr("cy",  function (d) { return yScale(d.y*100); })
             .attr("r",  function (d) { return d.radius; })
             .style("fill", "black");
 
         chart.append("path")
-            .datum(this.data)
+            .datum(this.data.map(el => (el*100)))
             .attr("fill", "none")
             .attr("stroke", "black")
-            .attr("stroke-width", 1.5)
+            .attr("stroke-width", 2)
             .attr("d", line);
 
-
-        // const x = d3.scaleLinear()
-        // .domain([1,82])
-        // .range([0, width]);
-        // chart.append("g")
-        // .call(d3.axisBottom(x));
-        
-        // const y = d3.scaleLinear()
-        // .domain([0,1])
-        // .range([0, height]);
-        // chart.append("g")
-        // .call(d3.axisLeft(y));
-        
-        // const graph = d3.selectAll("dot")
-        // .data(this.data)
-        // .enter()
-        // .append("circle")
-        // .attr("cx", (d,i) => (i+1))
-        // .attr("cy", (d,i) => d)
-        // .attr("r", 10)
-        // .attr("fill", "#000000");
     }
-    
-    // <D3Components.Axis chart={this.chartRef} data={this.data}
-    //                     orientation="y" direction="left" />
-
-    //                 <D3Components.Axis chart={this.chartRef} data={this.data}
-    //                     orientation="x" direction="bottom" />
     
     render() {
         return (
             <div className="chart-container">
-                <svg ref={this.setChartRef} className="chart-svg" viewBox="0 0 1380 900" preserveAspectRatio="xMinYMin meet">
+                <svg ref={this.setChartRef} className="chart-svg" 
+                    viewBox="0 0 1380 900" preserveAspectRatio="xMinYMin meet">
                 </svg>
             </div>
         );
