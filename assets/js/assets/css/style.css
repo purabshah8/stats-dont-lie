@@ -43,6 +43,14 @@
 .default-theme a.navbar-burger span {
   color: #fff; }
 
+.default-theme circle {
+  fill: #c9082a; }
+
+.default-theme .curve {
+  fill: none;
+  stroke: #17408b;
+  stroke-width: 0.25rem; }
+
 .ATL-theme .primary-background {
   background-color: #e14434; }
 
@@ -86,6 +94,14 @@
 
 .ATL-theme a.navbar-burger span {
   color: #fff; }
+
+.ATL-theme circle {
+  fill: #c4d600; }
+
+.ATL-theme .curve {
+  fill: none;
+  stroke: #e14434;
+  stroke-width: 0.25rem; }
 
 .BOS-theme .primary-background {
   background-color: #007a33; }
@@ -131,11 +147,19 @@
 .BOS-theme a.navbar-burger span {
   color: #fff; }
 
+.BOS-theme circle {
+  fill: #8b6f4e; }
+
+.BOS-theme .curve {
+  fill: none;
+  stroke: #007a33;
+  stroke-width: 0.25rem; }
+
 .BKN-theme .primary-background {
   background-color: black; }
 
 .BKN-theme .secondary-background {
-  background-color: black; }
+  background-color: #777d84; }
 
 .BKN-theme .block {
   -webkit-transform: perspective(1px) translateZ(0);
@@ -151,7 +175,7 @@
   left: 0;
   right: 0;
   top: 100%;
-  background: black;
+  background: #777d84;
   height: 100%;
   -webkit-transition-property: top;
   transition-property: top;
@@ -174,6 +198,14 @@
 
 .BKN-theme a.navbar-burger span {
   color: #fff; }
+
+.BKN-theme circle {
+  fill: #777d84; }
+
+.BKN-theme .curve {
+  fill: none;
+  stroke: black;
+  stroke-width: 0.25rem; }
 
 .CHA-theme .primary-background {
   background-color: #00788c; }
@@ -219,6 +251,14 @@
 .CHA-theme a.navbar-burger span {
   color: #fff; }
 
+.CHA-theme circle {
+  fill: #1d1160; }
+
+.CHA-theme .curve {
+  fill: none;
+  stroke: #00788c;
+  stroke-width: 0.25rem; }
+
 .CHI-theme .primary-background {
   background-color: #ce1141; }
 
@@ -262,6 +302,14 @@
 
 .CHI-theme a.navbar-burger span {
   color: #fff; }
+
+.CHI-theme circle {
+  fill: #061922; }
+
+.CHI-theme .curve {
+  fill: none;
+  stroke: #ce1141;
+  stroke-width: 0.25rem; }
 
 .CLE-theme .primary-background {
   background-color: #6f263d; }
@@ -307,6 +355,14 @@
 .CLE-theme a.navbar-burger span {
   color: #fff; }
 
+.CLE-theme circle {
+  fill: #ffb81c; }
+
+.CLE-theme .curve {
+  fill: none;
+  stroke: #6f263d;
+  stroke-width: 0.25rem; }
+
 .DAL-theme .primary-background {
   background-color: #0053bc; }
 
@@ -350,6 +406,14 @@
 
 .DAL-theme a.navbar-burger span {
   color: #fff; }
+
+.DAL-theme circle {
+  fill: #bbc4ca; }
+
+.DAL-theme .curve {
+  fill: none;
+  stroke: #0053bc;
+  stroke-width: 0.25rem; }
 
 .DEN-theme .primary-background {
   background-color: #0d2240; }
@@ -395,6 +459,14 @@
 .DEN-theme a.navbar-burger span {
   color: #fff; }
 
+.DEN-theme circle {
+  fill: #ffc627; }
+
+.DEN-theme .curve {
+  fill: none;
+  stroke: #0d2240;
+  stroke-width: 0.25rem; }
+
 .DET-theme .primary-background {
   background-color: #c8102e; }
 
@@ -438,6 +510,14 @@
 
 .DET-theme a.navbar-burger span {
   color: #fff; }
+
+.DET-theme circle {
+  fill: #002d62; }
+
+.DET-theme .curve {
+  fill: none;
+  stroke: #c8102e;
+  stroke-width: 0.25rem; }
 
 .GSW-theme .primary-background {
   background-color: #fdb927; }
@@ -483,6 +563,14 @@
 .GSW-theme a.navbar-burger span {
   color: rgba(0, 0, 0, 0.7); }
 
+.GSW-theme circle {
+  fill: #006bb6; }
+
+.GSW-theme .curve {
+  fill: none;
+  stroke: #fdb927;
+  stroke-width: 0.25rem; }
+
 .HOU-theme .primary-background {
   background-color: #ce1141; }
 
@@ -526,6 +614,14 @@
 
 .HOU-theme a.navbar-burger span {
   color: #fff; }
+
+.HOU-theme circle {
+  fill: #061922; }
+
+.HOU-theme .curve {
+  fill: none;
+  stroke: #ce1141;
+  stroke-width: 0.25rem; }
 
 .IND-theme .primary-background {
   background-color: #fdbb30; }
@@ -571,6 +667,14 @@
 .IND-theme a.navbar-burger span {
   color: rgba(0, 0, 0, 0.7); }
 
+.IND-theme circle {
+  fill: #002d62; }
+
+.IND-theme .curve {
+  fill: none;
+  stroke: #fdbb30;
+  stroke-width: 0.25rem; }
+
 .LAC-theme .primary-background {
   background-color: #1d4294; }
 
@@ -614,6 +718,14 @@
 
 .LAC-theme a.navbar-burger span {
   color: #fff; }
+
+.LAC-theme circle {
+  fill: #bec0c2; }
+
+.LAC-theme .curve {
+  fill: none;
+  stroke: #1d4294;
+  stroke-width: 0.25rem; }
 
 .LAL-theme .primary-background {
   background-color: #552582; }
@@ -659,6 +771,14 @@
 .LAL-theme a.navbar-burger span {
   color: #fff; }
 
+.LAL-theme circle {
+  fill: #fdb927; }
+
+.LAL-theme .curve {
+  fill: none;
+  stroke: #552582;
+  stroke-width: 0.25rem; }
+
 .MEM-theme .primary-background {
   background-color: #5d76a9; }
 
@@ -702,6 +822,14 @@
 
 .MEM-theme a.navbar-burger span {
   color: #fff; }
+
+.MEM-theme circle {
+  fill: #12173f; }
+
+.MEM-theme .curve {
+  fill: none;
+  stroke: #5d76a9;
+  stroke-width: 0.25rem; }
 
 .MIA-theme .primary-background {
   background-color: #98002e; }
@@ -747,6 +875,14 @@
 .MIA-theme a.navbar-burger span {
   color: #fff; }
 
+.MIA-theme circle {
+  fill: #f9a01b; }
+
+.MIA-theme .curve {
+  fill: none;
+  stroke: #98002e;
+  stroke-width: 0.25rem; }
+
 .MIL-theme .primary-background {
   background-color: #00471b; }
 
@@ -790,6 +926,14 @@
 
 .MIL-theme a.navbar-burger span {
   color: #fff; }
+
+.MIL-theme circle {
+  fill: #f0ebd2; }
+
+.MIL-theme .curve {
+  fill: none;
+  stroke: #00471b;
+  stroke-width: 0.25rem; }
 
 .MIN-theme .primary-background {
   background-color: #236192; }
@@ -835,6 +979,14 @@
 .MIN-theme a.navbar-burger span {
   color: #fff; }
 
+.MIN-theme circle {
+  fill: #78be20; }
+
+.MIN-theme .curve {
+  fill: none;
+  stroke: #236192;
+  stroke-width: 0.25rem; }
+
 .NOP-theme .primary-background {
   background-color: #001641; }
 
@@ -878,6 +1030,14 @@
 
 .NOP-theme a.navbar-burger span {
   color: #fff; }
+
+.NOP-theme circle {
+  fill: #e13a3e; }
+
+.NOP-theme .curve {
+  fill: none;
+  stroke: #001641;
+  stroke-width: 0.25rem; }
 
 .NYK-theme .primary-background {
   background-color: #006bb6; }
@@ -923,6 +1083,14 @@
 .NYK-theme a.navbar-burger span {
   color: #fff; }
 
+.NYK-theme circle {
+  fill: #f58426; }
+
+.NYK-theme .curve {
+  fill: none;
+  stroke: #006bb6;
+  stroke-width: 0.25rem; }
+
 .OKC-theme .primary-background {
   background-color: #ef3b24; }
 
@@ -966,6 +1134,14 @@
 
 .OKC-theme a.navbar-burger span {
   color: #fff; }
+
+.OKC-theme circle {
+  fill: #007dc3; }
+
+.OKC-theme .curve {
+  fill: none;
+  stroke: #ef3b24;
+  stroke-width: 0.25rem; }
 
 .ORL-theme .primary-background {
   background-color: #007dc5; }
@@ -1011,6 +1187,14 @@
 .ORL-theme a.navbar-burger span {
   color: #fff; }
 
+.ORL-theme circle {
+  fill: #c4ced3; }
+
+.ORL-theme .curve {
+  fill: none;
+  stroke: #007dc5;
+  stroke-width: 0.25rem; }
+
 .PHI-theme .primary-background {
   background-color: #006bb6; }
 
@@ -1054,6 +1238,14 @@
 
 .PHI-theme a.navbar-burger span {
   color: #fff; }
+
+.PHI-theme circle {
+  fill: #ed174c; }
+
+.PHI-theme .curve {
+  fill: none;
+  stroke: #006bb6;
+  stroke-width: 0.25rem; }
 
 .PHX-theme .primary-background {
   background-color: #e55f20; }
@@ -1099,6 +1291,14 @@
 .PHX-theme a.navbar-burger span {
   color: #fff; }
 
+.PHX-theme circle {
+  fill: #1d1160; }
+
+.PHX-theme .curve {
+  fill: none;
+  stroke: #e55f20;
+  stroke-width: 0.25rem; }
+
 .POR-theme .primary-background {
   background-color: #e03a3e; }
 
@@ -1142,6 +1342,14 @@
 
 .POR-theme a.navbar-burger span {
   color: #fff; }
+
+.POR-theme circle {
+  fill: #061922; }
+
+.POR-theme .curve {
+  fill: none;
+  stroke: #e03a3e;
+  stroke-width: 0.25rem; }
 
 .SAC-theme .primary-background {
   background-color: #5b2b82; }
@@ -1187,6 +1395,14 @@
 .SAC-theme a.navbar-burger span {
   color: #fff; }
 
+.SAC-theme circle {
+  fill: #63717a; }
+
+.SAC-theme .curve {
+  fill: none;
+  stroke: #5b2b82;
+  stroke-width: 0.25rem; }
+
 .SAS-theme .primary-background {
   background-color: #c4ced3; }
 
@@ -1230,6 +1446,14 @@
 
 .SAS-theme a.navbar-burger span {
   color: rgba(0, 0, 0, 0.7); }
+
+.SAS-theme circle {
+  fill: #061922; }
+
+.SAS-theme .curve {
+  fill: none;
+  stroke: #c4ced3;
+  stroke-width: 0.25rem; }
 
 .TOR-theme .primary-background {
   background-color: #ce1141; }
@@ -1275,6 +1499,14 @@
 .TOR-theme a.navbar-burger span {
   color: #fff; }
 
+.TOR-theme circle {
+  fill: #b4975a; }
+
+.TOR-theme .curve {
+  fill: none;
+  stroke: #ce1141;
+  stroke-width: 0.25rem; }
+
 .UTA-theme .primary-background {
   background-color: #f9a01b; }
 
@@ -1319,6 +1551,14 @@
 .UTA-theme a.navbar-burger span {
   color: #fff; }
 
+.UTA-theme circle {
+  fill: #002b5c; }
+
+.UTA-theme .curve {
+  fill: none;
+  stroke: #f9a01b;
+  stroke-width: 0.25rem; }
+
 .WAS-theme .primary-background {
   background-color: #002b5c; }
 
@@ -1362,6 +1602,14 @@
 
 .WAS-theme a.navbar-burger span {
   color: #fff; }
+
+.WAS-theme circle {
+  fill: #e31837; }
+
+.WAS-theme .curve {
+  fill: none;
+  stroke: #002b5c;
+  stroke-width: 0.25rem; }
 
 /*! bulma.io v0.7.4 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {

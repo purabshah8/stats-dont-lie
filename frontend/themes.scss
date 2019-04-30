@@ -7,7 +7,7 @@ $DarkCornflowerBlue: rgb(23, 64, 139);
 $PhilippineRed: rgb(201, 8, 42);
 
 // ATL
-$HawksRed: rgb(225,68,52);
+$HawksRed: rgb(225, 68, 52);
 $VoltGreen: rgb(196, 214, 0);
 $HawksCharcoal: rgb(38,40,42);
 
@@ -233,13 +233,23 @@ $WizardsSilver: rgb(196,206,212);
             color: $text-color;
         }
 
+        circle {
+            fill: $secondary;
+        }
+
+        .curve {
+            fill: none;
+            stroke: $primary;
+            stroke-width: 0.25rem;
+        }
+
     }
 }
 
 @include theme(default-theme, $DarkCornflowerBlue, $PhilippineRed);
 @include theme(ATL-theme, $HawksRed, $VoltGreen);
 @include theme(BOS-theme, $CelticsGreen, $CelticsGold);
-@include theme(BKN-theme, $Black, $Black);
+@include theme(BKN-theme, $Black, $NetsGray);
 @include theme(CHA-theme, $Teal, $HornetsPurple);
 @include theme(CHI-theme, $BullsRed, $BullsBlack);
 @include theme(CLE-theme, $CavaliersWine, $CavaliersYellow);
