@@ -30,8 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "statsdontlie.herokuapp.com"
-
+    "stats-dont-lie.herokuapp.com"
 ]
 
 
