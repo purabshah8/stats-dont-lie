@@ -1,5 +1,10 @@
 import psycopg2
 import sys
+import os
+
+connection_url = os.environ["DATABASE_URL"]
+if os.environ.get('DJANGO_DEVELOPMENT') is not None:
+    connection_url = "dbname=nba user=purab password=godricshallows"
 
 def create_tables():
     commands = [
@@ -126,7 +131,7 @@ def create_tables():
                     ON DELETE RESTRICT ON UPDATE CASCADE,
                 final_season_id INTEGER
                     REFERENCES season(id)
-                    ON DELETE RESTRICT ON UPDATE CASCADE,
+                    ON DELETE RESTRICT ON UPDATE CASCADE
             );
         """,
         """ 
@@ -260,20 +265,20 @@ def create_tables():
                 id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES statline(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
-                'ts', FLOAT,
-                'efg', FLOAT,
-                'tpar', FLOAT,
-                'ftr', FLOAT,
-                'orb_pct', FLOAT NOT NULL,
-                'drb_pct', FLOAT NOT NULL,
-                'trb_pct', FLOAT NOT NULL,
-                'ast_pct', FLOAT NOT NULL,
-                'stl_pct', FLOAT NOT NULL,
-                'blk_pct', FLOAT NOT NULL,
-                'tov_pct', FLOAT,
-                'usg_rate', FLOAT NOT NULL,
-                'ortg', INTEGER NOT NULL,
-                'drtg', INTEGER NOT NULL
+                ts FLOAT,
+                efg FLOAT,
+                tpar FLOAT,
+                ftr FLOAT,
+                orb_pct FLOAT NOT NULL,
+                drb_pct FLOAT NOT NULL,
+                trb_pct FLOAT NOT NULL,
+                ast_pct FLOAT NOT NULL,
+                stl_pct FLOAT NOT NULL,
+                blk_pct FLOAT NOT NULL,
+                tov_pct FLOAT,
+                usg_rate FLOAT NOT NULL,
+                ortg INTEGER NOT NULL,
+                drtg INTEGER NOT NULL
             );
         """,        
         """ 
@@ -305,7 +310,7 @@ def create_tables():
 
     connection = None
     try:
-        connection = psycopg2.connect("dbname=nba user=purab password=godricshallows")
+        connection = psycopg2.connect(connection_url, sslmode='require')
         cursor = connection.cursor()
         tables = ["league", "conference", "division", "location", "arena", "team", "season", "person", "team_employee", "referee", "player", "position", "player_position", "team_season", "player_team_season", "game", "game_period", "statline", "advanced_statline", "player_statline"]
         for i, command in enumerate(commands):
@@ -330,7 +335,7 @@ def create_tables():
 def execute_command(command):
     connection = None
     try:
-        connection = psycopg2.connect("dbname=nba user=purab password=godricshallows")
+        connection = psycopg2.connect(connection_url, sslmode='require')
         cursor = connection.cursor()
         cursor.execute(command)
         cursor.close()

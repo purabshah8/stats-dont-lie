@@ -12,9 +12,11 @@ if __name__ == "__main__":
     create_tables()
     for i in range(len(seed_data)):
         insert(tables[i], seed_data[i])
-    update_auto_increments()
+    update_auto_increments()    
     letters = "abcdefghijklmnopqrstuvwyz"
     for letter in letters:
         load_and_save_players(letter)
+    update_auto_increments()    
     load_and_save_refs()
     load_and_save_games(2019)
+    update_auto_increments()

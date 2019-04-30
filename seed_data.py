@@ -6,6 +6,11 @@ from scraper import get_season_dates
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
 django.setup()
 
+connection_url = os.environ["DATABASE_URL"]
+if os.environ.get('DJANGO_DEVELOPMENT') is not None:
+    connection_url = "dbname=nba user=purab password=godricshallows"
+
+
 
 leagues = [
     (1, "nba", 1946),
@@ -132,7 +137,7 @@ with open("data/season_info.csv") as f:
     for row in csv_reader:
         season_start = parse(row[-1])
         playoff_start = parse(row[-2])
-        row = [int(col) for col in row[0:2]]
+        row = [int(col) for col in row[0:3]]
         row.append(season_start)
         row.append(playoff_start)
         seasons.append(tuple(row))

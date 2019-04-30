@@ -1,9 +1,14 @@
+import os
 import sys
 import django
 import psycopg2
 import pytz
 from dateutil.parser import parse
 from django.utils.six import StringIO
+
+connection_url = os.environ.get("DATABASE_URL")
+if os.environ.get("DJANGO_DEVELOPMENT") is not None:
+    connection_url = "dbname=nba user=purab password=godricshallows"
 
 ABA_TEAMS = ["Nets", "Spurs", "Pacers", "Nuggets"]
 
@@ -50,8 +55,7 @@ def update_auto_increments():
         "sqlsequencereset", "stats", stdout=output, no_color=True)
     connection = None
     try:
-        connection = psycopg2.connect(
-            "dbname=nba user=purab password=godricshallows")
+        connection = psycopg2.connect(connection_url, sslmode='require')
         cursor = connection.cursor()
         cursor.execute(output.getvalue())
         cursor.close()
