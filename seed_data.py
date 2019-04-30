@@ -6,7 +6,7 @@ from scraper import get_season_dates
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
 django.setup()
 
-connection_url = os.environ.get["DATABASE_URL"]
+connection_url = os.environ.get("DATABASE_URL")
 if os.environ.get('DJANGO_DEVELOPMENT') is not None:
     connection_url = "dbname=nba user=purab password=godricshallows"
 
