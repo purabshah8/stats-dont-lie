@@ -2,7 +2,7 @@ import psycopg2
 import sys
 import os
 
-connection_url = os.environ["DATABASE_URL"]
+connection_url = os.environ.get["DATABASE_URL"]
 if os.environ.get('DJANGO_DEVELOPMENT') is not None:
     connection_url = "dbname=nba user=purab password=godricshallows"
 

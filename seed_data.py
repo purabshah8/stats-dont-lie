@@ -6,7 +6,7 @@ from scraper import get_season_dates
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
 django.setup()
 
-connection_url = os.environ["DATABASE_URL"]
+connection_url = os.environ.get["DATABASE_URL"]
 if os.environ.get('DJANGO_DEVELOPMENT') is not None:
     connection_url = "dbname=nba user=purab password=godricshallows"
 
@@ -174,7 +174,7 @@ def insert(table, values):
     connection = None
 
     try:
-        connection = psycopg2.connect("dbname=nba user=purab password=godricshallows", sslmode='require')
+        connection = psycopg2.connect(connection_url, sslmode='require')
         cursor = connection.cursor()
         num_args_str = "(" + "%s," * (len(values[0])-1) + "%s)"
         args = [str(cursor.mogrify(num_args_str, x), "utf-8") for x in values]
@@ -194,7 +194,3 @@ def insert(table, values):
 
 tables = ["league", "conference", "division", "location", "arena", "team", "season", "position", "team_season"]
 seed_data = [leagues, conferences, divisions, locations, arenas, teams, seasons, positions, team_seasons]
-
-# if __name__ == "__main__":
-#     for i in range(len(seed_data)):
-#         insert(tables[i], seed_data[i])
