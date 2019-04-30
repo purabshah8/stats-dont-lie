@@ -1,6 +1,6 @@
 import re
 from django.db import models
-from django.db.models import Sum, Avg
+from django.db.models import Sum, Avg, Q
 from util import ABA_TEAMS, BASIC_STAT_NAMES, ADVANCED_STAT_NAMES, PLAYER_STAT_NAMES
 from datetime import date
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
@@ -9,6 +9,9 @@ from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 # %load_ext autoreload
 # %autoreload 2
 # from stats.models import *
+# nets = Team.find("Brooklyn Nets")
+# caris = Player.find("Caris LeVert")
+# nets19 = nets.get_season(2019)
 
 class League(models.Model):
     name = models.CharField(max_length=8)
@@ -61,8 +64,8 @@ class Location(models.Model):
             if self.state:
                 loc += ", " + self.state
             return loc + ", " + self.country
-        if self.precision == 'address': 
-            address =  self.address
+        if self.precision == 'address':
+            address = self.address
             if self.city:
                 address += ", " + self.city
             if self.state:
@@ -109,13 +112,13 @@ class Team(models.Model):
         league_id = 2 if self.name in ABA_TEAMS and year < 1977 else 1
         season = Season.objects.get(year=year, league_id=league_id)
         return TeamSeason.objects.get(team_id=self.id, season_id=season.id)
-    
-    def get_roster(self,year):
+
+    def get_roster(self, year):
         team_season = self.get_season(year)
         return list(PlayerTeamSeason.objects.filter(team_season=team_season))
 
     @classmethod
-    def find(cls,team_name):
+    def find(cls, team_name):
         name = team_name.split(" ")
         if "Blazers" in name:
             city = name[0]
@@ -181,7 +184,8 @@ class Person(models.Model):
         except MultipleObjectsReturned:
             if year:
                 active_players = []
-                people = cls.objects.filter(preferred_name=preferred_name, last_name=last_name)
+                people = cls.objects.filter(
+                    preferred_name=preferred_name, last_name=last_name)
                 for person in people:
                     player = person.player
                     first_year = player.rookie_season.year
@@ -202,16 +206,19 @@ class Person(models.Model):
                 breakpoint()
                 print(f"Found multiple matches for {full_name}")
 
-            
+
 class Referee(models.Model):
-    id = models.OneToOneField(Person, models.DO_NOTHING, db_column='id', primary_key=True)
+    id = models.OneToOneField(
+        Person, models.DO_NOTHING, db_column='id', primary_key=True)
     jersey_number = models.IntegerField()
-    rookie_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="ref_rookie_season")
-    final_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="ref_final_season", null=True)
+    rookie_season = models.ForeignKey(
+        'Season', models.DO_NOTHING, related_name="ref_rookie_season")
+    final_season = models.ForeignKey(
+        'Season', models.DO_NOTHING, related_name="ref_final_season", null=True)
 
     def __str__(self):
         return self.id.__str__()
-        
+
     class Meta:
         db_table = 'referee'
 
@@ -222,11 +229,10 @@ class Referee(models.Model):
         else:
             last_year = self.final_season.year
         return first_year <= year and year <= last_year
-        
 
     def get_name(self):
         return self.id.get_name()
-    
+
     @classmethod
     def find(cls, full_name):
         names = full_name.split(" ")
@@ -238,17 +244,19 @@ class Referee(models.Model):
         else:
             preferred_name = " ".join(names[:1])
             last_name = names[-1]
-        matches = cls.objects.filter(id__preferred_name=preferred_name, id__last_name=last_name)
+        matches = cls.objects.filter(
+            id__preferred_name=preferred_name, id__last_name=last_name)
         return matches
 
 
 class TeamEmployee(models.Model):
-    id = models.OneToOneField(Person, models.DO_NOTHING, db_column='id', primary_key=True)
+    id = models.OneToOneField(
+        Person, models.DO_NOTHING, db_column='id', primary_key=True)
     team = models.ForeignKey(Team, models.DO_NOTHING)
     role = models.CharField(max_length=16)
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
-    
+
     def __str__(self):
         return self.id.__str__()
 
@@ -260,14 +268,17 @@ class TeamEmployee(models.Model):
 
 
 class Player(models.Model):
-    id = models.OneToOneField(Person, models.DO_NOTHING, db_column='id', primary_key=True)
+    id = models.OneToOneField(
+        Person, models.DO_NOTHING, db_column='id', primary_key=True)
     height = models.IntegerField()
     weight = models.IntegerField()
     shooting_hand = models.CharField(max_length=5)
-    rookie_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="rookie_season")
-    final_season = models.ForeignKey('Season', models.DO_NOTHING, related_name="final_season", null=True)
+    rookie_season = models.ForeignKey(
+        'Season', models.DO_NOTHING, related_name="rookie_season")
+    final_season = models.ForeignKey(
+        'Season', models.DO_NOTHING, related_name="final_season", null=True)
     image_url = models.CharField(max_length=128, null=True)
-    
+
     def __str__(self):
         return self.id.__str__()
 
@@ -277,8 +288,7 @@ class Player(models.Model):
     def get_name(self):
         return self.id.get_name()
 
-    # def get_regular_statlines(self, year):
-
+    # def get_statlines(self, year):
 
     @classmethod
     def find(cls, full_name):
@@ -291,11 +301,13 @@ class Player(models.Model):
         else:
             preferred_name = " ".join(names[:1])
             last_name = names[-1]
-        matches = cls.objects.filter(id__preferred_name=preferred_name, id__last_name=last_name)
+        matches = cls.objects.filter(
+            id__preferred_name=preferred_name, id__last_name=last_name)
         if len(matches) == 1:
             return matches[0]
         elif len(matches) < 1:
-            raise ObjectDoesNotExist(f"Could not find a match for Player {full_name}")
+            raise ObjectDoesNotExist(
+                f"Could not find a match for Player {full_name}")
         else:
             print(f"Found multiple matches for Player {full_name}")
             breakpoint()
@@ -320,47 +332,72 @@ class PlayerPosition(models.Model):
 
     class Meta:
         db_table = 'player_position'
-    
+
 
 class TeamSeason(models.Model):
     team = models.ForeignKey(Team, models.DO_NOTHING)
     season = models.ForeignKey(Season, models.DO_NOTHING)
 
     def __str__(self):
-        return self.team.name + " " + str(self.season.year)    
+        return self.team.name + " " + str(self.season.year)
 
-    def get_regular_statlines(self):
-        return Statline.objects.filter(team=self.team, 
-            playerstatline__isnull=True, 
-            game__tipoff__lt=self.season.playoff_start, 
-            game__tipoff__gte=self.season.season_start)
+    def get_games(self):
+        return Game.objects.filter(Q(home=self.team) | Q(away=self.team),
+                                   tipoff__lt=self.season.playoff_start,
+                                   tipoff__gte=self.season.season_start)
+
+    def get_statlines(self):
+        return Statline.objects.filter(team=self.team,
+                                       playerstatline__isnull=True,
+                                       game__tipoff__lt=self.season.playoff_start,
+                                       game__tipoff__gte=self.season.season_start)
 
     def get_playoff_statlines(self):
-        return Statline.objects.filter(team=self.team, 
-            playerstatline__isnull=True, 
-            game__tipoff__gte=self.season.playoff_start, 
-            game__tipoff__lt=date(self.season.year, 7, 1))
-    
+        return Statline.objects.filter(team=self.team,
+                                       playerstatline__isnull=True,
+                                       game__tipoff__gte=self.season.playoff_start,
+                                       game__tipoff__lt=date(self.season.year, 7, 1))
+
     def get_raw_stats(self):
         raw_stats = {}
-        team_stats = self.get_regular_statlines()
+        games = self.get_games()
+        team_stats = self.get_statlines()
         for stat in BASIC_STAT_NAMES:
             stat_values = team_stats.values_list(stat, flat=True)
             raw_stats[stat] = list(stat_values)
+        possessions = []
+        pace = []
+        for game in games:
+            poss = game.get_poss("home") if game.home == self.team else game.get_poss("away")
+            possessions.append(poss)
+            pace.append(game.get_pace())
+        raw_stats["possessions"] = possessions
+        raw_stats["pace"] = pace
+        raw_stats["game_dates"] = list(
+            team_stats.values_list("game__tipoff", flat=True)
+        )
         return raw_stats
 
     def get_season_totals(self):
-        team_stats = self.get_regular_statlines()
-        totals = team_stats.aggregate(mp=Sum("mp"), fg=Sum("fg"), 
-            fga=Sum("fga"), tp=Sum("tp"), tpa=Sum("tpa"), 
-            ft=Sum("ft"), fta=Sum("fta"), orb=Sum("orb"), 
-            drb=Sum("drb"), trb=Sum("trb"), ast=Sum("ast"), 
-            stl=Sum("stl"), blk=Sum("blk"), tov=Sum("tov"), 
-            pf=Sum("pf"), pts=Sum("pts"))
+        team_stats = self.get_statlines()
+        totals = team_stats.aggregate(mp=Sum("mp"), fg=Sum("fg"),
+                                      fga=Sum("fga"), tp=Sum("tp"), tpa=Sum("tpa"),
+                                      ft=Sum("ft"), fta=Sum("fta"), orb=Sum("orb"),
+                                      drb=Sum("drb"), trb=Sum("trb"), ast=Sum("ast"),
+                                      stl=Sum("stl"), blk=Sum("blk"), tov=Sum("tov"),
+                                      pf=Sum("pf"), pts=Sum("pts"))
         totals["fg_pct"] = totals["fg"] / totals["fga"]
         totals["tp_pct"] = totals["tp"] / totals["tpa"]
         totals["ft_pct"] = totals["ft"] / totals["fta"]
+        games = self.get_games()
+        possessions = []
+        for game in games:
+            poss = game.get_poss("home") if game.home == self.team else game.get_poss("away")
+            possessions.append(poss)
+        totals["possessions"] = sum(possessions)
+        totals["gp"] = len(team_stats)
         return totals
+
     class Meta:
         db_table = 'team_season'
 
@@ -372,37 +409,41 @@ class PlayerTeamSeason(models.Model):
     def __str__(self):
         return self.player.get_name() + " " + self.team_season.__str__()
 
-    def get_regular_statlines(self):
+    def get_statlines(self):
         return Statline.objects.filter(playerstatline__isnull=False,
-            playerstatline__player=self.player.id.id, 
-            game__tipoff__lt=self.team_season.season.playoff_start, 
-            game__tipoff__gte=self.team_season.season.season_start)
+                                       playerstatline__player=self.player.id.id,
+                                       team=self.team_season.team,
+                                       game__tipoff__lt=self.team_season.season.playoff_start,
+                                       game__tipoff__gte=self.team_season.season.season_start)
 
     def get_playoff_statlines(self):
         return Statline.objects.filter(playerstatline__isnull=False,
-            playerstatline__player=self.player.id.id, 
-            game__tipoff__gte=self.team_season.season.playoff_start, 
-            game__tipoff__lt=date(self.team_season.season.year, 7, 1))
-    
+                                       playerstatline__player=self.player.id.id,
+                                       game__tipoff__gte=self.team_season.season.playoff_start,
+                                       game__tipoff__lt=date(self.team_season.season.year, 7, 1))
+
     def get_raw_stats(self):
         raw_stats = {}
-        player_stats = self.get_regular_statlines()
+        player_stats = self.get_statlines()
         for stat in BASIC_STAT_NAMES:
             stat_values = player_stats.values_list(stat, flat=True)
             raw_stats[stat] = list(stat_values)
         for stat in PLAYER_STAT_NAMES:
-            stat_values = player_stats.values_list("playerstatline__"+stat, flat=True)
+            stat_values = player_stats.values_list(
+                "playerstatline__"+stat, flat=True)
             raw_stats[stat] = list(stat_values)
+        raw_stats["game_dates"] = list(
+            player_stats.values_list("game__tipoff", flat=True))
         return raw_stats
 
     def get_season_totals(self):
-        team_stats = self.get_regular_statlines()
-        totals = team_stats.aggregate(mp=Sum("mp"), fg=Sum("fg"), 
-            fga=Sum("fga"), tp=Sum("tp"), tpa=Sum("tpa"), 
-            ft=Sum("ft"), fta=Sum("fta"), orb=Sum("orb"), 
-            drb=Sum("drb"), trb=Sum("trb"), ast=Sum("ast"), 
-            stl=Sum("stl"), blk=Sum("blk"), tov=Sum("tov"), 
-            pf=Sum("pf"), pts=Sum("pts"))
+        team_stats = self.get_statlines()
+        totals = team_stats.aggregate(mp=Sum("mp"), fg=Sum("fg"),
+                                      fga=Sum("fga"), tp=Sum("tp"), tpa=Sum("tpa"),
+                                      ft=Sum("ft"), fta=Sum("fta"), orb=Sum("orb"),
+                                      drb=Sum("drb"), trb=Sum("trb"), ast=Sum("ast"),
+                                      stl=Sum("stl"), blk=Sum("blk"), tov=Sum("tov"),
+                                      pf=Sum("pf"), pts=Sum("pts"))
         totals["fg_pct"] = totals["fg"] / totals["fga"]
         totals["tp_pct"] = totals["tp"] / totals["tpa"]
         totals["ft_pct"] = totals["ft"] / totals["fta"]
@@ -414,39 +455,72 @@ class PlayerTeamSeason(models.Model):
                 starts += 1
         totals["plus_minus"] = plus_minus
         totals["starts"] = starts
+        totals["gp"] = len(team_stats)
         return totals
+
     class Meta:
         db_table = 'player_team_season'
 
 
 class Game(models.Model):
     id = models.CharField(primary_key=True, max_length=16)
-    home = models.ForeignKey('Team', models.DO_NOTHING, related_name="home_team")
-    away = models.ForeignKey('Team', models.DO_NOTHING, related_name="away_team")
+    home = models.ForeignKey('Team', models.DO_NOTHING,
+                             related_name="home_team")
+    away = models.ForeignKey('Team', models.DO_NOTHING,
+                             related_name="away_team")
     home_score = models.IntegerField()
     away_score = models.IntegerField()
-    winner = models.ForeignKey('Team', models.DO_NOTHING, related_name="winner")
-    ref_one = models.ForeignKey('Referee', models.DO_NOTHING, blank=True, null=True, related_name="first_ref")
-    ref_two = models.ForeignKey('Referee', models.DO_NOTHING, blank=True, null=True, related_name="second_ref")
-    ref_three = models.ForeignKey('Referee', models.DO_NOTHING, blank=True, null=True, related_name="third_ref")
+    winner = models.ForeignKey(
+        'Team', models.DO_NOTHING, related_name="winner")
+    ref_one = models.ForeignKey(
+        'Referee', models.DO_NOTHING, blank=True, null=True, related_name="first_ref")
+    ref_two = models.ForeignKey(
+        'Referee', models.DO_NOTHING, blank=True, null=True, related_name="second_ref")
+    ref_three = models.ForeignKey(
+        'Referee', models.DO_NOTHING, blank=True, null=True, related_name="third_ref")
     tipoff = models.DateTimeField(blank=True, null=True)
     attendance = models.IntegerField(blank=True, null=True)
     duration = models.IntegerField(blank=True, null=True)
-    
+
     def __str__(self):
         return self.id
-    
+
     class Meta:
         db_table = 'game'
 
     def get_stats(self, team):
         if team == "home":
             return Statline.objects.filter(team=self.home, game=self.id)
-        else:
+        elif team == "away":
             return Statline.objects.filter(team=self.away, game=self.id)
+        else:
+            return None
 
-    # def get_team_players(self, location):
-        # self.
+    def calc_poss(self, team, opp):
+        return 0.5 * ((team.fga + 0.4 * team.fta - 1.07 * (team.orb / (team.orb + opp.drb)) * (team.fga - team.fg) + team.tov) + (opp.fga + 0.4 * opp.fta - 1.07 * (opp.orb / (opp.orb + team.drb)) * (opp.fga - opp.fg) + opp.tov))
+
+    def get_poss(self, team):
+        home = self.get_team_stats("home")
+        away = self.get_team_stats("away")
+        if team == "home":
+            return self.calc_poss(home, away)
+        elif team == "away":
+            return self.calc_poss(away, home)
+
+    def get_pace(self):
+        home = self.get_team_stats("home")
+        home_poss = self.get_poss("home")
+        away_poss = self.get_poss("away")
+        return 48 * ((home_poss+away_poss) / (2*(home.mp/5)))
+
+
+    def get_team_stats(self, team):
+        if team == "home":
+            return Statline.objects.get(team=self.home, game=self.id, playerstatline__isnull=True)
+        elif team == "away":
+            return Statline.objects.get(team=self.away, game=self.id, playerstatline__isnull=True)
+        else:
+            return None
 
 
 class GamePeriod(models.Model):
@@ -487,13 +561,14 @@ class Statline(models.Model):
 
     def __str__(self):
         return self.game.id + " " + self.team.abbreviation + str(self.id)
-    
+
     class Meta:
         db_table = 'statline'
 
 
 class AdvancedStatline(models.Model):
-    id = models.OneToOneField('Statline', models.DO_NOTHING, db_column='id', primary_key=True)
+    id = models.OneToOneField(
+        'Statline', models.DO_NOTHING, db_column='id', primary_key=True)
     ts = models.FloatField(blank=True, null=True)
     efg = models.FloatField(blank=True, null=True)
     tpar = models.FloatField(blank=True, null=True)
@@ -514,7 +589,8 @@ class AdvancedStatline(models.Model):
 
 
 class PlayerStatline(models.Model):
-    id = models.OneToOneField('Statline', models.DO_NOTHING, db_column='id', primary_key=True)
+    id = models.OneToOneField(
+        'Statline', models.DO_NOTHING, db_column='id', primary_key=True)
     player = models.ForeignKey(Player, models.DO_NOTHING)
     started = models.BooleanField(blank=True, null=True)
     plus_minus = models.IntegerField()

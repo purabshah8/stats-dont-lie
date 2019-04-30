@@ -126,6 +126,7 @@ class PlayerSeasonStatsType(graphene.ObjectType):
     pts = graphene.List(graphene.Int)
     plus_minus = graphene.List(graphene.Int)
     started = graphene.List(graphene.Boolean)
+    game_dates = graphene.List(graphene.types.datetime.DateTime)
 
 class PlayerFullStatlineType(graphene.ObjectType):
     mp = graphene.Int()
@@ -149,17 +150,19 @@ class PlayerFullStatlineType(graphene.ObjectType):
     pts = graphene.Int()
     plus_minus = graphene.Int()
     starts = graphene.Int()
+    gp = graphene.Int()
 
 
 class PlayerTeamSeasonType(DjangoObjectType):
-    total_stats = graphene.Field(PlayerStatlineType)
+    total_stats = graphene.Field(PlayerFullStatlineType)
     raw_stats = graphene.Field(PlayerSeasonStatsType)
 
     class Meta:
         model = PlayerTeamSeason
 
     def resolve_total_stats(self, info):
-        self.get_season_totals()
+        total_stats = self.get_season_totals()
+        return PlayerFullStatlineType(**total_stats)
 
     def resolve_raw_stats(self, info):
         raw_stats = self.get_raw_stats()
@@ -186,6 +189,8 @@ class TeamStatlineType(graphene.ObjectType):
     tov = graphene.Int()
     pf = graphene.Int()
     pts = graphene.Int()
+    possessions = graphene.Float()
+    gp = graphene.Int()
 
 
 class TeamSeasonStatsType(graphene.ObjectType):
@@ -208,6 +213,9 @@ class TeamSeasonStatsType(graphene.ObjectType):
     tov = graphene.List(graphene.Int)
     pf = graphene.List(graphene.Int)
     pts = graphene.List(graphene.Int)
+    possessions = graphene.List(graphene.Float)
+    pace = graphene.List(graphene.Float)
+    game_dates = graphene.List(graphene.types.datetime.DateTime)
 
 
 class TeamSeasonType(DjangoObjectType):

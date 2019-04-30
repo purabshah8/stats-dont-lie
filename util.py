@@ -33,6 +33,10 @@ ADVANCED_STAT_NAMES = ["ts", "efg", "tpar", "ftr", "orb_pct", "drb_pct",
 PLAYER_STAT_NAMES = ["started", "plus_minus"]
 
 
+# def calcluate_team_posessions(stats):
+    # possession_formula: 0.5 * ((Tm FGA + 0.4 * Tm FTA - 1.07 * (Tm ORB / (Tm ORB + Opp DRB)) * (Tm FGA - Tm FG) + Tm TOV) + (Opp FGA + 0.4 * Opp FTA - 1.07 * (Opp ORB / (Opp ORB + Tm DRB)) * (Opp FGA - Opp FG) + Opp TOV))
+
+
 def get_datetime(datetime_str):
     est = pytz.timezone("America/New_York")
     date = parse(datetime_str)

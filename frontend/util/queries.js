@@ -147,6 +147,10 @@ query getPlayerSeason($playerId: Int!, $year: Int!) {
             team {
                 ...teamName
             }
+            season {
+                seasonStart
+                playoffStart
+            }
         }
         rawStats {
             mp
@@ -170,6 +174,7 @@ query getPlayerSeason($playerId: Int!, $year: Int!) {
             pts
             plusMinus
             started
+            gameDates
         }
     }
 }
