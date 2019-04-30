@@ -5,6 +5,7 @@ import { GET_PLAYER, GET_PLAYER_SEASON } from "../../util/queries";
 import PlayerDetails from "./player_details";
 import LineChart from "../d3/line_chart";
 import SeasonPicker from "../elements/season_picker";
+import ChartPicker from '../d3/chart_picker';
 
 export default class Player extends React.Component {
     constructor(props) {
@@ -73,7 +74,7 @@ export default class Player extends React.Component {
                                     <PlayerDetails player={player} team={currentTeamSeason.team} year={0}/>
                                     <SeasonPicker path={this.props.history.location.pathname} start={player.rookieSeason.year} end={player.finalSeason ? player.finalSeason.year : 2019 } />
                                     <div className={`${abbreviation}-theme`}>
-                                        <LineChart stats={stats} />
+                                        <ChartPicker stats={stats} season={currentTeamSeason.season}/>
                                     </div>
                                 </>
                             );

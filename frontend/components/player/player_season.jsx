@@ -4,6 +4,7 @@ import { GET_PLAYER_SEASON } from "../../util/queries";
 import PlayerDetails from "./player_details";
 import SeasonPicker from "../elements/season_picker";
 import LineChart from "../d3/line_chart";
+import ChartPicker from "../d3/chart_picker";
 
 export default class PlayerSeason extends Component {
     constructor(props) {
@@ -39,7 +40,7 @@ export default class PlayerSeason extends Component {
                                             </div>
                                         :
                                             <div className={`${abbreviation}-theme`}>
-                                                <LineChart stats={stats} />
+                                                <ChartPicker stats={stats} season={currentTeamSeason.season}/>
                                             </div>
                                     }
                                 </>
