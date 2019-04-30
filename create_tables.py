@@ -89,8 +89,8 @@ def create_tables():
                     REFERENCES league(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 year INTEGER NOT NULL,
-                season_start DATE,
-                playoff_start DATE
+                season_start TIMESTAMP,
+                playoff_start TIMESTAMP
             );
         """,
         """ 
@@ -280,7 +280,7 @@ def create_tables():
                 ortg INTEGER NOT NULL,
                 drtg INTEGER NOT NULL
             );
-        """,        
+        """,
         """ 
             CREATE TABLE player_statline(
                 id INTEGER NOT NULL PRIMARY KEY
@@ -306,20 +306,21 @@ def create_tables():
 #
 # CASCADE ==> RESTRICT
 #   game: ref_one_id, ref_two_id, ref_three_id
-#  
+#
 
     connection = None
     try:
         connection = psycopg2.connect(connection_url, sslmode='require')
         cursor = connection.cursor()
-        tables = ["league", "conference", "division", "location", "arena", "team", "season", "person", "team_employee", "referee", "player", "position", "player_position", "team_season", "player_team_season", "game", "game_period", "statline", "advanced_statline", "player_statline"]
+        tables = ["league", "conference", "division", "location", "arena", "team", "season", "person", "team_employee", "referee", "player",
+                  "position", "player_position", "team_season", "player_team_season", "game", "game_period", "statline", "advanced_statline", "player_statline"]
         for i, command in enumerate(commands):
             cursor.execute(command)
             if i == 0:
                 print("Dropping existing tables...")
             else:
                 print("Created table", tables[i-1])
-        
+
         cursor.close()
         connection.commit()
     except psycopg2.DatabaseError as e:
@@ -331,6 +332,7 @@ def create_tables():
     finally:
         if connection:
             connection.close()
+
 
 def execute_command(command):
     connection = None
@@ -350,11 +352,12 @@ def execute_command(command):
         if connection:
             connection.close()
 
+
 if __name__ == '__main__':
     create_tables()
 
 # commands = [
-#     """ 
+#     """
 #         CREATE TABLE table_name(
 #             id SERIAL PRIMARY KEY,
 
