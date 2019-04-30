@@ -132,7 +132,7 @@ with open("data/season_info.csv") as f:
     for row in csv_reader:
         season_start = parse(row[-1])
         playoff_start = parse(row[-2])
-        row = [int(col) for col in row if not isinstance(col, datetime.datetime)]
+        row = [int(col) for col in row[0:2]]
         row.append(season_start)
         row.append(playoff_start)
         seasons.append(tuple(row))
@@ -169,7 +169,7 @@ def insert(table, values):
     connection = None
 
     try:
-        connection = psycopg2.connect("dbname=nba user=purab password=godricshallows")
+        connection = psycopg2.connect("dbname=nba user=purab password=godricshallows", sslmode='require')
         cursor = connection.cursor()
         num_args_str = "(" + "%s," * (len(values[0])-1) + "%s)"
         args = [str(cursor.mogrify(num_args_str, x), "utf-8") for x in values]
@@ -190,6 +190,6 @@ def insert(table, values):
 tables = ["league", "conference", "division", "location", "arena", "team", "season", "position", "team_season"]
 seed_data = [leagues, conferences, divisions, locations, arenas, teams, seasons, positions, team_seasons]
 
-if __name__ == "__main__":
-    for i in range(len(seed_data)):
-        insert(tables[i], seed_data[i])
+# if __name__ == "__main__":
+#     for i in range(len(seed_data)):
+#         insert(tables[i], seed_data[i])

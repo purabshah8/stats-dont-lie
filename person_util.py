@@ -193,9 +193,9 @@ def delete_person(info, category="person", delete_person=True):
         print("Couldn't find a match in the database with the given information.")
 
 
-if __name__ == "__main__":
-    update_auto_increments()
-    letters = "abcdefghijklmnopqrstuvwyz"
-    for letter in letters:
-        load_and_save_players(letter)
-    load_and_save_refs()
+# if __name__ == "__main__":
+#     update_auto_increments()
+#     letters = "abcdefghijklmnopqrstuvwyz"
+#     for letter in letters:
+#         load_and_save_players(letter)
+#     load_and_save_refs()

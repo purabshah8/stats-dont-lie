@@ -9,15 +9,6 @@ from django.core.exceptions import ObjectDoesNotExist
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "statsdontlie.settings")
 django.setup()
 
-# BASIC_STAT_NAMES = ["mp", "fg", "fga", "fg_pct", "tp", "tpa", "tp_pct", "ft",
-#                     "fta", "ft_pct", "orb", "drb", "trb", "ast", "stl", "blk", 
-#                     "tov", "pf", "pts"]
-# ADVANCED_STAT_NAMES = ["ts", "efg", "tpar", "ftr", "orb_pct", "drb_pct",
-#                        "trb_pct", "ast_pct", "stl_pct", "blk_pct", "tov_pct", 
-#                        "usg_rate", "ortg", "drtg"]
-
-# player_stat_names = ["started", "plus_minus"]
-
 def save_game(info):
     home = Team.find(info["home_team"])
     away = Team.find(info["away_team"])
