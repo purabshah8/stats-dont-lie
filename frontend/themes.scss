@@ -243,6 +243,21 @@ $WizardsSilver: rgb(196,206,212);
             stroke-width: 0.25rem;
         }
 
+        .menu-list li {
+            padding: 0.2rem;
+            border-radius: 5px;
+        }
+        
+        .menu-list li:hover {
+            background: $primary;
+            color: $text-color;
+            cursor: pointer;
+        }
+
+        .menu-list li.is-active {
+            background: $primary;
+            color: $text-color
+        }
     }
 }
 

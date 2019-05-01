@@ -38,7 +38,6 @@ export default class SeasonPicker extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         let dropdownClasses = "dropdown ";
         dropdownClasses += this.state.isActive ? " is-active" : "";
         return (

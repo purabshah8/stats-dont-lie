@@ -51,6 +51,19 @@
   stroke: #17408b;
   stroke-width: 0.25rem; }
 
+.default-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.default-theme .menu-list li:hover {
+  background: #17408b;
+  color: #fff;
+  cursor: pointer; }
+
+.default-theme .menu-list li.is-active {
+  background: #17408b;
+  color: #fff; }
+
 .ATL-theme .primary-background {
   background-color: #e14434; }
 
@@ -102,6 +115,19 @@
   fill: none;
   stroke: #e14434;
   stroke-width: 0.25rem; }
+
+.ATL-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.ATL-theme .menu-list li:hover {
+  background: #e14434;
+  color: #fff;
+  cursor: pointer; }
+
+.ATL-theme .menu-list li.is-active {
+  background: #e14434;
+  color: #fff; }
 
 .BOS-theme .primary-background {
   background-color: #007a33; }
@@ -155,6 +181,19 @@
   stroke: #007a33;
   stroke-width: 0.25rem; }
 
+.BOS-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.BOS-theme .menu-list li:hover {
+  background: #007a33;
+  color: #fff;
+  cursor: pointer; }
+
+.BOS-theme .menu-list li.is-active {
+  background: #007a33;
+  color: #fff; }
+
 .BKN-theme .primary-background {
   background-color: black; }
 
@@ -206,6 +245,19 @@
   fill: none;
   stroke: black;
   stroke-width: 0.25rem; }
+
+.BKN-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.BKN-theme .menu-list li:hover {
+  background: black;
+  color: #fff;
+  cursor: pointer; }
+
+.BKN-theme .menu-list li.is-active {
+  background: black;
+  color: #fff; }
 
 .CHA-theme .primary-background {
   background-color: #00788c; }
@@ -259,6 +311,19 @@
   stroke: #00788c;
   stroke-width: 0.25rem; }
 
+.CHA-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.CHA-theme .menu-list li:hover {
+  background: #00788c;
+  color: #fff;
+  cursor: pointer; }
+
+.CHA-theme .menu-list li.is-active {
+  background: #00788c;
+  color: #fff; }
+
 .CHI-theme .primary-background {
   background-color: #ce1141; }
 
@@ -310,6 +375,19 @@
   fill: none;
   stroke: #ce1141;
   stroke-width: 0.25rem; }
+
+.CHI-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.CHI-theme .menu-list li:hover {
+  background: #ce1141;
+  color: #fff;
+  cursor: pointer; }
+
+.CHI-theme .menu-list li.is-active {
+  background: #ce1141;
+  color: #fff; }
 
 .CLE-theme .primary-background {
   background-color: #6f263d; }
@@ -363,6 +441,19 @@
   stroke: #6f263d;
   stroke-width: 0.25rem; }
 
+.CLE-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.CLE-theme .menu-list li:hover {
+  background: #6f263d;
+  color: #fff;
+  cursor: pointer; }
+
+.CLE-theme .menu-list li.is-active {
+  background: #6f263d;
+  color: #fff; }
+
 .DAL-theme .primary-background {
   background-color: #0053bc; }
 
@@ -414,6 +505,19 @@
   fill: none;
   stroke: #0053bc;
   stroke-width: 0.25rem; }
+
+.DAL-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.DAL-theme .menu-list li:hover {
+  background: #0053bc;
+  color: #fff;
+  cursor: pointer; }
+
+.DAL-theme .menu-list li.is-active {
+  background: #0053bc;
+  color: #fff; }
 
 .DEN-theme .primary-background {
   background-color: #0d2240; }
@@ -467,6 +571,19 @@
   stroke: #0d2240;
   stroke-width: 0.25rem; }
 
+.DEN-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.DEN-theme .menu-list li:hover {
+  background: #0d2240;
+  color: #fff;
+  cursor: pointer; }
+
+.DEN-theme .menu-list li.is-active {
+  background: #0d2240;
+  color: #fff; }
+
 .DET-theme .primary-background {
   background-color: #c8102e; }
 
@@ -518,6 +635,19 @@
   fill: none;
   stroke: #c8102e;
   stroke-width: 0.25rem; }
+
+.DET-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.DET-theme .menu-list li:hover {
+  background: #c8102e;
+  color: #fff;
+  cursor: pointer; }
+
+.DET-theme .menu-list li.is-active {
+  background: #c8102e;
+  color: #fff; }
 
 .GSW-theme .primary-background {
   background-color: #fdb927; }
@@ -571,6 +701,19 @@
   stroke: #fdb927;
   stroke-width: 0.25rem; }
 
+.GSW-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.GSW-theme .menu-list li:hover {
+  background: #fdb927;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer; }
+
+.GSW-theme .menu-list li.is-active {
+  background: #fdb927;
+  color: rgba(0, 0, 0, 0.7); }
+
 .HOU-theme .primary-background {
   background-color: #ce1141; }
 
@@ -622,6 +765,19 @@
   fill: none;
   stroke: #ce1141;
   stroke-width: 0.25rem; }
+
+.HOU-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.HOU-theme .menu-list li:hover {
+  background: #ce1141;
+  color: #fff;
+  cursor: pointer; }
+
+.HOU-theme .menu-list li.is-active {
+  background: #ce1141;
+  color: #fff; }
 
 .IND-theme .primary-background {
   background-color: #fdbb30; }
@@ -675,6 +831,19 @@
   stroke: #fdbb30;
   stroke-width: 0.25rem; }
 
+.IND-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.IND-theme .menu-list li:hover {
+  background: #fdbb30;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer; }
+
+.IND-theme .menu-list li.is-active {
+  background: #fdbb30;
+  color: rgba(0, 0, 0, 0.7); }
+
 .LAC-theme .primary-background {
   background-color: #1d4294; }
 
@@ -726,6 +895,19 @@
   fill: none;
   stroke: #1d4294;
   stroke-width: 0.25rem; }
+
+.LAC-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.LAC-theme .menu-list li:hover {
+  background: #1d4294;
+  color: #fff;
+  cursor: pointer; }
+
+.LAC-theme .menu-list li.is-active {
+  background: #1d4294;
+  color: #fff; }
 
 .LAL-theme .primary-background {
   background-color: #552582; }
@@ -779,6 +961,19 @@
   stroke: #552582;
   stroke-width: 0.25rem; }
 
+.LAL-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.LAL-theme .menu-list li:hover {
+  background: #552582;
+  color: #fff;
+  cursor: pointer; }
+
+.LAL-theme .menu-list li.is-active {
+  background: #552582;
+  color: #fff; }
+
 .MEM-theme .primary-background {
   background-color: #5d76a9; }
 
@@ -830,6 +1025,19 @@
   fill: none;
   stroke: #5d76a9;
   stroke-width: 0.25rem; }
+
+.MEM-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.MEM-theme .menu-list li:hover {
+  background: #5d76a9;
+  color: #fff;
+  cursor: pointer; }
+
+.MEM-theme .menu-list li.is-active {
+  background: #5d76a9;
+  color: #fff; }
 
 .MIA-theme .primary-background {
   background-color: #98002e; }
@@ -883,6 +1091,19 @@
   stroke: #98002e;
   stroke-width: 0.25rem; }
 
+.MIA-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.MIA-theme .menu-list li:hover {
+  background: #98002e;
+  color: #fff;
+  cursor: pointer; }
+
+.MIA-theme .menu-list li.is-active {
+  background: #98002e;
+  color: #fff; }
+
 .MIL-theme .primary-background {
   background-color: #00471b; }
 
@@ -934,6 +1155,19 @@
   fill: none;
   stroke: #00471b;
   stroke-width: 0.25rem; }
+
+.MIL-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.MIL-theme .menu-list li:hover {
+  background: #00471b;
+  color: #fff;
+  cursor: pointer; }
+
+.MIL-theme .menu-list li.is-active {
+  background: #00471b;
+  color: #fff; }
 
 .MIN-theme .primary-background {
   background-color: #236192; }
@@ -987,6 +1221,19 @@
   stroke: #236192;
   stroke-width: 0.25rem; }
 
+.MIN-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.MIN-theme .menu-list li:hover {
+  background: #236192;
+  color: #fff;
+  cursor: pointer; }
+
+.MIN-theme .menu-list li.is-active {
+  background: #236192;
+  color: #fff; }
+
 .NOP-theme .primary-background {
   background-color: #001641; }
 
@@ -1038,6 +1285,19 @@
   fill: none;
   stroke: #001641;
   stroke-width: 0.25rem; }
+
+.NOP-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.NOP-theme .menu-list li:hover {
+  background: #001641;
+  color: #fff;
+  cursor: pointer; }
+
+.NOP-theme .menu-list li.is-active {
+  background: #001641;
+  color: #fff; }
 
 .NYK-theme .primary-background {
   background-color: #006bb6; }
@@ -1091,6 +1351,19 @@
   stroke: #006bb6;
   stroke-width: 0.25rem; }
 
+.NYK-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.NYK-theme .menu-list li:hover {
+  background: #006bb6;
+  color: #fff;
+  cursor: pointer; }
+
+.NYK-theme .menu-list li.is-active {
+  background: #006bb6;
+  color: #fff; }
+
 .OKC-theme .primary-background {
   background-color: #ef3b24; }
 
@@ -1142,6 +1415,19 @@
   fill: none;
   stroke: #ef3b24;
   stroke-width: 0.25rem; }
+
+.OKC-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.OKC-theme .menu-list li:hover {
+  background: #ef3b24;
+  color: #fff;
+  cursor: pointer; }
+
+.OKC-theme .menu-list li.is-active {
+  background: #ef3b24;
+  color: #fff; }
 
 .ORL-theme .primary-background {
   background-color: #007dc5; }
@@ -1195,6 +1481,19 @@
   stroke: #007dc5;
   stroke-width: 0.25rem; }
 
+.ORL-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.ORL-theme .menu-list li:hover {
+  background: #007dc5;
+  color: #fff;
+  cursor: pointer; }
+
+.ORL-theme .menu-list li.is-active {
+  background: #007dc5;
+  color: #fff; }
+
 .PHI-theme .primary-background {
   background-color: #006bb6; }
 
@@ -1246,6 +1545,19 @@
   fill: none;
   stroke: #006bb6;
   stroke-width: 0.25rem; }
+
+.PHI-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.PHI-theme .menu-list li:hover {
+  background: #006bb6;
+  color: #fff;
+  cursor: pointer; }
+
+.PHI-theme .menu-list li.is-active {
+  background: #006bb6;
+  color: #fff; }
 
 .PHX-theme .primary-background {
   background-color: #e55f20; }
@@ -1299,6 +1611,19 @@
   stroke: #e55f20;
   stroke-width: 0.25rem; }
 
+.PHX-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.PHX-theme .menu-list li:hover {
+  background: #e55f20;
+  color: #fff;
+  cursor: pointer; }
+
+.PHX-theme .menu-list li.is-active {
+  background: #e55f20;
+  color: #fff; }
+
 .POR-theme .primary-background {
   background-color: #e03a3e; }
 
@@ -1350,6 +1675,19 @@
   fill: none;
   stroke: #e03a3e;
   stroke-width: 0.25rem; }
+
+.POR-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.POR-theme .menu-list li:hover {
+  background: #e03a3e;
+  color: #fff;
+  cursor: pointer; }
+
+.POR-theme .menu-list li.is-active {
+  background: #e03a3e;
+  color: #fff; }
 
 .SAC-theme .primary-background {
   background-color: #5b2b82; }
@@ -1403,6 +1741,19 @@
   stroke: #5b2b82;
   stroke-width: 0.25rem; }
 
+.SAC-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.SAC-theme .menu-list li:hover {
+  background: #5b2b82;
+  color: #fff;
+  cursor: pointer; }
+
+.SAC-theme .menu-list li.is-active {
+  background: #5b2b82;
+  color: #fff; }
+
 .SAS-theme .primary-background {
   background-color: #c4ced3; }
 
@@ -1454,6 +1805,19 @@
   fill: none;
   stroke: #c4ced3;
   stroke-width: 0.25rem; }
+
+.SAS-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.SAS-theme .menu-list li:hover {
+  background: #c4ced3;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer; }
+
+.SAS-theme .menu-list li.is-active {
+  background: #c4ced3;
+  color: rgba(0, 0, 0, 0.7); }
 
 .TOR-theme .primary-background {
   background-color: #ce1141; }
@@ -1507,6 +1871,19 @@
   stroke: #ce1141;
   stroke-width: 0.25rem; }
 
+.TOR-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.TOR-theme .menu-list li:hover {
+  background: #ce1141;
+  color: #fff;
+  cursor: pointer; }
+
+.TOR-theme .menu-list li.is-active {
+  background: #ce1141;
+  color: #fff; }
+
 .UTA-theme .primary-background {
   background-color: #f9a01b; }
 
@@ -1559,6 +1936,19 @@
   stroke: #f9a01b;
   stroke-width: 0.25rem; }
 
+.UTA-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.UTA-theme .menu-list li:hover {
+  background: #f9a01b;
+  color: #fff;
+  cursor: pointer; }
+
+.UTA-theme .menu-list li.is-active {
+  background: #f9a01b;
+  color: #fff; }
+
 .WAS-theme .primary-background {
   background-color: #002b5c; }
 
@@ -1610,6 +2000,19 @@
   fill: none;
   stroke: #002b5c;
   stroke-width: 0.25rem; }
+
+.WAS-theme .menu-list li {
+  padding: 0.2rem;
+  border-radius: 5px; }
+
+.WAS-theme .menu-list li:hover {
+  background: #002b5c;
+  color: #fff;
+  cursor: pointer; }
+
+.WAS-theme .menu-list li.is-active {
+  background: #002b5c;
+  color: #fff; }
 
 /*! bulma.io v0.7.4 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
@@ -8706,6 +9109,9 @@ img {
   position: absolute;
   top: 0;
   left: 0; }
+
+.main-container {
+  display: flex; }
 
 
 /*# sourceMappingURL=style.css.map*/
