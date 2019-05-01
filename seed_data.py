@@ -26,9 +26,9 @@ divisions = [
     (1, "Atlantic Division", "ATL", 1),
     (2, "Central Division", "CEN", 1),
     (3, "Southeast Division", "SE", 1),
-    (4, "Southwest Division", "SW", 1),
-    (5, "Nortwest Division", "NW", 1),
-    (6, "Pacific Division", "PAC", 1),
+    (4, "Southwest Division", "SW", 2),
+    (5, "Nortwest Division", "NW", 2),
+    (6, "Pacific Division", "PAC", 2),
 ]
 
 locations = [
