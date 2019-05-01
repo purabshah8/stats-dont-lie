@@ -137,8 +137,8 @@ class Team(models.Model):
 class Season(models.Model):
     league = models.ForeignKey(League, models.DO_NOTHING)
     year = models.IntegerField()
-    season_start = models.DateField(blank=True, null=True)
-    playoff_start = models.DateField(blank=True, null=True)
+    start_date = models.DateTimeField(blank=True, null=True)
+    playoffs_start_date = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
         return self.league.name.upper() + " " + str(self.year)
@@ -343,19 +343,19 @@ class TeamSeason(models.Model):
 
     def get_games(self):
         return Game.objects.filter(Q(home=self.team) | Q(away=self.team),
-                                   tipoff__lt=self.season.playoff_start,
-                                   tipoff__gte=self.season.season_start)
+                                   tipoff__lt=self.season.playoffs_start_date,
+                                   tipoff__gte=self.season.start_date)
 
     def get_statlines(self):
         return Statline.objects.filter(team=self.team,
                                        playerstatline__isnull=True,
-                                       game__tipoff__lt=self.season.playoff_start,
-                                       game__tipoff__gte=self.season.season_start)
+                                       game__tipoff__lt=self.season.playoffs_start_date,
+                                       game__tipoff__gte=self.season.start_date)
 
     def get_playoff_statlines(self):
         return Statline.objects.filter(team=self.team,
                                        playerstatline__isnull=True,
-                                       game__tipoff__gte=self.season.playoff_start,
+                                       game__tipoff__gte=self.season.playoffs_start_date,
                                        game__tipoff__lt=date(self.season.year, 7, 1))
 
     def get_raw_stats(self):
@@ -410,18 +410,17 @@ class PlayerTeamSeason(models.Model):
         return self.player.get_name() + " " + self.team_season.__str__()
 
     def get_statlines(self):
-        return Statline.objects.filter(playerstatline__isnull=False, playerstatline__player=self.player.id.id, team=self.team_season.team, game__tipoff__lt=self.team_season.season.playoff_start, game__tipoff__gte=self.team_season.season.season_start)
+        return Statline.objects.filter(playerstatline__isnull=False, playerstatline__player=self.player.id.id, team=self.team_season.team, game__tipoff__lt=self.team_season.season.playoffs_start_date, game__tipoff__gte=self.team_season.season.start_date)
 
     def get_playoff_statlines(self):
         return Statline.objects.filter(playerstatline__isnull=False,
                                        playerstatline__player=self.player.id.id,
-                                       game__tipoff__gte=self.team_season.season.playoff_start,
+                                       game__tipoff__gte=self.team_season.season.playoffs_start_date,
                                        game__tipoff__lt=date(self.team_season.season.year, 7, 1))
 
     def get_raw_stats(self):
         raw_stats = {}
         player_stats = self.get_statlines()
-        breakpoint()
         for stat in BASIC_STAT_NAMES:
             stat_values = player_stats.values_list(stat, flat=True)
             raw_stats[stat] = list(stat_values)

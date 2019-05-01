@@ -135,11 +135,11 @@ seasons = []
 with open("data/season_info.csv") as f:
     csv_reader = csv.reader(f, delimiter="|")
     for row in csv_reader:
-        season_start = parse(row[-1])
-        playoff_start = parse(row[-2])
+        start_date = parse(row[-2])
+        playoffs_start_date = parse(row[-1])
         row = [int(col) for col in row[0:3]]
-        row.append(season_start)
-        row.append(playoff_start)
+        row.append(start_date)
+        row.append(playoffs_start_date)
         seasons.append(tuple(row))
 
 positions = [

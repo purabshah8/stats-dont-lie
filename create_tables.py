@@ -89,8 +89,8 @@ def create_tables():
                     REFERENCES league(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 year INTEGER NOT NULL,
-                season_start TIMESTAMP,
-                playoff_start TIMESTAMP
+                start_date TIMESTAMP,
+                playoffs_start_date TIMESTAMP
             );
         """,
         """ 
