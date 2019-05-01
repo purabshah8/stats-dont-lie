@@ -53,10 +53,11 @@
 
 .default-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .default-theme .menu-list li:hover {
-  background: #17408b;
+  background: #c9082a;
   color: #fff;
   cursor: pointer; }
 
@@ -118,10 +119,11 @@
 
 .ATL-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .ATL-theme .menu-list li:hover {
-  background: #e14434;
+  background: #c4d600;
   color: #fff;
   cursor: pointer; }
 
@@ -183,10 +185,11 @@
 
 .BOS-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .BOS-theme .menu-list li:hover {
-  background: #007a33;
+  background: #8b6f4e;
   color: #fff;
   cursor: pointer; }
 
@@ -248,10 +251,11 @@
 
 .BKN-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .BKN-theme .menu-list li:hover {
-  background: black;
+  background: #777d84;
   color: #fff;
   cursor: pointer; }
 
@@ -313,10 +317,11 @@
 
 .CHA-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .CHA-theme .menu-list li:hover {
-  background: #00788c;
+  background: #1d1160;
   color: #fff;
   cursor: pointer; }
 
@@ -378,10 +383,11 @@
 
 .CHI-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .CHI-theme .menu-list li:hover {
-  background: #ce1141;
+  background: #061922;
   color: #fff;
   cursor: pointer; }
 
@@ -443,10 +449,11 @@
 
 .CLE-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .CLE-theme .menu-list li:hover {
-  background: #6f263d;
+  background: #ffb81c;
   color: #fff;
   cursor: pointer; }
 
@@ -508,10 +515,11 @@
 
 .DAL-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .DAL-theme .menu-list li:hover {
-  background: #0053bc;
+  background: #bbc4ca;
   color: #fff;
   cursor: pointer; }
 
@@ -573,10 +581,11 @@
 
 .DEN-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .DEN-theme .menu-list li:hover {
-  background: #0d2240;
+  background: #ffc627;
   color: #fff;
   cursor: pointer; }
 
@@ -638,10 +647,11 @@
 
 .DET-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .DET-theme .menu-list li:hover {
-  background: #c8102e;
+  background: #002d62;
   color: #fff;
   cursor: pointer; }
 
@@ -703,10 +713,11 @@
 
 .GSW-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .GSW-theme .menu-list li:hover {
-  background: #fdb927;
+  background: #006bb6;
   color: rgba(0, 0, 0, 0.7);
   cursor: pointer; }
 
@@ -768,10 +779,11 @@
 
 .HOU-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .HOU-theme .menu-list li:hover {
-  background: #ce1141;
+  background: #061922;
   color: #fff;
   cursor: pointer; }
 
@@ -833,10 +845,11 @@
 
 .IND-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .IND-theme .menu-list li:hover {
-  background: #fdbb30;
+  background: #002d62;
   color: rgba(0, 0, 0, 0.7);
   cursor: pointer; }
 
@@ -898,10 +911,11 @@
 
 .LAC-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .LAC-theme .menu-list li:hover {
-  background: #1d4294;
+  background: #bec0c2;
   color: #fff;
   cursor: pointer; }
 
@@ -963,10 +977,11 @@
 
 .LAL-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .LAL-theme .menu-list li:hover {
-  background: #552582;
+  background: #fdb927;
   color: #fff;
   cursor: pointer; }
 
@@ -1028,10 +1043,11 @@
 
 .MEM-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .MEM-theme .menu-list li:hover {
-  background: #5d76a9;
+  background: #12173f;
   color: #fff;
   cursor: pointer; }
 
@@ -1093,10 +1109,11 @@
 
 .MIA-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .MIA-theme .menu-list li:hover {
-  background: #98002e;
+  background: #f9a01b;
   color: #fff;
   cursor: pointer; }
 
@@ -1158,10 +1175,11 @@
 
 .MIL-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .MIL-theme .menu-list li:hover {
-  background: #00471b;
+  background: #f0ebd2;
   color: #fff;
   cursor: pointer; }
 
@@ -1223,10 +1241,11 @@
 
 .MIN-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .MIN-theme .menu-list li:hover {
-  background: #236192;
+  background: #78be20;
   color: #fff;
   cursor: pointer; }
 
@@ -1288,10 +1307,11 @@
 
 .NOP-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .NOP-theme .menu-list li:hover {
-  background: #001641;
+  background: #e13a3e;
   color: #fff;
   cursor: pointer; }
 
@@ -1353,10 +1373,11 @@
 
 .NYK-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .NYK-theme .menu-list li:hover {
-  background: #006bb6;
+  background: #f58426;
   color: #fff;
   cursor: pointer; }
 
@@ -1418,10 +1439,11 @@
 
 .OKC-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .OKC-theme .menu-list li:hover {
-  background: #ef3b24;
+  background: #007dc3;
   color: #fff;
   cursor: pointer; }
 
@@ -1483,10 +1505,11 @@
 
 .ORL-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .ORL-theme .menu-list li:hover {
-  background: #007dc5;
+  background: #c4ced3;
   color: #fff;
   cursor: pointer; }
 
@@ -1548,10 +1571,11 @@
 
 .PHI-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .PHI-theme .menu-list li:hover {
-  background: #006bb6;
+  background: #ed174c;
   color: #fff;
   cursor: pointer; }
 
@@ -1613,10 +1637,11 @@
 
 .PHX-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .PHX-theme .menu-list li:hover {
-  background: #e55f20;
+  background: #1d1160;
   color: #fff;
   cursor: pointer; }
 
@@ -1678,10 +1703,11 @@
 
 .POR-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .POR-theme .menu-list li:hover {
-  background: #e03a3e;
+  background: #061922;
   color: #fff;
   cursor: pointer; }
 
@@ -1743,10 +1769,11 @@
 
 .SAC-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .SAC-theme .menu-list li:hover {
-  background: #5b2b82;
+  background: #63717a;
   color: #fff;
   cursor: pointer; }
 
@@ -1808,10 +1835,11 @@
 
 .SAS-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .SAS-theme .menu-list li:hover {
-  background: #c4ced3;
+  background: #061922;
   color: rgba(0, 0, 0, 0.7);
   cursor: pointer; }
 
@@ -1873,10 +1901,11 @@
 
 .TOR-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .TOR-theme .menu-list li:hover {
-  background: #ce1141;
+  background: #b4975a;
   color: #fff;
   cursor: pointer; }
 
@@ -1938,10 +1967,11 @@
 
 .UTA-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .UTA-theme .menu-list li:hover {
-  background: #f9a01b;
+  background: #002b5c;
   color: #fff;
   cursor: pointer; }
 
@@ -2003,10 +2033,11 @@
 
 .WAS-theme .menu-list li {
   padding: 0.2rem;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-top: 0.1rem; }
 
 .WAS-theme .menu-list li:hover {
-  background: #002b5c;
+  background: #e31837;
   color: #fff;
   cursor: pointer; }
 

@@ -282,6 +282,18 @@ class Player(models.Model):
     def __str__(self):
         return self.id.__str__()
 
+    # def get_career_totals(self):
+    #     career_totals = {}
+    #     player_seasons = PlayerTeamSeason.objects.filter(player=self)
+    #     for player_season in player_seasons:
+    #         total_stats = player_season.get_season_totals()
+    #         for stat, values in total_stats:
+    #             if stat in career_totals:
+    #                 career_totals[stat] += values
+    #             else:
+    #                 career_totals[stat] = values
+    #     breakpoint()
+    #     return career_totals
     class Meta:
         db_table = 'player'
 
@@ -342,21 +354,24 @@ class TeamSeason(models.Model):
         return self.team.name + " " + str(self.season.year)
 
     def get_games(self):
-        return Game.objects.filter(Q(home=self.team) | Q(away=self.team),
-                                   tipoff__lt=self.season.playoffs_start_date,
-                                   tipoff__gte=self.season.start_date)
+        return Game.objects.filter(
+            Q(home=self.team) | Q(away=self.team),
+            tipoff__lt=self.season.playoffs_start_date,
+            tipoff__gte=self.season.start_date)
 
     def get_statlines(self):
-        return Statline.objects.filter(team=self.team,
-                                       playerstatline__isnull=True,
-                                       game__tipoff__lt=self.season.playoffs_start_date,
-                                       game__tipoff__gte=self.season.start_date)
+        return Statline.objects.filter(
+            team=self.team,
+            playerstatline__isnull=True,
+            game__tipoff__lt=self.season.playoffs_start_date,
+            game__tipoff__gte=self.season.start_date)
 
     def get_playoff_statlines(self):
-        return Statline.objects.filter(team=self.team,
-                                       playerstatline__isnull=True,
-                                       game__tipoff__gte=self.season.playoffs_start_date,
-                                       game__tipoff__lt=date(self.season.year, 7, 1))
+        return Statline.objects.filter(
+            team=self.team,
+            playerstatline__isnull=True,
+            game__tipoff__gte=self.season.playoffs_start_date,
+            game__tipoff__lt=date(self.season.year, 7, 1))
 
     def get_raw_stats(self):
         raw_stats = {}

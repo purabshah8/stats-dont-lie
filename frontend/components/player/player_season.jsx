@@ -39,7 +39,7 @@ export default class PlayerSeason extends Component {
                                                 <div className="notification">Coming Soon!</div>
                                             </div>
                                         :
-                                            <div className={`${abbreviation}-theme`}>
+                                            <div className={`${abbreviation}-theme main-container`}>
                                                 <ChartPicker stats={stats} season={currentTeamSeason.season}/>
                                             </div>
                                     }

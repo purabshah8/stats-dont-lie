@@ -246,10 +246,11 @@ $WizardsSilver: rgb(196,206,212);
         .menu-list li {
             padding: 0.2rem;
             border-radius: 5px;
+            margin-top: 0.1rem;
         }
         
         .menu-list li:hover {
-            background: $primary;
+            background: $secondary;
             color: $text-color;
             cursor: pointer;
         }
