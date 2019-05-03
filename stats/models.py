@@ -1,6 +1,6 @@
 import re
 from django.db import models
-from django.db.models import Sum, Avg, Q
+from django.db.models import Sum, Avg, Q, StdDev
 from util import ABA_TEAMS, BASIC_STAT_NAMES, ADVANCED_STAT_NAMES, PLAYER_STAT_NAMES
 from datetime import date
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
@@ -142,6 +142,60 @@ class Season(models.Model):
 
     def __str__(self):
         return self.league.name.upper() + " " + str(self.year)
+
+    def get_aggregate_stats(self):
+        all_statlines = Statline.objects.filter(
+            playerstatline__isnull=False,
+            game__tipoff__lt=self.playoffs_start_date,
+            game__tipoff__gte=self.start_date)
+
+        averages = all_statlines.aggregate(
+            mp=Avg("mp"), fg=Avg("fg"), fga=Avg("fga"), 
+            fg_pct=Avg("fg_pct"), tp=Avg("tp"), tpa=Avg("tpa"), 
+            tp_pct=Avg("tp_pct"), ft=Avg("ft"),fta=Avg("fta"), 
+            ft_pct=Avg("ft_pct"), orb=Avg("orb"), drb=Avg("drb"),
+            trb=Avg("trb"), ast=Avg("ast"), stl=Avg("stl"),
+            blk=Avg("blk"), tov=Avg("tov"), pf=Avg("pf"),
+            pts=Avg("pts"), plus_minus=Avg("playerstatline__plus_minus"),
+            ts=Avg("advancedstatline__ts"), 
+            efg=Avg("advancedstatline__efg"),
+            tpar=Avg("advancedstatline__tpar"),
+            ftr=Avg("advancedstatline__ftr"),
+            orb_pct=Avg("advancedstatline__orb_pct"),
+            drb_pct=Avg("advancedstatline__drb_pct"),
+            trb_pct=Avg("advancedstatline__trb_pct"),
+            ast_pct=Avg("advancedstatline__ast_pct"),
+            stl_pct=Avg("advancedstatline__stl_pct"),
+            blk_pct=Avg("advancedstatline__blk_pct"),
+            tov_pct=Avg("advancedstatline__tov_pct"),
+            usg_rate=Avg("advancedstatline__usg_rate"),
+            ortg=Avg("advancedstatline__ortg"),
+            drtg=Avg("advancedstatline__drtg"))
+
+        std_devs = all_statlines.aggregate(
+            mp=StdDev("mp"), fg=StdDev("fg"), fga=StdDev("fga"), 
+            fg_pct=StdDev("fg_pct"), tp=StdDev("tp"), tpa=StdDev("tpa"), 
+            tp_pct=StdDev("tp_pct"), ft=StdDev("ft"),fta=StdDev("fta"), 
+            ft_pct=StdDev("ft_pct"), orb=StdDev("orb"), drb=StdDev("drb"),
+            trb=StdDev("trb"), ast=StdDev("ast"), stl=StdDev("stl"),
+            blk=StdDev("blk"), tov=StdDev("tov"), pf=StdDev("pf"),
+            pts=StdDev("pts"), plus_minus=StdDev("playerstatline__plus_minus"),
+            ts=StdDev("advancedstatline__ts"),
+            efg=StdDev("advancedstatline__efg"),
+            tpar=StdDev("advancedstatline__tpar"),
+            ftr=StdDev("advancedstatline__ftr"),
+            orb_pct=StdDev("advancedstatline__orb_pct"),
+            drb_pct=StdDev("advancedstatline__drb_pct"),
+            trb_pct=StdDev("advancedstatline__trb_pct"),
+            ast_pct=StdDev("advancedstatline__ast_pct"),
+            stl_pct=StdDev("advancedstatline__stl_pct"),
+            blk_pct=StdDev("advancedstatline__blk_pct"),
+            tov_pct=StdDev("advancedstatline__tov_pct"),
+            usg_rate=StdDev("advancedstatline__usg_rate"),
+            ortg=StdDev("advancedstatline__ortg"),
+            drtg=StdDev("advancedstatline__drtg"))
+        
+        return { "averages" : averages, "standard_deviations": std_devs }
 
     class Meta:
         db_table = 'season'
@@ -383,7 +437,8 @@ class TeamSeason(models.Model):
         possessions = []
         pace = []
         for game in games:
-            poss = game.get_poss("home") if game.home == self.team else game.get_poss("away")
+            poss = game.get_poss(
+                "home") if game.home == self.team else game.get_poss("away")
             possessions.append(poss)
             pace.append(game.get_pace())
         raw_stats["possessions"] = possessions
@@ -395,19 +450,21 @@ class TeamSeason(models.Model):
 
     def get_season_totals(self):
         team_stats = self.get_statlines()
-        totals = team_stats.aggregate(mp=Sum("mp"), fg=Sum("fg"),
-                                      fga=Sum("fga"), tp=Sum("tp"), tpa=Sum("tpa"),
-                                      ft=Sum("ft"), fta=Sum("fta"), orb=Sum("orb"),
-                                      drb=Sum("drb"), trb=Sum("trb"), ast=Sum("ast"),
-                                      stl=Sum("stl"), blk=Sum("blk"), tov=Sum("tov"),
-                                      pf=Sum("pf"), pts=Sum("pts"))
+        totals = team_stats.aggregate(
+            mp=Sum("mp"), fg=Sum("fg"), fga=Sum("fga"),
+            tp=Sum("tp"), tpa=Sum("tpa"), ft=Sum("ft"),
+            fta=Sum("fta"), orb=Sum("orb"), drb=Sum("drb"),
+            trb=Sum("trb"), ast=Sum("ast"), stl=Sum("stl"),
+            blk=Sum("blk"), tov=Sum("tov"), pf=Sum("pf"),
+            pts=Sum("pts"))
         totals["fg_pct"] = totals["fg"] / totals["fga"]
         totals["tp_pct"] = totals["tp"] / totals["tpa"]
         totals["ft_pct"] = totals["ft"] / totals["fta"]
         games = self.get_games()
         possessions = []
         for game in games:
-            poss = game.get_poss("home") if game.home == self.team else game.get_poss("away")
+            poss = game.get_poss(
+                "home") if game.home == self.team else game.get_poss("away")
             possessions.append(poss)
         totals["possessions"] = sum(possessions)
         totals["gp"] = len(team_stats)
@@ -425,7 +482,12 @@ class PlayerTeamSeason(models.Model):
         return self.player.get_name() + " " + self.team_season.__str__()
 
     def get_statlines(self):
-        return Statline.objects.filter(playerstatline__isnull=False, playerstatline__player=self.player.id.id, team=self.team_season.team, game__tipoff__lt=self.team_season.season.playoffs_start_date, game__tipoff__gte=self.team_season.season.start_date)
+        return Statline.objects.filter(
+            playerstatline__isnull=False,
+            playerstatline__player=self.player.id.id,
+            team=self.team_season.team,
+            game__tipoff__lt=self.team_season.season.playoffs_start_date,
+            game__tipoff__gte=self.team_season.season.start_date)
 
     def get_playoff_statlines(self):
         return Statline.objects.filter(playerstatline__isnull=False,
@@ -449,12 +511,13 @@ class PlayerTeamSeason(models.Model):
 
     def get_season_totals(self):
         team_stats = self.get_statlines()
-        totals = team_stats.aggregate(mp=Sum("mp"), fg=Sum("fg"),
-                                      fga=Sum("fga"), tp=Sum("tp"), tpa=Sum("tpa"),
-                                      ft=Sum("ft"), fta=Sum("fta"), orb=Sum("orb"),
-                                      drb=Sum("drb"), trb=Sum("trb"), ast=Sum("ast"),
-                                      stl=Sum("stl"), blk=Sum("blk"), tov=Sum("tov"),
-                                      pf=Sum("pf"), pts=Sum("pts"))
+        totals = team_stats.aggregate(
+            mp=Sum("mp"), fg=Sum("fg"), fga=Sum("fga"),
+            tp=Sum("tp"), tpa=Sum("tpa"), ft=Sum("ft"),
+            fta=Sum("fta"), orb=Sum("orb"), drb=Sum("drb"),
+            trb=Sum("trb"), ast=Sum("ast"), stl=Sum("stl"),
+            blk=Sum("blk"), tov=Sum("tov"), pf=Sum("pf"),
+            pts=Sum("pts"))
         totals["fg_pct"] = totals["fg"] / totals["fga"]
         totals["tp_pct"] = totals["tp"] / totals["tpa"]
         totals["ft_pct"] = totals["ft"] / totals["fta"]
@@ -523,7 +586,6 @@ class Game(models.Model):
         home_poss = self.get_poss("home")
         away_poss = self.get_poss("away")
         return 48 * ((home_poss+away_poss) / (2*(home.mp/5)))
-
 
     def get_team_stats(self, team):
         if team == "home":

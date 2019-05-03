@@ -1,7 +1,49 @@
 import graphene
-
 from graphene_django.types import DjangoObjectType
 from stats.models import *
+
+class FullStatlineType(graphene.ObjectType):
+    game_date = graphene.types.datetime.DateTime()
+    mp = graphene.Float()
+    fg = graphene.Float()
+    fga = graphene.Float()
+    fg_pct = graphene.Float()
+    tp = graphene.Float()
+    tpa = graphene.Float()
+    tp_pct = graphene.Float()
+    ft = graphene.Float()
+    fta = graphene.Float()
+    ft_pct = graphene.Float()
+    orb = graphene.Float()
+    drb = graphene.Float()
+    trb = graphene.Float() 
+    ast = graphene.Float()
+    stl = graphene.Float()
+    blk = graphene.Float()
+    tov = graphene.Float()
+    pf = graphene.Float()
+    pts = graphene.Float()
+    plus_minus = graphene.Float()
+    gp = graphene.Float()
+    starts = graphene.Float()
+    ts = graphene.Float()
+    efg = graphene.Float()
+    tpar = graphene.Float()
+    ftr = graphene.Float()
+    orb_pct = graphene.Float()
+    drb_pct = graphene.Float()
+    trb_pct = graphene.Float()
+    ast_pct = graphene.Float()
+    stl_pct = graphene.Float()
+    blk_pct = graphene.Float()
+    tov_pct = graphene.Float()
+    usg_rate = graphene.Float()
+    ortg = graphene.Float()
+    drtg = graphene.Float()
+
+class AggregateStatlineType(graphene.ObjectType):
+    averages = graphene.Field(FullStatlineType)
+    standard_deviations = graphene.Field(FullStatlineType)
 
 
 class LeagueType(DjangoObjectType):
@@ -35,8 +77,17 @@ class TeamType(DjangoObjectType):
 
 
 class SeasonType(DjangoObjectType):
+    aggregate_stats = graphene.Field(AggregateStatlineType)
     class Meta:
         model = Season
+
+    def resolve_aggregate_stats(self, info):
+        aggregate_stats = self.get_aggregate_stats()
+        averages = aggregate_stats["averages"]
+        standard_deviations = aggregate_stats["standard_deviations"]
+        return AggregateStatlineType(
+            averages=FullStatlineType(**averages), 
+            standard_deviations=FullStatlineType(**standard_deviations))
 
 
 class PersonType(DjangoObjectType):
@@ -419,3 +470,13 @@ class Query(object):
 
         if name is not None:
             return Person.find(name)
+
+    def resolve_season(self, info, **kwargs):
+        id = kwargs.get("league_id")
+        year = kwargs.get("year")
+        
+        if id is not None:
+            return Season.objects.get(pk=id)
+
+        if year is not None and year > 1976:
+            return Season.objects.get(year=year)
