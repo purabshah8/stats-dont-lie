@@ -17,7 +17,6 @@ export default class PlayerSeason extends Component {
                 ({loading, error, data, client}) => {
                     if (loading) return <div className="lds-ring is-centered"><div></div><div></div><div></div><div></div></div>;
                     if (error) return `Error! ${error.message}`;
-                    
                     const playerSeasons = data.playerSeason;
                     if (playerSeasons.length !== 0) {
                         const { player } = playerSeasons[0];

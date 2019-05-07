@@ -60,7 +60,7 @@ export default class ChartPicker extends Component {
       <>
         <div className="menu">{this.renderMenuOptions()}</div>
         <div className="container">
-          <HeatMap stats={stats} />
+          <HeatMap stats={stats} season={season} />
           <LineChart
             stats={stats}
             statName={this.state.chartStat}

@@ -1,69 +1,5 @@
 import gql from "graphql-tag";
-
-
-const personFragments = {
-    details: gql`
-    fragment personDetails on PersonType {
-        id
-        preferredName
-        lastName
-        dob
-        college
-        birthplace {
-            city
-            state
-            country
-        }
-    }
-    `
-};
-
-const playerFragments = {
-    name: gql`
-    fragment playerName on PlayerType {
-        person {
-            id
-            preferredName
-            lastName
-        }
-        imageUrl
-    }
-    `,
-    details: gql`
-    fragment playerDetails on PlayerType {
-        height
-        weight
-        shootingHand
-        positions
-    }
-    `
-};
-
-
-const teamSeasonFragments = {
-    roster : gql`
-    fragment teamRoster on TeamSeasonType {
-        roster {
-            player {
-            ...playerName
-            positions
-            }
-        }
-    }
-    ${playerFragments.name}
-    `,
-};
-
-const teamFragments = {
-    name: gql`
-    fragment teamName on TeamType {
-        id
-        city
-        name
-        abbreviation
-    }
-    `,
-};
+import * as fragments from "./fragments";
 
 export const GET_ALL_TEAMS = gql`
 query {
@@ -71,7 +7,7 @@ query {
         ...teamName
     }
 }
-${teamFragments.name}
+${fragments.teamFragments.name}
 `;
 
 export const GET_TEAM = gql`
@@ -90,7 +26,7 @@ query TeamDetails($teamId: Int!) {
         yearFounded
     }
 }
-${teamFragments.name}
+${fragments.teamFragments.name}
 `;
 
 export const GET_ROSTER = gql`
@@ -100,7 +36,7 @@ query roster($teamId: Int!, $year: Int!) {
     }
     theme @client
 }
-${teamSeasonFragments.roster}
+${fragments.teamSeasonFragments.roster}
 `;
 
 export const GET_PLAYER = gql`
@@ -122,9 +58,9 @@ query ($playerId: Int!) {
         imageUrl
     }
 }
-${personFragments.details}
-${teamFragments.name}
-${playerFragments.details}
+${fragments.personFragments.details}
+${fragments.teamFragments.name}
+${fragments.playerFragments.details}
 `;
 
 export const GET_PLAYER_SEASON = gql`
@@ -150,6 +86,14 @@ query getPlayerSeason($playerId: Int!, $year: Int!) {
             season {
                 startDate
                 playoffsStartDate
+                aggregateStats {
+                    averages {
+                        ...stats
+                    }
+                    standardDeviations {
+                        ...stats
+                    }
+                }
             }
         }
         rawStats {
@@ -178,9 +122,10 @@ query getPlayerSeason($playerId: Int!, $year: Int!) {
         }
     }
 }
-${personFragments.details}
-${teamFragments.name}
-${playerFragments.details}
+${fragments.personFragments.details}
+${fragments.teamFragments.name}
+${fragments.playerFragments.details}
+${fragments.statFragments.stats}
 `;
 
 
@@ -195,4 +140,20 @@ export const GET_THEME = gql`
 query themeQuery {
     theme @client
 }
+`;
+
+export const GET_SEASON_STATS = gql`
+query seasonStatsQuery($year: Int, $leagueId: Int){
+    season(year:2019) {
+    aggregateStats {
+        averages {
+        ...stats
+        }
+        standardDeviations {
+        ...stats
+        }
+    }
+    }
+}
+${fragments.statFragments.stats}
 `;

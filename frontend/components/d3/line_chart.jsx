@@ -138,9 +138,9 @@ export default class LineChart extends React.Component {
     render() {
         console.log(this.props.statName);
         return (
-            <div className="chart-container">
+            <div className="d3-container">
                 <svg 
-                    className="chart-svg" 
+                    className="d3-svg" 
                     viewBox="0 0 1380 900" 
                     preserveAspectRatio="xMinYMin meet">
                     <g 

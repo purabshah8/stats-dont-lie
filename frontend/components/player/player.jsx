@@ -18,6 +18,7 @@ export default class Player extends React.Component {
                     ({loading, error, data, client}) => {
                         if (loading) return <div className="lds-ring is-centered"><div></div><div></div><div></div><div></div></div>;
                         if (error) return `Error! ${error.message}`;
+                        
                         const playerSeasons = data.playerSeason;
                         const { player } = playerSeasons[0];
                         const currentTeamSeason = playerSeasons[playerSeasons.length-1].teamSeason;

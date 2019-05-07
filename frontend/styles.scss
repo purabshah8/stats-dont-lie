@@ -191,21 +191,45 @@ img {
     margin-top: 1.5rem;
 }
 
-.chart-container {
+.d3-container {
   display: inline-block;
   position: relative;
   width: 100%;
   padding-bottom: 100%;
   vertical-align: top;
   overflow: hidden;
-  background: #f8f9fa;
+  // background: #f8f9fa;
 }
 
-.chart-svg {
-  display: inline-block;
+.d3-svg {
+  // display: inline-block;
   position: absolute;
   top: 0;
   left: 0;
+
+}
+
+.heat-map-rect {
+  rx: 4;
+  ry: 4;
+  stroke-width: 4;
+  stroke: none;
+  opacity: 0.8;
+}
+
+.tooltip {
+  position: fixed;			
+  // text-align: center;
+  background: black;
+  border-radius: 5px;
+  padding: 5px;
+  width: 8rem;
+  height: 5rem;
+  // text-anchor: left;
+  // text-align: left;
+  font-size: 0.8rem;
+  color: white;
+  // border: 1px solid white;
 }
 
 .circle {
