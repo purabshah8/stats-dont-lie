@@ -53,9 +53,9 @@ export default class SeasonPicker extends React.Component {
                     </div>
                     <div className="dropdown-menu" role="menu">
                         <div className="dropdown-content">
-                            {this.renderSeasonOptions()}
-                            <hr className="dropdown-divider"></hr>
                             <Link className="dropdown-item" to={this.basePath}>{this.baseLinkText}</Link>
+                            <hr className="dropdown-divider"></hr>
+                            {this.renderSeasonOptions()}
                         </div>
                     </div>
                 </div>

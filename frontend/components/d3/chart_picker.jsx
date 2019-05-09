@@ -57,18 +57,16 @@ export default class ChartPicker extends Component {
   render() {
     const { stats, season } = this.props;
     return (
-      <>
-        <div className="menu">{this.renderMenuOptions()}</div>
         <div className="container">
           <HeatMap stats={stats} season={season} />
-          <LineChart
-            stats={stats}
-            statName={this.state.chartStat}
-            xMin={new Date(season.startDate)}
-            xMax={new Date(season.playoffsStartDate)}
-          />
         </div>
-      </>
     );
   }
 }
+// <div className="menu">{this.renderMenuOptions()}</div>
+/* <LineChart
+  stats={stats}
+  statName={this.state.chartStat}
+  xMin={new Date(season.startDate)}
+  xMax={new Date(season.playoffsStartDate)}
+/> */
