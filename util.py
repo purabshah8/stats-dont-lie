@@ -12,7 +12,7 @@ if os.environ.get("DJANGO_DEVELOPMENT") is not None:
 
 ABA_TEAMS = ["Nets", "Spurs", "Pacers", "Nuggets"]
 
-NBA_MONTHS = ["october", "november", "december", "january", "march", "april", "may", "june"]
+NBA_MONTHS = ["october", "november", "december", "january", "february", "march", "april", "may", "june"]
 
 STATES = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas",
           "California", "Colorado", "Connecticut", "Delaware",

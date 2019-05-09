@@ -4,14 +4,16 @@ from django.db.models import Sum, Avg, Q, StdDev
 from util import ABA_TEAMS, BASIC_STAT_NAMES, ADVANCED_STAT_NAMES, PLAYER_STAT_NAMES
 from datetime import date
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
-
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 
 # %load_ext autoreload
 # %autoreload 2
 # from stats.models import *
+# from django.db.models import Q
 # nets = Team.find("Brooklyn Nets")
-# caris = Player.find("Caris LeVert")
+# dlo = Player.find("D'Angelo Russell")
 # nets19 = nets.get_season(2019)
+# dlo19 = PlayerTeamSeason.objects.get(player=dlo, team_season=nets19)
 
 class League(models.Model):
     name = models.CharField(max_length=8)
@@ -218,6 +220,16 @@ class Person(models.Model):
 
     def get_name(self):
         return self.preferred_name + " " + self.last_name
+    
+    @classmethod
+    def search(cls, query_str):
+        vector = SearchVector('first_name', weight="B") + \
+            SearchVector('last_name', weight="A") + \
+            SearchVector('preferred_name', weight="A")
+        query = SearchQuery(query_str)
+        rank = SearchRank(vector, query, weights=[0.2, 0.4, 0.7, 1.0])
+        return cls.objects.annotate(rank=rank).filter(rank__gte=0.2).order_by('-rank')
+        
 
     @classmethod
     def find(cls, full_name, year=None):
@@ -420,6 +432,15 @@ class TeamSeason(models.Model):
             game__tipoff__lt=self.season.playoffs_start_date,
             game__tipoff__gte=self.season.start_date)
 
+    def get_opp_statlines(self):
+        return Statline.objects.filter(
+            Q(game__home=self.team) | Q(game__away=self.team),
+            game__tipoff__lt=self.season.playoffs_start_date,
+            game__tipoff__gte=self.season.start_date,
+            playerstatline__isnull=True
+            ).exclude(team=self.team)
+
+
     def get_playoff_statlines(self):
         return Statline.objects.filter(
             team=self.team,
@@ -460,14 +481,39 @@ class TeamSeason(models.Model):
         totals["fg_pct"] = totals["fg"] / totals["fga"]
         totals["tp_pct"] = totals["tp"] / totals["tpa"]
         totals["ft_pct"] = totals["ft"] / totals["fta"]
+        opp_stats = self.get_opp_statlines()
+        opp_totals = opp_stats.aggregate(
+            mp=Sum("mp"), fg=Sum("fg"), fga=Sum("fga"),
+            tp=Sum("tp"), tpa=Sum("tpa"), ft=Sum("ft"),
+            fta=Sum("fta"), orb=Sum("orb"), drb=Sum("drb"),
+            trb=Sum("trb"), ast=Sum("ast"), stl=Sum("stl"),
+            blk=Sum("blk"), tov=Sum("tov"), pf=Sum("pf"),
+            pts=Sum("pts"))
         games = self.get_games()
         possessions = []
+        opp_possessions = []
         for game in games:
-            poss = game.get_poss(
-                "home") if game.home == self.team else game.get_poss("away")
+            if game.home == self.team:
+                poss = game.get_poss("home")
+                opp_poss = game.get_poss("away")
+            else:
+                poss = game.get_poss("away")
+                opp_poss = game.get_poss("home")
             possessions.append(poss)
+            opp_possessions.append(opp_poss)
         totals["possessions"] = sum(possessions)
+        opp_totals["possessions"] = sum(opp_possessions)
         totals["gp"] = len(team_stats)
+        totals["ts"] = totals["pts"] / (2*(totals["fga"]+0.44*totals["fta"]))
+        totals["efg"] = (totals["fg"]+0.5*totals["tpa"]) / totals["fga"]
+        totals["tpar"] = totals["tpa"] / totals["fga"]
+        totals["ftr"] = totals["fta"] / totals["fga"]
+        totals["tov_pct"] = totals["tov"] / totals["possessions"] * 100
+        totals["blk_pct"] = totals["blk"] / totals["possessions"] * 100
+        totals["pace"] = totals["possessions"] / (totals["mp"]/(48*5))
+        totals["ortg"] = totals["pts"] / totals["possessions"] * 100
+        totals["drtg"] = opp_totals["pts"] / opp_totals["possessions"] * 100
+        totals["plus_minus"] = (totals["pts"] - opp_totals["pts"])/totals["gp"]
         return totals
 
     class Meta:
@@ -487,13 +533,14 @@ class PlayerTeamSeason(models.Model):
             playerstatline__player=self.player.id.id,
             team=self.team_season.team,
             game__tipoff__lt=self.team_season.season.playoffs_start_date,
-            game__tipoff__gte=self.team_season.season.start_date)
+            game__tipoff__gte=self.team_season.season.start_date).order_by("game__tipoff")
 
     def get_playoff_statlines(self):
-        return Statline.objects.filter(playerstatline__isnull=False,
-                                       playerstatline__player=self.player.id.id,
-                                       game__tipoff__gte=self.team_season.season.playoffs_start_date,
-                                       game__tipoff__lt=date(self.team_season.season.year, 7, 1))
+        return Statline.objects.filter(
+            playerstatline__isnull=False,
+            playerstatline__player=self.player.id.id,
+            game__tipoff__gte=self.team_season.season.playoffs_start_date,
+            game__tipoff__lt=date(self.team_season.season.year, 7, 1))
 
     def get_raw_stats(self):
         raw_stats = {}
@@ -530,6 +577,10 @@ class PlayerTeamSeason(models.Model):
         totals["plus_minus"] = plus_minus
         totals["starts"] = starts
         totals["gp"] = len(team_stats)
+        totals["ts"] = totals["pts"]/(2*(totals["fga"]+0.44*totals["fta"]))
+        totals["efg"] = (totals["fg"] + 0.5 * totals["tpa"])/totals["fga"]
+        totals["tpar"] = totals["tpa"]/totals["fga"]
+        totals["ftr"] = totals["fta"]/totals["fga"]
         return totals
 
     class Meta:

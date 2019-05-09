@@ -104,7 +104,6 @@ def get_box_score_info(url):
                 team_data["Team Totals"] = data_dict
             
             info[team_stats] = team_data
-
         scores = box_soup.find(id="all_line_score")
         score = [s for s in scores if isinstance(s, bs4.element.Comment)][0]
         score_soup = bs4.BeautifulSoup(score, "html.parser")

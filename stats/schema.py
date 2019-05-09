@@ -26,6 +26,7 @@ class FullStatlineType(graphene.ObjectType):
     plus_minus = graphene.Float()
     gp = graphene.Float()
     starts = graphene.Float()
+    started = graphene.Boolean()
     ts = graphene.Float()
     efg = graphene.Float()
     tpar = graphene.Float()
@@ -40,6 +41,51 @@ class FullStatlineType(graphene.ObjectType):
     usg_rate = graphene.Float()
     ortg = graphene.Float()
     drtg = graphene.Float()
+    possessions = graphene.Float()
+    pace = graphene.Float()
+
+class FullStatlineListType(graphene.ObjectType):
+    mp = graphene.List(graphene.Float)
+    fg = graphene.List(graphene.Float)
+    fga = graphene.List(graphene.Float)
+    fg_pct = graphene.List(graphene.Float)
+    tp = graphene.List(graphene.Float)
+    tpa = graphene.List(graphene.Float)
+    tp_pct = graphene.List(graphene.Float)
+    ft = graphene.List(graphene.Float)
+    fta = graphene.List(graphene.Float)
+    ft_pct = graphene.List(graphene.Float)
+    orb = graphene.List(graphene.Float)
+    drb = graphene.List(graphene.Float)
+    trb = graphene.List(graphene.Float)
+    ast = graphene.List(graphene.Float)
+    stl = graphene.List(graphene.Float)
+    blk = graphene.List(graphene.Float)
+    tov = graphene.List(graphene.Float)
+    pf = graphene.List(graphene.Float)
+    pts = graphene.List(graphene.Float)
+    plus_minus = graphene.List(graphene.Float)
+    gp = graphene.List(graphene.Float)
+    starts = graphene.List(graphene.Float)
+    started = graphene.List(graphene.Boolean)
+    ts = graphene.List(graphene.Float)
+    efg = graphene.List(graphene.Float)
+    tpar = graphene.List(graphene.Float)
+    ftr = graphene.List(graphene.Float)
+    orb_pct = graphene.List(graphene.Float)
+    drb_pct = graphene.List(graphene.Float)
+    trb_pct = graphene.List(graphene.Float)
+    ast_pct = graphene.List(graphene.Float)
+    stl_pct = graphene.List(graphene.Float)
+    blk_pct = graphene.List(graphene.Float)
+    tov_pct = graphene.List(graphene.Float)
+    usg_rate = graphene.List(graphene.Float)
+    ortg = graphene.List(graphene.Float)
+    drtg = graphene.List(graphene.Float)
+    possessions = graphene.List(graphene.Float)
+    pace = graphene.List(graphene.Float)
+    game_dates = graphene.List(graphene.types.datetime.DateTime)
+
 
 class AggregateStatlineType(graphene.ObjectType):
     averages = graphene.Field(FullStatlineType)
@@ -155,124 +201,26 @@ class PlayerPositionType(DjangoObjectType):
         model = PlayerPosition
 
 
-class PlayerSeasonStatsType(graphene.ObjectType):
-    mp = graphene.List(graphene.Int)
-    fg = graphene.List(graphene.Int)
-    fga = graphene.List(graphene.Int)
-    fg_pct = graphene.List(graphene.Float)
-    tp = graphene.List(graphene.Int)
-    tpa = graphene.List(graphene.Int)
-    tp_pct = graphene.List(graphene.Float)
-    ft = graphene.List(graphene.Int)
-    fta = graphene.List(graphene.Int)
-    ft_pct = graphene.List(graphene.Float)
-    orb = graphene.List(graphene.Int)
-    drb = graphene.List(graphene.Int)
-    trb = graphene.List(graphene.Int)
-    ast = graphene.List(graphene.Int)
-    stl = graphene.List(graphene.Int)
-    blk = graphene.List(graphene.Int)
-    tov = graphene.List(graphene.Int)
-    pf = graphene.List(graphene.Int)
-    pts = graphene.List(graphene.Int)
-    plus_minus = graphene.List(graphene.Int)
-    started = graphene.List(graphene.Boolean)
-    game_dates = graphene.List(graphene.types.datetime.DateTime)
-
-class PlayerFullStatlineType(graphene.ObjectType):
-    mp = graphene.Int()
-    fg = graphene.Int()
-    fga = graphene.Int()
-    fg_pct = graphene.Float()
-    tp = graphene.Int()
-    tpa = graphene.Int()
-    tp_pct = graphene.Float()
-    ft = graphene.Int()
-    fta = graphene.Int()
-    ft_pct = graphene.Float()
-    orb = graphene.Int()
-    drb = graphene.Int()
-    trb = graphene.Int()
-    ast = graphene.Int()
-    stl = graphene.Int()
-    blk = graphene.Int()
-    tov = graphene.Int()
-    pf = graphene.Int()
-    pts = graphene.Int()
-    plus_minus = graphene.Int()
-    starts = graphene.Int()
-    gp = graphene.Int()
-
 
 class PlayerTeamSeasonType(DjangoObjectType):
-    total_stats = graphene.Field(PlayerFullStatlineType)
-    raw_stats = graphene.Field(PlayerSeasonStatsType)
+    total_stats = graphene.Field(FullStatlineType)
+    raw_stats = graphene.Field(FullStatlineListType)
 
     class Meta:
         model = PlayerTeamSeason
 
     def resolve_total_stats(self, info):
         total_stats = self.get_season_totals()
-        return PlayerFullStatlineType(**total_stats)
+        return FullStatlineType(**total_stats)
 
     def resolve_raw_stats(self, info):
         raw_stats = self.get_raw_stats()
-        return PlayerSeasonStatsType(**raw_stats)
-
-
-class TeamStatlineType(graphene.ObjectType):
-    mp = graphene.Int()
-    fg = graphene.Int()
-    fga = graphene.Int()
-    fg_pct = graphene.Float()
-    tp = graphene.Int()
-    tpa = graphene.Int()
-    tp_pct = graphene.Float()
-    ft = graphene.Int()
-    fta = graphene.Int()
-    ft_pct = graphene.Float()
-    orb = graphene.Int()
-    drb = graphene.Int()
-    trb = graphene.Int()
-    ast = graphene.Int()
-    stl = graphene.Int()
-    blk = graphene.Int()
-    tov = graphene.Int()
-    pf = graphene.Int()
-    pts = graphene.Int()
-    possessions = graphene.Float()
-    gp = graphene.Int()
-
-
-class TeamSeasonStatsType(graphene.ObjectType):
-    mp = graphene.List(graphene.Int)
-    fg = graphene.List(graphene.Int)
-    fga = graphene.List(graphene.Int)
-    fg_pct = graphene.List(graphene.Float)
-    tp = graphene.List(graphene.Int)
-    tpa = graphene.List(graphene.Int)
-    tp_pct = graphene.List(graphene.Float)
-    ft = graphene.List(graphene.Int)
-    fta = graphene.List(graphene.Int)
-    ft_pct = graphene.List(graphene.Float)
-    orb = graphene.List(graphene.Int)
-    drb = graphene.List(graphene.Int)
-    trb = graphene.List(graphene.Int)
-    ast = graphene.List(graphene.Int)
-    stl = graphene.List(graphene.Int)
-    blk = graphene.List(graphene.Int)
-    tov = graphene.List(graphene.Int)
-    pf = graphene.List(graphene.Int)
-    pts = graphene.List(graphene.Int)
-    possessions = graphene.List(graphene.Float)
-    pace = graphene.List(graphene.Float)
-    game_dates = graphene.List(graphene.types.datetime.DateTime)
-
+        return FullStatlineListType(**raw_stats)
 
 class TeamSeasonType(DjangoObjectType):
     roster = graphene.List(PlayerTeamSeasonType)
-    total_stats = graphene.Field(TeamStatlineType)
-    raw_stats = graphene.Field(TeamSeasonStatsType)
+    total_stats = graphene.Field(FullStatlineType)
+    raw_stats = graphene.Field(FullStatlineListType)
 
     class Meta:
         model = TeamSeason
@@ -282,11 +230,11 @@ class TeamSeasonType(DjangoObjectType):
 
     def resolve_total_stats(self, info):
         total_stats = self.get_season_totals()
-        return TeamStatlineType(**total_stats)
+        return FullStatlineType(**total_stats)
 
     def resolve_raw_stats(self, info):
         raw_stats = self.get_raw_stats()
-        return TeamSeasonStatsType(**raw_stats)
+        return FullStatlineListType(**raw_stats)
 
 
 class GameType(DjangoObjectType):
@@ -313,39 +261,40 @@ class Query(object):
     all_arenas = graphene.List(ArenaType)
     all_teams = graphene.List(TeamType)
     
-    league = graphene.Field(LeagueType, id=graphene.Int(),
-                            name=graphene.String())
-
-    conference = graphene.Field(ConferenceType, 
-        id=graphene.Int(), name=graphene.String())
-    division = graphene.Field(DivisionType, 
-        id=graphene.Int(), name=graphene.String())
+    league = graphene.Field(
+        LeagueType, id=graphene.Int(),name=graphene.String())
+    conference = graphene.Field(
+        ConferenceType, id=graphene.Int(), name=graphene.String())
+    division = graphene.Field(
+        DivisionType, id=graphene.Int(), name=graphene.String())
     location = graphene.Field(LocationType, id=graphene.Int())
-    arena = graphene.Field(ArenaType, id=graphene.Int(),
-        name=graphene.String())
-    team = graphene.Field(TeamType, id=graphene.Int(), 
-        name=graphene.String(), city=graphene.String(), 
-        abbr=graphene.String())
-    person = graphene.Field(PersonType, id=graphene.Int(),
-        name=graphene.String())
-    player = graphene.Field(PlayerType, id=graphene.Int(), 
-        name=graphene.String())
-    season = graphene.Field(SeasonType, year=graphene.Int(), 
-        league_id=graphene.Int())
-    team_season = graphene.Field(TeamSeasonType, 
-        team_id=graphene.Int(), year=graphene.Int())
-    player_team_season = graphene.Field(PlayerTeamSeasonType, 
-        player_id=graphene.Int(), team_season_id=graphene.Int(), 
-        team_id=graphene.Int(), year=graphene.Int())
-    statlines = graphene.List(StatlineType, 
-        game_id=graphene.String())
-    player_statlines = graphene.List(PlayerStatlineType, 
-        game_id=graphene.String(), player_id=graphene.String())
-    advanced_statlines = graphene.List(AdvancedStatlineType, 
-        statline_id=graphene.String())
-    
+    arena = graphene.Field(
+        ArenaType, id=graphene.Int(), name=graphene.String())
+    team = graphene.Field(
+        TeamType, id=graphene.Int(), name=graphene.String(), 
+        city=graphene.String(), abbr=graphene.String())
+    person = graphene.Field(
+        PersonType, id=graphene.Int(), name=graphene.String())
+    player = graphene.Field(
+        PlayerType, id=graphene.Int(), name=graphene.String())
+    season = graphene.Field(
+        SeasonType, year=graphene.Int(), league_id=graphene.Int())
+    team_season = graphene.Field(
+        TeamSeasonType, team_id=graphene.Int(), year=graphene.Int())
+    player_team_season = graphene.Field(
+        PlayerTeamSeasonType, player_id=graphene.Int(), 
+        team_season_id=graphene.Int(), team_id=graphene.Int(), 
+        year=graphene.Int())
+    statlines = graphene.List(
+        StatlineType, game_id=graphene.String())
+    player_statlines = graphene.List(
+        PlayerStatlineType, game_id=graphene.String(), 
+        player_id=graphene.String())
+    advanced_statlines = graphene.List(
+        AdvancedStatlineType, statline_id=graphene.String())
     roster = graphene.List(PlayerTeamSeasonType)
-    player_season = graphene.List(PlayerTeamSeasonType, player_id=graphene.Int(), year=graphene.Int())
+    player_season = graphene.List(
+        PlayerTeamSeasonType, player_id=graphene.Int(), year=graphene.Int())
 
     def resolve_player_team_season(self, info, **kwargs):
         player_id = kwargs.get("player_id")

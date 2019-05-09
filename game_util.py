@@ -122,6 +122,7 @@ def save_game(info):
 
             advanced_statline = { stat:player_stats[stat] for stat in ADVANCED_STAT_NAMES }   
             advanced_statline["id"] = basic_statline
+            
             if AdvancedStatline.objects.filter(**advanced_statline).exists():
                 advanced_statline = AdvancedStatline.objects.get(**advanced_statline)
             else:
@@ -170,3 +171,56 @@ def delete_all_games():
     for class_objs in to_delete:
         for obj in class_objs:
             obj.delete()
+
+
+# The basic building blocks of the Offensive Rating calculation are Individual Total Possessions and Individual Points Produced. The formula for Total Possessions is broken down into four components: Scoring Possessions, Missed FG Possessions, Missed FT Possessions, and Turnovers.
+
+# The Scoring Possessions formula is by far the most complex:
+
+# ScPoss = (FG_Part + AST_Part + FT_Part) * (1 - (Team_ORB / Team_Scoring_Poss) * Team_ORB_Weight * Team_Play%) + ORB_Part
+# where:
+
+# FG_Part = FGM * (1 - 0.5 * ((PTS - FTM) / (2 * FGA)) * qAST)
+# qAST = ((MP / (Team_MP / 5)) * (1.14 * ((Team_AST - AST) / Team_FGM))) + ((((Team_AST / Team_MP) * MP * 5 - AST) / ((Team_FGM / Team_MP) * MP * 5 - FGM)) * (1 - (MP / (Team_MP / 5))))
+# AST_Part = 0.5 * (((Team_PTS - Team_FTM) - (PTS - FTM)) / (2 * (Team_FGA - FGA))) * AST
+# FT_Part = (1-(1-(FTM/FTA))^2)*0.4*FTA
+# Team_Scoring_Poss = Team_FGM + (1 - (1 - (Team_FTM / Team_FTA))^2) * Team_FTA * 0.4
+# Team_ORB_Weight = ((1 - Team_ORB%) * Team_Play%) / ((1 - Team_ORB%) * Team_Play% + Team_ORB% * (1 - Team_Play%))
+# Team_ORB% = Team_ORB / (Team_ORB + (Opponent_TRB - Opponent_ORB))
+# Team_Play% = Team_Scoring_Poss / (Team_FGA + Team_FTA * 0.4 + Team_TOV)
+# ORB_Part = ORB * Team_ORB_Weight * Team_Play%
+# Missed FG and Missed FT Possessions are calculated as follows:
+
+# FGxPoss = (FGA - FGM) * (1 - 1.07 * Team_ORB%)
+# FTxPoss = ((1 - (FTM / FTA))^2) * 0.4 * FTA
+# Total Possessions are then computed like so:
+
+# TotPoss = ScPoss + FGxPoss + FTxPoss + TOV
+
+
+def calc_team_poss(info):
+    # team info: fga, fta, orb, fga, fg, tov, drb
+    # opp team info: drb, fga, fta, orb, fg, tov
+    0.5 * ((info["fga"] + 0.4 * info["fta"] - 1.07 * (info["orb"] / (info["orb"] + info["opp_drb"])) * (info["fga"] - info["fg"]) + info["tov"]) + (info["opp_fga"] + 0.4 * info["opp_fta"] - 1.07 * (info["opp_orb"] / (info["opp_orb"] + info["drb"])) * (info["opp_fga"] - info["opp_fg"]) + info["opp_tov"]))
+
+
+def calc_player_poss(info):
+    # player info: mp, ast, fg, pts, ft, fga, fta, tov
+    # team info: mp, ast, fg, pts, ft, fga, fta, orb, tov
+    # opp team info: trb, orb
+    qAST_0 = ((info["mp"] / (info["team_mp"] / 5)) * (1.14 * ((info["team_ast"] - info["ast"]) / info["team_fg"])))
+    qAST_1 = (((info["team_ast"] / info["team_mp"]) * info["mp"] * 5 - info["ast"]) / ((info["team_fg"] / info["team_mp"]) * info["mp"] * 5 - info["fg"]))
+    qAST = qAST_0 + (qAST_1 * (1 - (info["mp"] / (info["team_mp"] / 5))))
+    fg_part = info["fg"] * (1 - 0.5 * ((info["pts"] - info["ft"]) / (2 * info["fga"])) * qAST)
+    ast_part = 0.5 * (((info["team_pts"] - info["team_ft"]) - (info["pts"]-info["ft"])) / (2 * (info["team_fga"]-info["fga"]))) * info["ast"]
+    ft_part = (1-(1-(info["ft"]/info["fta"])) ** 2) * 0.4 * info["fta"]
+    team_scoring_poss = info["team_fg"] + (1 - (1-(info["team_ft"]/info["team_fta"])) ** 2) * info["team_fta"] * 0.4
+    team_orb_pct = info["team_orb"] / (info["team_orb"] + (info["opp_trb"]-info["opp_orb"]))
+    team_play_pct = team_scoring_poss / (info["team_fga"]+info["team_fta"]*0.4+info["team_tov"])
+    team_orb_weight = ((1 - team_orb_pct) * team_play_pct) / ((1 - team_orb_pct) * team_play_pct + team_orb_pct * (1 - team_play_pct))
+    orb_part = info["orb"] * team_orb_weight * team_play_pct
+    sc_poss = (fg_part + ast_part + ft_part) * (1 - (info["team_orb"] / team_scoring_poss) * team_orb_weight * team_play_pct) + orb_part
+    
+    fg_poss = (info["fga"] - info["fg"]) * (1 - 1.07 * team_orb_pct)
+    ft_poss = ((1 - (info["ft"]/info["fta"])) ** 2) * 0.4 * info["fta"]
+    return sc_poss + fg_poss + ft_poss + info["tov"]

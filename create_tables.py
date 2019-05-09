@@ -259,12 +259,13 @@ def create_tables():
                 pf INTEGER,
                 pts INTEGER NOT NULL
             );
-        """,
+        """, ## modify advanced statline to save possession data
         """ 
             CREATE TABLE advanced_statline(
                 id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES statline(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
+                possessions FLOAT,
                 ts FLOAT,
                 efg FLOAT,
                 tpar FLOAT,
