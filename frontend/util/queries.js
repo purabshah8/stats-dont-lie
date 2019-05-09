@@ -120,6 +120,34 @@ query getPlayerSeason($playerId: Int!, $year: Int!) {
             started
             gameDates
         }
+        totalStats {
+            mp
+            fg
+            fga
+            fgPct
+            tp
+            tpa
+            tpPct
+            ft
+            fta
+            ftPct
+            orb
+            drb
+            trb
+            ast
+            stl
+            blk
+            tov
+            pf
+            pts
+            plusMinus
+            gp
+            starts
+            ts
+            efg
+            tpar
+            ftr
+        }
     }
 }
 ${fragments.personFragments.details}

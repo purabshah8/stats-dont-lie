@@ -23,11 +23,25 @@ export default class PlayerSeason extends Component {
                         const currentTeamSeason = playerSeasons[playerSeasons.length-1].teamSeason;
                         const { abbreviation } = currentTeamSeason.team;
                         client.writeData({ data : {theme: abbreviation} });
-                        let stats = [];
-                        playerSeasons.forEach(ps => stats.push(ps.rawStats));
+                        let rawStats = [];
+                        let totalStats = {};
+                        playerSeasons.forEach(ps => {
+                            rawStats.push(ps.rawStats);
+                            Object.entries(ps.totalStats).forEach(([statName, val]) => {
+                                if (totalStats.hasOwnProperty(statName))
+                                    totalStats[statName] += val;
+                                else
+                                    totalStats[statName] = val;
+                            });
+                        });
+                        totalStats["ts"] = totalStats["pts"]/(2*(totalStats["fga"]+0.44*totalStats["fta"]));
                         return(
                                 <>
-                                    <PlayerDetails player={player} team={currentTeamSeason.team} year={ repeat ? 0 : year}/>
+                                    <PlayerDetails 
+                                        player={player}
+                                        totalStats = {totalStats}
+                                        team={currentTeamSeason.team} 
+                                        year={ repeat ? 0 : year}/>
                                     <SeasonPicker 
                                         path={this.props.history.location.pathname} 
                                         start={player.rookieSeason.year} 
@@ -39,7 +53,7 @@ export default class PlayerSeason extends Component {
                                             </div>
                                         :
                                             <div className={`${abbreviation}-theme main-container`}>
-                                                <ChartPicker stats={stats} season={currentTeamSeason.season}/>
+                                                <ChartPicker stats={rawStats} season={currentTeamSeason.season}/>
                                             </div>
                                     }
                                 </>

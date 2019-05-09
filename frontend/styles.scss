@@ -191,13 +191,35 @@ img {
     margin-top: 1.5rem;
 }
 
+// .box-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+// }
+
+// .box-header {
+//   width: 100%;
+//   font-size: 1.5rem;
+// }
+
+.box-stat-val {
+  font-size: 1.5rem;
+}
+
+.box-stat-name {
+  font-size: 1rem;
+}
+
 .d3-container {
-  display: inline-block;
-  position: relative;
+  display: flex;
+  min-height: 33%;
+  // position: relative;
   width: 100%;
   padding-bottom: 100%;
   vertical-align: top;
-  overflow: hidden;
+  overflow: scroll;
   // background: #f8f9fa;
 }
 
@@ -218,7 +240,7 @@ img {
 }
 
 .tooltip {
-  position: fixed;			
+  position: absolute;			
   // text-align: center;
   background: black;
   border-radius: 5px;
@@ -238,4 +260,15 @@ img {
 
 .main-container {
   display: flex;
+}
+
+.personal-links {
+  display: flex;
+  a {
+    margin: 2rem;
+    transition: transform 0.5s;
+  }
+  a:hover {
+    transform: scale(1.5);
+  }
 }

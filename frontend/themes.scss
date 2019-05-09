@@ -177,8 +177,9 @@ $WizardsRed: rgb(227,24,55);
 $WizardsSilver: rgb(196,206,212);
 
 
-@mixin theme($name, $primary, $secondary) {
+@mixin theme($name, $primary, $secondary, $tertiary) {
     $text-color: findColorInvert($primary);
+    $text-color-secondary: findColorInvert($secondary);
     .#{$name} {
         .primary-background {
             background-color: $primary;
@@ -259,37 +260,52 @@ $WizardsSilver: rgb(196,206,212);
             background: $primary;
             color: $text-color
         }
+
+        .box-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: $text-color-secondary;
+            background: $secondary;
+        }
+
+        .box-header {
+            width: 100%;
+            font-size: 1.5rem;
+        }
     }
 }
 
-@include theme(default-theme, $DarkCornflowerBlue, $PhilippineRed);
-@include theme(ATL-theme, $HawksRed, $VoltGreen);
-@include theme(BOS-theme, $CelticsGreen, $CelticsGold);
-@include theme(BKN-theme, $Black, $NetsGray);
-@include theme(CHA-theme, $Teal, $HornetsPurple);
-@include theme(CHI-theme, $BullsRed, $BullsBlack);
-@include theme(CLE-theme, $CavaliersWine, $CavaliersYellow);
-@include theme(DAL-theme, $RoyalBlue, $MavericksSilver);
-@include theme(DEN-theme, $NuggetsMidnightBlue, $SunshineYellow);
-@include theme(DET-theme, $PistonsRed, $PistonsNavy);
-@include theme(GSW-theme, $GoldenYellow, $WarriorsRoyalBlue);
-@include theme(HOU-theme, $RocketsRed, $RocketsBlack);
-@include theme(IND-theme, $PacersYellow, $PacersBlue);
-@include theme(LAC-theme, $ClippersBlue, $ClippersRed);
-@include theme(LAL-theme, $LakersPurple, $LakersGold);
-@include theme(MEM-theme, $GrizzliesBlue, $GrizzliesNavy);
-@include theme(MIA-theme, $HeatRed, $HeatYellow);
-@include theme(MIL-theme, $GoodLandGreen, $CreamCityCream);
-@include theme(MIN-theme, $LakeBlue, $AuroraGreen);
-@include theme(NOP-theme, $PelicansNavy, $PelicansRed);
-@include theme(NYK-theme, $KnicksBlue, $KnicksOrange);
-@include theme(OKC-theme, $Sunset, $ThunderBlue);
-@include theme(ORL-theme, $MagicBlue, $MagicSilver);
-@include theme(PHI-theme, $SixersBlue, $SixersRed);
-@include theme(PHX-theme, $SunsOrange, $SunsPurple);
-@include theme(POR-theme, $BlazersRed, $BlazersBlack);
-@include theme(SAC-theme, $KingsPurple, $KingsGray);
-@include theme(SAS-theme, $SpursSilver, $SpursBlack);
-@include theme(TOR-theme, $RaptorsRed, $RaptorsGold);
-@include theme(UTA-theme, $JazzYellow, $JazzNavy);
-@include theme(WAS-theme, $WizardsNavyBlue, $WizardsRed);
+@include theme(default-theme, $DarkCornflowerBlue, $PhilippineRed, $Black);
+@include theme(ATL-theme, $HawksRed, $VoltGreen, $HawksCharcoal);
+@include theme(BOS-theme, $CelticsGreen, $CelticsGold, $CelticsBrown);
+@include theme(BKN-theme, $Black, $NetsGray, $NetsSilver);
+@include theme(CHA-theme, $Teal, $HornetsPurple, $HornetsGray);
+@include theme(CHI-theme, $BullsRed, $BullsBlack, $Black);
+@include theme(CLE-theme, $CavaliersWine, $CavaliersYellow, $CavaliersNavy);
+@include theme(DAL-theme, $RoyalBlue, $MavericksSilver, $NavyBlue);
+@include theme(DEN-theme, $NuggetsMidnightBlue, $SunshineYellow, $FlatironsRed);
+@include theme(DET-theme, $PistonsRed, $Royal, $PistonsGray);
+@include theme(GSW-theme, $GoldenYellow, $WarriorsRoyalBlue, $Slate);
+@include theme(HOU-theme, $RocketsRed, $RocketsBlack, $RocketsSilver);
+@include theme(IND-theme, $PacersYellow, $PacersBlue, $PacersSilver);
+@include theme(LAC-theme, $ClippersBlue, $ClippersRed, $ClippersSilver);
+@include theme(LAL-theme, $LakersPurple, $LakersGold, $LakersBlack);
+@include theme(MEM-theme, $GrizzliesBlue, $GrizzliesNavy, $GrizzliesYellow);
+@include theme(MIA-theme, $HeatRed, $HeatYellow, $HeatBlack);
+@include theme(MIL-theme, $GoodLandGreen, $CreamCityCream, $GreatLakesBlue);
+@include theme(MIN-theme, $LakeBlue, $AuroraGreen, $WolvesMidnightBlue);
+@include theme(NOP-theme, $PelicansNavy, $PelicansRed, $PelicansGold);
+@include theme(NYK-theme, $KnicksBlue, $KnicksOrange, $KnicksSilver);
+@include theme(OKC-theme, $Sunset, $ThunderBlue, $ThunderYellow);
+@include theme(ORL-theme, $MagicBlue, $MagicSilver, $MagicBlack);
+@include theme(PHI-theme, $SixersBlue, $SixersRed, $SixersSilver);
+@include theme(PHX-theme, $SunsOrange, $SunsPurple, $SunsGray);
+@include theme(POR-theme, $BlazersRed, $BlazersBlack, $Black);
+@include theme(SAC-theme, $KingsPurple, $KingsGray, $KingsBlack);
+@include theme(SAS-theme, $SpursSilver, $SpursBlack, $Black);
+@include theme(TOR-theme, $RaptorsRed, $RaptorsGold, $RaptorsBlack);
+@include theme(UTA-theme, $JazzYellow, $JazzNavy, $JazzGreen);
+@include theme(WAS-theme, $WizardsNavyBlue, $WizardsRed, $WizardsSilver);

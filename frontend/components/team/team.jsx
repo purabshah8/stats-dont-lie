@@ -90,7 +90,7 @@ export default class Team extends Component {
                                     <div key={person.id}
                                         className="column is-one-fifth is-flexed zoom-in">
                                         <Link className="link"
-                                            to={`/players/${person.id}`}>
+                                            to={`/players/${person.id}/seasons/2019`}>
                                             <figure className="is-flexed">
                                                 <img src={imageUrl} />
                                             </figure>

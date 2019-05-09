@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { yearToSeason } from "../../util/util";
+import StatBox from "../elements/stat_box";
 
 export default class PlayerDetails extends React.Component {
     constructor(props) {
@@ -43,16 +44,17 @@ export default class PlayerDetails extends React.Component {
     }
 
     render() {
-        const { person, positions, imageUrl } = this.props.player;
+        const { team, player, totalStats, year } = this.props;
+        const { person, positions, imageUrl } = player;
         const { preferredName, lastName } = person;
         let uniquePositions = positions;
         const isLongerThanOne = el => el.length > 1;
         if (positions.some(isLongerThanOne));
             uniquePositions = positions.filter(isLongerThanOne).join(", ");
-        const { id, city, name, abbreviation } = this.props.team;
-        const boxHeader = this.props.year === 0 ? "Career" : `${yearToSeason(this.props.year)} Season`;
+        const { id, city, name, abbreviation } = team;
+        const boxHeader = year === 0 ? "Career" : `${yearToSeason(year)} Season`;
         return (
-            <div className="container">
+            <div className={`${abbreviation}-theme container`}>
                 <div className="level">
                     <div className="level-left">
                         <div className="level-item">
@@ -76,20 +78,10 @@ export default class PlayerDetails extends React.Component {
                         </div>
                     </div>
                     <div className="level-right">
-                        <div className="box level-item">
-                            <div className="box-header">
-                                <span>{boxHeader}</span>
-                            </div>
-                            <div className="box-content">
-                                <div className="box-body columns">
-                                    <div className="column">PPG</div>
-                                    <div className="column">TS%</div>
-                                    <div className="column">Stat2</div>
-                                    <div className="column">Stat3</div>
-                                    <div className="column">Stat4</div>
-                                </div>
-                            </div>
-                        </div>
+                        <StatBox
+                            boxHeader = {boxHeader}
+                            stats={totalStats} 
+                            positions={positions} />
                     </div>
                 </div>
             </div>
