@@ -5,6 +5,8 @@ __pycache__
 node_modules
 bundle.js
 bundle.js.map
+style.css
+style.css.map
 webpack-stats.json
 images
 scraper.ipynb
