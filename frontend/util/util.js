@@ -4,7 +4,7 @@ export const yearToSeason = (year) => {
     let endYear = year - 2000;
     if (endYear < 0)
                 endYear += 100; 
-    return `${startYear}-${endYear}`;
+    return `${startYear}-${endYear.toString().padStart(2,'0')}`;
 };
 
 export const statNameMap = {

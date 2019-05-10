@@ -1,4 +1,5 @@
 @import "../node_modules/bulma/sass/utilities/functions.sass";
+@import "../node_modules/bulma/sass/utilities/mixins.sass";
 
 // Team Colors
 
@@ -180,12 +181,39 @@ $WizardsSilver: rgb(196,206,212);
 @mixin theme($name, $primary, $secondary, $tertiary) {
     $text-color: findColorInvert($primary);
     $text-color-secondary: findColorInvert($secondary);
+    
     .#{$name} {
         .primary-background {
             background-color: $primary;
+            position: relative;
+            height: 9rem;
+            border-bottom: 5rem solid white;
+            border-left: 100vw solid transparent;
+        }
+
+        .secondary-diagonal {
+            border-bottom: 5rem solid $secondary;
+            border-left: 100vw solid transparent;
         }
         .secondary-background {
-            background-color: $secondary
+            background-color: $secondary;
+            position: relative;
+            height: 10rem;
+            overflow: hidden;
+        }
+
+        .primary-diagonal {
+            border-top: 4rem solid $primary;
+            border-left: 100vw solid transparent;
+        }
+
+        .white-diagonal {
+            width: 0;
+            height:0;
+            position:absolute;
+            bottom:0px;
+            border-bottom: 6rem solid white;
+            border-left: 100vw solid transparent;
         }
 
         .block {
@@ -220,6 +248,7 @@ $WizardsSilver: rgb(196,206,212);
 
         nav.navbar, .navbar-menu {
             background: $primary;
+            width: 100vw;
         }
         
         a.navbar-item {
@@ -275,6 +304,40 @@ $WizardsSilver: rgb(196,206,212);
             width: 100%;
             font-size: 1.5rem;
         }
+
+        a.result-link {
+            color: inherit;
+        }
+        a.result-link:hover {
+            text-decoration: none;
+        }
+
+        .result-item {
+            display: flex;
+            flex-direction: column;
+            background: #f8f8f8;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        .result-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            div {
+                padding-top: 2rem;
+            }
+        }
+
+        .result-team {
+            margin-top: 1rem;
+            background: $primary;
+            color: $text-color;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
     }
 }
 
@@ -306,6 +369,6 @@ $WizardsSilver: rgb(196,206,212);
 @include theme(POR-theme, $BlazersRed, $BlazersBlack, $Black);
 @include theme(SAC-theme, $KingsPurple, $KingsGray, $KingsBlack);
 @include theme(SAS-theme, $SpursSilver, $SpursBlack, $Black);
-@include theme(TOR-theme, $RaptorsRed, $RaptorsGold, $RaptorsBlack);
+@include theme(TOR-theme, $RaptorsRed, $RaptorsSilver, $RaptorsGold);
 @include theme(UTA-theme, $JazzYellow, $JazzNavy, $JazzGreen);
 @include theme(WAS-theme, $WizardsNavyBlue, $WizardsRed, $WizardsSilver);

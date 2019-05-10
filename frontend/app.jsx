@@ -8,20 +8,20 @@ import Breadcrumb from "./components/elements/breadcrumb";
 import Footer from "./components/elements/footer";
 import Player from "./components/player/player";
 import PlayerSeason from "./components/player/player_season";
-import Players from "./components/player/players";
+import PlayerSearch from "./components/player/player_search";
 
 const App = () => {
     return(
         <>
         <section className="section is-paddingless">
             <Navbar/>
-            <Route component={Breadcrumb}/>
+            {/* <Route component={Breadcrumb}/> */}
         </section>
         <Switch>
             <Route exact path="/" component={Splash}/>
             <Route exact path="/teams" component={Teams}/>
             <Route exact path="/teams/:id" component={Team}/>
-            <Route exact path="/players" component={Players}/>
+            <Route exact path="/players" component={PlayerSearch}/>
             <Route exact path="/players/:id" component={Player}/>
             <Route exact path="/players/:playerId/seasons/:year" component={PlayerSeason}/>
         </Switch>

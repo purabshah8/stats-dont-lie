@@ -44,36 +44,59 @@ $family-sans-serif: "Poppins", sans-serif;
 
 .team-logo {
   display: block;
-  width: 10rem;
-  height: 10rem;
+  width: 16rem;
+  height: 16rem;
 }
 
 img {
   max-height: 100%;
   max-width: 100%;
+  mix-blend-mode: multiply;
 }
 
 .preferred-name {
   font-weight: 500;
-  font-size: 2vw;
+  font-size: 2rem;
 }
 
 .last-name {
   font-weight: 700;
-  font-size: 2.5vw;
+  font-size: 2.5rem;
 }
 
-.player-info {
-  margin-left: 2vw;
-  margin-right: 2vw;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 0.5vw;
+
+.team-name {
+  padding-right: 3rem;
 }
+
+.arena-name {
+  display: flex;
+  flex-direction: row;
+  
+  ion-icon {
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.team-info {
+  p {
+    margin-top: 1rem
+  }
+}
+
+// .player-info {
+//   margin-left: 2rem;
+//   margin-right: 3rem;
+//   border: 1px solid black;
+//   border-radius: 5px;
+//   padding: 0.5rem;
+// }
 
 .info-item {
-  font-size: 1.25vw;
-  margin: 1.25vw auto 1.25vw auto;
+  font-size: 1.25rem;
+  margin: 1.25rem auto 1.25rem auto;
 }
 
 #bc-container {
@@ -191,19 +214,6 @@ img {
     margin-top: 1.5rem;
 }
 
-// .box-container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-// }
-
-// .box-header {
-//   width: 100%;
-//   font-size: 1.5rem;
-// }
-
 .box-stat-val {
   font-size: 1.5rem;
 }
@@ -265,10 +275,71 @@ img {
 .personal-links {
   display: flex;
   a {
+    color: black;
     margin: 2rem;
-    transition: transform 0.5s;
+    -webkit-transition: transform 0.5s, color 0.5s;
+    transition: transform 0.5s color 0.5s;
   }
   a:hover {
+    color: hsl(217, 71%, 53%);
+    -webkit-transform: scale(1.5);
     transform: scale(1.5);
   }
 }
+
+.search-container {
+  margin-top: 4rem;
+}
+
+#player-search-large {
+  border: none;
+  width: 40%;
+  height: 3rem;
+  font-size: 2rem;
+}
+
+#player-search-large:focus {
+  outline: none;
+}
+
+.underline {
+  border-bottom: 1px solid rgb(224, 224, 224);
+  bottom: 0rem;
+  box-sizing: content-box;
+  margin: 0px;
+  position: absolute;
+  width: 40%;
+}
+
+.is-focused {
+  border-bottom: 1px solid $PhilippineRed;
+  -webkit-transition: border-bottom 0.5s ease-out;
+  transition: border-bottom 0.5s ease-out;
+}
+
+.search-input {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.results {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.search-results {
+  margin: 2rem;
+
+  li {
+    margin: 1.5rem;
+    -webkit-transition: transform 0.2s;
+    transition: transform 0.2s;
+  }
+
+  li:hover {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+}
+
