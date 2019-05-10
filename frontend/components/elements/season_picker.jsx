@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { range } from "lodash";
 import { yearToSeason } from "../../util/util";
 
-export default class SeasonPicker extends React.Component {
+export default class  extends React.Component {
 
     constructor(props) {
         super(props);

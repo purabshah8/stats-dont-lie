@@ -36,12 +36,20 @@ export default class PlayerSeason extends Component {
                         });
                         totalStats["ts"] = totalStats["pts"]/(2*(totalStats["fga"]+0.44*totalStats["fta"]));
                         return(
-                                <>
+                                <div className={`${abbreviation}-theme`}>
+                                    <div className="primary-background">
+                                    </div>
+                                    <div className="secondary-background">
+                                        <div className="primary-diagonal"></div>
+                                        <div className="white-diagonal"></div>
+                                    </div>
+                                    <div className="white-background">
                                     <PlayerDetails 
                                         player={player}
                                         totalStats = {totalStats}
                                         team={currentTeamSeason.team} 
                                         year={ repeat ? 0 : year}/>
+                                    </div>
                                     <SeasonPicker 
                                         path={this.props.history.location.pathname} 
                                         start={player.rookieSeason.year} 
@@ -56,7 +64,7 @@ export default class PlayerSeason extends Component {
                                                 <ChartPicker stats={rawStats} season={currentTeamSeason.season}/>
                                             </div>
                                     }
-                                </>
+                                </div>
                         );
                     } else {
                         return this.renderQuery(playerId, 2019, true);
@@ -68,10 +76,6 @@ export default class PlayerSeason extends Component {
 
     render() {
         const { playerId, year } = this.props.match.params;
-        return (
-        <div className="section">
-            {this.renderQuery(playerId, year)}
-        </div>
-        );
+        return this.renderQuery(playerId, year);
     }
 }

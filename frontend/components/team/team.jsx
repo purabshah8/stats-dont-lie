@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Query } from "react-apollo";
 import { GET_TEAM, GET_ROSTER } from '../../util/queries';
+import SeasonPicker from "../elements/season_picker";
 export default class Team extends Component {
 
     constructor(props) {
@@ -20,36 +21,54 @@ export default class Team extends Component {
                     if (error) return <div>Error! ${error.message}</div>;
 
                     const { team } = data;
-                    const { abbreviation, city, name, arena, division } = team;
+                    const { abbreviation, city, name, arena, division, yearFounded } = team;
+                    const divisionArray = division.name.split(" ");
+                    const divisionString = "Division: " + divisionArray[0];
+
+                    const conferenceArray = division.conference.name.split("ern ");
+                    const conferenceString = "Conference: " + conferenceArray[0];
                     client.writeData({ data: { theme: abbreviation } });
                     return(
-                        <div className="container">
-                            <div className="level">
-                                <div className="level-left">
-                                    <div className="level-item">
-                                        <figure className="is-square is-96x96-touch">
-                                            <img src={`/static/images/logos/${abbreviation}.svg`} className="team-logo" />
-                                        </figure>
+                        <>
+                        <div className={`${abbreviation}-theme`}>
+                            <div className="primary-background">
+                            </div>
+                            <div className="container">
+                                <div className="level">
+                                    <div className="level-left">
+                                        <div className="level-item">
+                                            <figure className="is-square is-96x96-touch">
+                                                <img src={`/static/images/logos/${abbreviation}.svg`} className="team-logo" />
+                                            </figure>
+                                        </div>
+                                        <div className="level-item is-flexed team-name">
+                                            <p className="is-size-2 is-size-4-touch has-text-weight-semibold">{city}</p>
+                                            <p className="is-size-1 is-size-3-touch has-text-weight-semibold">{name}</p>
+                                            <p className="is-size-5 is-size-6-touch">est. {yearFounded}</p>
+                                        </div>
+                                        <div className="level-item is-flexed team-info">
+                                            <p className="is-size-4 is-size-5-touch has-text-left">{divisionString}</p>
+                                            <p className="is-size-4 is-size-5-touch has-text-left">{conferenceString}</p>
+                                            <div className="arena-name">
+                                                <ion-icon name="home"></ion-icon>
+                                                <p className="is-size-4 is-size-5-touch">{arena.name}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="level-item is-flexed">
-                                        <p className="is-size-2 is-size-4-touch">{city}</p>
-                                        <p className="is-size-1 is-size-3-touch">{name}</p>
-                                    </div>
-                                    <div className="level-item is-flexed">
-                                        <p className="is-size-4 is-size-5-touch">{division.name}</p>
-                                        <p className="is-size-4 is-size-5-touch">
-                                            {division.conference.name}
-                                        </p>
-                                        <p className="is-size-4 is-size-5-touch">
-                                            Home: {arena.name}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="level-right">
+                                    <div className="level-right">
 
+                                    </div>
                                 </div>
                             </div>
+                            <div className="secondary-diagonal"></div>
+                            <div className="secondary-background">
+                            </div>
                         </div>
+                        <SeasonPicker 
+                        path={this.props.history.location.pathname} 
+                        start={yearFounded} 
+                        end={2019}/>
+                        </>
                     );
                 }
             }
@@ -104,7 +123,6 @@ export default class Team extends Component {
                             });
                         return(
                             <div className="container">
-                                <h2>Roster</h2>
                                 <div className={`columns is-centered is-tablet is-multiline is-3 ${theme}-theme`}>
                                     {players}
                                 </div>
@@ -118,10 +136,9 @@ export default class Team extends Component {
 
     render() {
         return (
-            <div className="section">
+            <div className="">
                 {this.renderTeam()}
                 {this.renderRoster()}
-                <Link to="/teams">Back</Link>
             </div>
         );
     }

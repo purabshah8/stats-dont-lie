@@ -50,7 +50,7 @@ export default class PlayerDetails extends React.Component {
         let uniquePositions = positions;
         const isLongerThanOne = el => el.length > 1;
         if (positions.some(isLongerThanOne));
-            uniquePositions = positions.filter(isLongerThanOne).join(", ");
+            uniquePositions = positions.filter(isLongerThanOne).join(" | ");
         const { id, city, name, abbreviation } = team;
         const boxHeader = year === 0 ? "Career" : `${yearToSeason(year)} Season`;
         return (
