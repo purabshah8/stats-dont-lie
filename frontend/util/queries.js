@@ -185,3 +185,17 @@ query seasonStatsQuery($year: Int, $leagueId: Int){
 }
 ${fragments.statFragments.stats}
 `;
+
+export const SEARCH = gql`
+query playerSearchQuery($term: String) {
+    search(term: $term) {
+        ...playerName
+        currentTeam {
+            ...teamName
+        }
+        positions
+    }
+}
+${fragments.playerFragments.name}
+${fragments.teamFragments.name}
+`;

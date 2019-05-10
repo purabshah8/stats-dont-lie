@@ -1,10 +1,12 @@
-import re
 from django.db import models
 from django.db.models import Sum, Avg, Q, StdDev
-from util import ABA_TEAMS, BASIC_STAT_NAMES, ADVANCED_STAT_NAMES, PLAYER_STAT_NAMES
-from datetime import date
+from django.db.models.functions import Greatest  
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
-from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector, TrigramSimilarity
+
+import re
+from datetime import date
+from util import ABA_TEAMS, BASIC_STAT_NAMES, ADVANCED_STAT_NAMES, PLAYER_STAT_NAMES
 
 # %load_ext autoreload
 # %autoreload 2
@@ -223,12 +225,17 @@ class Person(models.Model):
     
     @classmethod
     def search(cls, query_str):
-        vector = SearchVector('first_name', weight="B") + \
-            SearchVector('last_name', weight="A") + \
-            SearchVector('preferred_name', weight="A")
-        query = SearchQuery(query_str)
-        rank = SearchRank(vector, query, weights=[0.2, 0.4, 0.7, 1.0])
-        return cls.objects.annotate(rank=rank).filter(rank__gte=0.2).order_by('-rank')
+        # vector = SearchVector('first_name', weight="B") + \
+        #     SearchVector('last_name', weight="A") + \
+        #     SearchVector('preferred_name', weight="A")
+        # query = SearchQuery(query_str)
+        # rank = SearchRank(vector, query, weights=[0.2, 0.4, 0.7, 1.0])
+        return cls.objects.annotate(
+            similarity=Greatest(
+                TrigramSimilarity('first_name', query_str), 
+                TrigramSimilarity('last_name', query_str), 
+                TrigramSimilarity('preferred_name', query_str))
+            ).filter(similarity__gte=0.4).order_by('-similarity') 
         
 
     @classmethod

@@ -1,6 +1,8 @@
 import graphene
 from graphene_django.types import DjangoObjectType
 from stats.models import *
+from django.db.models.functions import Greatest
+from django.contrib.postgres.search import TrigramSimilarity
 
 class FullStatlineType(graphene.ObjectType):
     game_date = graphene.types.datetime.DateTime()
@@ -90,6 +92,7 @@ class FullStatlineListType(graphene.ObjectType):
 class AggregateStatlineType(graphene.ObjectType):
     averages = graphene.Field(FullStatlineType)
     standard_deviations = graphene.Field(FullStatlineType)
+
 
 
 class LeagueType(DjangoObjectType):
@@ -260,7 +263,8 @@ class Query(object):
     all_locations = graphene.List(LocationType)
     all_arenas = graphene.List(ArenaType)
     all_teams = graphene.List(TeamType)
-    
+    search = graphene.List(PlayerType, term=graphene.String())
+
     league = graphene.Field(
         LeagueType, id=graphene.Int(),name=graphene.String())
     conference = graphene.Field(
@@ -295,6 +299,15 @@ class Query(object):
     roster = graphene.List(PlayerTeamSeasonType)
     player_season = graphene.List(
         PlayerTeamSeasonType, player_id=graphene.Int(), year=graphene.Int())
+
+    def resolve_search(self, info, **kwargs):
+        term = kwargs.get("term")
+        return Player.objects.filter(playerteamseason__isnull=False).annotate(
+                similarity=Greatest(
+                TrigramSimilarity('id__first_name', term), 
+                TrigramSimilarity('id__last_name', term), 
+                TrigramSimilarity('id__preferred_name', term)
+            )).filter(similarity__gte=0.4).order_by('-similarity').distinct()
 
     def resolve_player_team_season(self, info, **kwargs):
         player_id = kwargs.get("player_id")
