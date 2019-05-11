@@ -44,8 +44,12 @@ $family-sans-serif: "Poppins", sans-serif;
 
 .team-logo {
   display: block;
-  width: 16rem;
-  height: 16rem;
+  width: 18rem;
+  height: 18rem;
+  @include touch {
+    width: 12rem;
+    height: 12rem;
+  }
 }
 
 img {
@@ -67,6 +71,9 @@ img {
 
 .team-name {
   padding-right: 3rem;
+  @include touch {
+    padding-right: 0;
+  }
 }
 
 .arena-name {
@@ -77,12 +84,19 @@ img {
     font-size: 1.5rem;
     margin-top: 1.25rem;
     margin-right: 0.5rem;
+
+    @include touch {
+      margin-top: 0.5rem;
+    }
   }
 }
 
 .team-info {
   p {
-    margin-top: 1rem
+    margin-top: 1rem;
+    @include touch {
+      margin-top: 0.4rem;
+    }
   }
 }
 
@@ -104,20 +118,29 @@ img {
   padding-left: 0.5rem;
 }
 
+.lds-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-top: 10vw;
+}
+
 .lds-ring {
   display: inline-block;
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 6rem;
+  height: 6rem;
 }
 .lds-ring div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 51px;
-  height: 51px;
-  margin: 6px;
-  border: 6px solid black;
+  width: 8rem;
+  height: 8rem;
+  margin: 0.25rem;
+  border: 0.25rem solid black;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: black transparent transparent transparent;
@@ -140,29 +163,29 @@ img {
   }
 }
 
-.loader {
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-  border: 16px solid $DarkCornflowerBlue;
-  border-radius: 50%;
-  border-top: 16px solid $PhilippineRed;
-  border-left: 16px solid #f3f3f3;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
+// .loader {
+//   width: 150px;
+//   height: 150px;
+//   margin: -75px 0 0 -75px;
+//   border: 16px solid $DarkCornflowerBlue;
+//   border-radius: 50%;
+//   border-top: 16px solid $PhilippineRed;
+//   border-left: 16px solid #f3f3f3;
+//   width: 120px;
+//   height: 120px;
+//   -webkit-animation: spin 2s linear infinite;
+//   animation: spin 2s linear infinite;
+// }
 
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
+// @-webkit-keyframes spin {
+//   0% { -webkit-transform: rotate(0deg); }
+//   100% { -webkit-transform: rotate(360deg); }
+// }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+// @keyframes spin {
+//   0% { transform: rotate(0deg); }
+//   100% { transform: rotate(360deg); }
+// }
 
 .team-tile {
     // border: 1px transparent;    
@@ -313,7 +336,7 @@ img {
 
 .is-focused {
   border-bottom: 1px solid $PhilippineRed;
-  -webkit-transition: border-bottom 0.5s ease-out;
+  -webkit-transition: border-bottom 0.5s ease;
   transition: border-bottom 0.5s ease-out;
 }
 

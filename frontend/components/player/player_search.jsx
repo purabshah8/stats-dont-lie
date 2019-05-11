@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Query } from "react-apollo";
 import { Link } from "react-router-dom";
 import { SEARCH } from "../../util/queries";
+import Loading from '../elements/loading';
 export default class Search extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +27,7 @@ export default class Search extends Component {
                 <Query query={SEARCH} variables={ { term: this.state.searchString } }>
                     {
                         ({ loading, error, data }) => {
-                            if (loading) return <div className="lds-ring is-centered"><div></div><div></div><div></div><div></div></div>;
+                            if (loading) return <Loading />;
                             if (error) return `Error! ${error.message}`;
 
                             let { search } = data;

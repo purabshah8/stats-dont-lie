@@ -572,9 +572,19 @@ class PlayerTeamSeason(models.Model):
             trb=Sum("trb"), ast=Sum("ast"), stl=Sum("stl"),
             blk=Sum("blk"), tov=Sum("tov"), pf=Sum("pf"),
             pts=Sum("pts"))
-        totals["fg_pct"] = totals["fg"] / totals["fga"]
-        totals["tp_pct"] = totals["tp"] / totals["tpa"]
-        totals["ft_pct"] = totals["ft"] / totals["fta"]
+        try:
+            totals["fg_pct"] = totals["fg"] / totals["fga"]
+        except ZeroDivisionError:
+            totals["fg_pct"] = 0.0
+        try:
+            totals["tp_pct"] = totals["tp"] / totals["tpa"]
+        except ZeroDivisionError:
+            totals["tp_pct"] = 0.0
+        try:
+            totals["ft_pct"] = totals["ft"] / totals["fta"]
+        except ZeroDivisionError:
+            totals["ft_pct"] = 0.0
+
         starts = 0
         plus_minus = 0
         for stat in team_stats:

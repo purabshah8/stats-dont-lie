@@ -75,7 +75,7 @@ $PacersYellow: rgb(253,187,48);
 $PacersSilver: rgb(190,192,194);
 
 // LAC
-$ClippersRed: rgb(190,192,194);
+$ClippersRed: rgb(200,16,46);
 $ClippersBlue: rgb(29,66,148);
 $ClippersSilver: rgb(190,192,194);
 
@@ -180,7 +180,9 @@ $WizardsSilver: rgb(196,206,212);
 
 @mixin theme($name, $primary, $secondary, $tertiary) {
     $text-color: findColorInvert($primary);
+    $text-invert: findColorInvert($text-color);
     $text-color-secondary: findColorInvert($secondary);
+    $text-color-tertiary: findColorInvert($tertiary);
     
     .#{$name} {
         .primary-background {
@@ -189,6 +191,9 @@ $WizardsSilver: rgb(196,206,212);
             height: 9rem;
             border-bottom: 5rem solid white;
             border-left: 100vw solid transparent;
+            @include touch {
+                height: 6rem;
+            }
         }
 
         .secondary-diagonal {
@@ -198,8 +203,13 @@ $WizardsSilver: rgb(196,206,212);
         .secondary-background {
             background-color: $secondary;
             position: relative;
-            height: 10rem;
+            height: 14rem;
             overflow: hidden;
+            border-bottom: 5rem solid white;
+            border-left: 100vw solid transparent;
+            @include touch {
+                height: 10rem;
+            }
         }
 
         .primary-diagonal {
@@ -255,8 +265,9 @@ $WizardsSilver: rgb(196,206,212);
             color: $text-color;
         }
 
-        a.navbar-item:hover {
-            color: black;
+        a.navbar-item:hover, a.navbar-brand:hover {
+            color: $text-color-tertiary;
+            background: $tertiary
         }
 
         a.navbar-burger span {
@@ -296,8 +307,9 @@ $WizardsSilver: rgb(196,206,212);
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: $text-color-secondary;
-            background: $secondary;
+            color: $text-color-tertiary;
+            background: $tertiary;
+            // opacity: 0.8;
         }
 
         .box-header {
@@ -341,10 +353,10 @@ $WizardsSilver: rgb(196,206,212);
     }
 }
 
-@include theme(default-theme, $DarkCornflowerBlue, $PhilippineRed, $Black);
+@include theme(default-theme, $DarkCornflowerBlue, $PhilippineRed, $White);
 @include theme(ATL-theme, $HawksRed, $VoltGreen, $HawksCharcoal);
-@include theme(BOS-theme, $CelticsGreen, $CelticsGold, $CelticsBrown);
-@include theme(BKN-theme, $Black, $NetsGray, $NetsSilver);
+@include theme(BOS-theme, $CelticsGreen, $CelticsGreen, $CelticsGold);
+@include theme(BKN-theme, $Black, $Black, $NetsSilver);
 @include theme(CHA-theme, $Teal, $HornetsPurple, $HornetsGray);
 @include theme(CHI-theme, $BullsRed, $BullsBlack, $Black);
 @include theme(CLE-theme, $CavaliersWine, $CavaliersYellow, $CavaliersNavy);
@@ -352,23 +364,23 @@ $WizardsSilver: rgb(196,206,212);
 @include theme(DEN-theme, $NuggetsMidnightBlue, $SunshineYellow, $FlatironsRed);
 @include theme(DET-theme, $PistonsRed, $Royal, $PistonsGray);
 @include theme(GSW-theme, $GoldenYellow, $WarriorsRoyalBlue, $Slate);
-@include theme(HOU-theme, $RocketsRed, $RocketsBlack, $RocketsSilver);
+@include theme(HOU-theme, $RocketsRed, $RocketsSilver, $RocketsBlack);
 @include theme(IND-theme, $PacersYellow, $PacersBlue, $PacersSilver);
 @include theme(LAC-theme, $ClippersBlue, $ClippersRed, $ClippersSilver);
 @include theme(LAL-theme, $LakersPurple, $LakersGold, $LakersBlack);
 @include theme(MEM-theme, $GrizzliesBlue, $GrizzliesNavy, $GrizzliesYellow);
 @include theme(MIA-theme, $HeatRed, $HeatYellow, $HeatBlack);
 @include theme(MIL-theme, $GoodLandGreen, $CreamCityCream, $GreatLakesBlue);
-@include theme(MIN-theme, $LakeBlue, $AuroraGreen, $WolvesMidnightBlue);
+@include theme(MIN-theme, $WolvesMidnightBlue, $LakeBlue, $AuroraGreen);
 @include theme(NOP-theme, $PelicansNavy, $PelicansRed, $PelicansGold);
-@include theme(NYK-theme, $KnicksBlue, $KnicksOrange, $KnicksSilver);
-@include theme(OKC-theme, $Sunset, $ThunderBlue, $ThunderYellow);
+@include theme(NYK-theme, $KnicksOrange, $KnicksBlue, $KnicksSilver);
+@include theme(OKC-theme, $ThunderBlue, $Sunset, $ThunderYellow);
 @include theme(ORL-theme, $MagicBlue, $MagicSilver, $MagicBlack);
 @include theme(PHI-theme, $SixersBlue, $SixersRed, $SixersSilver);
 @include theme(PHX-theme, $SunsOrange, $SunsPurple, $SunsGray);
-@include theme(POR-theme, $BlazersRed, $BlazersBlack, $Black);
+@include theme(POR-theme, $BlazersRed, $BlazersBlack, $White);
 @include theme(SAC-theme, $KingsPurple, $KingsGray, $KingsBlack);
-@include theme(SAS-theme, $SpursSilver, $SpursBlack, $Black);
+@include theme(SAS-theme, $SpursSilver, $SpursBlack, $White);
 @include theme(TOR-theme, $RaptorsRed, $RaptorsSilver, $RaptorsGold);
-@include theme(UTA-theme, $JazzYellow, $JazzNavy, $JazzGreen);
+@include theme(UTA-theme, $JazzYellow, $JazzGreen, $JazzNavy);
 @include theme(WAS-theme, $WizardsNavyBlue, $WizardsRed, $WizardsSilver);

@@ -327,7 +327,7 @@ class Query(object):
     def resolve_player_season(self, info, **kwargs):
         player_id = kwargs.get("player_id")
         year = kwargs.get("year")
-        return list(PlayerTeamSeason.objects.filter(player_id=player_id, team_season__season__year=year))
+        return PlayerTeamSeason.objects.filter(player_id=player_id, team_season__season__year=year)
 
     def resolve_team_season(self, info, **kwargs):
         team_id = kwargs.get("team_id")

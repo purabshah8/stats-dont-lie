@@ -1,5 +1,6 @@
 import React from 'react';
 import { Query } from "react-apollo";
+import Loading from "../elements/loading";
 import { GET_PLAYER_SEASON } from "../../util/queries";
 import PlayerDetails from "./player_details";
 import SeasonPicker from "../elements/season_picker";
@@ -16,7 +17,7 @@ export default class Player extends React.Component {
             <Query query={GET_PLAYER_SEASON} variables={ { playerId: this.props.match.params.id, year } }>
                 {
                     ({loading, error, data, client}) => {
-                        if (loading) return <div className="lds-ring is-centered"><div></div><div></div><div></div><div></div></div>;
+                        if (loading) return <Loading/>;
                         if (error) return `Error! ${error.message}`;
                         
                         const playerSeasons = data.playerSeason;
@@ -37,12 +38,16 @@ export default class Player extends React.Component {
                         });
                         totalStats["ts"] = totalStats["pts"]/(2*(totalStats["fga"]+0.44*totalStats["fta"]));
                         return(
-                            <>
+                            <div className={`${abbreviation}-theme`}>
+                                <div className="primary-background">
+                                </div>
                                 <PlayerDetails 
                                     player={player}
                                     totalStats = {totalStats} 
                                     team={currentTeamSeason.team} 
                                     year={0}/>
+                                <div className="secondary-diagonal"></div>
+                                <div className="secondary-background"></div>
                                 <SeasonPicker 
                                     path={this.props.history.location.pathname} 
                                     start={player.rookieSeason.year} 
@@ -52,7 +57,7 @@ export default class Player extends React.Component {
                                         stats={rawStats} 
                                         season={currentTeamSeason.season}/>
                                 </div>
-                            </>
+                            </div>
                         );
                     }
                 }
@@ -61,10 +66,6 @@ export default class Player extends React.Component {
     }
     
     render() {
-        return(
-            <div className="section">
-                {this.renderQuery()}
-            </div>
-        );
+        return this.renderQuery();
     }
 }

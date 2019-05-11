@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Query } from "react-apollo";
 import { GET_TEAM, GET_ROSTER } from '../../util/queries';
 import SeasonPicker from "../elements/season_picker";
+import Loading from '../elements/loading';
 export default class Team extends Component {
 
     constructor(props) {
@@ -17,7 +18,7 @@ export default class Team extends Component {
         <Query query={GET_TEAM} variables={{ teamId: this.props.match.params.id }}>
             {
                 ({loading, error, data, client}) => {
-                    if (loading) return <div className="lds-ring"><div></div><div></div><div></div><div></div></div>;
+                    if (loading) return <Loading />;
                     if (error) return <div>Error! ${error.message}</div>;
 
                     const { team } = data;
@@ -56,7 +57,6 @@ export default class Team extends Component {
                                         </div>
                                     </div>
                                     <div className="level-right">
-
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ export default class Team extends Component {
                 variables={ { teamId: this.props.match.params.id, year: 2019 } }>
                 {
                     ({loading, error, data}) => {
-                        if (loading) return <div className="lds-ring"><div></div><div></div><div></div><div></div></div>;
+                        if (loading) return null;
                         if (error) return <div>Error! ${error.message}</div>;
                         
                         const { teamSeason, theme } = data;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { statNameMap } from "../../util/util";
 
 export default function StatBox(props) {
     const { positions, stats, boxHeader } = props;
@@ -18,13 +17,13 @@ export default function StatBox(props) {
     statNames.forEach(name => {
         let val = stats[name];
         if (name !== "ts")
-            val /= stats["gp"];
+            val = (val/stats["gp"]).toFixed(1);
         else
-            val *= 100;
+            val = (val*100).toFixed(1) + "%";
         statDivs.push(
             <div className="column">
-                <div className="box-stat-val">{val.toFixed(1)}</div>
-                <div className="box-stat-name">{statNameMap[name]}</div>
+                <div className="box-stat-val">{val}</div>
+                <div className="box-stat-name">{nameMap[name]}</div>
             </div>
         );
     });
@@ -41,3 +40,13 @@ export default function StatBox(props) {
         </div>
     );
 }
+
+
+const nameMap = {
+    "pts": "PTS",
+    "ts": "TS",
+    "trb": "REB",
+    "blk": "BLK",
+    "ast": "AST",
+    "tov": "TOV"
+};

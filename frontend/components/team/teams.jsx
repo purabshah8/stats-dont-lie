@@ -2,9 +2,9 @@ import React from 'react';
 import { Query } from "react-apollo";
 import { GET_ALL_TEAMS } from '../../util/queries';
 import { Link } from "react-router-dom";
+import Loading from '../elements/loading';
 
 const divisions = ["Atlantic", "Central", "Southeast", "Southwest", "Northwest", "Pacific"];
-const conferences = ["Eastern Conference", "Western Conference"];
 
 const Teams = () => {
     return(
@@ -12,7 +12,7 @@ const Teams = () => {
             <Query query={GET_ALL_TEAMS} >
             {
                 ({loading, error, data, client}) => {
-                    if (loading) return <div className="lds-ring"><div></div><div></div><div></div><div></div></div>;
+                    if (loading) return <Loading />;
                     if (error) return `Error! ${error.message}`;
                     client.writeData({ data: {theme: "default"}});
                     return(

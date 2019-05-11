@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
+import Loading from "../elements/loading";
 import { GET_PLAYER_SEASON } from "../../util/queries";
 import PlayerDetails from "./player_details";
 import SeasonPicker from "../elements/season_picker";
@@ -15,7 +16,7 @@ export default class PlayerSeason extends Component {
         return <Query query={GET_PLAYER_SEASON} variables={ { playerId, year } }>
             {
                 ({loading, error, data, client}) => {
-                    if (loading) return <div className="lds-ring is-centered"><div></div><div></div><div></div><div></div></div>;
+                    if (loading) return <Loading />;
                     if (error) return `Error! ${error.message}`;
                     const playerSeasons = data.playerSeason;
                     if (playerSeasons.length !== 0) {
@@ -39,17 +40,13 @@ export default class PlayerSeason extends Component {
                                 <div className={`${abbreviation}-theme`}>
                                     <div className="primary-background">
                                     </div>
-                                    <div className="secondary-background">
-                                        <div className="primary-diagonal"></div>
-                                        <div className="white-diagonal"></div>
-                                    </div>
-                                    <div className="white-background">
                                     <PlayerDetails 
                                         player={player}
                                         totalStats = {totalStats}
                                         team={currentTeamSeason.team} 
                                         year={ repeat ? 0 : year}/>
-                                    </div>
+                                    <div className="secondary-diagonal"></div>
+                                    <div className="secondary-background"></div>
                                     <SeasonPicker 
                                         path={this.props.history.location.pathname} 
                                         start={player.rookieSeason.year} 
