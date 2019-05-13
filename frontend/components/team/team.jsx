@@ -107,7 +107,7 @@ export default class Team extends Component {
                                     imageUrl = "https://www.maxwell.syr.edu/uploadedImages/exed/people/students/IFS_Phase_V/August_2010/unknown-person.png";
                                 return(
                                     <div key={person.id}
-                                        className="column is-one-fifth is-flexed zoom-in">
+                                        className="roster-item column is-one-fifth is-flexed zoom-in">
                                         <Link className="link"
                                             to={`/players/${person.id}/seasons/2019`}>
                                             <figure className="is-flexed">

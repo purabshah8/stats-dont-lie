@@ -28,7 +28,7 @@ const Teams = () => {
                                                 </div> : null
                                         }
                                         <div className="column is-one-fifth-desktop is-one-fifth-fullhd is-one-fifth-widescreen is-full-mobile is-one-fifth-tablet team-tile" key={team.id}>
-                                            <Link className="link is-flexed" to={`teams/${team.id}`}>
+                                            <Link className="is-flexed" to={`teams/${team.id}`}>
                                                 <figure className="is-square">
                                                     <img className="team-logo" 
                                                         src={`/static/images/logos/${team.abbreviation}.svg`}/>
