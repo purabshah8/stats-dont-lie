@@ -171,16 +171,11 @@ query themeQuery {
 `;
 
 export const GET_SEASON_STATS = gql`
-query seasonStatsQuery($year: Int, $leagueId: Int){
-    season(year:2019) {
-    aggregateStats {
-        averages {
-        ...stats
+query seasonStatsQuery($year: Int){
+    season(year: 2019) {
+        teamStats {
+            ...stats
         }
-        standardDeviations {
-        ...stats
-        }
-    }
     }
 }
 ${fragments.statFragments.stats}

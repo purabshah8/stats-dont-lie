@@ -144,6 +144,15 @@ class Season(models.Model):
     start_date = models.DateTimeField(blank=True, null=True)
     playoffs_start_date = models.DateTimeField(blank=True, null=True)
 
+    # def get_team_stats(self):
+    #     totals = []
+    #     for team_season in TeamSeason.objects.filter(season=self):
+    #         team_totals = team_season.get_season_totals()
+    #         team_totals["abbr"] = team_season.team.abbreviation
+    #         totals.append(team_totals)
+    #     return totals
+
+
     def __str__(self):
         return self.league.name.upper() + " " + str(self.year)
 
@@ -225,11 +234,6 @@ class Person(models.Model):
     
     @classmethod
     def search(cls, query_str):
-        # vector = SearchVector('first_name', weight="B") + \
-        #     SearchVector('last_name', weight="A") + \
-        #     SearchVector('preferred_name', weight="A")
-        # query = SearchQuery(query_str)
-        # rank = SearchRank(vector, query, weights=[0.2, 0.4, 0.7, 1.0])
         return cls.objects.annotate(
             similarity=Greatest(
                 TrigramSimilarity('first_name', query_str), 

@@ -31,6 +31,7 @@ const Teams = () => {
                                             <Link className="is-flexed" to={`teams/${team.id}`}>
                                                 <figure className="is-square">
                                                     <img className="team-logo" 
+                                                        alt={`${team.city} ${team.name}`}
                                                         src={`/static/images/logos/${team.abbreviation}.svg`}/>
                                                 </figure>
                                             </Link>

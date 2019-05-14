@@ -80,6 +80,7 @@ export const statFragments = {
         drtg
         possessions
         pace
+        abbr
     }`
 };
 

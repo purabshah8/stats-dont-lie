@@ -45,6 +45,7 @@ class FullStatlineType(graphene.ObjectType):
     drtg = graphene.Float()
     possessions = graphene.Float()
     pace = graphene.Float()
+    abbr = graphene.String()
 
 class FullStatlineListType(graphene.ObjectType):
     mp = graphene.List(graphene.Float)
@@ -127,6 +128,7 @@ class TeamType(DjangoObjectType):
 
 class SeasonType(DjangoObjectType):
     aggregate_stats = graphene.Field(AggregateStatlineType)
+    team_stats = graphene.List(FullStatlineType)
     class Meta:
         model = Season
 
@@ -138,6 +140,13 @@ class SeasonType(DjangoObjectType):
             averages=FullStatlineType(**averages), 
             standard_deviations=FullStatlineType(**standard_deviations))
 
+    def resolve_team_stats(self, info):
+        team_stats = []
+        for team_season in TeamSeason.objects.filter(season=self):
+            team_totals = team_season.get_season_totals()
+            team_totals["abbr"] = team_season.team.abbreviation
+            team_stats.append(FullStatlineType(**team_totals))
+        return team_stats 
 
 class PersonType(DjangoObjectType):
     class Meta:

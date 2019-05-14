@@ -39,7 +39,9 @@ export default class Team extends Component {
                                     <div className="level-left">
                                         <div className="level-item">
                                             <figure className="is-square is-96x96-touch">
-                                                <img src={`/static/images/logos/${abbreviation}.svg`} className="team-logo" />
+                                                <img alt={`${team.city} ${team.name}`} 
+                                                    src={`/static/images/logos/${abbreviation}.svg`} 
+                                                    className="team-logo" />
                                             </figure>
                                         </div>
                                         <div className="level-item is-flexed team-name">
