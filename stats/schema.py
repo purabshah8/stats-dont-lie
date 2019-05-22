@@ -43,7 +43,7 @@ class FullStatlineType(graphene.ObjectType):
     usg_rate = graphene.Float()
     ortg = graphene.Float()
     drtg = graphene.Float()
-    possessions = graphene.Float()
+    poss = graphene.Float()
     pace = graphene.Float()
     abbr = graphene.String()
 
@@ -85,7 +85,7 @@ class FullStatlineListType(graphene.ObjectType):
     usg_rate = graphene.List(graphene.Float)
     ortg = graphene.List(graphene.Float)
     drtg = graphene.List(graphene.Float)
-    possessions = graphene.List(graphene.Float)
+    poss = graphene.List(graphene.Float)
     pace = graphene.List(graphene.Float)
     game_dates = graphene.List(graphene.types.datetime.DateTime)
 
@@ -168,26 +168,17 @@ class StatlineType(DjangoObjectType):
         model = Statline
 
 
-class AdvancedStatlineType(DjangoObjectType):
-    class Meta:
-        model = AdvancedStatline
-
-
 class PlayerStatlineType(DjangoObjectType):
     class Meta:
         model = PlayerStatline
 
 
 class PlayerType(DjangoObjectType):
-    person = graphene.Field(PersonType)
     positions = graphene.List(graphene.String)
     current_team = graphene.Field(TeamType)
 
     class Meta:
         model = Player
-
-    def resolve_person(self, info):
-        return self.id
 
     def resolve_positions(self, info):
         positions = []
@@ -198,7 +189,7 @@ class PlayerType(DjangoObjectType):
 
     def resolve_current_team(self, info):
         latest_team_membership = PlayerTeamSeason.objects.filter(
-            player=self, team_season__season__year=2019
+            player=self.person, team_season__season__year=2019
         )
         return latest_team_membership.last().team_season.team
 
@@ -303,19 +294,18 @@ class Query(object):
     player_statlines = graphene.List(
         PlayerStatlineType, game_id=graphene.String(), 
         player_id=graphene.String())
-    advanced_statlines = graphene.List(
-        AdvancedStatlineType, statline_id=graphene.String())
+
     roster = graphene.List(PlayerTeamSeasonType)
     player_season = graphene.List(
         PlayerTeamSeasonType, player_id=graphene.Int(), year=graphene.Int())
 
     def resolve_search(self, info, **kwargs):
         term = kwargs.get("term")
-        return Player.objects.filter(playerteamseason__isnull=False).annotate(
+        return Player.objects.filter(person__playerteamseason__isnull=False).annotate(
                 similarity=Greatest(
-                TrigramSimilarity('id__first_name', term), 
-                TrigramSimilarity('id__last_name', term), 
-                TrigramSimilarity('id__preferred_name', term)
+                TrigramSimilarity('person__first_name', term), 
+                TrigramSimilarity('person__last_name', term), 
+                TrigramSimilarity('person__preferred_name', term)
             )).filter(similarity__gte=0.4).order_by('-similarity').distinct()
 
     def resolve_player_team_season(self, info, **kwargs):

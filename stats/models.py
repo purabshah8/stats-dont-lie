@@ -6,9 +6,9 @@ from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 
 import re
 from datetime import date
-from util import ABA_TEAMS, BASIC_STAT_NAMES, ADVANCED_STAT_NAMES, PLAYER_STAT_NAMES
+from util import ABA_TEAMS, STAT_NAMES, PLAYER_STAT_NAMES
 
-# %load_ext autoreload
+# %load_ext a†utoreload
 # %autoreload 2
 # from stats.models import *
 # from django.db.models import Q
@@ -144,15 +144,6 @@ class Season(models.Model):
     start_date = models.DateTimeField(blank=True, null=True)
     playoffs_start_date = models.DateTimeField(blank=True, null=True)
 
-    # def get_team_stats(self):
-    #     totals = []
-    #     for team_season in TeamSeason.objects.filter(season=self):
-    #         team_totals = team_season.get_season_totals()
-    #         team_totals["abbr"] = team_season.team.abbreviation
-    #         totals.append(team_totals)
-    #     return totals
-
-
     def __str__(self):
         return self.league.name.upper() + " " + str(self.year)
 
@@ -163,27 +154,18 @@ class Season(models.Model):
             game__tipoff__gte=self.start_date)
 
         averages = all_statlines.aggregate(
-            mp=Avg("mp"), fg=Avg("fg"), fga=Avg("fga"), 
-            fg_pct=Avg("fg_pct"), tp=Avg("tp"), tpa=Avg("tpa"), 
-            tp_pct=Avg("tp_pct"), ft=Avg("ft"),fta=Avg("fta"), 
-            ft_pct=Avg("ft_pct"), orb=Avg("orb"), drb=Avg("drb"),
-            trb=Avg("trb"), ast=Avg("ast"), stl=Avg("stl"),
-            blk=Avg("blk"), tov=Avg("tov"), pf=Avg("pf"),
-            pts=Avg("pts"), plus_minus=Avg("playerstatline__plus_minus"),
-            ts=Avg("advancedstatline__ts"), 
-            efg=Avg("advancedstatline__efg"),
-            tpar=Avg("advancedstatline__tpar"),
-            ftr=Avg("advancedstatline__ftr"),
-            orb_pct=Avg("advancedstatline__orb_pct"),
-            drb_pct=Avg("advancedstatline__drb_pct"),
-            trb_pct=Avg("advancedstatline__trb_pct"),
-            ast_pct=Avg("advancedstatline__ast_pct"),
-            stl_pct=Avg("advancedstatline__stl_pct"),
-            blk_pct=Avg("advancedstatline__blk_pct"),
-            tov_pct=Avg("advancedstatline__tov_pct"),
-            usg_rate=Avg("advancedstatline__usg_rate"),
-            ortg=Avg("advancedstatline__ortg"),
-            drtg=Avg("advancedstatline__drtg"))
+            mp=Avg("mp"), fg=Avg("fg"), fga=Avg("fga"), fg_pct=Avg("fg_pct"), 
+            tp=Avg("tp"), tpa=Avg("tpa"), tp_pct=Avg("tp_pct"), ft=Avg("ft"), 
+            fta=Avg("fta"), ft_pct=Avg("ft_pct"), orb=Avg("orb"), 
+            drb=Avg("drb"), trb=Avg("trb"), ast=Avg("ast"), stl=Avg("stl"),
+            blk=Avg("blk"), tov=Avg("tov"), pf=Avg("pf"), pts=Avg("pts"), 
+            poss=Avg("poss"), ts=Avg("ts"), efg=Avg("efg"), tpar=Avg("tpar"), 
+            ftr=Avg("ftr"), orb_pct=Avg("orb_pct"), drb_pct=Avg("drb_pct"),
+            trb_pct=Avg("trb_pct"), ast_pct=Avg("ast_pct"),
+            stl_pct=Avg("stl_pct"), blk_pct=Avg("blk_pct"),
+            tov_pct=Avg("tov_pct"), usg_rate=Avg("usg_rate"),
+            ortg=Avg("ortg"), drtg=Avg("drtg"),
+            plus_minus=Avg("playerstatline__plus_minus"))
 
         std_devs = all_statlines.aggregate(
             mp=StdDev("mp"), fg=StdDev("fg"), fga=StdDev("fga"), 
@@ -193,20 +175,12 @@ class Season(models.Model):
             trb=StdDev("trb"), ast=StdDev("ast"), stl=StdDev("stl"),
             blk=StdDev("blk"), tov=StdDev("tov"), pf=StdDev("pf"),
             pts=StdDev("pts"), plus_minus=StdDev("playerstatline__plus_minus"),
-            ts=StdDev("advancedstatline__ts"),
-            efg=StdDev("advancedstatline__efg"),
-            tpar=StdDev("advancedstatline__tpar"),
-            ftr=StdDev("advancedstatline__ftr"),
-            orb_pct=StdDev("advancedstatline__orb_pct"),
-            drb_pct=StdDev("advancedstatline__drb_pct"),
-            trb_pct=StdDev("advancedstatline__trb_pct"),
-            ast_pct=StdDev("advancedstatline__ast_pct"),
-            stl_pct=StdDev("advancedstatline__stl_pct"),
-            blk_pct=StdDev("advancedstatline__blk_pct"),
-            tov_pct=StdDev("advancedstatline__tov_pct"),
-            usg_rate=StdDev("advancedstatline__usg_rate"),
-            ortg=StdDev("advancedstatline__ortg"),
-            drtg=StdDev("advancedstatline__drtg"))
+            poss=StdDev("poss"), ts=StdDev("ts"), efg=StdDev("efg"),
+            tpar=StdDev("tpar"), ftr=StdDev("ftr"), orb_pct=StdDev("orb_pct"),
+            drb_pct=StdDev("drb_pct"), trb_pct=StdDev("trb_pct"),
+            ast_pct=StdDev("ast_pct"), stl_pct=StdDev("stl_pct"),
+            blk_pct=StdDev("blk_pct"), tov_pct=StdDev("tov_pct"),
+            usg_rate=StdDev("usg_rate"), ortg=StdDev("ortg"), drtg=StdDev("drtg"))
         
         return { "averages" : averages, "standard_deviations": std_devs }
 
@@ -274,7 +248,7 @@ class Person(models.Model):
                     if is_active:
                         active_players.append(player)
                 if len(active_players) == 1:
-                    return active_players[0].id
+                    return active_players[0].person
                 else:
                     breakpoint()
                     print(f"Found multiple matching players for {full_name}")
@@ -285,16 +259,15 @@ class Person(models.Model):
 
 
 class Referee(models.Model):
-    id = models.OneToOneField(
-        Person, models.DO_NOTHING, db_column='id', primary_key=True)
-    jersey_number = models.IntegerField()
+    person = models.OneToOneField(Person, models.DO_NOTHING, primary_key=True)
+    jersey_number = models.IntegerField(blank=True, null=True)
     rookie_season = models.ForeignKey(
         'Season', models.DO_NOTHING, related_name="ref_rookie_season")
     final_season = models.ForeignKey(
         'Season', models.DO_NOTHING, related_name="ref_final_season", null=True)
 
     def __str__(self):
-        return self.id.__str__()
+        return self.person.__str__()
 
     class Meta:
         db_table = 'referee'
@@ -308,7 +281,7 @@ class Referee(models.Model):
         return first_year <= year and year <= last_year
 
     def get_name(self):
-        return self.id.get_name()
+        return self.person.get_name()
 
     @classmethod
     def find(cls, full_name):
@@ -322,31 +295,29 @@ class Referee(models.Model):
             preferred_name = " ".join(names[:1])
             last_name = names[-1]
         matches = cls.objects.filter(
-            id__preferred_name=preferred_name, id__last_name=last_name)
+            person__preferred_name=preferred_name, person__last_name=last_name)
         return matches
 
 
 class TeamEmployee(models.Model):
-    id = models.OneToOneField(
-        Person, models.DO_NOTHING, db_column='id', primary_key=True)
+    person = models.OneToOneField(Person, models.DO_NOTHING, primary_key=True)
     team = models.ForeignKey(Team, models.DO_NOTHING)
     role = models.CharField(max_length=16)
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return self.id.__str__()
+        return self.person.__str__()
 
     class Meta:
         db_table = 'team_employee'
 
     def get_name(self):
-        return self.id.get_name()
+        return self.person.get_name()
 
 
 class Player(models.Model):
-    id = models.OneToOneField(
-        Person, models.DO_NOTHING, db_column='id', primary_key=True)
+    person = models.OneToOneField(Person, models.DO_NOTHING, primary_key=True)
     height = models.IntegerField()
     weight = models.IntegerField()
     shooting_hand = models.CharField(max_length=5)
@@ -357,7 +328,7 @@ class Player(models.Model):
     image_url = models.CharField(max_length=128, null=True)
 
     def __str__(self):
-        return self.id.__str__()
+        return self.person.__str__()
 
     # def get_career_totals(self):
     #     career_totals = {}
@@ -375,9 +346,8 @@ class Player(models.Model):
         db_table = 'player'
 
     def get_name(self):
-        return self.id.get_name()
+        return self.person.get_name()
 
-    # def get_statlines(self, year):
 
     @classmethod
     def find(cls, full_name):
@@ -391,7 +361,7 @@ class Player(models.Model):
             preferred_name = " ".join(names[:1])
             last_name = names[-1]
         matches = cls.objects.filter(
-            id__preferred_name=preferred_name, id__last_name=last_name)
+            person__preferred_name=preferred_name, person__last_name=last_name)
         if len(matches) == 1:
             return matches[0]
         elif len(matches) < 1:
@@ -441,7 +411,7 @@ class TeamSeason(models.Model):
             team=self.team,
             playerstatline__isnull=True,
             game__tipoff__lt=self.season.playoffs_start_date,
-            game__tipoff__gte=self.season.start_date)
+            game__tipoff__gte=self.season.start_date).order_by('game__tipoff')
 
     def get_opp_statlines(self):
         return Statline.objects.filter(
@@ -449,7 +419,7 @@ class TeamSeason(models.Model):
             game__tipoff__lt=self.season.playoffs_start_date,
             game__tipoff__gte=self.season.start_date,
             playerstatline__isnull=True
-            ).exclude(team=self.team)
+            ).exclude(team=self.team).order_by('game__tipoff')
 
 
     def get_playoff_statlines(self):
@@ -457,27 +427,35 @@ class TeamSeason(models.Model):
             team=self.team,
             playerstatline__isnull=True,
             game__tipoff__gte=self.season.playoffs_start_date,
-            game__tipoff__lt=date(self.season.year, 7, 1))
+            game__tipoff__lt=date(self.season.year, 7, 1)).order_by('game__tipoff')
 
     def get_raw_stats(self):
         raw_stats = {}
-        games = self.get_games()
+        # games = self.get_games()
         team_stats = self.get_statlines()
-        for stat in BASIC_STAT_NAMES:
+        breakpoint()
+
+        for stat in STAT_NAMES:
             stat_values = team_stats.values_list(stat, flat=True)
             raw_stats[stat] = list(stat_values)
-        possessions = []
-        pace = []
-        for game in games:
-            poss = game.get_poss(
-                "home") if game.home == self.team else game.get_poss("away")
-            possessions.append(poss)
-            pace.append(game.get_pace())
-        raw_stats["possessions"] = possessions
-        raw_stats["pace"] = pace
-        raw_stats["game_dates"] = list(
-            team_stats.values_list("game__tipoff", flat=True)
-        )
+        
+        raw_stats["game_dates"] = list(team_stats.values_list("game__tipoff", flat=True))
+        opp_stats = self.get_opp_statlines()
+        opp_poss = opp_stats.values_list('poss', flat=True)
+        # team_poss = team_stats.values_list('poss', flat=True)
+        def calc_pace(stats, opp_poss):
+            return 48 * ((stats.poss + opp_poss) / (2*(stats.mp/(5*60))))
+
+        raw_stats["pace"] = [ calc_pace(team, opp) for team, opp in zip(team_stats, opp_poss) ]
+        # possessions = []
+        # pace = []
+        # for game in games:
+        #     poss = game.get_poss(
+        #         "home") if game.home == self.team else game.get_poss("away")
+        #     possessions.append(poss)
+        #     pace.append(game.get_pace())
+        # raw_stats["possessions"] = possessions
+        # raw_stats["pace"] = pace
         return raw_stats
 
     def get_season_totals(self):
@@ -532,16 +510,20 @@ class TeamSeason(models.Model):
 
 
 class PlayerTeamSeason(models.Model):
+    
     player = models.ForeignKey(Player, models.DO_NOTHING)
     team_season = models.ForeignKey('TeamSeason', models.DO_NOTHING)
 
+    class Meta:
+        db_table = 'player_team_season'
+    
     def __str__(self):
         return self.player.get_name() + " " + self.team_season.__str__()
 
     def get_statlines(self):
         return Statline.objects.filter(
             playerstatline__isnull=False,
-            playerstatline__player=self.player.id.id,
+            playerstatline__player=self.player.person.id,
             team=self.team_season.team,
             game__tipoff__lt=self.team_season.season.playoffs_start_date,
             game__tipoff__gte=self.team_season.season.start_date).order_by("game__tipoff")
@@ -549,14 +531,14 @@ class PlayerTeamSeason(models.Model):
     def get_playoff_statlines(self):
         return Statline.objects.filter(
             playerstatline__isnull=False,
-            playerstatline__player=self.player.id.id,
+            playerstatline__player=self.player.person.id,
             game__tipoff__gte=self.team_season.season.playoffs_start_date,
             game__tipoff__lt=date(self.team_season.season.year, 7, 1))
 
     def get_raw_stats(self):
         raw_stats = {}
         player_stats = self.get_statlines()
-        for stat in BASIC_STAT_NAMES:
+        for stat in STAT_NAMES:
             stat_values = player_stats.values_list(stat, flat=True)
             raw_stats[stat] = list(stat_values)
         for stat in PLAYER_STAT_NAMES:
@@ -604,8 +586,6 @@ class PlayerTeamSeason(models.Model):
         totals["ftr"] = totals["fta"]/totals["fga"]
         return totals
 
-    class Meta:
-        db_table = 'player_team_season'
 
 
 class Game(models.Model):
@@ -619,11 +599,17 @@ class Game(models.Model):
     winner = models.ForeignKey(
         'Team', models.DO_NOTHING, related_name="winner")
     ref_one = models.ForeignKey(
-        'Referee', models.DO_NOTHING, blank=True, null=True, related_name="first_ref")
+        'Person', models.DO_NOTHING, 
+        blank=True, null=True, 
+        related_name="first_ref")
     ref_two = models.ForeignKey(
-        'Referee', models.DO_NOTHING, blank=True, null=True, related_name="second_ref")
+        'Person', models.DO_NOTHING, 
+        blank=True, null=True, 
+        related_name="second_ref")
     ref_three = models.ForeignKey(
-        'Referee', models.DO_NOTHING, blank=True, null=True, related_name="third_ref")
+        'Person', models.DO_NOTHING, 
+        blank=True, null=True, 
+        related_name="third_ref")
     tipoff = models.DateTimeField(blank=True, null=True)
     attendance = models.IntegerField(blank=True, null=True)
     duration = models.IntegerField(blank=True, null=True)
@@ -634,42 +620,42 @@ class Game(models.Model):
     class Meta:
         db_table = 'game'
 
-    def get_stats(self, team):
-        if team == "home":
-            return Statline.objects.filter(team=self.home, game=self.id)
-        elif team == "away":
-            return Statline.objects.filter(team=self.away, game=self.id)
-        else:
-            return None
+    # def get_stats(self, team):
+    #     if team == "home":
+    #         return Statline.objects.filter(team=self.home, game=self.id)
+    #     elif team == "away":
+    #         return Statline.objects.filter(team=self.away, game=self.id)
+    #     else:
+    #         return None
 
-    def calc_poss(self, team, opp):
-        return 0.5 * ((team.fga + 0.4 * team.fta - 1.07 * (team.orb / (team.orb + opp.drb)) * (team.fga - team.fg) + team.tov) + (opp.fga + 0.4 * opp.fta - 1.07 * (opp.orb / (opp.orb + team.drb)) * (opp.fga - opp.fg) + opp.tov))
+    # def calc_poss(self, team, opp):
+    #     return 0.5 * ((team.fga + 0.4 * team.fta - 1.07 * (team.orb / (team.orb + opp.drb)) * (team.fga - team.fg) + team.tov) + (opp.fga + 0.4 * opp.fta - 1.07 * (opp.orb / (opp.orb + team.drb)) * (opp.fga - opp.fg) + opp.tov))
 
-    def get_poss(self, team):
-        home = self.get_team_stats("home")
-        away = self.get_team_stats("away")
-        if team == "home":
-            return self.calc_poss(home, away)
-        elif team == "away":
-            return self.calc_poss(away, home)
+    # def get_poss(self, team):
+    #     home = self.get_team_stats("home")
+    #     away = self.get_team_stats("away")
+    #     if team == "home":
+    #         return self.calc_poss(home, away)
+    #     elif team == "away":
+    #         return self.calc_poss(away, home)
 
-    def get_pace(self):
-        home = self.get_team_stats("home")
-        home_poss = self.get_poss("home")
-        away_poss = self.get_poss("away")
-        return 48 * ((home_poss+away_poss) / (2*(home.mp/5)))
+    # def get_pace(self):
+    #     home = self.get_team_stats("home")
+    #     home_poss = self.get_poss("home")
+    #     away_poss = self.get_poss("away")
+    #     return 48 * ((home_poss+away_poss) / (2*(home.mp/5)))
 
-    def get_team_stats(self, team):
-        if team == "home":
-            return Statline.objects.get(team=self.home, game=self.id, playerstatline__isnull=True)
-        elif team == "away":
-            return Statline.objects.get(team=self.away, game=self.id, playerstatline__isnull=True)
-        else:
-            return None
+    # def get_team_stats(self, team):
+    #     if team == "home":
+    #         return Statline.objects.get(team=self.home, game=self.id, playerstatline__isnull=True)
+    #     elif team == "away":
+    #         return Statline.objects.get(team=self.away, game=self.id, playerstatline__isnull=True)
+    #     else:
+    #         return None
 
 
 class GamePeriod(models.Model):
-    game = models.ForeignKey(Game, models.DO_NOTHING)
+    game = models.OneToOneField(Game, models.DO_NOTHING, primary_key=True)
     number = models.IntegerField()
     home_score = models.IntegerField()
     away_score = models.IntegerField()
@@ -679,13 +665,14 @@ class GamePeriod(models.Model):
 
     class Meta:
         db_table = 'game_period'
+        unique_together = (('game', 'number'),)
 
 
 class Statline(models.Model):
     game = models.ForeignKey(Game, models.DO_NOTHING)
     team = models.ForeignKey('Team', models.DO_NOTHING)
     mp = models.IntegerField(blank=True, null=True)
-    fg = models.IntegerField()
+    fg = models.IntegerField(blank=True, null=True)
     fga = models.IntegerField(blank=True, null=True)
     fg_pct = models.FloatField(blank=True, null=True)
     tp = models.IntegerField(blank=True, null=True)
@@ -702,42 +689,34 @@ class Statline(models.Model):
     blk = models.IntegerField(blank=True, null=True)
     tov = models.IntegerField(blank=True, null=True)
     pf = models.IntegerField(blank=True, null=True)
-    pts = models.IntegerField()
+    pts = models.IntegerField(blank=True, null=True)
+    poss = models.FloatField(blank=True, null=True)
+    ts = models.FloatField(blank=True, null=True)
+    efg = models.FloatField(blank=True, null=True)
+    tpar = models.FloatField(blank=True, null=True)
+    ftr = models.FloatField(blank=True, null=True)
+    orb_pct = models.FloatField(blank=True, null=True)
+    drb_pct = models.FloatField(blank=True, null=True)
+    trb_pct = models.FloatField(blank=True, null=True)
+    ast_pct = models.FloatField(blank=True, null=True)
+    stl_pct = models.FloatField(blank=True, null=True)
+    blk_pct = models.FloatField(blank=True, null=True)
+    tov_pct = models.FloatField(blank=True, null=True)
+    usg_rate = models.FloatField(blank=True, null=True)
+    ortg = models.IntegerField(blank=True, null=True)
+    drtg = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
+        # TODO: Change to reflect statline type
         return self.game.id + " " + self.team.abbreviation + str(self.id)
 
     class Meta:
         db_table = 'statline'
 
-
-class AdvancedStatline(models.Model):
-    id = models.OneToOneField(
-        'Statline', models.DO_NOTHING, db_column='id', primary_key=True)
-    ts = models.FloatField(blank=True, null=True)
-    efg = models.FloatField(blank=True, null=True)
-    tpar = models.FloatField(blank=True, null=True)
-    ftr = models.FloatField(blank=True, null=True)
-    orb_pct = models.FloatField()
-    drb_pct = models.FloatField()
-    trb_pct = models.FloatField()
-    ast_pct = models.FloatField()
-    stl_pct = models.FloatField()
-    blk_pct = models.FloatField()
-    tov_pct = models.FloatField(blank=True, null=True)
-    usg_rate = models.FloatField()
-    ortg = models.IntegerField()
-    drtg = models.IntegerField()
-
-    class Meta:
-        db_table = 'advanced_statline'
-
-
 class PlayerStatline(models.Model):
-    id = models.OneToOneField(
-        'Statline', models.DO_NOTHING, db_column='id', primary_key=True)
-    player = models.ForeignKey(Player, models.DO_NOTHING)
-    started = models.BooleanField(blank=True, null=True)
+    statline = models.OneToOneField('Statline', models.DO_NOTHING, primary_key=True)
+    player = models.ForeignKey(Person, models.DO_NOTHING)
+    started = models.BooleanField()
     plus_minus = models.IntegerField()
 
     class Meta:

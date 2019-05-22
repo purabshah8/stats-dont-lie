@@ -78,7 +78,7 @@ export const statFragments = {
         usgRate
         ortg
         drtg
-        possessions
+        poss
         pace
         abbr
     }`
@@ -89,8 +89,8 @@ export const teamSeasonFragments = {
     fragment teamRoster on TeamSeasonType {
         roster {
             player {
-            ...playerName
-            positions
+                ...playerName
+                positions
             }
         }
     }
