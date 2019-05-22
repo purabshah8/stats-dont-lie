@@ -150,6 +150,7 @@ STATICFILES_DIRS = (
 # Webpack Loader
 WEBPACK_LOADER = {
     'DEFAULT': {
+        'CACHE': not DEBUG,
         'BUNDLE_DIR_NAME': 'js/',
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
     }
