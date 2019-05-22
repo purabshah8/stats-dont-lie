@@ -172,7 +172,7 @@ query themeQuery {
 
 export const GET_SEASON_STATS = gql`
 query seasonStatsQuery($year: Int){
-    season(year: 2019) {
+    season(year: $year) {
         teamStats {
             ...stats
         }

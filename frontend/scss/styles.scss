@@ -213,7 +213,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-
+  z-index: -10;
 }
 
 .heat-map-rect {
@@ -316,3 +316,22 @@ a {
   }
 }
 
+.selected-stat {
+  background: black;
+  color: white;
+}
+
+// .stat-tag {
+//   margin-left: 0.5rem;
+// }
+
+.stat-selector {
+  display: flex;
+  justify-content: space-around;  
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
