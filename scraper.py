@@ -96,7 +96,7 @@ def get_box_score_info(url):
                     stat_val = str_to_data(stat_val)
                     data_dict[stat_name] = stat_val
                 if box_type == "advanced":
-                    data_dict["mp"] *= 3600
+                    data_dict["mp"] *= 60
             
             if "Team Totals" in team_data:
                 team_data["Team Totals"].update(data_dict)

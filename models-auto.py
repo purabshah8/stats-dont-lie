@@ -8,28 +8,6 @@
 from django.db import models
 
 
-class AdvancedStatline(models.Model):
-    id = models.ForeignKey('Statline', models.DO_NOTHING, db_column='id', primary_key=True)
-    ts = models.FloatField(blank=True, null=True)
-    efg = models.FloatField(blank=True, null=True)
-    tpar = models.FloatField(blank=True, null=True)
-    ftr = models.FloatField(blank=True, null=True)
-    orb_pct = models.FloatField()
-    drb_pct = models.FloatField()
-    trb_pct = models.FloatField()
-    ast_pct = models.FloatField()
-    stl_pct = models.FloatField()
-    blk_pct = models.FloatField()
-    tov_pct = models.FloatField(blank=True, null=True)
-    usg_rate = models.FloatField()
-    ortg = models.IntegerField()
-    drtg = models.IntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'advanced_statline'
-
-
 class Arena(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True)
     location = models.ForeignKey('Location', models.DO_NOTHING)
@@ -40,6 +18,72 @@ class Arena(models.Model):
     class Meta:
         managed = False
         db_table = 'arena'
+
+
+class AuthGroup(models.Model):
+    name = models.CharField(unique=True, max_length=80)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_group'
+
+
+class AuthGroupPermissions(models.Model):
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+    permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_group_permissions'
+        unique_together = (('group', 'permission'),)
+
+
+class AuthPermission(models.Model):
+    name = models.CharField(max_length=255)
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
+    codename = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_permission'
+        unique_together = (('content_type', 'codename'),)
+
+
+class AuthUser(models.Model):
+    password = models.CharField(max_length=128)
+    last_login = models.DateTimeField(blank=True, null=True)
+    is_superuser = models.BooleanField()
+    username = models.CharField(unique=True, max_length=150)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=150)
+    email = models.CharField(max_length=254)
+    is_staff = models.BooleanField()
+    is_active = models.BooleanField()
+    date_joined = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user'
+
+
+class AuthUserGroups(models.Model):
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user_groups'
+        unique_together = (('user', 'group'),)
+
+
+class AuthUserUserPermissions(models.Model):
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user_user_permissions'
+        unique_together = (('user', 'permission'),)
 
 
 class Conference(models.Model):
@@ -61,6 +105,51 @@ class Division(models.Model):
         managed = False
         db_table = 'division'
 
+
+class DjangoAdminLog(models.Model):
+    action_time = models.DateTimeField()
+    object_id = models.TextField(blank=True, null=True)
+    object_repr = models.CharField(max_length=200)
+    action_flag = models.SmallIntegerField()
+    change_message = models.TextField()
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'django_admin_log'
+
+
+class DjangoContentType(models.Model):
+    app_label = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'django_content_type'
+        unique_together = (('app_label', 'model'),)
+
+
+class DjangoMigrations(models.Model):
+    app = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    applied = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_migrations'
+
+
+class DjangoSession(models.Model):
+    session_key = models.CharField(primary_key=True, max_length=40)
+    session_data = models.TextField()
+    expire_date = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_session'
+
+
 class Game(models.Model):
     id = models.CharField(primary_key=True, max_length=16)
     home = models.ForeignKey('Team', models.DO_NOTHING)
@@ -68,9 +157,9 @@ class Game(models.Model):
     home_score = models.IntegerField()
     away_score = models.IntegerField()
     winner = models.ForeignKey('Team', models.DO_NOTHING)
-    ref_one = models.ForeignKey('Referee', models.DO_NOTHING, blank=True, null=True)
-    ref_two = models.ForeignKey('Referee', models.DO_NOTHING, blank=True, null=True)
-    ref_three = models.ForeignKey('Referee', models.DO_NOTHING, blank=True, null=True)
+    ref_one = models.ForeignKey('Person', models.DO_NOTHING, blank=True, null=True)
+    ref_two = models.ForeignKey('Person', models.DO_NOTHING, blank=True, null=True)
+    ref_three = models.ForeignKey('Person', models.DO_NOTHING, blank=True, null=True)
     tipoff = models.DateTimeField(blank=True, null=True)
     attendance = models.IntegerField(blank=True, null=True)
     duration = models.IntegerField(blank=True, null=True)
@@ -81,7 +170,7 @@ class Game(models.Model):
 
 
 class GamePeriod(models.Model):
-    game = models.ForeignKey(Game, models.DO_NOTHING)
+    game = models.ForeignKey(Game, models.DO_NOTHING, primary_key=True)
     number = models.IntegerField()
     home_score = models.IntegerField()
     away_score = models.IntegerField()
@@ -89,6 +178,7 @@ class GamePeriod(models.Model):
     class Meta:
         managed = False
         db_table = 'game_period'
+        unique_together = (('game', 'number'),)
 
 
 class League(models.Model):
@@ -128,7 +218,7 @@ class Person(models.Model):
 
 
 class Player(models.Model):
-    id = models.ForeignKey(Person, models.DO_NOTHING, db_column='id', primary_key=True)
+    person = models.ForeignKey(Person, models.DO_NOTHING, primary_key=True)
     height = models.IntegerField()
     weight = models.IntegerField()
     shooting_hand = models.CharField(max_length=5)
@@ -142,7 +232,7 @@ class Player(models.Model):
 
 
 class PlayerPosition(models.Model):
-    player = models.ForeignKey(Player, models.DO_NOTHING)
+    player = models.ForeignKey(Person, models.DO_NOTHING)
     position = models.ForeignKey('Position', models.DO_NOTHING)
 
     class Meta:
@@ -151,9 +241,9 @@ class PlayerPosition(models.Model):
 
 
 class PlayerStatline(models.Model):
-    id = models.ForeignKey('Statline', models.DO_NOTHING, db_column='id', primary_key=True)
-    player = models.ForeignKey(Player, models.DO_NOTHING)
-    started = models.BooleanField(blank=True, null=True)
+    statline = models.ForeignKey('Statline', models.DO_NOTHING, primary_key=True)
+    player = models.ForeignKey(Person, models.DO_NOTHING)
+    started = models.BooleanField()
     plus_minus = models.IntegerField()
 
     class Meta:
@@ -162,7 +252,7 @@ class PlayerStatline(models.Model):
 
 
 class PlayerTeamSeason(models.Model):
-    player = models.ForeignKey(Player, models.DO_NOTHING)
+    player = models.ForeignKey(Person, models.DO_NOTHING)
     team_season = models.ForeignKey('TeamSeason', models.DO_NOTHING)
 
     class Meta:
@@ -181,9 +271,10 @@ class Position(models.Model):
 
 
 class Referee(models.Model):
-    id = models.ForeignKey(Person, models.DO_NOTHING, db_column='id', primary_key=True)
-    jersey_number = models.IntegerField()
+    person = models.ForeignKey(Person, models.DO_NOTHING, primary_key=True)
+    jersey_number = models.IntegerField(blank=True, null=True)
     rookie_season = models.ForeignKey('Season', models.DO_NOTHING)
+    final_season = models.ForeignKey('Season', models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -193,8 +284,8 @@ class Referee(models.Model):
 class Season(models.Model):
     league = models.ForeignKey(League, models.DO_NOTHING)
     year = models.IntegerField()
-    season_start = models.DateField(blank=True, null=True)
-    playoff_start = models.DateField(blank=True, null=True)
+    start_date = models.DateTimeField(blank=True, null=True)
+    playoffs_start_date = models.DateTimeField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -205,7 +296,7 @@ class Statline(models.Model):
     game = models.ForeignKey(Game, models.DO_NOTHING)
     team = models.ForeignKey('Team', models.DO_NOTHING)
     mp = models.IntegerField(blank=True, null=True)
-    fg = models.IntegerField()
+    fg = models.IntegerField(blank=True, null=True)
     fga = models.IntegerField(blank=True, null=True)
     fg_pct = models.FloatField(blank=True, null=True)
     tp = models.IntegerField(blank=True, null=True)
@@ -222,7 +313,22 @@ class Statline(models.Model):
     blk = models.IntegerField(blank=True, null=True)
     tov = models.IntegerField(blank=True, null=True)
     pf = models.IntegerField(blank=True, null=True)
-    pts = models.IntegerField()
+    pts = models.IntegerField(blank=True, null=True)
+    poss = models.FloatField(blank=True, null=True)
+    ts = models.FloatField(blank=True, null=True)
+    efg = models.FloatField(blank=True, null=True)
+    tpar = models.FloatField(blank=True, null=True)
+    ftr = models.FloatField(blank=True, null=True)
+    orb_pct = models.FloatField(blank=True, null=True)
+    drb_pct = models.FloatField(blank=True, null=True)
+    trb_pct = models.FloatField(blank=True, null=True)
+    ast_pct = models.FloatField(blank=True, null=True)
+    stl_pct = models.FloatField(blank=True, null=True)
+    blk_pct = models.FloatField(blank=True, null=True)
+    tov_pct = models.FloatField(blank=True, null=True)
+    usg_rate = models.FloatField(blank=True, null=True)
+    ortg = models.FloatField(blank=True, null=True)
+    drtg = models.FloatField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -244,7 +350,7 @@ class Team(models.Model):
 
 
 class TeamEmployee(models.Model):
-    id = models.ForeignKey(Person, models.DO_NOTHING, db_column='id', primary_key=True)
+    person = models.ForeignKey(Person, models.DO_NOTHING, primary_key=True)
     team = models.ForeignKey(Team, models.DO_NOTHING)
     role = models.CharField(max_length=16)
     start_date = models.DateField()

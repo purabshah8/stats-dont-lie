@@ -162,7 +162,7 @@ for season in seasons:
     elif league_id == 2 and year < 1977:
         active_teams = [team for team in teams if team[2] in ABA_TEAMS]
     else:
-        active_teams = [team for team in teams if team[5] <= year]
+        active_teams = [team for team in teams if team[5] <= year and (team[6] is None or team[6] >= year) ]
     
     for team in active_teams:
         team_season = (i, team[0], season[0])

@@ -14,7 +14,7 @@ def create_tables():
                 team, season, person, team_employee, referee, 
                 player, position, player_position, team_season, 
                 player_team_season, game, game_period, 
-                statline, advanced_statline, player_statline;
+                statline, player_statline;
         """,
         """ 
             CREATE TABLE league(
@@ -109,7 +109,7 @@ def create_tables():
         """,
         """
             CREATE TABLE team_employee(
-                id INTEGER NOT NULL PRIMARY KEY
+                person_id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES person(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 team_id INTEGER NOT NULL
@@ -122,7 +122,7 @@ def create_tables():
         """,
         """ 
             CREATE TABLE referee(
-                id INTEGER NOT NULL PRIMARY KEY
+                person_id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES person(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 jersey_number INTEGER,
@@ -136,7 +136,7 @@ def create_tables():
         """,
         """ 
             CREATE TABLE player(
-                id INTEGER NOT NULL PRIMARY KEY
+                person_id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES person(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 height INTEGER NOT NULL,
@@ -162,7 +162,7 @@ def create_tables():
             CREATE TABLE player_position(
                 id SERIAL PRIMARY KEY,
                 player_id INTEGER NOT NULL
-                    REFERENCES player(id)
+                    REFERENCES person(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 position_id INTEGER NOT NULL
                     REFERENCES position(id)
@@ -184,7 +184,7 @@ def create_tables():
             CREATE TABLE player_team_season(
                 id SERIAL PRIMARY KEY,
                 player_id INTEGER NOT NULL
-                    REFERENCES player(id)
+                    REFERENCES person(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 team_season_id INTEGER NOT NULL
                     REFERENCES team_season(id)
@@ -206,13 +206,13 @@ def create_tables():
                     REFERENCES team(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 ref_one_id INTEGER
-                    REFERENCES referee(id)
+                    REFERENCES person(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE,
                 ref_two_id INTEGER
-                    REFERENCES referee(id)
+                    REFERENCES person(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE,
                 ref_three_id INTEGER
-                    REFERENCES referee(id)
+                    REFERENCES person(id)
                     ON DELETE RESTRICT ON UPDATE CASCADE,
                 tipoff TIMESTAMP,
                 attendance INTEGER,
@@ -221,13 +221,13 @@ def create_tables():
         """,
         """ 
             CREATE TABLE game_period(
-                id SERIAL PRIMARY KEY,
                 game_id VARCHAR(16) NOT NULL
                     REFERENCES game(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 number INTEGER NOT NULL,
                 home_score INTEGER NOT NULL,
-                away_score INTEGER NOT NULL
+                away_score INTEGER NOT NULL,
+                PRIMARY KEY(game_id, number)
             );
         """,
         """ 
@@ -240,7 +240,7 @@ def create_tables():
                     REFERENCES team(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 mp INTEGER,
-                fg INTEGER NOT NULL,
+                fg INTEGER,
                 fga INTEGER,
                 fg_pct FLOAT,
                 tp INTEGER,
@@ -257,64 +257,44 @@ def create_tables():
                 blk INTEGER,
                 tov INTEGER,
                 pf INTEGER,
-                pts INTEGER NOT NULL
-            );
-        """, ## modify advanced statline to save possession data
-        """ 
-            CREATE TABLE advanced_statline(
-                id INTEGER NOT NULL PRIMARY KEY
-                    REFERENCES statline(id)
-                    ON DELETE CASCADE ON UPDATE CASCADE,
-                possessions FLOAT,
+                pts INTEGER,
+                poss FLOAT,
                 ts FLOAT,
                 efg FLOAT,
                 tpar FLOAT,
                 ftr FLOAT,
-                orb_pct FLOAT NOT NULL,
-                drb_pct FLOAT NOT NULL,
-                trb_pct FLOAT NOT NULL,
-                ast_pct FLOAT NOT NULL,
-                stl_pct FLOAT NOT NULL,
-                blk_pct FLOAT NOT NULL,
+                orb_pct FLOAT,
+                drb_pct FLOAT,
+                trb_pct FLOAT,
+                ast_pct FLOAT,
+                stl_pct FLOAT,
+                blk_pct FLOAT,
                 tov_pct FLOAT,
-                usg_rate FLOAT NOT NULL,
-                ortg INTEGER NOT NULL,
-                drtg INTEGER NOT NULL
+                usg_rate FLOAT,
+                ortg FLOAT,
+                drtg FLOAT
             );
         """,
         """ 
             CREATE TABLE player_statline(
-                id INTEGER NOT NULL PRIMARY KEY
+                statline_id INTEGER NOT NULL PRIMARY KEY
                     REFERENCES statline(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
                 player_id INTEGER NOT NULL
-                    REFERENCES player(id)
+                    REFERENCES person(id)
                     ON DELETE CASCADE ON UPDATE CASCADE,
-                started BOOL,
+                started BOOL NOT NULL,
                 plus_minus integer NOT NULL
             );
         """,
     ]
-
-# FOREIGN KEY CHANGES NOT IMPLEMENTED YET
-#
-# RESTRICT ==> CASCADE
-#   advanced_statline: id
-#   player_statline: id, player_id
-#   team_employee: id
-#   referee: id
-#   player: id
-#
-# CASCADE ==> RESTRICT
-#   game: ref_one_id, ref_two_id, ref_three_id
-#
 
     connection = None
     try:
         connection = psycopg2.connect(connection_url, sslmode='require')
         cursor = connection.cursor()
         tables = ["league", "conference", "division", "location", "arena", "team", "season", "person", "team_employee", "referee", "player",
-                  "position", "player_position", "team_season", "player_team_season", "game", "game_period", "statline", "advanced_statline", "player_statline"]
+                  "position", "player_position", "team_season", "player_team_season", "game", "game_period", "statline", "player_statline"]
         for i, command in enumerate(commands):
             cursor.execute(command)
             if i == 0:

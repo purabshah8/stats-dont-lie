@@ -52,7 +52,7 @@ def save_game(info):
             else:
                 breakpoint()
                 
-        game_info[ref_keys[i]] = referee
+        game_info[ref_keys[i]] = referee.person
     
     if Game.objects.filter(**game_info).exists():
         game = Game.objects.get(**game_info)
@@ -79,13 +79,20 @@ def save_game(info):
 
     teams = [home, away]
     team_loc = "home"
+    
+    home_stats = info["home_stats"]["Team Totals"]
+    away_stats = info["away_stats"]["Team Totals"]
+    home_poss = calc_poss(home_stats, away_stats)
+    away_poss = calc_poss(away_stats, home_stats)
 
     for team in teams:
         team_season = team.get_season(year)
         team_stats = info[team_loc + "_stats"]
+        
         team_players = team_stats.keys()
         invalid_keys = ["Team Totals", "inactive"]
         team_players = [player for player in team_players if bool(team_stats[player]) and player not in invalid_keys]
+        
         for name in team_players:
             person = Person.find(name, year)
             if person is None:
@@ -98,17 +105,21 @@ def save_game(info):
                 team_membership.save()
             
             player_stats = team_stats[name]
-            basic_statline = { stat:player_stats[stat] for stat in BASIC_STAT_NAMES }
-            basic_statline["game_id"] = game.id
-            basic_statline["team_id"] = team.id
-            if Statline.objects.filter(**basic_statline).exists():
-                basic_statline = Statline.objects.get(**basic_statline)
+            statline = { stat:player_stats[stat] for stat in STAT_NAMES if stat != "poss" }
+            statline["game_id"] = game.id
+            statline["team_id"] = team.id
+            team_totals = team_stats["Team Totals"]
+            team_totals["opp_orb"] = home_stats["orb"] if team_loc == "away" else away_stats["orb"]
+            team_totals["opp_trb"] = home_stats["trb"] if team_loc == "away" else away_stats["trb"]
+            statline["poss"] = calc_player_poss(statline, team_totals)
+            if Statline.objects.filter(**statline).exists():
+                statline = Statline.objects.get(**statline)
             else:
-                basic_statline = Statline(**basic_statline)
-                basic_statline.save()
+                statline = Statline(**statline)
+                statline.save()
 
             player_statline = {
-                "id": basic_statline,
+                "statline": statline,
                 "player_id": person.id,
                 "started": player_stats["started"],
                 "plus_minus": player_stats["plus_minus"],
@@ -116,36 +127,20 @@ def save_game(info):
             if PlayerStatline.objects.filter(**player_statline).exists():
                 player_statline = PlayerStatline.objects.get(**player_statline)
             else:
-                # breakpoint()
                 player_statline = PlayerStatline(**player_statline)
                 player_statline.save()
-
-            advanced_statline = { stat:player_stats[stat] for stat in ADVANCED_STAT_NAMES }   
-            advanced_statline["id"] = basic_statline
-            
-            if AdvancedStatline.objects.filter(**advanced_statline).exists():
-                advanced_statline = AdvancedStatline.objects.get(**advanced_statline)
-            else:
-                advanced_statline = AdvancedStatline(**advanced_statline)
-                advanced_statline.save()
         
-        # save team totals (basic & advanced)
-        basic_team_statline = {stat:team_stats["Team Totals"][stat] for stat in BASIC_STAT_NAMES}
-        basic_team_statline["game_id"] = game.id
-        basic_team_statline["team_id"] = team.id
+        # save team totals
+        team_statline = {stat:team_stats["Team Totals"][stat] for stat in STAT_NAMES if stat != "poss"}
+        team_statline["game_id"] = game.id
+        team_statline["team_id"] = team.id
+        team_statline["poss"] = home_poss if team_loc == "home" else away_poss
 
-        if Statline.objects.filter(**basic_team_statline).exists():
-                basic_team_statline = Statline.objects.get(**basic_team_statline)
+        if Statline.objects.filter(**team_statline).exists():
+                team_statline = Statline.objects.get(**team_statline)
         else:
-            basic_team_statline = Statline(**basic_team_statline)
-            basic_team_statline.save()
-        advanced_team_statline = {stat:team_stats["Team Totals"][stat] for stat in ADVANCED_STAT_NAMES}
-        advanced_team_statline["id"] = basic_team_statline
-        if AdvancedStatline.objects.filter(**advanced_team_statline).exists():
-                advanced_team_statline = AdvancedStatline.objects.get(**advanced_team_statline)
-        else:
-            advanced_team_statline = AdvancedStatline(**advanced_team_statline)
-            advanced_team_statline.save()
+            team_statline = Statline(**team_statline)
+            team_statline.save()
         team_loc = "away"
 
     return game
@@ -161,17 +156,16 @@ def load_and_save_games(season, nba_months=NBA_MONTHS):
         except FileNotFoundError:
             pass
 
-
-def delete_all_games():
-    games = Game.objects.all()
-    stats = Statline.objects.all()
-    player_stats = PlayerStatline.objects.all()
-    adv_stats = AdvancedStatline.objects.all()
-    to_delete = [player_stats, adv_stats, stats, games]
-    for class_objs in to_delete:
-        for obj in class_objs:
-            obj.delete()
-
+def calc_poss(team, opp):
+    team_orb_pct = team["orb"] / (team["orb"]+opp["drb"])
+    team_missed_fg = team["fga"] - team["fg"]
+    team_est_poss = team["fga"] + 0.4 * team["fta"] - 1.07 * (team_orb_pct) * (team_missed_fg) + team["tov"]
+    
+    opp_orb_pct = opp["orb"] / (opp["orb"]+team["drb"])
+    opp_missed_fg = opp["fga"] - opp["fg"]
+    opp_est_poss = opp["fga"] + 0.4 * opp["fta"] - 1.07 * (opp_orb_pct) * (opp_missed_fg) + opp["tov"]
+    
+    return 0.5 * (team_est_poss + opp_est_poss)
 
 # The basic building blocks of the Offensive Rating calculation are Individual Total Possessions and Individual Points Produced. The formula for Total Possessions is broken down into four components: Scoring Possessions, Missed FG Possessions, Missed FT Possessions, and Turnovers.
 
@@ -197,30 +191,31 @@ def delete_all_games():
 
 # TotPoss = ScPoss + FGxPoss + FTxPoss + TOV
 
-
-def calc_team_poss(info):
-    # team info: fga, fta, orb, fga, fg, tov, drb
-    # opp team info: drb, fga, fta, orb, fg, tov
-    0.5 * ((info["fga"] + 0.4 * info["fta"] - 1.07 * (info["orb"] / (info["orb"] + info["opp_drb"])) * (info["fga"] - info["fg"]) + info["tov"]) + (info["opp_fga"] + 0.4 * info["opp_fta"] - 1.07 * (info["opp_orb"] / (info["opp_orb"] + info["drb"])) * (info["opp_fga"] - info["opp_fg"]) + info["opp_tov"]))
-
-
-def calc_player_poss(info):
+def calc_player_poss(info, team_info):
     # player info: mp, ast, fg, pts, ft, fga, fta, tov
     # team info: mp, ast, fg, pts, ft, fga, fta, orb, tov
     # opp team info: trb, orb
-    qAST_0 = ((info["mp"] / (info["team_mp"] / 5)) * (1.14 * ((info["team_ast"] - info["ast"]) / info["team_fg"])))
-    qAST_1 = (((info["team_ast"] / info["team_mp"]) * info["mp"] * 5 - info["ast"]) / ((info["team_fg"] / info["team_mp"]) * info["mp"] * 5 - info["fg"]))
-    qAST = qAST_0 + (qAST_1 * (1 - (info["mp"] / (info["team_mp"] / 5))))
-    fg_part = info["fg"] * (1 - 0.5 * ((info["pts"] - info["ft"]) / (2 * info["fga"])) * qAST)
-    ast_part = 0.5 * (((info["team_pts"] - info["team_ft"]) - (info["pts"]-info["ft"])) / (2 * (info["team_fga"]-info["fga"]))) * info["ast"]
-    ft_part = (1-(1-(info["ft"]/info["fta"])) ** 2) * 0.4 * info["fta"]
-    team_scoring_poss = info["team_fg"] + (1 - (1-(info["team_ft"]/info["team_fta"])) ** 2) * info["team_fta"] * 0.4
-    team_orb_pct = info["team_orb"] / (info["team_orb"] + (info["opp_trb"]-info["opp_orb"]))
-    team_play_pct = team_scoring_poss / (info["team_fga"]+info["team_fta"]*0.4+info["team_tov"])
+
+    qAST_0 = ((info["mp"] / (team_info["mp"] / 5)) * (1.14 * ((team_info["ast"] - info["ast"]) / team_info["fg"])))
+    try:
+        qAST_1 = (((team_info["ast"] / team_info["mp"]) * info["mp"] * 5 - info["ast"]) / ((team_info["fg"] / team_info["mp"]) * info["mp"] * 5 - info["fg"]))
+    except ZeroDivisionError:
+        qAST_1 = 0
+    qAST = qAST_0 + (qAST_1 * (1 - (info["mp"] / (team_info["mp"] / 5))))
+    try:
+        fg_part = info["fg"] * (1 - 0.5 * ((info["pts"] - info["ft"]) / (2 * info["fga"])) * qAST)
+    except ZeroDivisionError:
+        fg_part = 0
+
+    ast_part = 0.5 * (((team_info["pts"] - team_info["ft"]) - (info["pts"]-info["ft"])) / (2 * (team_info["fga"]-info["fga"]))) * info["ast"]
+    ft_part = (1-(1-info["ft_pct"]) ** 2) * 0.4 * info["fta"]
+    team_scoring_poss = team_info["fg"] + (1 - (1-(team_info["ft_pct"])) ** 2) * team_info["fta"] * 0.4
+    team_orb_pct = team_info["orb"] / (team_info["orb"] + (team_info["opp_trb"]-team_info["opp_orb"]))
+    team_play_pct = team_scoring_poss / (team_info["fga"]+team_info["fta"]*0.4+team_info["tov"])
     team_orb_weight = ((1 - team_orb_pct) * team_play_pct) / ((1 - team_orb_pct) * team_play_pct + team_orb_pct * (1 - team_play_pct))
     orb_part = info["orb"] * team_orb_weight * team_play_pct
-    sc_poss = (fg_part + ast_part + ft_part) * (1 - (info["team_orb"] / team_scoring_poss) * team_orb_weight * team_play_pct) + orb_part
+    sc_poss = (fg_part + ast_part + ft_part) * (1 - (team_info["orb"] / team_scoring_poss) * team_orb_weight * team_play_pct) + orb_part
     
     fg_poss = (info["fga"] - info["fg"]) * (1 - 1.07 * team_orb_pct)
-    ft_poss = ((1 - (info["ft"]/info["fta"])) ** 2) * 0.4 * info["fta"]
+    ft_poss = ((1 - info["ft_pct"]) ** 2) * 0.4 * info["fta"]
     return sc_poss + fg_poss + ft_poss + info["tov"]

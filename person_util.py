@@ -51,7 +51,7 @@ def save_person_to_db(person):
 def save_player_to_db(player, person):
     person = save_person_to_db(person)
     
-    player["id"] = person
+    player["person_id"] = person.id
     league_id = 1
     
     ### TO REMOVE - check if key abay is not in player
@@ -106,7 +106,7 @@ def save_player_to_db(player, person):
 
 def save_ref_to_db(person, referee):
     person = save_person_to_db(person)
-    referee["id"] = person
+    referee["person_id"] = person.id
 
     first_season = Season.objects.get(
         year=referee.pop("rookie_season"), 

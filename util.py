@@ -28,12 +28,11 @@ STATES = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas",
           "Vermont", "U.S. Virgin Islands", "Virginia", "Washington",
           "West Virginia", "Wisconsin", "Wyoming"]
 
-BASIC_STAT_NAMES = ["mp", "fg", "fga", "fg_pct", "tp", "tpa", "tp_pct", "ft",
-                    "fta", "ft_pct", "orb", "drb", "trb", "ast", "stl", "blk", 
-                    "tov", "pf", "pts"]
-ADVANCED_STAT_NAMES = ["ts", "efg", "tpar", "ftr", "orb_pct", "drb_pct",
-                       "trb_pct", "ast_pct", "stl_pct", "blk_pct", "tov_pct", 
-                       "usg_rate", "ortg", "drtg"]
+STAT_NAMES = ["mp", "fg", "fga", "fg_pct", "tp", "tpa", "tp_pct", "ft",
+              "fta", "ft_pct", "orb", "drb", "trb", "ast", "stl", "blk", 
+              "tov", "pf", "pts", "poss", "ts", "efg", "tpar", "ftr", 
+              "orb_pct", "drb_pct", "trb_pct", "ast_pct", "stl_pct", 
+              "blk_pct", "tov_pct", "usg_rate", "ortg", "drtg"]
 
 PLAYER_STAT_NAMES = ["started", "plus_minus"]
 
@@ -69,3 +68,4 @@ def update_auto_increments():
     finally:
         if connection:
             connection.close()
+        print("Updated auto increments.")
