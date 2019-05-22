@@ -301,7 +301,7 @@ class Query(object):
 
     def resolve_search(self, info, **kwargs):
         term = kwargs.get("term")
-        return Player.objects.filter(person__playerteamseason__isnull=False).annotate(
+        return Player.objects.filter(playerteamseason__isnull=False).annotate(
                 similarity=Greatest(
                 TrigramSimilarity('person__first_name', term), 
                 TrigramSimilarity('person__last_name', term), 

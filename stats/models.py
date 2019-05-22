@@ -605,40 +605,7 @@ class Game(models.Model):
 
     class Meta:
         db_table = 'game'
-
-    # def get_stats(self, team):
-    #     if team == "home":
-    #         return Statline.objects.filter(team=self.home, game=self.id)
-    #     elif team == "away":
-    #         return Statline.objects.filter(team=self.away, game=self.id)
-    #     else:
-    #         return None
-
-    # def calc_poss(self, team, opp):
-    #     return 0.5 * ((team.fga + 0.4 * team.fta - 1.07 * (team.orb / (team.orb + opp.drb)) * (team.fga - team.fg) + team.tov) + (opp.fga + 0.4 * opp.fta - 1.07 * (opp.orb / (opp.orb + team.drb)) * (opp.fga - opp.fg) + opp.tov))
-
-    # def get_poss(self, team):
-    #     home = self.get_team_stats("home")
-    #     away = self.get_team_stats("away")
-    #     if team == "home":
-    #         return self.calc_poss(home, away)
-    #     elif team == "away":
-    #         return self.calc_poss(away, home)
-
-    # def get_pace(self):
-    #     home = self.get_team_stats("home")
-    #     home_poss = self.get_poss("home")
-    #     away_poss = self.get_poss("away")
-    #     return 48 * ((home_poss+away_poss) / (2*(home.mp/5)))
-
-    # def get_team_stats(self, team):
-    #     if team == "home":
-    #         return Statline.objects.get(team=self.home, game=self.id, playerstatline__isnull=True)
-    #     elif team == "away":
-    #         return Statline.objects.get(team=self.away, game=self.id, playerstatline__isnull=True)
-    #     else:
-    #         return None
-
+        
 
 class GamePeriod(models.Model):
     game = models.OneToOneField(Game, models.DO_NOTHING, primary_key=True)
