@@ -8,13 +8,13 @@ import re
 from datetime import date
 from util import ABA_TEAMS, STAT_NAMES, PLAYER_STAT_NAMES
 
-# %load_ext a†utoreload
+# %load_ext autoreload
 # %autoreload 2
 # from stats.models import *
 # from django.db.models import Q
 # nets = Team.find("Brooklyn Nets")
-# dlo = Player.find("D'Angelo Russell")
 # nets19 = nets.get_season(2019)
+# dlo = Player.find("D'Angelo Russell")
 # dlo19 = PlayerTeamSeason.objects.get(player=dlo, team_season=nets19)
 
 class League(models.Model):
@@ -466,42 +466,28 @@ class TeamSeason(models.Model):
             fta=Sum("fta"), orb=Sum("orb"), drb=Sum("drb"),
             trb=Sum("trb"), ast=Sum("ast"), stl=Sum("stl"),
             blk=Sum("blk"), tov=Sum("tov"), pf=Sum("pf"),
-            pts=Sum("pts"))
+            pts=Sum("pts"), poss=Sum("poss"))
         totals["fg_pct"] = totals["fg"] / totals["fga"]
         totals["tp_pct"] = totals["tp"] / totals["tpa"]
         totals["ft_pct"] = totals["ft"] / totals["fta"]
         opp_stats = self.get_opp_statlines()
         opp_totals = opp_stats.aggregate(
-            mp=Sum("mp"), fg=Sum("fg"), fga=Sum("fga"),
-            tp=Sum("tp"), tpa=Sum("tpa"), ft=Sum("ft"),
-            fta=Sum("fta"), orb=Sum("orb"), drb=Sum("drb"),
-            trb=Sum("trb"), ast=Sum("ast"), stl=Sum("stl"),
-            blk=Sum("blk"), tov=Sum("tov"), pf=Sum("pf"),
-            pts=Sum("pts"))
-        games = self.get_games()
-        possessions = []
-        opp_possessions = []
-        for game in games:
-            if game.home == self.team:
-                poss = game.get_poss("home")
-                opp_poss = game.get_poss("away")
-            else:
-                poss = game.get_poss("away")
-                opp_poss = game.get_poss("home")
-            possessions.append(poss)
-            opp_possessions.append(opp_poss)
-        totals["possessions"] = sum(possessions)
-        opp_totals["possessions"] = sum(opp_possessions)
+            # mp=Sum("mp"), fg=Sum("fg"), fga=Sum("fga"),
+            # tp=Sum("tp"), tpa=Sum("tpa"), ft=Sum("ft"),
+            # fta=Sum("fta"), orb=Sum("orb"), drb=Sum("drb"),
+            # trb=Sum("trb"), ast=Sum("ast"), stl=Sum("stl"),
+            # blk=Sum("blk"), tov=Sum("tov"), pf=Sum("pf"),
+            pts=Sum("pts"), poss=Sum("poss"))
         totals["gp"] = len(team_stats)
         totals["ts"] = totals["pts"] / (2*(totals["fga"]+0.44*totals["fta"]))
         totals["efg"] = (totals["fg"]+0.5*totals["tpa"]) / totals["fga"]
         totals["tpar"] = totals["tpa"] / totals["fga"]
         totals["ftr"] = totals["fta"] / totals["fga"]
-        totals["tov_pct"] = totals["tov"] / totals["possessions"] * 100
-        totals["blk_pct"] = totals["blk"] / totals["possessions"] * 100
-        totals["pace"] = totals["possessions"] / (totals["mp"]/(48*5))
-        totals["ortg"] = totals["pts"] / totals["possessions"] * 100
-        totals["drtg"] = opp_totals["pts"] / opp_totals["possessions"] * 100
+        totals["tov_pct"] = totals["tov"] / totals["poss"] * 100
+        totals["blk_pct"] = totals["blk"] / totals["poss"] * 100
+        totals["pace"] = totals["poss"] / (totals["mp"]/(60*48*5))
+        totals["ortg"] = totals["pts"] / totals["poss"] * 100
+        totals["drtg"] = opp_totals["pts"] / opp_totals["poss"] * 100
         totals["plus_minus"] = (totals["pts"] - opp_totals["pts"])/totals["gp"]
         return totals
 
