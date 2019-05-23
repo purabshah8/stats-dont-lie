@@ -14,7 +14,7 @@ export default function Lollipop({ teamStats, statName }) {
     const margin = { top: 100, bottom: 50, left: 75, right: 50 };
     const height = baseHeight + margin.top + margin.bottom;
     const width = baseWidth + margin.left + margin.right;
-    teamStats.sort((b,a) => a[statName] - b[statName]);
+    teamStats.sort((b,a) => b[statName] - a[statName]);
     const teams = teamStats.map(team => team.abbr);
     const values = teamStats.map(team => team[statName]);
     const minVal = d3.min(values);
@@ -39,13 +39,13 @@ export default function Lollipop({ teamStats, statName }) {
             .append("g")
             .attr("transform", `translate(${margin.left}, ${margin.top})`);
         
+        chart.selectAll("*").remove();
         
         // Title
         chart.append("text")
             .attr("x", `${width/2-250}`)
-            .attr("y", "20")
-            .attr("text-anchor", "left")
-            .style("font-size", "2em")
+            .attr("y", "-20")
+            .attr("class", "d3-title")
             .text(`Team ${statNameMap[statName]}`);
 
         chart.append("g")
@@ -61,15 +61,15 @@ export default function Lollipop({ teamStats, statName }) {
             .call(yAxis);
         
         
-        chart.selectAll("myline")
-            .data(teamStats)
-            .enter()
-            .append("line")
-              .attr("x1", 0)
-              .attr("x2", 0)
-              .attr("y1", function(d) { return yScale(d.abbr); })
-              .attr("y2", function(d) { return yScale(d.abbr); })
-              .attr("stroke", "grey");
+        // chart.selectAll("myline")
+        //     .data(teamStats)
+        //     .enter()
+        //     .append("line")
+        //       .attr("x1", 0)
+        //       .attr("x2", 0)
+        //       .attr("y1", function(d) { return yScale(d.abbr); })
+        //       .attr("y2", function(d) { return yScale(d.abbr); })
+        //       .attr("stroke", "grey");
     
         chart.selectAll("mycircle")
             .data(teamStats)
@@ -85,10 +85,10 @@ export default function Lollipop({ teamStats, statName }) {
             .duration(2000)
             .attr("cx", function(d) { return xScale(d[statName]); });
               
-        chart.selectAll("line")
-            .transition()
-            .duration(2000)
-            .attr("x1", function(d) { return xScale(d[statName]); });
+        // chart.selectAll("line")
+        //     .transition()
+        //     .duration(2000)
+        //     .attr("x1", function(d) { return xScale(d[statName]); });
     });
 
     return (
