@@ -40,7 +40,7 @@ export default class Team extends Component {
                                         <div className="level-item">
                                             <figure className="is-square is-96x96-touch">
                                                 <img alt={`${team.city} ${team.name}`} 
-                                                    src={`/static/images/logos/${abbreviation}.svg`} 
+                                                    src={`https://statsdontlie-media.s3.amazonaws.com/${abbreviation}.svg`} 
                                                     className="team-logo" />
                                             </figure>
                                         </div>

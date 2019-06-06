@@ -62,7 +62,7 @@ export default class PlayerDetails extends React.Component {
                                 <img className="player-image" src={imageUrl} />
                             </figure>
                             <figure className="current-team-logo">
-                                <img src={`/static/images/logos/${abbreviation}.svg`} />
+                                <img src={`https://statsdontlie-media.s3.amazonaws.com/${abbreviation}.svg`} />
                             </figure>
                         </div>
                         <div className="level-item">
