@@ -32,7 +32,7 @@ const Teams = () => {
                                                 <figure className="is-square">
                                                     <img className="team-logo" 
                                                         alt={`${team.city} ${team.name}`}
-                                                        src={`/static/images/logos/${team.abbreviation}.svg`}/>
+                                                        src={`https://statsdontlie-media.s3.amazonaws.com/${team.abbreviation}.svg`}/>
                                                 </figure>
                                             </Link>
                                         </div>
