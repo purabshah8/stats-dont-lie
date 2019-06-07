@@ -188,9 +188,7 @@ class PlayerType(DjangoObjectType):
         return positions
 
     def resolve_current_team(self, info):
-        latest_team_membership = PlayerTeamSeason.objects.filter(
-            player=self.person, team_season__season__year=2019
-        )
+        latest_team_membership = PlayerTeamSeason.objects.filter(player=self, team_season__season__year=2019)
         return latest_team_membership.last().team_season.team
 
 
