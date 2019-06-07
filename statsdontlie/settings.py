@@ -32,7 +32,7 @@ if os.environ.get('DJANGO_DEVELOPMENT') is not None:
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "stats-dont-lie.herokuapp.com"
+    "statsdontlie.herokuapp.com"
 ]
 
 
