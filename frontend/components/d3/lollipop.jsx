@@ -34,12 +34,12 @@ export default function Lollipop({ teamStats, statName }) {
     const yAxis = d3.axisLeft(yScale).tickSize(0);
 
     useEffect(() => {
-        
+
+        d3.select(chartRef).selectAll("g").remove();
+
         const chart = d3.select(chartRef)
             .append("g")
             .attr("transform", `translate(${margin.left}, ${margin.top})`);
-        
-        chart.selectAll("*").remove();
         
         // Title
         chart.append("text")
@@ -77,7 +77,7 @@ export default function Lollipop({ teamStats, statName }) {
             .append("circle")
                 .attr("cx", 0)
                 .attr("cy", function(d) { return yScale(d.abbr); })
-                .attr("r", "10")
+                .attr("r", "12")
                 .style("fill", "#69b3a2");
 
         chart.selectAll("circle")
