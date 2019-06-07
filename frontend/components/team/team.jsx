@@ -112,12 +112,14 @@ export default class Team extends Component {
                                         className="roster-item column is-one-fifth is-flexed zoom-in">
                                         <Link className="link"
                                             to={`/players/${person.id}/seasons/2019`}>
+                                            <div className="is-flexed">
+                                                <p className="roster-text">{fullName}</p>
+                                            </div>
                                             <figure className="is-flexed">
                                                 <img src={imageUrl} />
                                             </figure>
                                             <div className="is-flexed">
-                                                <p className="">{fullName}</p>
-                                                <p className="">{positions}</p>
+                                                <p className="roster-pos">{positions}</p>
                                             </div>
                                         </Link>
                                     </div>

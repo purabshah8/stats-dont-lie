@@ -8,7 +8,7 @@ import { statNameMap } from "../util/util";
 
 export default function Splash(props) {
     const [stat, setstat] = useState("ortg");
-    const stats = ["ortg", "drtg", "fgPct", "tpPct", "ftPct", "ts", "ast", "trb", "stl", "blk", "tov"];
+    const stats = ["ortg", "drtg", "fgPct", "tpPct", "ftPct", "ts", "ast", "trb", "stl", "blk", "tovPct"];
     const statTags = stats.map(statName => {
         let statClasses = "tag stat-tag";
         if (statName === stat)

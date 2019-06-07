@@ -8,24 +8,55 @@ export default function Lollipop({ teamStats, statName }) {
     let containerRef = null;
     const setContainerRef = el => { containerRef = el; };
     const setChartRef = el => { chartRef = el; };
-
+    
     const baseHeight = 800;
     const baseWidth = 1280;
     const margin = { top: 100, bottom: 50, left: 75, right: 50 };
     const height = baseHeight + margin.top + margin.bottom;
     const width = baseWidth + margin.left + margin.right;
+    let xLabel = `${statNameMap[statName]} (per 100 poss)`;
+
+    const pctStats = ["fgPct", "tpPct", "ftPct", "ts"];
+    if (pctStats.includes(statName)) {
+        teamStats = teamStats.map(team => {
+            let team_ = team;
+            team_[statName] = team[statName]*100;
+            return team_;
+        });
+        xLabel = `${statNameMap[statName]}`;
+    }
+
+    const countingStats = ["ast", "trb", "stl", "blk", "tov"];
+    if (countingStats.includes(statName)) {
+        teamStats = teamStats.map(team => {
+            let team_ = team;
+            team_[statName] = team[statName]/team["poss"]*100;
+            return team_;
+        });
+    }
+        
+
     teamStats.sort((b,a) => b[statName] - a[statName]);
+    if (statName === "drtg")
+        teamStats.sort((a,b) => b[statName] - a[statName]);
+
     const teams = teamStats.map(team => team.abbr);
-    const values = teamStats.map(team => team[statName]);
+    let values = teamStats.map(team => team[statName]);
     const minVal = d3.min(values);
     const maxVal = d3.max(values);
     
     // Scales
-    const xScale = d3.scaleLinear()
+    let xScale = d3.scaleLinear()
         .range([0, baseWidth])
-        .domain([minVal-0.1*minVal, maxVal+0.01*maxVal]); // add stat
+        .domain([minVal-0.01*minVal, maxVal+0.01*maxVal]); // add stat
+
+    if (statName === "ortg" || statName === "drtg") {
+        xScale = d3.scaleLinear()
+            .range([0, baseWidth])
+            .domain([minVal-2, maxVal+2]);
+    }
     
-        const yScale = d3.scaleBand()
+    const yScale = d3.scaleBand()
         .range([baseHeight, 0])
         .domain(teams)
         .padding(1);
@@ -50,16 +81,41 @@ export default function Lollipop({ teamStats, statName }) {
 
         chart.append("g")
             .attr("transform", `translate(0,${baseHeight})`)
+            .style("font-size", "1rem")
             .transition()
             .duration(1000)
             .call(xAxis);
-        
+
+
         chart.append("g")
-            .style("font-size", "0.8rem")
-            .transition()
-            .duration(1000)
-            .call(yAxis);
+            .attr("class", "grid")
+            .attr("transform", `translate(0,${baseHeight})`)
+            .call(
+                xAxis.ticks(5)
+                    .tickSize(-baseHeight)
+                    .tickSizeOuter(0)
+                    .tickFormat("")
+            );
+
+        chart.append("text")
+            .attr("x", `${baseWidth/2-75}`)
+            .attr("y", `${baseHeight+40}`)
+            .attr("class","d3-xlabel")
+            .text(xLabel);
         
+        // chart.append("g")
+        //     .style("font-size", "1.2rem")
+        //     .transition()
+        //     .duration(1000)
+        //     .call(yAxis);
+        
+        // chart.selectAll("myline")
+        //     .append("line")
+        //         .attr("x1", yScale((maxVal+minVal)/2))
+        //         .attr("x2", yScale((maxVal+minVal)/2))
+        //         .attr("y1", 0)
+        //         .attr("y2", baseHeight)
+        //         .attr("stroke", "grey");
         
         // chart.selectAll("myline")
         //     .data(teamStats)
@@ -70,25 +126,69 @@ export default function Lollipop({ teamStats, statName }) {
         //       .attr("y1", function(d) { return yScale(d.abbr); })
         //       .attr("y2", function(d) { return yScale(d.abbr); })
         //       .attr("stroke", "grey");
+
+        const tooltip = d3.select(containerRef)
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+        const mouseOver = function(d) {
+            tooltip
+                .transition()
+                .duration(200)
+                .style("opacity", 1);
+            d3.select(this)
+                .transition()
+                .duration(200)
+                .style("stroke", "black")
+                .style("opacity", 1);
+        };
+
+        const mouseMove = function(d) {
+            tooltip
+                .html(`${d.abbr}: ${d[statName]}`)
+                .style("left", d3.mouse(this)[0] + "px")
+                .style("top", d3.mouse(this)[1] + "px");
+        };
+        const mouseLeave = function(d) {
+            tooltip.style("opacity", 0);
+            d3.select(this)
+                .transition()
+                .duration(350)
+                .style("stroke", "none")
+                .style("opacity", 0.8);
+        };
     
-        chart.selectAll("mycircle")
+        chart.selectAll("myimage")
             .data(teamStats)
             .enter()
-            .append("circle")
-                .attr("cx", 0)
-                .attr("cy", function(d) { return yScale(d.abbr); })
-                .attr("r", "12")
-                .style("fill", "#69b3a2");
+            
+            .append("svg:image")
+                .attr("x", 0)
+                .attr("y", function(d) { return yScale(d.abbr); })
+                .attr("width", "36")
+                .attr("height", "36")
+                .attr("xlink:href", function(d) { return `https://statsdontlie-media.s3.amazonaws.com/${d.abbr}.svg`; })
+            .on("mousover", mouseOver)
+            .on("mousemove", mouseMove)
+            .on("mouseleave", mouseLeave);
+            // .append("circle")
+            //     .attr("cx", 0)
+            //     .attr("cy", function(d) { return yScale(d.abbr); })
+            //     .attr("r", "12")
+            //     .style("fill", "#69b3a2");
 
-        chart.selectAll("circle")
+        chart.selectAll("image")
             .transition()
             .duration(2000)
-            .attr("cx", function(d) { return xScale(d[statName]); });
+            .attr("x", function(d) { return xScale(d[statName]); });
               
         // chart.selectAll("line")
         //     .transition()
         //     .duration(2000)
         //     .attr("x1", function(d) { return xScale(d[statName]); });
+
+
     });
 
     return (

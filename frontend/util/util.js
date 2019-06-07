@@ -40,7 +40,7 @@ export const statNameMap = {
     "astPct": "Assist %", 
     "stlPct": "Steal %", 
     "blkPct": "Block %", 
-    "tovPct": "Turover %", 
+    "tovPct": "TO%", 
     "usgRate": "Usage Rate", 
     "ortg": "Offensive Rating", 
     "drtg": "Defensive Rating",
