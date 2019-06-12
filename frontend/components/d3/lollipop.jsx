@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import { statNameMap } from '../../util/util';
 
 
-export default function Lollipop({ teamStats, statName }) {
+export default function Lollipop({ stats, statName }) {
     let chartRef = null;
     let containerRef = null;
     const setContainerRef = el => { containerRef = el; };
@@ -14,17 +14,18 @@ export default function Lollipop({ teamStats, statName }) {
     const margin = { top: 100, bottom: 50, left: 75, right: 50 };
     const height = baseHeight + margin.top + margin.bottom;
     const width = baseWidth + margin.left + margin.right;
-    let xLabel = `${statNameMap[statName]} (per 100 poss)`;
+    let xLabel = `${statNameMap[statNameMap[statName]]} (per 100 poss)`;
+
+    let teamStats = [];
+    stats.forEach(team => teamStats.push(Object.assign({}, team)));
 
     const pctStats = ["fgPct", "tpPct", "ftPct", "ts"];
-    if (pctStats.includes(statName)) {
-        teamStats = teamStats.map(team => {
-            let team_ = team;
-            team_[statName] = team[statName]*100;
-            return team_;
-        });
-        xLabel = `${statNameMap[statName]}`;
-    }
+    teamStats.forEach(team => {
+        pctStats.forEach(stat => { team[stat] *= 100; });
+    });
+    
+    if (pctStats.includes(statName))
+        xLabel = `${statNameMap[statNameMap[statName]]}`;
 
     const countingStats = ["ast", "trb", "stl", "blk", "tov"];
     if (countingStats.includes(statName)) {
@@ -59,9 +60,9 @@ export default function Lollipop({ teamStats, statName }) {
     const yScale = d3.scaleBand()
         .range([baseHeight, 0])
         .domain(teams)
-        .padding(1);
+        .padding(1.5);
 
-    const xAxis = d3.axisBottom(xScale);
+    const xAxis = d3.axisBottom(xScale).tickSize(0).tickPadding(5);
     const yAxis = d3.axisLeft(yScale).tickSize(0);
 
     useEffect(() => {
@@ -74,10 +75,10 @@ export default function Lollipop({ teamStats, statName }) {
         
         // Title
         chart.append("text")
-            .attr("x", `${width/2-250}`)
+            .attr("x", `${width/2}`)
             .attr("y", "-20")
             .attr("class", "d3-title")
-            .text(`Team ${statNameMap[statName]}`);
+            .text(`Team ${statNameMap[statNameMap[statName]]}`);
 
         chart.append("g")
             .attr("transform", `translate(0,${baseHeight})`)
@@ -92,15 +93,15 @@ export default function Lollipop({ teamStats, statName }) {
             .attr("transform", `translate(0,${baseHeight})`)
             .call(
                 xAxis.ticks(5)
-                    .tickSize(-baseHeight)
+                    .tickSize(-(baseHeight-45))
                     .tickSizeOuter(0)
                     .tickFormat("")
             );
 
         chart.append("text")
-            .attr("x", `${baseWidth/2-75}`)
+            .attr("x", `${baseWidth/2}`)
             .attr("y", `${baseHeight+40}`)
-            .attr("class","d3-xlabel")
+            .attr("class","d3-text")
             .text(xLabel);
         
         // chart.append("g")

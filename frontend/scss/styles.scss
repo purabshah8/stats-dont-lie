@@ -362,8 +362,12 @@ a {
 }
 
 .d3-title {
-  text-anchor: left;
+  text-anchor: middle;
   font-size: 2.5em;
+}
+
+.d3-text {
+  text-anchor: middle;
 }
 
 .grid line {
@@ -447,4 +451,24 @@ a {
     }
   }
 
+}
+
+.glossary-link {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.entry {
+  margin: 2rem auto;
+
+  span {
+    // font-style: italic;
+    font-weight: 700;
+  }
+}
+
+.term {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }

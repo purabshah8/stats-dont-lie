@@ -7,17 +7,23 @@ export default class  extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            isActive: false
-        };
+
         const pathArr = this.props.path.split("/");
         const seasonType = pathArr[1];
         this.basePath = pathArr.slice(0,3).join("/");
         this.baseLinkText = null;
         if (seasonType === "teams")
-            this.baseLinkText = "Team Page";
+        this.baseLinkText = "Team Page";
         else if (seasonType === "players")
-            this.baseLinkText = "Career";
+        this.baseLinkText = "Career";
+        
+        let buttonText = "Select Season";
+        if (pathArr.length > 3)
+            buttonText = yearToSeason(parseInt(pathArr[pathArr.length-1]));
+        this.state = {
+            isActive: false,
+            buttonText,
+        };
     }
 
     toggleActive() {
@@ -45,7 +51,7 @@ export default class  extends React.Component {
                 <div className={dropdownClasses} onClick={this.toggleActive()}>
                     <div className="dropdown-trigger">
                         <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                            <span>Select Season</span>
+                            <span>{this.state.buttonText}</span>
                             <span className="icon is-small">
                                 <i className="fas fa-angle-down" aria-hidden="true"></i>
                             </span>

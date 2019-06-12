@@ -176,6 +176,8 @@ query seasonStatsQuery($year: Int){
         teamStats {
             ...stats
         }
+        startDate
+        playoffsStartDate
     }
 }
 ${fragments.statFragments.stats}

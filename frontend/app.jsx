@@ -9,6 +9,7 @@ import Player from "./components/player/player";
 import PlayerSeason from "./components/player/player_season";
 import PlayerSearch from "./components/player/player_search";
 import Games from "./components/game/games";
+import Glossary from './components/elements/glossary';
 
 const App = () => {
     return(
@@ -25,6 +26,7 @@ const App = () => {
             <Route exact path="/players" component={PlayerSearch}/>
             <Route exact path="/players/:id" component={Player}/>
             <Route exact path="/players/:playerId/seasons/:year" component={PlayerSeason}/>
+            <Route exact path="/glossary" component={Glossary}/>
         </Switch>
         <Footer/>
         </>

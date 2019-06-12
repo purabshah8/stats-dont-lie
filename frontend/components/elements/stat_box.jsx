@@ -21,7 +21,7 @@ export default function StatBox(props) {
         else
             val = (val*100).toFixed(1) + "%";
         statDivs.push(
-            <div className="column">
+            <div key={val} className="column">
                 <div className="box-stat-val">{val}</div>
                 <div className="box-stat-name">{nameMap[name]}</div>
             </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LineChart from "./line_chart";
 import HeatMap from "./heat_map";
 import { statNameMap } from "../../util/util";
+import { Link } from "react-router-dom";
 
 export default class ChartPicker extends Component {
   constructor(props) {
@@ -58,6 +59,7 @@ export default class ChartPicker extends Component {
     const { stats, season } = this.props;
     return (
         <div className="container">
+          <Link className="glossary-link" to="/glossary">Glossary</Link>
           <HeatMap stats={stats} season={season} />
         </div>
     );
