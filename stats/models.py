@@ -608,7 +608,7 @@ class Game(models.Model):
         
 
 class GamePeriod(models.Model):
-    game = models.OneToOneField(Game, models.DO_NOTHING, primary_key=True)
+    game = models.ForeignKey(Game, models.DO_NOTHING, primary_key=True)
     number = models.IntegerField()
     home_score = models.IntegerField()
     away_score = models.IntegerField()

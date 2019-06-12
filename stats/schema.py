@@ -238,14 +238,20 @@ class TeamSeasonType(DjangoObjectType):
         return FullStatlineListType(**raw_stats)
 
 
-class GameType(DjangoObjectType):
-    class Meta:
-        model = Game
-
-
 class GamePeriodType(DjangoObjectType):
     class Meta:
         model = GamePeriod
+
+class GameType(DjangoObjectType):
+    scoring = graphene.List(GamePeriodType)
+
+    class Meta:
+        model = Game
+    
+    def resolve_scoring(self, info, **kwargs):
+        game_periods = GamePeriod.objects.filter(game=self)
+        breakpoint()
+        return game_periods
 
 
 class RosterType(graphene.ObjectType):
@@ -261,6 +267,8 @@ class Query(object):
     all_locations = graphene.List(LocationType)
     all_arenas = graphene.List(ArenaType)
     all_teams = graphene.List(TeamType)
+    games = graphene.List(GameType, date=graphene.Date())
+
     search = graphene.List(PlayerType, term=graphene.String())
 
     league = graphene.Field(
@@ -349,6 +357,11 @@ class Query(object):
 
     def resolve_all_arenas(self, info, **kwargs):
         return Arena.objects.all()
+
+    def resolve_games(self, info, **kwargs):
+        date = kwargs.get("date")
+
+        return Game.objects.filter(tipoff__date=date)
 
     def resolve_league(self, info, **kwargs):
         id = kwargs.get("id")
