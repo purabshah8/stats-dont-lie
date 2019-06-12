@@ -371,3 +371,80 @@ a {
   stroke-opacity: 0.7;
   shape-rendering: crispEdges;
 }
+
+.date-panel {
+  margin-top: 1rem;
+}
+
+.games-title {
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.date-selector {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dates {
+  min-height: 4rem;
+  border-radius: 25%;
+  margin: auto 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  min-width: 3rem;
+
+  &:hover {
+    background: #f1f1f1;
+    cursor: pointer;
+  }
+}
+
+.weekday {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.selected-date {
+  color: $PhilippineRed;
+}
+
+.left-arrow {
+  @include arrow($DarkCornflowerBlue);
+  transform: rotate(45deg);
+  left: 50%;
+}
+
+.right-arrow {
+  @include arrow($DarkCornflowerBlue);
+  transform: rotate(225deg);
+  left: 50%;
+}
+
+.arrow-container {
+  position: relative;
+  min-height: 4rem;
+  min-width: 3rem;
+
+  &:hover {
+    cursor: pointer;
+    
+    .right-arrow, .left-arrow {
+      @include arrow($Black);
+    }
+
+    .right-arrow {
+      transform: rotate(225deg);
+    }
+
+    .left-arrow {
+      transform: rotate(45deg);
+    }
+  }
+
+}

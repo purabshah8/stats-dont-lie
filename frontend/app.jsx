@@ -4,11 +4,11 @@ import Teams from './components/team/teams';
 import Team from './components/team/team';
 import Splash from "./components/splash";
 import Navbar from "./components/elements/navbar";
-import Breadcrumb from "./components/elements/breadcrumb";
 import Footer from "./components/elements/footer";
 import Player from "./components/player/player";
 import PlayerSeason from "./components/player/player_season";
 import PlayerSearch from "./components/player/player_search";
+import Games from "./components/game/games";
 
 const App = () => {
     return(
@@ -19,6 +19,7 @@ const App = () => {
         </section>
         <Switch>
             <Route exact path="/" component={Splash}/>
+            <Route exact path="/games" component={Games}/>
             <Route exact path="/teams" component={Teams}/>
             <Route exact path="/teams/:id" component={Team}/>
             <Route exact path="/players" component={PlayerSearch}/>

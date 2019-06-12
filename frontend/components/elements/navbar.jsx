@@ -43,6 +43,7 @@ export default class Navbar extends React.Component {
                                         <div className="navbar-start">
                                             <Link onClick={toggleNavMenu} className="navbar-item" to="/teams">Teams</Link>
                                             <Link onClick={toggleNavMenu} className="navbar-item" to="/players">Players</Link>
+                                            <Link onClick={toggleNavMenu} className="navbar-item" to="/games">Games</Link>
                                         </div>
                                         <div className="navbar-end">
                                             
