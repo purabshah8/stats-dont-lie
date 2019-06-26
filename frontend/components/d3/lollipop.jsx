@@ -130,7 +130,7 @@ export default function Lollipop({ stats, statName }) {
 
         const tooltip = d3.select(containerRef)
         .append("div")
-        .attr("class", "tooltip")
+        .attr("class", "lollipop-tooltip")
         .style("opacity", 0);
 
         const mouseOver = function(d) {
@@ -138,16 +138,11 @@ export default function Lollipop({ stats, statName }) {
                 .transition()
                 .duration(200)
                 .style("opacity", 1);
-            d3.select(this)
-                .transition()
-                .duration(200)
-                .style("stroke", "black")
-                .style("opacity", 1);
         };
 
         const mouseMove = function(d) {
             tooltip
-                .html(`${d.abbr}: ${d[statName]}`)
+                .html(`${d.abbr}: ${d[statName].toFixed(2)}`)
                 .style("left", d3.mouse(this)[0] + "px")
                 .style("top", d3.mouse(this)[1] + "px");
         };
@@ -169,8 +164,9 @@ export default function Lollipop({ stats, statName }) {
                 .attr("y", function(d) { return yScale(d.abbr); })
                 .attr("width", "36")
                 .attr("height", "36")
+                .attr("class", "lollipop-logo")
                 .attr("xlink:href", function(d) { return `https://statsdontlie-media.s3.amazonaws.com/${d.abbr}.svg`; })
-            .on("mousover", mouseOver)
+            .on("mouseover", mouseOver)
             .on("mousemove", mouseMove)
             .on("mouseleave", mouseLeave);
             // .append("circle")

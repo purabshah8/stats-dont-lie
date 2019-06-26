@@ -32,7 +32,9 @@ export default function Splash(props) {
             <div className="container splash-container">
                 <div className="title is-4">2018-19 Team Stats</div>
 
-                <Link className="glossary-link" to="/glossary">Glossary</Link>
+                <div className="glossary-link">
+                    <Link to="/glossary">Glossary</Link>
+                </div>
 
                 <div className="stat-selector">
                     {statTags}

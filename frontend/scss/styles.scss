@@ -346,10 +346,6 @@ a {
   color: white;
 }
 
-// .stat-tag {
-//   margin-left: 0.5rem;
-// }
-
 .stat-selector {
   display: flex;
   justify-content: space-around;  
@@ -454,8 +450,11 @@ a {
 }
 
 .glossary-link {
-  text-align: right;
   margin-bottom: 1rem;
+
+  a {
+    text-align: right;
+  }
 }
 
 .entry {
@@ -471,4 +470,24 @@ a {
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-weight: 700;
+}
+
+.stat-tag {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.lollipop-tooltip {
+  position: absolute;
+  background: black;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.lollipop-logo {
+  // &:hover {
+  //   transform: scale(1.5);
+  // }
 }
