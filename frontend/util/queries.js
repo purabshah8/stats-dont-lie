@@ -34,7 +34,6 @@ query roster($teamId: Int!, $year: Int!) {
     teamSeason(teamId: $teamId, year: $year) {
         ...teamRoster
     }
-    theme @client
 }
 ${fragments.teamSeasonFragments.roster}
 `;

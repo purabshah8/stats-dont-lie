@@ -112,11 +112,11 @@ export default function HeatMap({stats, season}) {
                 .style("opacity", 1);
         };
     
-        const mouseMove = function(d) {
+        const mouseMove = function(event, d) {
             tooltip
                 .html(`Date: ${d.date.toLocaleDateString()} <br/> Stat: ${d.stat} <br/> Value: ${d.val} <br/> zScore: ${d.normVal.toFixed(2)}`)
-                .style("left", d3.mouse(this)[0] + "px")
-                .style("top", d3.mouse(this)[1] + "px");
+                .style("left", d3.pointer(event)[0] + "px")
+                .style("top", d3.pointer(event)[1] + "px");
         };
         const mouseLeave = function(d) {
             tooltip.style("opacity", 0);

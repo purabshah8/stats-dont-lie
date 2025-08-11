@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Teams from './components/team/teams';
 import Team from './components/team/team';
 import Splash from "./components/splash";
@@ -18,16 +18,16 @@ const App = () => {
             <Navbar/>
             {/* <Route component={Breadcrumb}/> */}
         </section>
-        <Switch>
-            <Route exact path="/" component={Splash}/>
-            <Route exact path="/games" component={Games}/>
-            <Route exact path="/teams" component={Teams}/>
-            <Route exact path="/teams/:id" component={Team}/>
-            <Route exact path="/players" component={PlayerSearch}/>
-            <Route exact path="/players/:id" component={Player}/>
-            <Route exact path="/players/:playerId/seasons/:year" component={PlayerSeason}/>
-            <Route exact path="/glossary" component={Glossary}/>
-        </Switch>
+        <Routes>
+            <Route path="/" element={<Splash/>}/>
+            <Route path="/games" element={<Games/>}/>
+            <Route path="/teams" element={<Teams/>}/>
+            <Route path="/teams/:id" element={<Team/>}/>
+            <Route path="/players" element={<PlayerSearch/>}/>
+            <Route path="/players/:id" element={<Player/>}/>
+            <Route path="/players/:playerId/seasons/:year" element={<PlayerSeason/>}/>
+            <Route path="/glossary" element={<Glossary/>}/>
+        </Routes>
         <Footer/>
         </>
     );
