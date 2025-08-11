@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Render build script for stats-dont-lie
+# Build script for stats-dont-lie (Railway deployment)
 
 set -o errexit  # Exit on error
 
