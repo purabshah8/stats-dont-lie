@@ -188,8 +188,10 @@ class PlayerType(DjangoObjectType):
         return positions
 
     def resolve_current_team(self, info):
-        latest_team_membership = PlayerTeamSeason.objects.filter(player=self, team_season__season__year=2019)
-        return latest_team_membership.last().team_season.team
+        latest_team_membership = PlayerTeamSeason.objects.filter(player=self.person, team_season__season__year=2019)
+        if latest_team_membership.exists():
+            return latest_team_membership.last().team_season.team
+        return None
 
 
 class PositionType(DjangoObjectType):
@@ -204,11 +206,19 @@ class PlayerPositionType(DjangoObjectType):
 
 
 class PlayerTeamSeasonType(DjangoObjectType):
+    player = graphene.Field(lambda: PlayerType)
     total_stats = graphene.Field(FullStatlineType)
     raw_stats = graphene.Field(FullStatlineListType)
 
     class Meta:
         model = PlayerTeamSeason
+
+    def resolve_player(self, info):
+        from stats.models import Player
+        try:
+            return Player.objects.get(person=self.player)
+        except Player.DoesNotExist:
+            return None
 
     def resolve_total_stats(self, info):
         total_stats = self.get_season_totals()
@@ -307,7 +317,7 @@ class Query(object):
 
     def resolve_search(self, info, **kwargs):
         term = kwargs.get("term")
-        return Player.objects.filter(playerteamseason__isnull=False).annotate(
+        return Player.objects.filter(person__playerteamseason__isnull=False).annotate(
                 similarity=Greatest(
                 TrigramSimilarity('person__first_name', term), 
                 TrigramSimilarity('person__last_name', term), 
@@ -322,17 +332,17 @@ class Query(object):
 
         if team_season_id is not None:
             return PlayerTeamSeason.objects.get(
-                player_id=player_id, team_season_id=team_season_id)
+                player=player_id, team_season_id=team_season_id)
         if team_id is not None and year is not None:
             team_season = TeamSeason.objects.get(team_id=team_id, 
                 season__year=year)
-            return PlayerTeamSeason.objects.get(player_id=player_id, team_season=team_season)
+            return PlayerTeamSeason.objects.get(player=player_id, team_season=team_season)
 
 
     def resolve_player_season(self, info, **kwargs):
         player_id = kwargs.get("player_id")
         year = kwargs.get("year")
-        return PlayerTeamSeason.objects.filter(player_id=player_id, team_season__season__year=year)
+        return PlayerTeamSeason.objects.filter(player=player_id, team_season__season__year=year)
 
     def resolve_team_season(self, info, **kwargs):
         team_id = kwargs.get("team_id")
@@ -451,4 +461,4 @@ class Query(object):
             return Season.objects.get(pk=id)
 
         if year is not None and year > 1976:
-            return Season.objects.get(year=year)
+            return Season.objects.get(year=year, league_id=1)  # NBA league

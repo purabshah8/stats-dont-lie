@@ -14,7 +14,7 @@ def create_tables():
                 team, season, person, team_employee, referee, 
                 player, position, player_position, team_season, 
                 player_team_season, game, game_period, 
-                statline, player_statline;
+                statline, player_statline CASCADE;
         """,
         """ 
             CREATE TABLE league(

@@ -497,7 +497,7 @@ class TeamSeason(models.Model):
 
 class PlayerTeamSeason(models.Model):
     
-    player = models.ForeignKey(Player, models.DO_NOTHING)
+    player = models.ForeignKey('Person', models.DO_NOTHING)
     team_season = models.ForeignKey('TeamSeason', models.DO_NOTHING)
 
     class Meta:
@@ -509,7 +509,7 @@ class PlayerTeamSeason(models.Model):
     def get_statlines(self):
         return Statline.objects.filter(
             playerstatline__isnull=False,
-            playerstatline__player=self.player.person.id,
+            playerstatline__player=self.player.id,
             team=self.team_season.team,
             game__tipoff__lt=self.team_season.season.playoffs_start_date,
             game__tipoff__gte=self.team_season.season.start_date).order_by("game__tipoff")
@@ -517,7 +517,7 @@ class PlayerTeamSeason(models.Model):
     def get_playoff_statlines(self):
         return Statline.objects.filter(
             playerstatline__isnull=False,
-            playerstatline__player=self.player.person.id,
+            playerstatline__player=self.player.id,
             game__tipoff__gte=self.team_season.season.playoffs_start_date,
             game__tipoff__lt=date(self.team_season.season.year, 7, 1))
 

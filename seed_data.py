@@ -194,3 +194,13 @@ def insert(table, values):
 
 tables = ["league", "conference", "division", "location", "arena", "team", "season", "position", "team_season"]
 seed_data = [leagues, conferences, divisions, locations, arenas, teams, seasons, positions, team_seasons]
+
+# Actually execute the data insertion
+if __name__ == "__main__":
+    print("Starting database seeding...")
+    for table, data in zip(tables, seed_data):
+        if data:  # Only insert if there's data
+            insert(table, data)
+        else:
+            print(f"No data for {table}, skipping...")
+    print("Database seeding completed!")
