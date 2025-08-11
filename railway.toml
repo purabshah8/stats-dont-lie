@@ -1,5 +1,5 @@
 [deploy]
-startCommand = "python -m gunicorn statsdontlie.wsgi:application"
+startCommand = "python3 -m gunicorn statsdontlie.wsgi:application"
 healthcheckPath = "/"
 healthcheckTimeout = 100
 restartPolicyType = "always"
