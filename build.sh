@@ -3,11 +3,7 @@
 
 set -o errexit  # Exit on error
 
-# Install Node.js dependencies
-echo "Installing Node.js dependencies..."
-npm ci
-
-# Build frontend assets
+# Build frontend assets (npm ci already run by Nixpacks)
 echo "Building production frontend assets..."
 npm run postinstall
 
