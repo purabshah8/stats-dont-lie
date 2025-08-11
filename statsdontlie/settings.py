@@ -94,19 +94,25 @@ WSGI_APPLICATION = 'statsdontlie.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-
+# Set PostgreSQL environment variables with defaults for Railway
+os.environ.setdefault("PGDATABASE", "nba")
+os.environ.setdefault("PGUSER", "purab") 
+os.environ.setdefault("PGPASSWORD", "godricshallows")
+os.environ.setdefault("PGHOST", "localhost")
+os.environ.setdefault("PGPORT", "5432")
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'nba',
-        'USER': 'purab',
-        'PASSWORD': 'godricshallows',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ.get('PGDATABASE'),
+        'USER': os.environ.get('PGUSER'),
+        'PASSWORD': os.environ.get('PGPASSWORD'),
+        'HOST': os.environ.get('PGHOST'),
+        'PORT': os.environ.get('PGPORT'),
     }
 }
 
+# Also support DATABASE_URL for compatibility
 DATABASES['default'].update(dj_database_url.config(conn_max_age=600, ssl_require=True))
 
 # Password validation
