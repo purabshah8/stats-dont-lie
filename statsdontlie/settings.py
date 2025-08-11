@@ -22,18 +22,26 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')@h_#ig_gq6&seb=wb4)xd)n7u-n6pmjg=90tdr^8-0%q0_(6o'
+SECRET_KEY = os.environ.get('SECRET_KEY', ')@h_#ig_gq6&seb=wb4)xd)n7u-n6pmjg=90tdr^8-0%q0_(6o')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 if os.environ.get('DJANGO_DEVELOPMENT') is not None:
     DEBUG = True
 
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    "statsdontlie.herokuapp.com"
-]
+# Parse ALLOWED_HOSTS from environment variable or use defaults
+ALLOWED_HOSTS = []
+if os.environ.get('ALLOWED_HOSTS'):
+    if os.environ.get('ALLOWED_HOSTS') == '*':
+        ALLOWED_HOSTS = ['*']
+    else:
+        ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
+else:
+    ALLOWED_HOSTS = [
+        "127.0.0.1",
+        "localhost",
+        "statsdontlie.herokuapp.com"
+    ]
 
 
 # Application definition
@@ -144,7 +152,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Webpack Loader
 WEBPACK_LOADER = {

@@ -13,3 +13,12 @@ images
 scraper.ipynb
 .ipynb_checkpoints
 misc.md
+
+# Django static files
+static/
+staticfiles/
+staticfiles.json
+
+# Build artifacts
+assets/js/
+assets/css/

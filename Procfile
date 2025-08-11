@@ -1,2 +1,1 @@
-web: gunicorn statsdontlie.wsgi —-log-file -
-
+web: gunicorn statsdontlie.wsgi:application
