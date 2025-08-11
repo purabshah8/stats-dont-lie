@@ -25,5 +25,5 @@ urlpatterns = [
     url(r'^graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path('admin/', admin.site.urls),
     url(r'^$', views.index, name="home"),
-    url(r'^(?:.*)/?$', views.index, name="home")
+    url(r'^(?!static/)(?:.*)/?$', views.index, name="home")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
