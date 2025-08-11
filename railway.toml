@@ -1,8 +1,0 @@
-[deploy]
-startCommand = "python3 -m gunicorn statsdontlie.wsgi:application"
-healthcheckPath = "/"
-healthcheckTimeout = 100
-restartPolicyType = "always"
-
-[variables]
-NIXPACKS_PYTHON_VERSION = "3.8.19"
