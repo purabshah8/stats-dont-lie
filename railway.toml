@@ -3,7 +3,7 @@ builder = "nixpacks"
 buildCommand = "./build.sh"
 
 [deploy]
-startCommand = "gunicorn statsdontlie.wsgi:application"
+startCommand = "python3 -m gunicorn statsdontlie.wsgi:application"
 healthcheckPath = "/"
 healthcheckTimeout = 100
 restartPolicyType = "always"

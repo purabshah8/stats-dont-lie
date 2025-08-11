@@ -9,16 +9,16 @@ npm run postinstall
 
 # Collect static files for Django
 echo "Collecting static files..."
-python manage.py collectstatic --noinput
+python3 manage.py collectstatic --noinput
 
 # Run database migrations
 echo "Running database migrations..."
-python manage.py migrate
+python3 manage.py migrate
 
 # Seed data if SEED_DATA environment variable is set to true
 if [ "$SEED_DATA" = "true" ]; then
     echo "Seeding database with initial data..."
-    python create_db.py
+    python3 create_db.py
 else
     echo "Skipping data seeding (SEED_DATA not set to true)"
 fi
