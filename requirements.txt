@@ -9,7 +9,7 @@ graphene==2.1.9
 graphene-django==2.2.0
 graphql-core==2.3.2
 graphql-relay==2.0.1
-gunicorn==19.9.0
+gunicorn==21.2.0
 idna==2.8
 promise==2.3
 psycopg2-binary==2.8.6
