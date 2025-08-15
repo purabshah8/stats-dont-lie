@@ -44,6 +44,7 @@ The easiest way to run this application is using Docker:
 
 4. **Access the application:**
    - Open your browser to: `http://localhost:8000`
+   - **For network access:** To access from other devices on your network, add your machine's IP address to `ALLOWED_HOSTS` in `docker-compose.yml` and recreate the container with `docker compose up -d --force-recreate web`
 
 ### Management Commands
 

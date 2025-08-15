@@ -44,6 +44,7 @@ COPY . .
 
 # Copy built frontend assets from previous stage
 COPY --from=frontend-builder /app/assets/ ./assets/
+COPY --from=frontend-builder /app/webpack-stats.json ./
 
 # Create static files directory
 RUN mkdir -p /app/static
