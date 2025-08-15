@@ -113,7 +113,8 @@ DATABASES = {
 }
 
 # Also support DATABASE_URL for compatibility
-DATABASES['default'].update(dj_database_url.config(conn_max_age=600, ssl_require=True))
+ssl_require = os.environ.get('DJANGO_DEVELOPMENT') is None
+DATABASES['default'].update(dj_database_url.config(conn_max_age=600, ssl_require=ssl_require))
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

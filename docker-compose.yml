@@ -1,0 +1,56 @@
+services:
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: nba
+      POSTGRES_USER: purab
+      POSTGRES_PASSWORD: godricshallows
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U purab -d nba"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PGDATABASE=nba
+      - PGUSER=purab
+      - PGPASSWORD=godricshallows
+      - PGHOST=db
+      - PGPORT=5432
+      - SECRET_KEY=)@h_#ig_gq6&seb=wb4)xd)n7u-n6pmjg=90tdr^8-0%q0_(6o
+      - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - static_volume:/app/static
+
+  # Optional: Add a data seeding service
+  db-seed:
+    build: .
+    environment:
+      - PGDATABASE=nba
+      - PGUSER=purab
+      - PGPASSWORD=godricshallows
+      - PGHOST=db
+      - PGPORT=5432
+      - SECRET_KEY=)@h_#ig_gq6&seb=wb4)xd)n7u-n6pmjg=90tdr^8-0%q0_(6o
+      - DJANGO_DEVELOPMENT=1  # For initial seeding without SSL
+    depends_on:
+      db:
+        condition: service_healthy
+    command: ["python", "create_db.py"]
+    profiles:
+      - seed
+
+volumes:
+  postgres_data:
+  static_volume:

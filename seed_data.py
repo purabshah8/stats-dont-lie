@@ -174,7 +174,10 @@ def insert(table, values):
     connection = None
 
     try:
-        connection = psycopg2.connect(connection_url, sslmode='require')
+        if os.environ.get('DJANGO_DEVELOPMENT') is not None:
+            connection = psycopg2.connect(connection_url)
+        else:
+            connection = psycopg2.connect(connection_url, sslmode='require')
         cursor = connection.cursor()
         num_args_str = "(" + "%s," * (len(values[0])-1) + "%s)"
         args = [str(cursor.mogrify(num_args_str, x), "utf-8") for x in values]

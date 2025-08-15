@@ -54,7 +54,10 @@ def update_auto_increments():
         "sqlsequencereset", "stats", stdout=output, no_color=True)
     connection = None
     try:
-        connection = psycopg2.connect(connection_url, sslmode='require')
+        if os.environ.get('DJANGO_DEVELOPMENT') is not None:
+            connection = psycopg2.connect(connection_url)
+        else:
+            connection = psycopg2.connect(connection_url, sslmode='require')
         cursor = connection.cursor()
         cursor.execute(output.getvalue())
         cursor.close()

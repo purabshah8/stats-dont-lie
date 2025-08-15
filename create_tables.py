@@ -291,7 +291,10 @@ def create_tables():
 
     connection = None
     try:
-        connection = psycopg2.connect(connection_url, sslmode='require')
+        if os.environ.get('DJANGO_DEVELOPMENT') is not None:
+            connection = psycopg2.connect(connection_url)
+        else:
+            connection = psycopg2.connect(connection_url, sslmode='require')
         cursor = connection.cursor()
         tables = ["league", "conference", "division", "location", "arena", "team", "season", "person", "team_employee", "referee", "player",
                   "position", "player_position", "team_season", "player_team_season", "game", "game_period", "statline", "player_statline"]
@@ -318,7 +321,10 @@ def create_tables():
 def execute_command(command):
     connection = None
     try:
-        connection = psycopg2.connect(connection_url, sslmode='require')
+        if os.environ.get('DJANGO_DEVELOPMENT') is not None:
+            connection = psycopg2.connect(connection_url)
+        else:
+            connection = psycopg2.connect(connection_url, sslmode='require')
         cursor = connection.cursor()
         cursor.execute(command)
         cursor.close()
